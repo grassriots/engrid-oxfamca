@@ -21,7 +21,7 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Saturday, December 11, 2021 @ 15:07:54 ET
+ *  Date: Saturday, December 11, 2021 @ 17:47:48 ET
  *  By: bryancasler
  *  ENGrid styles: v0.6.13
  *  ENGrid scripts: v0.6.16
@@ -7126,6 +7126,732 @@ body:not([data-engrid-debug]) #debug-bar{
 
 #en__pagebuilder video[data-src]{
   background-image:url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj48cGF0aCBmaWxsPSIjY2NjIiBkPSJNMCAwaDQwMHYzMDBIMHoiLz48dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIyNiIgZmlsbD0iIzMzMyI+TGF6eSBMb2FkZWQgVmlkZW88L3RleHQ+PC9zdmc+);
+}
+@font-face{
+  font-family:OxfamHeadline;
+  font-style:normal;
+  font-weight:400;
+  src:url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/oxfamglobalheadline-webfont.eot?v=1520436423000);
+  src:url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/oxfamglobalheadline-webfont.eot?v=1520436423000#iefix) format("embedded-opentype"), url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/oxfamglobalheadline-webfont.woff?v=1520436423000) format("woff"), url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/oxfamglobalheadline-webfont.ttf?v=1520436423000) format("truetype"), url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/oxfamglobalheadline-webfont.svg?v=1520436423000#OxfamGlobalHeadlineRegular) format("svg");
+}
+
+@font-face{
+  font-family:Oxfam Global Headline;
+  font-style:normal;
+  font-weight:400;
+  src:url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/OxfamGlobalHeadline-Regular.woff2?v=1568914042000) format("woff2"), url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/oxfamglobalheadline-webfont.woff?v=1520436423000) format("woff");
+}
+
+@font-face{
+  font-family:Oxfam TSTAR PRO;
+  font-style:normal;
+  font-weight:400;
+  src:url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/OxfamTSTARPRO-Regular.eot?v=1568914325000);
+  src:url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/OxfamTSTARPRO-Regular.eot?v=1568914325000%3F#iefix) format("embedded-opentype"), url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/OxfamTSTARPRO-Regular.woff2?v=1568914326000) format("woff2"), url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/OxfamTSTARPRO-Regular.woff?v=1568914326000) format("woff"), url(https://oxfam.ca/fonts/OxfamTSTARPRO-Regular.svg#OxfamTSTARPRO-Regular) format("svg");
+}
+
+@font-face{
+  font-family:Oxfam TSTAR PRO;
+  font-style:normal;
+  font-weight:700;
+  src:url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/OxfamTSTARPRO-Bold.eot?v=1568944904000);
+  src:url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/OxfamTSTARPRO-Bold.eot?v=1568944904000%3F#iefix) format("embedded-opentype"), url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/OxfamTSTARPRO-Bold.woff2?v=1568944708000) format("woff2"), url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/OxfamTSTARPRO-Bold.woff?v=1568944707000) format("woff"), url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/OxfamTSTARPRO-Bold.ttf?v=1568944707000) format("truetype"), url(https://oxfam.ca/fonts/OxfamTSTARPRO-Bold.svg#OxfamTSTARPRO-Bold) format("svg");
+}
+
+[data-engrid-theme=oxfamca]:before{
+  background:url(https://www.oxfam.ca/wp-content/uploads/2018/08/toptop.jpg) 50% no-repeat;
+  background-size:cover;
+  content:"";
+  display:block;
+  height:12px;
+  width:100%;
+}
+
+[data-engrid-theme=oxfamca] .body-header{
+  border-top:0 !important;
+}
+
+[data-engrid-theme=oxfamca] .body-header:before{
+  background:url(https://www.oxfam.ca/wp-content/uploads/2018/08/toptop.jpg) 50% no-repeat;
+  background-position:0;
+  background-size:cover;
+  box-shadow:none !important;
+  content:"";
+  display:block;
+  height:12px;
+  width:100%;
+  z-index:0 !important;
+}
+
+[data-engrid-theme=oxfamca] .page-backgroundImage{
+  background-attachment:fixed;
+  -webkit-clip-path:none !important;
+          clip-path:none !important;
+  height:auto !important;
+}
+
+[data-engrid-theme=oxfamca] .page-backgroundImage:before{
+  background-color:#00000080;
+  height:calc(100vh + 12px);
+  position:fixed;
+  top:-12px;
+  width:100vw;
+}
+
+[data-engrid-theme=oxfamca]{
+  background-color:#fff;
+  color:#3b3b3b;
+}
+
+[data-engrid-theme=oxfamca],[data-engrid-theme=oxfamca]#en__pagebuilder{
+  font-family:Oxfam TSTAR PRO,Arial,Helvetica,sans-serif;
+  font-size:1.125em;
+  font-stretch:normal;
+  font-style:normal;
+  font-weight:400;
+  letter-spacing:normal;
+  line-height:1.44;
+}
+
+[data-engrid-theme=oxfamca]:not(#en__pagebuilder) .en__field--donationAmt>label,[data-engrid-theme=oxfamca]:not(#en__pagebuilder) .en__field--inmem>label,[data-engrid-theme=oxfamca]:not(#en__pagebuilder) .en__field--recurrpay>label{
+  display:none;
+}
+
+[data-engrid-theme=oxfamca]:not(#en__pagebuilder) .en__component--advrow
+.page-backgroundImage.page-backgroundImageSet:before{
+  background-image:var(--theme-page-backgroundImage-url);
+  background-position:0 0;
+  background-repeat:no-repeat;
+  background-size:cover;
+  will-change:transform;
+}
+
+[data-engrid-theme=oxfamca] .en__field--102600 label{
+  opacity:1 !important;
+  position:relative !important;
+  transform:none !important;
+}
+
+[data-engrid-theme=oxfamca] .legacy .en__component--row--1,[data-engrid-theme=oxfamca] .legacy .en__component--row--2{
+  display:initial !important;
+}
+
+[data-engrid-theme=oxfamca] h1{
+  color:#3b3b3b;
+  font-family:OxfamHeadline;
+  font-size:2.66496rem;
+  font-stretch:normal;
+  font-style:normal;
+  font-weight:900;
+  letter-spacing:-1px;
+  line-height:normal;
+  margin-bottom:0;
+  text-align:center;
+  text-transform:uppercase;
+}
+
+[data-engrid-theme=oxfamca] h2,[data-engrid-theme=oxfamca] h3{
+  color:#3b3b3b;
+  font-family:Oxfam TSTAR PRO,Arial,Helvetica,sans-serif;
+  font-size:32px;
+  font-stretch:normal;
+  font-style:normal;
+  font-weight:700;
+  letter-spacing:normal;
+  line-height:36px;
+}
+
+[data-engrid-theme=oxfamca] label.en__field__label{
+  font-family:Oxfam TSTAR PRO,Arial,Helvetica,sans-serif;
+  font-size:14px;
+  font-stretch:normal;
+  font-style:normal;
+  font-weight:500;
+  letter-spacing:1.68px;
+  line-height:normal;
+  text-transform:uppercase;
+}
+
+[data-engrid-theme=oxfamca] .en__field__label--item{
+  font-family:Oxfam TSTAR PRO,Arial,Helvetica,sans-serif;
+  font-size:.99936rem;
+  font-stretch:normal;
+  font-style:normal;
+  font-weight:400;
+  letter-spacing:normal;
+  line-height:1.44;
+}
+
+[data-engrid-theme=oxfamca] .en__field--donationAmt .en__field__item--other:before,[data-engrid-theme=oxfamca] .en__field--donationAmt .en__field__item--other input,[data-engrid-theme=oxfamca] .en__field--donationAmt .en__field__label--item{
+  border-radius:0;
+  font-family:Oxfam TSTAR PRO,Arial,Helvetica,sans-serif;
+  font-size:1.33248rem;
+  font-stretch:normal;
+  font-style:normal;
+  font-weight:900;
+  letter-spacing:normal;
+  line-height:normal;
+}
+
+[data-engrid-theme=oxfamca] .en__field--recurrpay label.en__field__label{
+  font-size:1.33248rem;
+}
+
+[data-engrid-theme=oxfamca] .give-by-select .en__field--radio label{
+  display:block;
+  font-size:1.33248rem;
+  font-weight:900;
+  justify-content:center;
+  line-height:1;
+  margin-top:.83rem;
+  padding:18px 0;
+  width:100%;
+}
+
+[data-engrid-theme=oxfamca] .highlight{
+  background-color:#f9f003;
+  color:#343432;
+  display:inline-block;
+  font-weight:500;
+  padding:1ch;
+}
+
+[data-engrid-theme=oxfamca] .highlight.big{
+  font-size:120%;
+}
+
+[data-engrid-theme=oxfamca] .en__field--donationAmt input[type=number].en__field__input--other,[data-engrid-theme=oxfamca] .en__field--donationAmt input[type=tel].en__field__input--other,[data-engrid-theme=oxfamca] .en__field--donationAmt input[type=text].en__field__input--other{
+  min-height:64px;
+  padding-left:33%;
+}
+
+[data-engrid-theme=oxfamca] .en__field--donationAmt .en__field__item--other:before{
+  color:#fff;
+  content:"$";
+  display:block;
+  height:0;
+  left:calc(33.33333% - 1rem);
+  position:relative;
+  top:1.1rem;
+  width:0;
+}
+
+[data-engrid-theme=oxfamca] .en__field--monthly_upsell_checkbox
+.en__field__input--checkbox+.en__field__label{
+  display:inline-block !important;
+}
+
+[data-engrid-theme=oxfamca] .en__field--monthly_upsell_checkbox
+.en__field__input--checkbox+.en__field__label:before{
+  margin-top:.25rem;
+}
+
+[data-engrid-theme=oxfamca] .en__field--recurrpay label.en__field__label{
+  font-weight:900 !important;
+  text-transform:none !important;
+}
+
+[data-engrid-theme=oxfamca] .en__field--recurrpay label.en__field__label:before{
+  top:3px;
+}
+
+[data-engrid-theme=oxfamca] .en__field--recurrpay .en__field--recurrpay>label{
+  display:none;
+}
+
+[data-engrid-theme=oxfamca] .monthly-gift-upsell-tooltip{
+  text-align:center;
+}
+
+[data-engrid-theme=oxfamca] .monthly-gift-upsell-tooltip .highlight:after{
+  border:20px solid #0000;
+  border-top-color:#f9f003;
+  bottom:-12px;
+  content:" ";
+  height:0;
+  left:60%;
+  margin-left:30px;
+  pointer-events:none;
+  position:absolute;
+  width:0;
+  z-index:1;
+}
+
+[data-engrid-theme=oxfamca] .en__contactDetails__rows,[data-engrid-theme=oxfamca] .en__field__input--checkbox+.en__field__label{
+  display:inline-block;
+  font-size:.99936rem;
+  font-weight:400;
+  letter-spacing:.4px;
+  line-height:1.4;
+  text-transform:none;
+}
+
+[data-engrid-theme=oxfamca] .en__contactDetails__rows .highlight,[data-engrid-theme=oxfamca] .en__field__input--checkbox+.en__field__label .highlight{
+  font-weight:700;
+  margin-left:-.2rem;
+  margin-top:-.5rem;
+}
+
+[data-engrid-theme=oxfamca] .en__field--donationAmt .en__field__element--radio{
+  flex-wrap:wrap;
+  justify-content:center;
+  justify-items:center;
+  margin:.9375rem auto;
+}
+
+[data-engrid-theme=oxfamca] .en__component--formblock
+.en__field--donationAmt
+div.en__field__item:first-of-type,[data-engrid-theme=oxfamca] .en__component--formblock
+.en__field--donationAmt
+div.en__field__item:last-of-type,[data-engrid-theme=oxfamca] .en__field--donationAmt .en__field__element--radio .en__field__item{
+  margin:0 .25rem 1rem !important;
+}
+
+[data-engrid-theme=oxfamca] .en__field--donationAmt .en__field__element--radio .en__field__item{
+  width:calc(33.33333% - .5rem);
+}
+
+[data-engrid-theme=oxfamca] .en__field--donationAmt .en__field__element--radio .en__field__item label{
+  align-items:center;
+  display:flex;
+  height:64px;
+  justify-content:center;
+  width:100%;
+}
+
+[data-engrid-theme=oxfamca] .content-footer{
+  background-color:#fff;
+}
+
+[data-engrid-theme=oxfamca] .pre-footer-card-wrapper{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  margin:0 auto 260px;
+  width:90%;
+}
+
+[data-engrid-theme=oxfamca] .pre-footer-card{
+  display:flex;
+  flex-direction:column;
+  max-width:350px;
+  padding:0 1rem 2rem;
+  text-align:center;
+  width:100%;
+}
+
+[data-engrid-theme=oxfamca] .pre-footer-card img{
+  display:block;
+  margin-bottom:35px;
+}
+
+[data-engrid-theme=oxfamca] .pre-footer-card .header-wrapper h2{
+  color:#3b3b3b;
+  font-size:1.77664rem;
+  font-weight:900;
+  letter-spacing:1px;
+  line-height:1;
+  margin:0;
+  padding:1rem 1rem .5rem;
+  text-transform:uppercase;
+}
+
+[data-engrid-theme=oxfamca] .pre-footer-card p{
+  color:#3b3b3b;
+  font-size:.88832rem;
+  letter-spacing:.2px;
+  line-height:1.58;
+  text-align:center;
+}
+
+[data-engrid-theme=oxfamca] .content-footer{
+  background-color:#3b3b3b;
+}
+
+[data-engrid-theme=oxfamca] .footer-wrapper{
+  align-items:center;
+  color:#fff;
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  padding:30px 0;
+}
+
+[data-engrid-theme=oxfamca] .footer-wrapper .footer-logo{
+  padding:1rem;
+}
+
+[data-engrid-theme=oxfamca] .footer-wrapper .footer-logo img{
+  height:50px;
+  width:auto;
+}
+
+[data-engrid-theme=oxfamca] .footer-wrapper .footer-menu{
+  padding:1rem;
+}
+
+[data-engrid-theme=oxfamca] .footer-wrapper .footer-menu a{
+  color:#fff;
+  display:block;
+  font-size:.88832rem;
+  font-weight:700;
+  text-decoration:none;
+}
+
+[data-engrid-theme=oxfamca] .footer-wrapper .footer-menu a:hover{
+  text-decoration:underline;
+}
+
+[data-engrid-theme=oxfamca] .footer-wrapper .footer-copy{
+  max-width:452px;
+  padding:1rem;
+}
+
+[data-engrid-theme=oxfamca] .footer-wrapper .address,[data-engrid-theme=oxfamca] .footer-wrapper .footer-copy p{
+  color:#fff;
+  font-size:.77728rem;
+  font-weight:400;
+  letter-spacing:.6px;
+  line-height:1.57;
+}
+
+[data-engrid-theme=oxfamca] .footer-wrapper .address{
+  border-top:2px solid #fffc;
+  display:block;
+  margin:0;
+  padding-top:30px;
+  text-align:center;
+  width:100%;
+}
+
+@media screen and (min-width:970px){
+  [data-engrid-theme=oxfamca] .footer-wrapper .footer-copy p{
+    border-left:1px solid #fff;
+    padding-left:65px;
+  }
+}
+
+@media screen and (max-width:497px){
+  [data-engrid-theme=oxfamca] .footer-wrapper{
+    text-align:center;
+  }
+}
+
+[data-engrid-theme=oxfamca] .give-by-select .en__field--radio .en__field__item{
+  flex-grow:1;
+}
+
+[data-engrid-theme=oxfamca] .give-by-select .en__field--radio .en__field__item input[type=radio]+label{
+  background-position-x:calc(50% - 25px);
+  background-position-y:calc(50% - 2px);
+  background-repeat:no-repeat;
+  color:#fff;
+  flex-grow:1;
+  font-size:.99936rem;
+  font-weight:700;
+  letter-spacing:.4px;
+  padding:1rem 0 1rem 2.25rem;
+  text-align:center;
+  text-transform:none;
+}
+
+[data-engrid-theme=oxfamca] .give-by-select .en__field--radio input[value$=ard]+label{
+  background-image:url(https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10042/card.png?v=1572545889000);
+  background-size:24px 18px;
+}
+
+[data-engrid-theme=oxfamca] .give-by-select .en__field--radio input[value$=heck]+label{
+  background-image:url(https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10042/bank.png?v=1572545890000);
+  background-size:18px 16px;
+}
+
+[data-engrid-theme=oxfamca] .give-by-select .en__field--radio input[value$=aypal]+label{
+  background-image:url(https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10042/paypal.png?v=1572545891000);
+  background-size:17px 20px;
+}
+
+[data-engrid-theme=oxfamca] #en__field_supporter_monthly_upsell_checkbox:checked+.en__field__label:after{
+  top:.25rem;
+}
+
+[data-engrid-theme=oxfamca] .en__field--donationAmt input.en__field__input--other::placeholder{
+  opacity:.7;
+}
+
+[data-engrid-theme=oxfamca] .white-font{
+  color:#fff;
+}
+
+[data-engrid-theme=oxfamca] .en__component--advrow:not(.show) :not(.pboAdvancedRow__preview) .hide.en__component--column{
+  display:none;
+}
+
+[data-engrid-theme=oxfamca]:not(#en__pagebuilder) .en__component--advrow:not(.show) .hide{
+  display:none !important;
+}
+
+[data-engrid-theme=oxfamca] .content-footer>div{
+  grid-column:pc !important;
+}
+
+[data-engrid-theme=oxfamca] .footer-block-three{
+  background:url(https://oxfam.ca/wp-content/uploads/2018/06/footer-bg.png);
+  background-size:cover;
+  clear:both;
+  font-size:0;
+  height:14px;
+  line-height:0;
+}
+
+[data-engrid-theme=oxfamca] .footer-block-two{
+  background-color:#0c884a;
+}
+
+[data-engrid-theme=oxfamca] .footer-wrapper{
+  margin-left:auto;
+  margin-right:auto;
+  max-width:1100px;
+}
+
+[data-engrid-theme=oxfamca] .footer-block-two .yd-col.yd-ft-left p{
+  font-weight:400;
+  line-height:26px;
+}
+
+[data-engrid-theme=oxfamca] .footer-block-two .yd-col.yd-ft-left p,[data-engrid-theme=oxfamca] .footer-block-two .yd-col.yd-ft-right p{
+  color:#fff;
+  display:inline-block;
+  font-family:Oxfam TSTAR PRO,Arial,Helvetica,sans-serif;
+  font-size:14px;
+  margin:20px 20px 20px 0;
+}
+
+[data-engrid-theme=oxfamca] .yd-col{
+  display:inline-block;
+}
+
+[data-engrid-theme=oxfamca] .yd-ft-left{
+  width:36.51%;
+}
+
+[data-engrid-theme=oxfamca] .yd-ft-middle{
+  width:42.16%;
+}
+
+[data-engrid-theme=oxfamca] .yd-ft-right{
+  text-align:right;
+  width:19.33%;
+}
+
+[data-engrid-theme=oxfamca] .ft-link-wrapper{
+  margin:20px;
+}
+
+[data-engrid-theme=oxfamca] .ft-link-wrapper a{
+  color:#fff !important;
+  display:inline-block;
+  font-family:Oxfam TSTAR PRO,Arial,Helvetica,sans-serif;
+  font-size:14px !important;
+  font-weight:400;
+  line-height:26px;
+  margin-right:25px !important;
+  text-decoration:none !important;
+}
+
+[data-engrid-theme=oxfamca] .ft-link-wrapper a:hover{
+  text-decoration:underline;
+}
+@media screen and (max-width:360px){
+  .monthly-gift-upsell-tooltip .highlight:after{
+    display:none;
+  }
+}
+
+@media screen and (max-width:400px){
+  .give-by-select
+.en__field--radio
+.en__field__item
+input[type=radio]+label{
+    background-image:none;
+    padding-left:0;
+    padding-right:0;
+  }
+  h1{
+    font-size:2.26522rem;
+  }
+  .en__field--donationAmt .en__field__item--other:before,.en__field--donationAmt .en__field__item--other input,.en__field--donationAmt .en__field__label--item,.en__field--recurrpay label.en__field__label,.give-by-select .en__field--radio label,.highlight.big,h2{
+    font-size:1.19923rem;
+  }
+  .pre-footer-card.footer-wrapper .footer-menu a,.pre-footer-card p,h3{
+    font-size:.88832rem;
+  }
+  label.en__field__label{
+    font-size:.63293rem;
+  }
+  .en__contactDetails__rows,.en__field__label--item .en__field__input--checkbox+.en__field__label,.give-by-select
+.en__field--radio
+.en__field__item
+input[type=radio]+label{
+    font-size:.99936rem;
+  }
+}
+
+@media screen and (max-width:599px){
+  .en__field--donationAmt .en__field__element--radio .en__field__item{
+    width:calc(50% - .5rem);
+  }
+}
+
+h1{
+  margin-top:5px;
+}
+
+[data-engrid-layout=centercenter1col-wide] .body-banner,[data-engrid-layout=centercenter1col-wide] .body-bannerOverlay,[data-engrid-layout=centercenter1col-wide] .body-footerOutside,[data-engrid-layout=centercenter1col-wide] .body-side,[data-engrid-layout=centercenter1col-wide] .content-header,[data-engrid-layout=centercenter1col-wide] .page-alert,[data-engrid-layout=centercenter1col-wide] .page-backgroundImageOverlay,[data-engrid-layout=centercenter1col] .body-banner,[data-engrid-layout=centercenter1col] .body-bannerOverlay,[data-engrid-layout=centercenter1col] .body-footerOutside,[data-engrid-layout=centercenter1col] .body-side,[data-engrid-layout=centercenter1col] .content-header,[data-engrid-layout=centercenter1col] .page-alert,[data-engrid-layout=centercenter1col] .page-backgroundImageOverlay,[data-engrid-layout=centerleft1col] .body-banner,[data-engrid-layout=centerleft1col] .body-bannerOverlay,[data-engrid-layout=centerleft1col] .body-footerOutside,[data-engrid-layout=centerleft1col] .body-side,[data-engrid-layout=centerleft1col] .content-header,[data-engrid-layout=centerleft1col] .page-alert,[data-engrid-layout=centerleft1col] .page-backgroundImageOverlay,[data-engrid-layout=centerright1col] .body-banner,[data-engrid-layout=centerright1col] .body-bannerOverlay,[data-engrid-layout=centerright1col] .body-footerOutside,[data-engrid-layout=centerright1col] .body-side,[data-engrid-layout=centerright1col] .content-header,[data-engrid-layout=centerright1col] .page-alert,[data-engrid-layout=centerright1col] .page-backgroundImageOverlay{
+  clip:rect(0 0 0 0);
+  border:0;
+  -webkit-clip-path:inset(100%);
+  clip-path:inset(100%);
+  height:1px;
+  margin:-1px;
+  overflow:hidden;
+  padding:0;
+  position:absolute;
+  white-space:nowrap;
+  width:1px;
+}
+
+[data-engrid-layout=centercenter1col-wide] .body-headerOutside,[data-engrid-layout=centercenter1col] .body-headerOutside,[data-engrid-layout=centerleft1col] .body-headerOutside,[data-engrid-layout=centerright1col] .body-headerOutside{
+  grid-column:bc;
+  margin-bottom:2rem;
+  margin-top:2rem;
+}
+
+[data-engrid-layout=centercenter1col-wide] .content-preFooter,[data-engrid-layout=centercenter1col] .content-preFooter,[data-engrid-layout=centerleft1col] .content-preFooter,[data-engrid-layout=centerright1col] .content-preFooter{
+  background-size:contain;
+  grid-column:pc;
+}
+
+[data-engrid-layout=centercenter1col-wide] .content-preFooter.pseudo-subgrid>div,[data-engrid-layout=centercenter1col] .content-preFooter.pseudo-subgrid>div,[data-engrid-layout=centerleft1col] .content-preFooter.pseudo-subgrid>div,[data-engrid-layout=centerright1col] .content-preFooter.pseudo-subgrid>div{
+  grid-column:bc;
+}
+
+[data-engrid-layout=centercenter1col-wide] .body-footer,[data-engrid-layout=centercenter1col] .body-footer,[data-engrid-layout=centerleft1col] .body-footer,[data-engrid-layout=centerright1col] .body-footer{
+  margin-bottom:5rem;
+}
+
+[data-engrid-layout=centercenter1col-wide] .content-footer.pseudo-subgrid>div,[data-engrid-layout=centercenter1col] .content-footer.pseudo-subgrid>div,[data-engrid-layout=centerleft1col] .content-footer.pseudo-subgrid>div,[data-engrid-layout=centerright1col] .content-footer.pseudo-subgrid>div{
+  grid-column:bc;
+}
+
+body:not(#en__pagebuilder)[data-engrid-layout=centercenter1col-wide] .page-backgroundImage:before,body:not(#en__pagebuilder)[data-engrid-layout=centercenter1col] .page-backgroundImage:before,body:not(#en__pagebuilder)[data-engrid-layout=centerleft1col] .page-backgroundImage:before,body:not(#en__pagebuilder)[data-engrid-layout=centerright1col] .page-backgroundImage:before{
+  background-image:radial-gradient(circle at 50%, at 0, #0000004d, #0000 53%);
+  background-image:radial-gradient(circle at 50% 0, #0000004d, #0000 53%);
+  content:"";
+  grid-column:pc;
+  z-index:-3;
+}
+
+body:not(#en__pagebuilder)[data-engrid-layout=centercenter1col-wide] .page-backgroundImageOverlay,body:not(#en__pagebuilder)[data-engrid-layout=centercenter1col] .page-backgroundImageOverlay,body:not(#en__pagebuilder)[data-engrid-layout=centerleft1col] .page-backgroundImageOverlay,body:not(#en__pagebuilder)[data-engrid-layout=centerright1col] .page-backgroundImageOverlay{
+  background-image:linear-gradient(180deg, #0000004d 0, #0000 30%);
+  grid-row:page-start /  body-main-end;
+}
+
+body#en__pagebuilder [data-engrid-layout=centercenter1col-wide] .page-backgroundImage>div,body#en__pagebuilder [data-engrid-layout=centercenter1col-wide] .page-backgroundImageOverlay>div,body#en__pagebuilder [data-engrid-layout=centercenter1col] .page-backgroundImage>div,body#en__pagebuilder [data-engrid-layout=centercenter1col] .page-backgroundImageOverlay>div,body#en__pagebuilder [data-engrid-layout=centerleft1col] .page-backgroundImage>div,body#en__pagebuilder [data-engrid-layout=centerleft1col] .page-backgroundImageOverlay>div,body#en__pagebuilder [data-engrid-layout=centerright1col] .page-backgroundImage>div,body#en__pagebuilder [data-engrid-layout=centerright1col] .page-backgroundImageOverlay>div{
+  grid-column:bc;
+}
+@media screen and (min-width:600px){
+  [data-engrid-layout=centercenter1col-wide] .en__component--advrow .body-banner,[data-engrid-layout=centercenter1col-wide] .en__component--advrow .body-bannerOverlay,[data-engrid-layout=centercenter1col-wide] .en__component--advrow .body-bottom,[data-engrid-layout=centercenter1col-wide] .en__component--advrow .body-footer,[data-engrid-layout=centercenter1col-wide] .en__component--advrow .body-header,[data-engrid-layout=centercenter1col-wide] .en__component--advrow .body-main,[data-engrid-layout=centercenter1col-wide] .en__component--advrow .body-side,[data-engrid-layout=centercenter1col-wide] .en__component--advrow .body-top,[data-engrid-layout=centercenter1col] .en__component--advrow .body-banner,[data-engrid-layout=centercenter1col] .en__component--advrow .body-bannerOverlay,[data-engrid-layout=centercenter1col] .en__component--advrow .body-bottom,[data-engrid-layout=centercenter1col] .en__component--advrow .body-footer,[data-engrid-layout=centercenter1col] .en__component--advrow .body-header,[data-engrid-layout=centercenter1col] .en__component--advrow .body-main,[data-engrid-layout=centercenter1col] .en__component--advrow .body-side,[data-engrid-layout=centercenter1col] .en__component--advrow .body-top,[data-engrid-layout=centerleft1col] .en__component--advrow .body-banner,[data-engrid-layout=centerleft1col] .en__component--advrow .body-bannerOverlay,[data-engrid-layout=centerleft1col] .en__component--advrow .body-bottom,[data-engrid-layout=centerleft1col] .en__component--advrow .body-footer,[data-engrid-layout=centerleft1col] .en__component--advrow .body-header,[data-engrid-layout=centerleft1col] .en__component--advrow .body-main,[data-engrid-layout=centerleft1col] .en__component--advrow .body-side,[data-engrid-layout=centerleft1col] .en__component--advrow .body-top,[data-engrid-layout=centerright1col] .en__component--advrow .body-banner,[data-engrid-layout=centerright1col] .en__component--advrow .body-bannerOverlay,[data-engrid-layout=centerright1col] .en__component--advrow .body-bottom,[data-engrid-layout=centerright1col] .en__component--advrow .body-footer,[data-engrid-layout=centerright1col] .en__component--advrow .body-header,[data-engrid-layout=centerright1col] .en__component--advrow .body-main,[data-engrid-layout=centerright1col] .en__component--advrow .body-side,[data-engrid-layout=centerright1col] .en__component--advrow .body-top{
+    padding-left:3.5rem;
+    padding-right:3.5rem;
+  }
+  [data-engrid-layout=centercenter1col-wide] .en__component--advrow .body-header,[data-engrid-layout=centercenter1col] .en__component--advrow .body-header,[data-engrid-layout=centerleft1col] .en__component--advrow .body-header,[data-engrid-layout=centerright1col] .en__component--advrow .body-header{
+    padding-top:4rem;
+  }
+  [data-engrid-layout=centercenter1col-wide] .en__component--advrow .body-footer,[data-engrid-layout=centercenter1col] .en__component--advrow .body-footer,[data-engrid-layout=centerleft1col] .en__component--advrow .body-footer,[data-engrid-layout=centerright1col] .en__component--advrow .body-footer{
+    padding-bottom:4rem;
+  }
+  [data-engrid-layout=centercenter1col-wide] .body-headerOutside,[data-engrid-layout=centercenter1col] .body-headerOutside,[data-engrid-layout=centerleft1col] .body-headerOutside,[data-engrid-layout=centerright1col] .body-headerOutside{
+    margin-bottom:4rem;
+    margin-top:4rem;
+  }
+  [data-engrid-layout=centercenter1col-wide] [class^=body-],[data-engrid-layout=centercenter1col] [class^=body-],[data-engrid-layout=centerleft1col] [class^=body-],[data-engrid-layout=centerright1col] [class^=body-]{
+    border-left:1px solid #000;
+    border-right:1px solid #000;
+  }
+  [data-engrid-layout=centercenter1col-wide] .body-header,[data-engrid-layout=centercenter1col] .body-header,[data-engrid-layout=centerleft1col] .body-header,[data-engrid-layout=centerright1col] .body-header{
+    border-top:1px solid #000;
+    border-top-left-radius:5px;
+    border-top-right-radius:5px;
+    margin-top:1rem;
+  }
+  [data-engrid-layout=centercenter1col-wide] .content-footer.pseudo-subgrid>div,[data-engrid-layout=centercenter1col-wide] .content-preFooter.pseudo-subgrid>div,[data-engrid-layout=centercenter1col] .content-footer.pseudo-subgrid>div,[data-engrid-layout=centercenter1col] .content-preFooter.pseudo-subgrid>div,[data-engrid-layout=centerleft1col] .content-footer.pseudo-subgrid>div,[data-engrid-layout=centerleft1col] .content-preFooter.pseudo-subgrid>div,[data-engrid-layout=centerright1col] .content-footer.pseudo-subgrid>div,[data-engrid-layout=centerright1col] .content-preFooter.pseudo-subgrid>div{
+    grid-column:cc;
+  }
+}
+@media screen and (min-width:1231px){
+  [data-engrid-layout=centercenter1col-wide] .content-preFooter,[data-engrid-layout=centercenter1col] .content-preFooter,[data-engrid-layout=centerleft1col] .content-preFooter,[data-engrid-layout=centerright1col] .content-preFooter{
+    background-size:cover;
+  }
+}
+
+[data-engrid-subtheme=emergency] .en__submit button{
+  background-color:#ff1d34 !important;
+  border-color:#ff1d34 !important;
+}
+
+[data-engrid-subtheme=emergency] .en__submit button:focus,[data-engrid-subtheme=emergency] .en__submit button:hover,[data-engrid-subtheme=emergency] button.cta.primary:focus,[data-engrid-subtheme=emergency] button.cta.primary:hover,[data-engrid-subtheme=emergency] button:focus,[data-engrid-subtheme=emergency] button:hover{
+  background-color:#b4243f !important;
+}
+
+[data-engrid-subtheme=emergency] .en__contactDetails__select:checked+.en__contactDetails__rows:after,[data-engrid-subtheme=emergency] .en__field__input--checkbox:checked+.en__field__label:after{
+  content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='21' height='16' viewBox='0 0 21 16'><path fill='%23FF1D34' fill-rule='nonzero' d='M18.76.16L6.68 12.113l-4.44-4.392a.555.555 0 0 0-.779 0L.161 9.006a.541.541 0 0 0 0 .771L6.29 15.84a.555.555 0 0 0 .78 0l13.77-13.624a.541.541 0 0 0 0-.771L19.539.16a.555.555 0 0 0-.779 0z'/></svg>") !important;
+}
+
+[data-engrid-subtheme=emergency] .en__field__input--radio:checked+.en__field__label:before{
+  background-color:#ff1d34 !important;
+}
+
+[data-engrid-subtheme=emergency] .en__contactDetails__select:checked+.en__contactDetails__rows:after,[data-engrid-subtheme=emergency] .en__contactDetails__select:checked+.en__contactDetails__rows:before,[data-engrid-subtheme=emergency] .en__field__input--checkbox:checked+.en__field__label:after,[data-engrid-subtheme=emergency] .en__field__input--checkbox:checked+.en__field__label:before{
+  color:#ff1d34 !important;
+}
+
+[data-engrid-subtheme=emergency] .en__field--donationAmt.en__field--radio
+.en__field__item--other.has-value
+input,[data-engrid-subtheme=emergency] .en__field--donationAmt.en__field--radio
+.en__field__item--other:not(.en__field__item--hidden)
+input,[data-engrid-subtheme=emergency] .en__field--donationAmt.en__field--radio input[type=radio]:checked+label,[data-engrid-subtheme=emergency] .give-by-select .en__field--radio .en__field__item--other.has-value input,[data-engrid-subtheme=emergency] .give-by-select
+.en__field--radio
+.en__field__item--other:not(.en__field__item--hidden)
+input,[data-engrid-subtheme=emergency] .give-by-select .en__field--radio input[type=radio]:checked+label,[data-engrid-subtheme=emergency] .radio-to-buttons .en__field--radio .en__field__item--other.has-value input,[data-engrid-subtheme=emergency] .radio-to-buttons
+.en__field--radio
+.en__field__item--other:not(.en__field__item--hidden)
+input,[data-engrid-subtheme=emergency] .radio-to-buttons .en__field--radio input[type=radio]:checked+label{
+  background-color:#ff1d34 !important;
+  border-color:#ff1d34 !important;
+}
+
+[data-engrid-subtheme=emergency] .en__tweetButton__send,[data-engrid-subtheme=emergency] .en__tweetButton__sent{
+  background-color:#ff1d34 !important;
+}
+
+[data-engrid-subtheme=emergency] #enModal .enModal-container .accent{
+  color:#ff1d34 !important;
+}
+
+[data-engrid-subtheme=emergency] .body-header:before,[data-engrid-subtheme=emergency] .footer-block-three,[data-engrid-subtheme=emergency]:before{
+  background:url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/strip-emergency-desktop.png?v=1520436486000) !important;
+}
+
+[data-engrid-subtheme=emergency],[data-engrid-subtheme=emergency] .footer-block-two{
+  background-color:#000 !important;
+}
+
+[data-engrid-subtheme=emergency] .en__field--donationAmt input[type=radio]:checked+label,[data-engrid-subtheme=emergency] .en__field--donationAmt label.en__field__label.en__field__label--item:hover,[data-engrid-subtheme=emergency] .en__field--recurrpay input[type=radio]:checked+label,[data-engrid-subtheme=emergency] .en__field--recurrpay label.en__field__label.en__field__label--item:hover,[data-engrid-subtheme=emergency] button{
+  background-color:#ff1d34 !important;
+}
+
+[data-engrid-subtheme=emergency] .footer-block-three,[data-engrid-subtheme=emergency] header#yd-donationheader,[data-engrid-subtheme=emergency] section.form-sidebar,[data-engrid-subtheme=emergency] section.wrapper .main .form-large{
+  background-image:url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/strip-emergency-desktop.png?v=1520436486000) !important;
 }
 body{
   opacity:1;
