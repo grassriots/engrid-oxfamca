@@ -1,5 +1,5 @@
 {
-  "name": "@4site/engrid",
+  "name": "@4site/engrid-oxfamca",
   "version": "2.0.0",
   "private": false,
   "description": "Page Template Framework for Engaging Networks",
@@ -24,7 +24,7 @@
   ],
   "author": "4Site Studios",
   "license": "Unlicense",
-  "url": "https://github.com/4site-interactive-studios/engrid",
+  "url": "https://github.com/4site-interactive-studios/engrid-oxfamca",
   "devDependencies": {
     "@4site/engrid-common": "*",
     "@4site/engrid-styles": "*",
@@ -42,7 +42,7 @@
     "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "6.2.12",
     "mini-css-extract-plugin": "^1.6.2",
-    "node-sass": "^6.0.1",
+    "sass": "^1.49.0",
     "popper.js": "^1.16.1",
     "postcss-loader": "^6.1.0",
     "postcss-preset-env": "^6.7.0",

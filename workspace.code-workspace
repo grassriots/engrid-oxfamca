@@ -1,10 +1,22 @@
 {
   "folders": [
     {
+      "name": "engrid-scripts",
+      "path": "../engrid-scripts"
+    },
+    {
+      "name": "engrid",
+      "path": "../engrid"
+    },
+    {
+      "name": "engrid-oxfamca",
       "path": "."
     },
     {
-      "path": "../engrid-scripts"
+      "path": "../engrid-aiusa"
+    },
+    {
+      "path": "../engrid-oc"
     }
   ],
   "settings": {
