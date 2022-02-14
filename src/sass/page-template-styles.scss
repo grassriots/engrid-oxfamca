@@ -308,6 +308,7 @@
   --engrid__body_padding: 0px 60px;
   --engrid__body-main_padding: 0 60px 60px;
   --engrid__body-headerOutside_padding: 0;
+  --engrid__page_background-color: #44841a;
 }
 
 /* Add your custom theme styles here */
@@ -317,11 +318,8 @@
     --engrid__body_padding: 0px 10px;
     --engrid__body-main_padding: 0 10px 10px;
     --engrid__body-main_padding: 0 10px 10px;
-    &:not(#en__pagebuilder) .page-backgroundImage {
-      grid-row: page-start / content-footerSpacer-end;
-      &::before {
-        display: block;
-      }
+    .emailImage {
+      float: none !important;
     }
   }
   @mixin until-mobile-l {
@@ -361,13 +359,13 @@
       font-weight: 700;
       line-height: 0;
       height: 0;
-      left: 2.05ch;
+      left: 30%;
       top: calc(50% - 2px);
       color: var(--color_white);
     }
     input {
       padding: 0;
-      padding-left: 2.85ch;
+      padding-left: 37%;
       font-size: 22px;
       line-height: 61px;
       font-weight: 700;
@@ -482,24 +480,24 @@
       center center no-repeat;
     background-size: cover;
   }
-  .body-header {
-    border-top: 0 !important;
-    min-height: 12px;
-    padding-bottom: 30px;
-    &:before {
-      content: "";
-      position: absolute;
-      display: block;
-      height: 12px;
-      width: 100%;
-      background: url("https://www.oxfam.ca/wp-content/uploads/2018/08/toptop.jpg")
-        center center no-repeat;
-      background-size: cover;
-      background-position: left;
-      z-index: 0 !important;
-      box-shadow: none !important;
-    }
-  }
+  // .body-header {
+  //   border-top: 0 !important;
+  //   min-height: 12px;
+  //   padding-bottom: 30px;
+  //   &:before {
+  //     content: "";
+  //     position: absolute;
+  //     display: block;
+  //     height: 12px;
+  //     width: 100%;
+  //     background: url("https://www.oxfam.ca/wp-content/uploads/2018/08/toptop.jpg")
+  //       center center no-repeat;
+  //     background-size: cover;
+  //     background-position: left;
+  //     z-index: 0 !important;
+  //     box-shadow: none !important;
+  //   }
+  // }
 
   // Example Breakpoints Stylings (See engrid-scripts > _engrid-breakpoints.scss for more breakpoints)
   &[data-engrid-layout] {
@@ -520,6 +518,11 @@
   &[data-engrid-layout="centerleft1col"] {
     @media screen and (max-width: $centerleft1col_content-column_min-width) {
       @include simplified-header;
+      &:not(#en__pagebuilder) .page-backgroundImage {
+        &::after {
+          content: none !important;
+        }
+      }
     }
   }
 
@@ -1110,12 +1113,11 @@
 [data-engrid-layout="centerright1col"] {
   .page-alert,
   .content-header,
-  .body-banner,
   .body-bannerOverlay,
   .body-side,
   .body-footerOutside,
   .page-backgroundImageOverlay {
-    // display: none;
+    display: none !important;
     position: absolute;
     width: 1px;
     height: 1px;
@@ -1167,10 +1169,10 @@ body:not(#en__pagebuilder)[data-engrid-layout="centerright1col"] {
     );
     z-index: 0;
     grid-column: pc;
-    height: calc(100% - 12px);
+    height: 100%;
     left: 0;
     position: fixed;
-    top: 12px;
+    top: 0;
     width: 100vw;
     background-color: #333;
     opacity: 0.5;
@@ -1192,15 +1194,15 @@ body:not(#en__pagebuilder)[data-engrid-layout="centerright1col"] {
   }
 }
 
-body#en__pagebuilder [data-engrid-layout="centerleft1col"],
-body#en__pagebuilder [data-engrid-layout="centercenter1col"],
-body#en__pagebuilder [data-engrid-layout="centercenter1col-wide"],
-body#en__pagebuilder [data-engrid-layout="centerright1col"] {
-  .page-backgroundImage > div,
-  .page-backgroundImageOverlay > div {
-    grid-column: bc;
-  }
-}
+// body#en__pagebuilder [data-engrid-layout="centerleft1col"],
+// body#en__pagebuilder [data-engrid-layout="centercenter1col"],
+// body#en__pagebuilder [data-engrid-layout="centercenter1col-wide"],
+// body#en__pagebuilder [data-engrid-layout="centerright1col"] {
+//   .page-backgroundImage > div,
+//   .page-backgroundImageOverlay > div {
+//     grid-column: bc;
+//   }
+// }
 
 /*
 * ##########################################################
