@@ -71,6 +71,7 @@
   --success: #33cc33;
   --warning: #fcac00;
   --error: #f12222;
+  --error__color: #f12222;
 
   // PRIMARY COLORS
   --color_primary: #f16e22;
@@ -306,12 +307,28 @@
   --engrid__content_padding: 0px;
   --engrid__body_padding: 0px 60px;
   --engrid__body-main_padding: 0 60px 60px;
+  --engrid__body-headerOutside_padding: 0;
 }
 
 /* Add your custom theme styles here */
 [data-engrid-theme="oxfamca"] {
+  @mixin until-tablet {
+    // STYLES
+    --engrid__body_padding: 0px 10px;
+    --engrid__body-main_padding: 0 10px 10px;
+    --engrid__body-main_padding: 0 10px 10px;
+    &:not(#en__pagebuilder) .page-backgroundImage {
+      grid-row: page-start / content-footerSpacer-end;
+      &::before {
+        display: block;
+      }
+    }
+  }
   @mixin until-mobile-l {
     // STYLES
+    .radio-to-buttons_donationAmt {
+      --donation-amount__button_count: 2;
+    }
   }
 
   @mixin from-mobile-l {
@@ -389,15 +406,15 @@
   /* Card */
   .give-by-select .en__field__element--radio .en__field__item.card label span {
     display: inline-block;
-    height: 20px;
-    width: 20px;
-    background-image: url(https://cdn.jsdelivr.net/gh/4site-interactive-studios/Ocean-Conservancy-Engaging-Networks-Template@master/themes/parent-theme/images/icon-card-white.svg);
+    height: 18px;
+    width: 24px;
+    background-image: url(https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10042/card.png?v=1572545889000);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 50%;
     position: relative;
     margin-right: 7px;
-    top: 1px;
+    bottom: 1px;
   }
 
   /* Paypal */
@@ -408,14 +425,13 @@
     span {
     display: inline-block;
     height: 20px;
-    width: 20px;
-    background-image: url(https://cdn.jsdelivr.net/gh/4site-interactive-studios/Ocean-Conservancy-Engaging-Networks-Template@master/themes/parent-theme/images/icon-paypal-white.svg);
+    width: 17px;
+    background-image: url(https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10042/paypal.png?v=1572545891000);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: 50%;
     position: relative;
     margin-right: 7px;
-    top: 1px;
   }
 
   /* Check */
@@ -438,7 +454,7 @@
     input:checked
     + label
     span {
-    background-image: url(https://cdn.jsdelivr.net/gh/4site-interactive-studios/Ocean-Conservancy-Engaging-Networks-Template@master/themes/parent-theme/images/icon-card-white.svg);
+    background-image: url(https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10042/card.png?v=1572545889000);
   }
   .give-by-select
     .en__field__element--radio
@@ -446,7 +462,7 @@
     input:checked
     + label
     span {
-    background-image: url(https://cdn.jsdelivr.net/gh/4site-interactive-studios/Ocean-Conservancy-Engaging-Networks-Template@master/themes/parent-theme/images/icon-paypal-white.svg);
+    background-image: url(https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10042/paypal.png?v=1572545891000);
   }
   .give-by-select
     .en__field__element--radio
@@ -489,6 +505,10 @@
   &[data-engrid-layout] {
     @include mq($until: mobile-l) {
       @include until-mobile-l;
+    }
+
+    @include mq($until: tablet) {
+      @include until-tablet;
     }
 
     @include mq($from: mobile-l) {
@@ -784,6 +804,20 @@
     color: #fff;
     padding: 30px 0px;
     flex-wrap: wrap;
+    @include mq($until: tablet) {
+      display: block;
+      .yd-ft-left,
+      .yd-ft-middle,
+      .yd-ft-right {
+        width: 100%;
+        text-align: center;
+      }
+      .ft-link-wrapper a {
+        display: block;
+        margin: 0 auto;
+        padding: 0.2rem 0;
+      }
+    }
     .footer-logo {
       padding: 1rem;
       img {

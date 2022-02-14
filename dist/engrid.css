@@ -19,10 +19,10 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Thursday, February 3, 2022 @ 17:01:10 ET
+ *  Date: Monday, February 14, 2022 @ 22:33:18 ET
  *  By: fernando
- *  ENGrid styles: v0.8.3
- *  ENGrid scripts: v0.8.7
+ *  ENGrid styles: v0.8.15
+ *  ENGrid scripts: v0.8.14
  *
  *  Created by 4Site Studios
  *  Come work with us or join our team, we would love to hear from you
@@ -808,7 +808,7 @@ body[data-engrid-debug]:before{
 }
 
 .en__share{
-  margin-right:1.125rem;
+  margin-right:0;
 }
 
 .en__share--facebook.en__share--small{
@@ -2784,6 +2784,11 @@ body{
   opacity:.5;
 }
 
+[data-engrid-theme] .en__component--callcontactblock{
+  margin-left:auto;
+  margin-right:auto;
+  width:100%;
+}
 [data-engrid-theme] .en__component--callcontactblock .en__contact__detail{
   flex-wrap:wrap;
 }
@@ -2798,6 +2803,9 @@ body{
   display:flex;
   flex-wrap:wrap;
   justify-content:space-between;
+}
+[data-engrid-theme] .en__component--callcontactblock .en__overlay--callcontact{
+  width:100%;
 }
 [data-engrid-theme] .en__component--callsurveyblock .en__c2c__survey__rate .en__button{
   opacity:1;
@@ -4501,6 +4509,14 @@ body:not(#en__pagebuilder) .simple_country_select:not(.country-select-visible) .
 }
 .en__component--socialshareblock .en__socialShares a img{
   border-radius:var(--engrid__body_border-radius);
+}
+
+.en__shares{
+  grid-gap:calc(var(--fields_spacing-inline)*2);
+  gap:calc(var(--fields_spacing-inline)*2);
+}
+.en__shares .en__share.en__share--facebook,.en__shares .en__share.en__share--twitter{
+  flex-basis:50px;
 }
 
 .enWidget__bar .enWidget__progress{
@@ -6592,6 +6608,7 @@ body:not([data-engrid-debug]) #debug-bar{
   --success:#3c3;
   --warning:#fcac00;
   --error:#f12222;
+  --error__color:#f12222;
   --color_primary:#f16e22;
   --color_primary_overlay:#fff;
   --scale-up_20pct:1.2;
@@ -6743,6 +6760,7 @@ body:not([data-engrid-debug]) #debug-bar{
   --engrid__content_padding:0px;
   --engrid__body_padding:0px 60px;
   --engrid__body-main_padding:0 60px 60px;
+  --engrid__body-headerOutside_padding:0;
 }
 [data-engrid-theme=oxfamca] .en__captcha{
   margin:20px auto auto;
@@ -6805,19 +6823,19 @@ body:not([data-engrid-debug]) #debug-bar{
   text-transform:uppercase;
 }
 [data-engrid-theme=oxfamca] .give-by-select .en__field__element--radio .en__field__item.card label span{
-  background-image:url(https://cdn.jsdelivr.net/gh/4site-interactive-studios/Ocean-Conservancy-Engaging-Networks-Template@master/themes/parent-theme/images/icon-card-white.svg);
+  background-image:url(https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10042/card.png?v=1572545889000);
   background-position:50%;
   background-repeat:no-repeat;
   background-size:contain;
+  bottom:1px;
   display:inline-block;
-  height:20px;
+  height:18px;
   margin-right:7px;
   position:relative;
-  top:1px;
-  width:20px;
+  width:24px;
 }
 [data-engrid-theme=oxfamca] .give-by-select .en__field__element--radio .en__field__item.paypal label span{
-  background-image:url(https://cdn.jsdelivr.net/gh/4site-interactive-studios/Ocean-Conservancy-Engaging-Networks-Template@master/themes/parent-theme/images/icon-paypal-white.svg);
+  background-image:url(https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10042/paypal.png?v=1572545891000);
   background-position:50%;
   background-repeat:no-repeat;
   background-size:contain;
@@ -6825,8 +6843,7 @@ body:not([data-engrid-debug]) #debug-bar{
   height:20px;
   margin-right:7px;
   position:relative;
-  top:1px;
-  width:20px;
+  width:17px;
 }
 [data-engrid-theme=oxfamca] .give-by-select .en__field__element--radio .en__field__item.check label span{
   background-image:url(https://cdn.jsdelivr.net/gh/4site-interactive-studios/Ocean-Conservancy-Engaging-Networks-Template@master/themes/parent-theme/images/icon-check-white.svg);
@@ -6841,10 +6858,10 @@ body:not([data-engrid-debug]) #debug-bar{
   width:20px;
 }
 [data-engrid-theme=oxfamca] .give-by-select .en__field__element--radio .en__field__item.card input:checked+label span{
-  background-image:url(https://cdn.jsdelivr.net/gh/4site-interactive-studios/Ocean-Conservancy-Engaging-Networks-Template@master/themes/parent-theme/images/icon-card-white.svg);
+  background-image:url(https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10042/card.png?v=1572545889000);
 }
 [data-engrid-theme=oxfamca] .give-by-select .en__field__element--radio .en__field__item.paypal input:checked+label span{
-  background-image:url(https://cdn.jsdelivr.net/gh/4site-interactive-studios/Ocean-Conservancy-Engaging-Networks-Template@master/themes/parent-theme/images/icon-paypal-white.svg);
+  background-image:url(https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10042/paypal.png?v=1572545891000);
 }
 [data-engrid-theme=oxfamca] .give-by-select .en__field__element--radio .en__field__item.check input:checked+label span{
   background-image:url(https://cdn.jsdelivr.net/gh/4site-interactive-studios/Ocean-Conservancy-Engaging-Networks-Template@master/themes/parent-theme/images/icon-check-white.svg);
@@ -6874,6 +6891,23 @@ body:not([data-engrid-debug]) #debug-bar{
   width:100%;
   z-index:0 !important;
 }
+@media (max-width:26.5525em){
+  [data-engrid-theme=oxfamca][data-engrid-layout] .radio-to-buttons_donationAmt{
+    --donation-amount__button_count:2;
+  }
+}
+@media (max-width:47.99em){
+  [data-engrid-theme=oxfamca][data-engrid-layout]{
+    --engrid__body_padding:0px 10px;
+    --engrid__body-main_padding:0 10px 10px;
+  }
+  [data-engrid-theme=oxfamca][data-engrid-layout]:not(#en__pagebuilder) .page-backgroundImage{
+    grid-row:page-start /  content-footerSpacer-end;
+  }
+  [data-engrid-theme=oxfamca][data-engrid-layout]:not(#en__pagebuilder) .page-backgroundImage:before{
+    display:block;
+  }
+}
 [data-engrid-theme=oxfamca] h1{
   text-align:center;
 }
@@ -6887,6 +6921,20 @@ body:not([data-engrid-debug]) #debug-bar{
   flex-wrap:wrap;
   justify-content:center;
   padding:30px 0;
+}
+@media (max-width:47.99em){
+  [data-engrid-theme=oxfamca] .footer-wrapper{
+    display:block;
+  }
+  [data-engrid-theme=oxfamca] .footer-wrapper .yd-ft-left,[data-engrid-theme=oxfamca] .footer-wrapper .yd-ft-middle,[data-engrid-theme=oxfamca] .footer-wrapper .yd-ft-right{
+    text-align:center;
+    width:100%;
+  }
+  [data-engrid-theme=oxfamca] .footer-wrapper .ft-link-wrapper a{
+    display:block;
+    margin:0 auto;
+    padding:.2rem 0;
+  }
 }
 [data-engrid-theme=oxfamca] .footer-wrapper .footer-logo{
   padding:1rem;
