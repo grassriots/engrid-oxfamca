@@ -17,10 +17,10 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Monday, February 14, 2022 @ 13:35:55 ET
- *  By: fernando
- *  ENGrid styles: v0.8.16
- *  ENGrid scripts: v0.8.17
+ *  Date: Tuesday, February 22, 2022 @ 14:15:53 ET
+ *  By: bryancasler
+ *  ENGrid styles: v0.9.9
+ *  ENGrid scripts: v0.9.8
  *
  *  Created by 4Site Studios
  *  Come work with us or join our team, we would love to hear from you
@@ -9088,6 +9088,10 @@ const OptionsDefaults = {
     ThousandsSeparator: "",
     DecimalSeparator: ".",
     DecimalPlaces: 2,
+    MinAmount: 1,
+    MaxAmount: 100000,
+    MinAmountMessage: "Amount must be at least $1",
+    MaxAmountMessage: "Amount must be less than $100,000",
     SkipToMainContentLink: true,
     SrcDefer: true,
     NeverBounceAPI: null,
@@ -9702,6 +9706,32 @@ class engrid_ENGrid {
         }
         return true;
     }
+    static setError(querySelector, errorMessage) {
+        const errorElement = document.querySelector(querySelector);
+        if (errorElement) {
+            errorElement.classList.add("en__field--validationFailed");
+            let errorMessageElement = errorElement.querySelector(".en__field__error");
+            if (!errorMessageElement) {
+                errorMessageElement = document.createElement("div");
+                errorMessageElement.classList.add("en__field__error");
+                errorMessageElement.innerHTML = errorMessage;
+                errorElement.insertBefore(errorMessageElement, errorElement.firstChild);
+            }
+            else {
+                errorMessageElement.innerHTML = errorMessage;
+            }
+        }
+    }
+    static removeError(querySelector) {
+        const errorElement = document.querySelector(querySelector);
+        if (errorElement) {
+            errorElement.classList.remove("en__field--validationFailed");
+            const errorMessageElement = errorElement.querySelector(".en__field__error");
+            if (errorMessageElement) {
+                errorElement.removeChild(errorMessageElement);
+            }
+        }
+    }
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/events/donation-frequency.js
@@ -10013,6 +10043,7 @@ class App extends engrid_ENGrid {
         this._form.onSubmit.subscribe((s) => this.logger.success("Submit: " + s));
         this._form.onError.subscribe((s) => this.logger.danger("Error: " + s));
         window.enOnSubmit = () => {
+            this._form.submit = true;
             this._form.dispatchSubmit();
             return this._form.submit;
         };
@@ -10020,6 +10051,7 @@ class App extends engrid_ENGrid {
             this._form.dispatchError();
         };
         window.enOnValidate = () => {
+            this._form.validate = true;
             this._form.dispatchValidate();
             return this._form.validate;
         };
@@ -10076,6 +10108,7 @@ class App extends engrid_ENGrid {
             new NeverBounce(this.options.NeverBounceAPI, this.options.NeverBounceDateField, this.options.NeverBounceStatusField, this.options.NeverBounceDateFormat);
         new ShowIfAmount();
         new OtherAmount();
+        new MinMaxAmount();
         this.setDataAttributes();
     }
     onLoad() {
@@ -10882,6 +10915,10 @@ const inputPlaceholder = () => {
     // CHANGE FIELD INPUT TYPES
     if (enFieldDonationAmt) {
         enFieldDonationAmt.setAttribute("inputmode", "decimal");
+    }
+    // ADD THE MISSING LABEL FOR IMPROVED ACCESSABILITY
+    if (enFieldDonationAmt) {
+        enFieldDonationAmt.setAttribute("aria-label", "Enter your custom donation amount");
     }
     // ADD FIELD PLACEHOLDERS
     const enAddInputPlaceholder = document.querySelector("[data-engrid-add-input-placeholders]");
@@ -13672,8 +13709,75 @@ class EngridLogger {
     }
 }
 
+;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/min-max-amount.js
+// This script checks if the donations amounts are numbers and if they are, appends the correct currency symbol
+
+class MinMaxAmount {
+    constructor() {
+        var _a, _b;
+        this._form = EnForm.getInstance();
+        this._amount = DonationAmount.getInstance();
+        this.minAmount = (_a = engrid_ENGrid.getOption("MinAmount")) !== null && _a !== void 0 ? _a : 1;
+        this.maxAmount = (_b = engrid_ENGrid.getOption("MaxAmount")) !== null && _b !== void 0 ? _b : 100000;
+        this.minAmountMessage = engrid_ENGrid.getOption("MinAmountMessage");
+        this.maxAmountMessage = engrid_ENGrid.getOption("MaxAmountMessage");
+        this.logger = new EngridLogger("MinMaxAmount", "white", "purple", "🔢");
+        if (!this.shouldRun()) {
+            // If we're not on a Donation Page, get out
+            return;
+        }
+        this._amount.onAmountChange.subscribe((s) => window.setTimeout(this.liveValidate.bind(this), 1000) // Wait 1 second for the amount to be updated
+        );
+        this._form.onValidate.subscribe(this.enOnValidate.bind(this));
+    }
+    // Should we run the script?
+    shouldRun() {
+        return engrid_ENGrid.getPageType() === "DONATION";
+    }
+    // Don't submit the form if the amount is not valid
+    enOnValidate() {
+        const otherAmount = document.querySelector("[name='transaction.donationAmt.other']");
+        if (this._amount.amount < this.minAmount) {
+            this.logger.log("Amount is less than min amount: " + this.minAmount);
+            if (otherAmount) {
+                otherAmount.focus();
+            }
+            this._form.validate = false;
+        }
+        else if (this._amount.amount > this.maxAmount) {
+            this.logger.log("Amount is greater than max amount: " + this.maxAmount);
+            if (otherAmount) {
+                otherAmount.focus();
+            }
+            this._form.validate = false;
+        }
+        window.setTimeout(this.liveValidate.bind(this), 300);
+    }
+    // Disable Submit Button if the amount is not valid
+    liveValidate() {
+        if (this._amount.amount < this.minAmount) {
+            this.logger.log("Amount is less than min amount: " + this.minAmount);
+            engrid_ENGrid.setError(".en__field--withOther", this.minAmountMessage || "Invalid Amount");
+        }
+        else if (this._amount.amount > this.maxAmount) {
+            this.logger.log("Amount is greater than max amount: " + this.maxAmount);
+            engrid_ENGrid.setError(".en__field--withOther", this.maxAmountMessage || "Invalid Amount");
+        }
+        else {
+            engrid_ENGrid.removeError(".en__field--withOther");
+        }
+    }
+}
+
 ;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/index.js
+document
+    .getElementsByTagName("body")[0]
+    .setAttribute("data-engrid-scripts-js-loading", "started");
+document
+    .getElementsByTagName("body")[0]
+    .setAttribute("data-engrid-client-js-loading", "waiting");
  // Runs first so it can change the DOM markup before any markup dependent code fires
+
 
 
 
@@ -13709,6 +13813,9 @@ class EngridLogger {
 
 // Events
 
+document
+    .getElementsByTagName("body")[0]
+    .setAttribute("data-engrid-scripts-js-loading", "finished");
 
 ;// CONCATENATED MODULE: ./src/scripts/main.js
 const customScript = function () {
