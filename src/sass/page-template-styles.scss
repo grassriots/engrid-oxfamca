@@ -2,70 +2,17 @@
 // Uncomment to use and reference engrid-scrips SASS files for more CSS Custom Properties.
 // All CSS Custom Properties should be scoped to the theme using CSS Data Attributes.
 
-// $color-white: #ffffff;
-// $color-black: #3b3b3b;
-// $default-gray: #8a8a8a;
-// $default-light-gray: #cacaca;
-// $default-cta: #f16e22;
-// $default-cta-hover: #f05523;
-// $default-body-background-color: $color-white;
-// $default-page-backgroundImage-background-color: #333333;
-
-// $default-body-background-color: $color-white;
-// $default-body-border-radius: 0px;
-// $default-spacing-sm: 0.8652rem;
-// $default-spacing: calc(0.8652rem * 0.75);
-// $default-spacing-lg: calc(0.8652rem * 2.5);
-// $default-spacing-xlg: calc(0.8652rem * 5);
-
-// $default-input-border-radius: 5px;
-// $default-input-border-width: 2px;
-// $default-input-border-color: $color-black;
-// $default-input-background-color: transparent;
-
-// $default-button-background-color: $color-black;
-// $default-button-background-color-hover: $default-cta-hover;
-// $default-button-background-color-active: $default-cta;
-// $default-button-background-color-disabled: #949494;
-// $default-button-border-color: $color-black;
-// $default-button-border-color-active: $default-cta;
-// $default-button-border-color-hover: $default-cta-hover;
-// $default-button-border-radius: 0px;
-// $default-button-font-color: $color-white;
-// $default-button-font-color-active: $color-white;
-
-// $default-submit-button-background-color: $default-cta;
-// $default-submit-button-background-color-hover: $default-cta-hover;
-// $default-submit-button-border-color: $default-cta;
-// $default-submit-button-font-color: $color-white;
-
-// $default-checkmark-background-color: $default-cta;
-// $default-checkmark-border-color: $default-cta;
-// $default-checkmark-font-color: $color-white;
-
-// $default-error-red: #f12222;
-// $default-error-red-grayscale: #949494;
-// $default-error-red-faded: #ffeae9;
-// $default-error-page-group-background: #f4ddda;
-// $default-error-input-border-width: $default-input-border-width;
-
-// $default-highlight-background-color: #f9f003;
-// $default-highlight-font-color: #343432;
-
 [data-engrid-theme="oxfamca"] {
   --root_font-size: 18px;
   // FIXED COLOR PALETTE
-  --color_transparent: transparent;
-  --color_white: rgba(255, 255, 255, 1);
-  --color_black: rgba(37, 37, 37, 1);
-  --pagebuilder__background-color: #487c0f;
+  --pagebuilder__background-color: #0c884a;
 
   // GRAYSCALE COLOR PALETTE
   --color_off-white: #dfdfdf;
   --color_light-gray: #bfbfbf;
   --color_gray: #b3b3b3;
   --color_dark-gray: #808080;
-  --color_off-black: #404040;
+  --color_off-black: #3b3b3b;
 
   // SEMANTIC COLOR PALETTE
   --success: #33cc33;
@@ -92,7 +39,7 @@
 
   // TYPOGRAPHY DEFAULT
   --default_font-family: var(--native-fonts__sans-serif);
-  --default_color: var(--color_black);
+  --default_color: var(--color_off-black);
   --default_font-size: var(--root_font-size);
   --default_font-weight: initial;
   --default_line-height: initial;
@@ -137,13 +84,13 @@
 
   // TYPOGRAPHY INPUT
   --input_font-family: var(--default_font-family);
-  --input_color: #3b3b3b;
+  --input_color: var(--color_off-black);
   --input_font-size: var(--root_font-size);
   --input_font-weight: initial;
   --input_line-height: initial;
   --input_background-color: transparent;
   --input_border-width: 2px;
-  --input_border-color: #3b3b3b;
+  --input_border-color: var(--color_off-black);
   --input_border-radius: 5px;
   --input_placeholder-color: var(--color_light-gray);
   --input_box-shadow: none;
@@ -162,19 +109,19 @@
   --button_font-size: 1.3rem;
   --button_font-weight: bold;
   --button_line-height: initial;
-  --button_background-color: #f16e22;
-  --button_border-width: 1px;
-  --button_border-color: #f16e22;
+  --button_background-color: var(--color_off-black);
+  --button_border-width: 0px;
+  --button_border-color: var(--color_off-black);
   --button_border-radius: 0;
 
   // TYPOGRAPHY BUTTON:HOVER
-  --button_color_hover: var(--button_color);
-  --button_background-color_hover: var(--color_black);
-  --button_border-color_hover: var(--button_background-color_hover);
+  // --button_color_hover: var(--button_color);
+  --button_background-color_hover: var(--button_background-color);
+  // --button_border-color_hover: var(--button_background-color_hover);
 
   // TYPOGRAPHY BUTTON:SELECTED
   // --button_color_checked: var(--button_color_hover);
-  // --button_background-color_checked: var(--button_background-color_hover);
+  --button_background-color_checked: #f05523;
   // --button_border-color_checked: var(--button_border-color_hover);
 
   // TYPOGRAPHY SUBMIT BUTTON
@@ -197,24 +144,24 @@
   // --submit__button_border-color_checked: var(--color_primary);
 
   // TYPOGRAPHY GIVING AMOUNT BUTTON
-  --donation-amount__button_font-family: var(--button_font-family);
-  --donation-amount__button_color: var(--button_color);
+  // --donation-amount__button_font-family: var(--button_font-family);
+  // --donation-amount__button_color: var(--button_color);
   --donation-amount__button_font-size: 24px;
   --donation-amount__button_font-weight: var(--button_font-weight);
   --donation-amount__button_line-height: var(--button_line-height);
-  --donation-amount__button_background-color: var(--color_black);
-  --donation-amount__button_border-width: 0;
-  --donation-amount__button_border-color: var(--button_border-color);
-  --donation-amount__button_border-radius: var(--button_border-radius);
+  // --donation-amount__button_background-color: var(--color_off-black);
+  // --donation-amount__button_border-width: 0;
+  // --donation-amount__button_border-color: var(--button_border-color);
+  // --donation-amount__button_border-radius: var(--button_border-radius);
 
   // TYPOGRAPHY GIVING AMOUNT BUTTON:HOVER
-  --donation-amount__button_color_hover: var(--button_color_hover);
-  --donation-amount__button_background-color_hover: var(
-    --button_background-color_hover
-  );
-  --donation-amount__button_border-color_hover: var(
-    --button_border-color_hover
-  );
+  // --donation-amount__button_color_hover: var(--button_color_hover);
+  // --donation-amount__button_background-color_hover: var(
+  //   --button_background-color_hover
+  // );
+  // --donation-amount__button_border-color_hover: var(
+  //   --button_border-color_hover
+  // );
 
   // TYPOGRAPHY GIVING AMOUNT BUTTON:CHECKED
   --donation-amount__button_color_checked: var(--color_white);
@@ -229,7 +176,7 @@
   --radio_color: var(--color_primary);
   --radio_background-color: var(--color_white);
   --radio_border-width: 4px;
-  --radio_border-color: var(--color_black);
+  --radio_border-color: var(--color_off-black);
   --radio_border-radius: 50%;
   --radio_height: 1.4rem;
   --radio_width: 1.4rem;
@@ -254,7 +201,7 @@
   --checkbox_color: var(--color_white);
   --checkbox_background-color: var(--color_white);
   --checkbox_border-width: 2px;
-  --checkbox_border-color: var(--color_black);
+  --checkbox_border-color: var(--color_off-black);
   --checkbox_border-radius: 0px;
   --checkbox_height: 20px;
   --checkbox_width: 20px;
@@ -277,9 +224,9 @@
   --give-by-select__button_font-size: var(--button_font-size);
   --give-by-select__button_font-weight: var(--button_font-weight);
   --give-by-select__button_line-height: var(--button_line-height);
-  --give-by-select__button_background-color: var(--color_black);
+  --give-by-select__button_background-color: var(--color_off-black);
   --give-by-select__button_border-width: var(--button_border-width);
-  --give-by-select__button_border-color: var(--color_black);
+  --give-by-select__button_border-color: var(--color_off-black);
   --give-by-select__button_border-radius: var(--button_border-radius);
   --give-by-select__flex-grow: 1;
 
@@ -306,7 +253,6 @@
   --engrid__page_padding: 0px 0px;
   --engrid__content_padding: 0px;
   --engrid__body_padding: 0px 60px;
-  --engrid__body-main_padding: 0 60px 60px;
   --engrid__body-headerOutside_padding: 0;
   --engrid__page_background-color: #44841a;
 }
@@ -315,27 +261,31 @@
 [data-engrid-theme="oxfamca"] {
   @mixin until-tablet {
     // STYLES
-    --engrid__body_padding: 0px 10px;
-    --engrid__body-main_padding: 0 10px 10px;
-    --engrid__body-main_padding: 0 10px 10px;
     .emailImage {
       float: none !important;
+      height: auto !important;
     }
   }
   @mixin until-mobile-l {
     // STYLES
+    .body-headerOutside p.no-margin {
+      margin-top: 0;
+      margin-bottom: 0;
+
+      .emailImage {
+        height: 70px !important;
+        width: auto !important;
+      }
+    }
+
     .radio-to-buttons_donationAmt {
       --donation-amount__button_count: 2;
     }
   }
-
   @mixin from-mobile-l {
     // STYLES
   }
 
-  @mixin simplified-header {
-    // STLES
-  }
   .en__captcha {
     margin: auto;
     margin-top: 20px;
@@ -355,27 +305,77 @@
       content: "$";
       position: absolute;
       font-family: inherit;
-      font-size: 22px;
-      font-weight: 700;
+      font-size: var(--button_font-size);
+      font-weight: var(--button_font-weight);
       line-height: 0;
       height: 0;
       left: 30%;
       top: calc(50% - 2px);
-      color: var(--color_white);
+      color: var(--button_color);
     }
     input {
       padding: 0;
       padding-left: 37%;
-      font-size: 22px;
+      font-size: var(--donation-amount__button_font-size);
       line-height: 61px;
-      font-weight: 700;
-      background-color: var(--color_black);
-      color: var(--color_white);
+      font-weight: var(--button_font-weight);
+      background-color: var(--button_background-color);
+      color: var(--button_color);
     }
   }
-  input[type="radio"]:checked + label:before {
-    border-width: 2px;
+
+  // Strip the top margin from the first child on body top/title/main, and any of its first child children
+  .body-top,
+  .body-top > *:first-child,
+  .body-top > *:first-child > *:first-child,
+  .body-top > *:first-child > *:first-child > *:first-child,
+  .body-top > *:first-child > *:first-child > *:first-child > *:first-child,
+  .body-title,
+  .body-title > *:nth-child(2),
+  .body-title > *:nth-child(2) > *:first-child,
+  .body-title > *:nth-child(2) > *:first-child > *:first-child,
+  .body-title > *:nth-child(2) > *:first-child > *:first-child > *:first-child,
+  .body-main,
+  .body-main > *:first-child,
+  .body-main > *:first-child > *:first-child,
+  .body-main > *:first-child > *:first-child > *:first-child,
+  .body-main > *:first-child > *:first-child > *:first-child > *:first-child {
+    margin-top: 0;
   }
+
+  // Strip the bottom margin from the first child on body top/title/main, and any of its first child children
+  .body-top,
+  .body-top > *:last-child,
+  .body-top > *:last-child > *:last-child,
+  .body-top > *:last-child > *:last-child > *:last-child,
+  .body-top > *:last-child > *:last-child > *:last-child > *:last-child,
+  .body-title,
+  .body-title > *:last-child,
+  .body-title > *:last-child > *:last-child,
+  .body-title > *:last-child > *:last-child > *:last-child,
+  .body-title > *:last-child > *:last-child > *:last-child > *:last-child,
+  .body-main,
+  .body-main > *:last-child,
+  .body-main > *:last-child > *:last-child,
+  .body-main > *:last-child > *:last-child > *:last-child,
+  .body-main > *:last-child > *:last-child > *:last-child > *:last-child {
+    margin-bottom: 0;
+  }
+
+  .body-title {
+    padding-top: 2rem;
+    padding-bottom: 0.75rem;
+  }
+
+  .body-top {
+    padding-top: 0.75rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .body-main {
+    padding-bottom: min(4rem, max(10vw, 20px));
+  }
+
   .en__contactDetails__rows,
   .en__field__label {
     position: relative;
@@ -480,24 +480,6 @@
       center center no-repeat;
     background-size: cover;
   }
-  // .body-header {
-  //   border-top: 0 !important;
-  //   min-height: 12px;
-  //   padding-bottom: 30px;
-  //   &:before {
-  //     content: "";
-  //     position: absolute;
-  //     display: block;
-  //     height: 12px;
-  //     width: 100%;
-  //     background: url("https://www.oxfam.ca/wp-content/uploads/2018/08/toptop.jpg")
-  //       center center no-repeat;
-  //     background-size: cover;
-  //     background-position: left;
-  //     z-index: 0 !important;
-  //     box-shadow: none !important;
-  //   }
-  // }
 
   // Example Breakpoints Stylings (See engrid-scripts > _engrid-breakpoints.scss for more breakpoints)
   &[data-engrid-layout] {
@@ -514,291 +496,12 @@
     }
   }
 
-  // Example of Shared Layout Stylings
-  &[data-engrid-layout="centerleft1col"] {
-    @media screen and (max-width: $centerleft1col_content-column_min-width) {
-      @include simplified-header;
-      &:not(#en__pagebuilder) .page-backgroundImage {
-        &::after {
-          content: none !important;
-        }
-      }
-    }
-  }
-
-  &[data-engrid-layout="centerright1col"] {
-    @media screen and (max-width: $centerright1col_content-column_min-width) {
-      @include simplified-header;
-    }
-  }
-
-  // &:not(#en__pagebuilder) {
-  //   /* We need to set labels for error messages, but don't want them visually displayed outside page builder */
-  //   /* en__field--inmem is In Memoriam */
-  //   .en__field--inmem > label,
-  //   .en__field--recurrpay > label,
-  //   .en__field--donationAmt > label {
-  //     display: none;
-  //   }
-  // }
-
-  // &:not(#en__pagebuilder)
-  //   .en__component--advrow
-  //   .page-backgroundImage.page-backgroundImageSet:before {
-  //   background-position: top left;
-  //   background-repeat: no-repeat;
-  //   background-size: cover;
-  //   background-image: var(--theme-page-backgroundImage-url);
-  //   will-change: transform; // creates a new paint layer
-  // }
-
-  /* RAN Named their EMAIl Opt-in `email` which causes it to get the generated class `en__field--email` that matches the auto assigned class `en__field--email` given to EMAIL type fields. This fixes that collision of styles. https://d.pr/i/ziiG76 */
-  // .en__field--102600 label {
-  //   position: relative !important;
-  //   -webkit-transform: initial !important;
-  //   transform: initial !important;
-  //   opacity: 1 !important;
-  // }
-
-  /* Legacy Template Support */
-  // .legacy .en__component--row--1,
-  // .legacy .en__component--row--2 {
-  //   display: initial !important;
-  // }
-
   h1 {
     text-align: center;
   }
   h2 {
     margin-bottom: 25px;
   }
-
-  // h3 {
-  //   color: $color-black;
-  //   font-family: "Oxfam TSTAR PRO", Arial, Helvetica, sans-serif;
-  //   font-size: 32px;
-  //   font-weight: bold;
-  //   font-stretch: normal;
-  //   font-style: normal;
-  //   line-height: 36px;
-  //   letter-spacing: normal;
-  // }
-
-  // label.en__field__label {
-  //   font-family: "Oxfam TSTAR PRO", Arial, Helvetica, sans-serif;
-  //   font-size: 14px;
-  //   font-weight: 500;
-  //   font-stretch: normal;
-  //   font-style: normal;
-  //   line-height: normal;
-  //   letter-spacing: 1.68px;
-  //   text-transform: uppercase;
-  // }
-
-  // .en__field__label--item {
-  //   font-family: "Oxfam TSTAR PRO", Arial, Helvetica, sans-serif;
-  //   font-size: calc(0.05552rem * 18);
-  //   font-weight: normal;
-  //   font-stretch: normal;
-  //   font-style: normal;
-  //   line-height: 1.44;
-  //   letter-spacing: normal;
-  // }
-
-  // .en__field--donationAmt {
-  //   .en__field__label--item,
-  //   .en__field__item--other:before,
-  //   .en__field__item--other input {
-  //     font-family: "Oxfam TSTAR PRO", Arial, Helvetica, sans-serif;
-  //     font-size: calc(0.05552rem * 24);
-  //     font-weight: 900;
-  //     font-stretch: normal;
-  //     font-style: normal;
-  //     line-height: normal;
-  //     letter-spacing: normal;
-  //     border-radius: 0px;
-  //   }
-  // }
-
-  // .en__field--recurrpay label.en__field__label {
-  //   font-size: calc(0.05552rem * 24);
-  // }
-
-  // .give-by-select .en__field--radio {
-  //   label {
-  //     justify-content: center;
-  //     margin-top: 0.83rem;
-  //     display: block;
-  //     width: 100%;
-  //     font-size: calc(0.05552rem * 24);
-  //     font-weight: 900;
-  //     line-height: 1;
-  //     padding: 18px 0;
-  //   }
-  // }
-
-  // .highlight {
-  //   background-color: $default-highlight-background-color;
-  //   color: $default-highlight-font-color;
-  //   padding: 1ch;
-  //   font-weight: 500;
-  //   display: inline-block;
-  //   // margin-left: -0.5rem;
-  //   &.big {
-  //     font-size: 120%;
-  //   }
-  // }
-
-  // .en__field--donationAmt {
-  //   input[type="text"].en__field__input--other,
-  //   input[type="number"].en__field__input--other,
-  //   input[type="tel"].en__field__input--other {
-  //     padding-left: 33%;
-  //     // padding-right: 27%;
-  //     // text-align: center;
-  //     min-height: 64px;
-  //   }
-  // }
-
-  // .en__field--donationAmt .en__field__item--other:before {
-  //   display: block;
-  //   content: "$";
-  //   position: relative;
-  //   height: 0;
-  //   left: calc((100% / 3) - 1rem);
-  //   top: 1.1rem;
-  //   color: #ffffff;
-  //   width: 0;
-  // }
-
-  // .en__field--monthly_upsell_checkbox
-  //   .en__field__input--checkbox
-  //   + .en__field__label {
-  //   display: inline-block !important;
-  // }
-
-  // .en__field--monthly_upsell_checkbox
-  //   .en__field__input--checkbox
-  //   + .en__field__label:before {
-  //   margin-top: 0.25rem;
-  // }
-
-  // .en__field--donationAmt .en__field__item--other::after{
-  //   opacity: .8;
-  //   font-size: 80%;
-  //   position: absolute;
-  //   font-family: inherit;
-  //   font-weight: 400;
-  //   line-height: 1.5;
-  //   bottom: 1.25rem;
-  //   display: inline-block;
-  //   height: 0;
-  //   margin-left: .5rem;
-  // }
-
-  // .en__field--donationAmt.monthly-giving .en__field__item--other::after {
-  //   content: "enter monthly amount";
-  // }
-
-  // .en__field--donationAmt:not(.monthly-giving) .en__field__item--other::after {
-  //   content: "enter amount";
-  // }
-
-  // .en__field--recurrpay {
-  //   label.en__field__label {
-  //     // font-size: calc(0.05552rem * 24) !important;
-  //     font-weight: 900 !important;
-  //     text-transform: none !important;
-  //     &:before {
-  //       top: 3px;
-  //     }
-  //   }
-
-  //   .en__field--recurrpay > label {
-  //     display: none;
-  //   }
-  // }
-
-  // .monthly-gift-upsell-tooltip {
-  //   text-align: center;
-  // }
-
-  // .monthly-gift-upsell-tooltip .highlight:after {
-  //   bottom: -12px;
-  //   left: 60%;
-  //   content: " ";
-  //   height: 0;
-  //   width: 0;
-  //   position: absolute;
-  //   pointer-events: none;
-  //   border: 20px solid transparent;
-  //   border-top-color: #f9f003;
-  //   margin-left: 30px;
-  //   z-index: 1;
-  // }
-
-  // .en__field__input--checkbox + .en__field__label,
-  // .en__contactDetails__rows {
-  //   font-size: calc(0.05552rem * 18);
-  //   font-weight: 400;
-  //   text-transform: none;
-  //   letter-spacing: 0.4px;
-  //   display: inline-block;
-  //   line-height: 1.4;
-  //   .highlight {
-  //     font-weight: 700;
-  //     margin-top: -0.5rem;
-  //     margin-left: -0.2rem;
-  //   }
-  // }
-
-  // .content-footer {
-  //   background-color: #ffffff;
-  // }
-
-  // .pre-footer-card-wrapper {
-  //   display: flex;
-  //   flex-wrap: wrap;
-  //   width: 90%;
-  //   margin: 0 auto;
-  //   margin-bottom: 260px;
-  //   justify-content: center;
-  // }
-
-  // .pre-footer-card {
-  //   display: flex;
-  //   flex-direction: column;
-  //   text-align: center;
-  //   width: 100%;
-  //   max-width: 350px;
-  //   padding: 0rem 1rem 2rem 1rem;
-  //   img {
-  //     display: block;
-  //     margin-bottom: 35px;
-  //   }
-  //   .header-wrapper {
-  //     h2 {
-  //       margin: 0;
-  //       font-size: calc(0.05552rem * 32);
-  //       font-weight: 900;
-  //       letter-spacing: 1px;
-  //       color: $color-black;
-  //       text-transform: uppercase;
-  //       line-height: 1;
-  //       padding: 1rem 1rem 0.5rem 1rem; // Corrects for the fact the font is vertically off center
-  //     }
-  //   }
-  //   p {
-  //     font-size: calc(0.05552rem * 16);
-  //     line-height: 1.58;
-  //     letter-spacing: 0.2px;
-  //     text-align: center;
-  //     color: $color-black;
-  //   }
-  // }
-  // .content-footer {
-  //   background-color: $color-black;
-  // }
 
   .footer-wrapper {
     display: flex;
@@ -822,7 +525,7 @@
       }
     }
     .footer-logo {
-      padding: 1rem;
+      padding: 1.25rem;
       img {
         width: auto;
         height: 50px;
@@ -843,7 +546,7 @@
     }
     .footer-copy {
       padding: 1rem;
-      max-width: 452px;
+      max-width: $one_col_content-column_min-width;
 
       p {
         font-size: calc(0.05552rem * 14);
@@ -868,80 +571,22 @@
     }
   }
 
-  @media screen and (min-width: 970px) {
+  @media screen and (min-width: $one_col_body-column_min-width) {
     .footer-wrapper .footer-copy p {
       border-left: 1px solid #fff;
       padding-left: 65px;
     }
   }
 
-  @media screen and (max-width: 497px) {
+  @media screen and (max-width: #{$one_col_body-column_min-width + 100px}) {
+    --engrid__body_padding: 0px 8px;
+  }
+
+  @media screen and (max-width: $one_col_content-column_min-width) {
     .footer-wrapper {
       text-align: center;
     }
   }
-
-  // .give-by-select .en__field--radio .en__field__item {
-  //   flex-grow: 1;
-
-  //   input[type="radio"] + label {
-  //     flex-grow: 1;
-  //     padding: 1rem 0 1rem 2.25rem;
-  //     background-position-x: calc(50% - 25px);
-  //     background-position-y: calc(50% - 2px);
-  //     background-repeat: no-repeat;
-  //     font-size: calc(0.05552rem * 18);
-  //     font-weight: bold;
-  //     letter-spacing: 0.4px;
-  //     text-align: center;
-  //     color: #ffffff;
-  //     // line-height: 1;
-  //     text-transform: none;
-  //   }
-  // }
-
-  // // Case insensitive selector
-  // .give-by-select .en__field--radio input[value$="ard"] + label {
-  //   background-size: 24px 18px;
-  //   background-image: url("https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10042/card.png?v=1572545889000");
-  // }
-
-  // // Case insensitive selector
-  // .give-by-select .en__field--radio input[value$="heck"] + label {
-  //   background-size: 18px 16px;
-  //   background-image: url("https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10042/bank.png?v=1572545890000");
-  // }
-
-  // // Case insensitive selector
-  // .give-by-select .en__field--radio input[value$="aypal"] + label {
-  //   background-size: 17px 20px;
-  //   background-image: url("https://acb0a5d73b67fccd4bbe-c2d8138f0ea10a18dd4c43ec3aa4240a.ssl.cf5.rackcdn.com/10042/paypal.png?v=1572545891000");
-  // }
-
-  // // This field had a highlight applied to it that causes the checbox to show up off center
-  // #en__field_supporter_monthly_upsell_checkbox:checked
-  //   + .en__field__label:after {
-  //   top: 0.25rem;
-  // }
-
-  // .en__field--donationAmt input.en__field__input--other::placeholder {
-  //   opacity: 0.7;
-  // }
-
-  // .white-font {
-  //   color: $color-white;
-  // }
-
-  /** Hide COLUMNS when viewed publicly and in page builder, but not the page builder pop-up preview. **/
-  /* prettier-ignore */
-  // .en__component--advrow:not(.show) :not(.pboAdvancedRow__preview) .hide.en__component--column {
-  //       display: none;
-  //     }
-
-  /** Hide CONTENT when viewed publicly, but not when viewed in page builder. **/
-  // &:not(#en__pagebuilder) .en__component--advrow:not(.show) .hide {
-  //   display: none !important;
-  // }
 
   // Client specific CSS
   .content-footer > div {
@@ -956,14 +601,17 @@
     line-height: 0;
   }
 
-  .footer-block-two {
-    background-color: rgba(12, 136, 74, 1);
+  .content-footer {
+    --engrid__content-footer_background-color: var(
+      --pagebuilder__background-color
+    );
   }
 
   .footer-wrapper {
-    max-width: 1100px;
+    max-width: 1240px;
     margin-left: auto;
     margin-right: auto;
+    justify-content: space-between;
   }
 
   .footer-block-two .yd-col.yd-ft-left p {
@@ -973,8 +621,7 @@
     font-family: "Oxfam TSTAR PRO", Arial, Helvetica, sans-serif;
     font-weight: normal;
     line-height: 26px;
-    /* margin-left: 0px; */
-    margin: 20px 20px 20px 0;
+    margin: 1.25rem;
   }
 
   .footer-block-two .yd-col.yd-ft-right p {
@@ -982,31 +629,14 @@
     font-size: 14px;
     display: inline-block;
     font-family: "Oxfam TSTAR PRO", Arial, Helvetica, sans-serif;
-    margin-right: 10px;
-    /* margin-left: 0px; */
-    margin: 20px 20px 20px 0;
+    margin: 1.25rem;
   }
 
   .yd-col {
-    /* float: left;
-          min-height: 1px; */
     display: inline-block;
   }
 
-  /* .yd-col:after {
-          clear: both;
-      } */
-
-  .yd-ft-left {
-    width: 36.51%;
-  }
-
-  .yd-ft-middle {
-    width: 42.16%;
-  }
-
   .yd-ft-right {
-    width: 19.33%;
     text-align: right;
   }
 
@@ -1015,10 +645,9 @@
   }
 
   .ft-link-wrapper a {
-    margin-right: 25px !important;
-    text-decoration: none !important;
-    color: #ffffff !important;
-    font-size: 14px !important;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
     display: inline-block;
     font-family: "Oxfam TSTAR PRO", Arial, Helvetica, sans-serif;
     font-weight: normal;
@@ -1028,361 +657,141 @@
   .ft-link-wrapper a:hover {
     text-decoration: underline;
   }
-}
 
-/*
-* ####################################################################################################################
-* Layout - Center ANY
-* ####################################################################################################################
-*/
-
-/*
-* ##########################################################
-* # ENGRID - Mobile First Styling
-* # LAYOUT - Center ANY
-* ##########################################################
-*/
-
-// @media screen and (max-width: 360px) {
-//   // Remove down arrow when giving frequency wraps
-//   .monthly-gift-upsell-tooltip .highlight:after {
-//     display: none;
-//   }
-// }
-
-@media screen and (max-width: 400px) {
-  // Remove "Give By Select" icons on small screens
-  // .give-by-select
-  //   .en__field--radio
-  //   .en__field__item
-  //   input[type="radio"]
-  //   + label {
-  //   background-image: none;
-  //   padding-left: 0;
-  //   padding-right: 0;
-  // }
-
-  // h1 {
-  //   font-size: calc((0.05552rem * 48) * 0.85);
-  // }
-
-  // h2,
-  // .en__field--donationAmt .en__field__label--item,
-  // .en__field--donationAmt .en__field__item--other:before,
-  // .en__field--donationAmt .en__field__item--other input,
-  // .give-by-select .en__field--radio label,
-  // .en__field--recurrpay label.en__field__label,
-  // .highlight.big {
-  //   font-size: calc((0.05552rem * 24) * 0.9);
-  // }
-
-  // h3,
-  // .pre-footer-card p,
-  // .pre-footer-card.footer-wrapper .footer-menu a {
-  //   font-size: calc((0.05552rem * 16) * 1);
-  // }
-
-  // label.en__field__label {
-  //   font-size: calc((0.05552rem * 12) * 0.95);
-  // }
-
-  // .en__field__label--item .en__field__input--checkbox + .en__field__label,
-  // .en__contactDetails__rows,
-  // .give-by-select
-  //   .en__field--radio
-  //   .en__field__item
-  //   input[type="radio"]
-  //   + label {
-  //   font-size: calc((0.05552rem * 18) * 1);
-  // }
-}
-
-@media screen and (max-width: 599px) {
-  // .en__field--donationAmt .en__field__element--radio .en__field__item {
-  //   width: calc(50% - 0.5rem);
-  // }
-}
-
-// h1 {
-//   margin-top: 5px;
-// }
-
-[data-engrid-layout="centerleft1col"],
-[data-engrid-layout="centercenter1col"],
-[data-engrid-layout="centercenter1col-wide"],
-[data-engrid-layout="centerright1col"] {
-  .page-alert,
-  .content-header,
-  .body-bannerOverlay,
-  .body-side,
-  .body-footerOutside,
-  .page-backgroundImageOverlay {
-    display: none !important;
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
-    -webkit-clip-path: inset(100%);
-    clip-path: inset(100%);
-    clip: rect(0 0 0 0);
-    overflow: hidden;
-  }
-
-  .body-headerOutside {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    grid-column: bc;
-  }
-
-  .content-preFooter {
-    grid-column: pc;
-    background-size: contain;
-  }
-
-  .content-preFooter.pseudo-subgrid > div {
-    grid-column: bc;
-  }
-
-  .body-footer {
-    margin-bottom: 5rem;
-  }
-
-  .content-footer.pseudo-subgrid > div {
-    grid-column: bc;
-  }
-}
-
-body:not(#en__pagebuilder)[data-engrid-layout="centerleft1col"],
-body:not(#en__pagebuilder)[data-engrid-layout="centercenter1col"],
-body:not(#en__pagebuilder)[data-engrid-layout="centercenter1col-wide"],
-body:not(#en__pagebuilder)[data-engrid-layout="centerright1col"] {
-  /* This should use a more robust solution for adding a gradient overlay to the background image, but below the overlay text */
-  .page-backgroundImage::after {
-    content: "";
-    background-image: radial-gradient(
-      circle at 50% 0,
-      rgba(0, 0, 0, 0.3),
-      transparent 53%
-    );
-    z-index: 0;
-    grid-column: pc;
-    height: 100%;
-    left: 0;
-    position: fixed;
-    top: 0;
-    width: 100vw;
-    background-color: #333;
-    opacity: 0.5;
-  }
-  .page-backgroundImageOverlay {
-    grid-row: page-start / body-main-end;
-    background-image: -webkit-gradient(
-      linear,
-      left top,
-      left bottom,
-      from(rgba(0, 0, 0, 0.3)),
-      color-stop(30%, transparent)
-    );
-    background-image: linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.3) 0%,
-      transparent 30%
-    );
-  }
-}
-
-// body#en__pagebuilder [data-engrid-layout="centerleft1col"],
-// body#en__pagebuilder [data-engrid-layout="centercenter1col"],
-// body#en__pagebuilder [data-engrid-layout="centercenter1col-wide"],
-// body#en__pagebuilder [data-engrid-layout="centerright1col"] {
-//   .page-backgroundImage > div,
-//   .page-backgroundImageOverlay > div {
-//     grid-column: bc;
-//   }
-// }
-
-/*
+  /*
 * ##########################################################
 * # ENGRID - BODY Column Breakpoint Styling
 * # LAYOUT - Center ANY - [class^="layout-center"][class$="1col"]
 * ##########################################################
 */
 
-/* Sum of all MIN values of the Body Columns */
-@media screen and (min-width: 600px) {
-  [data-engrid-layout="centerleft1col"],
-  [data-engrid-layout="centercenter1col"],
-  [data-engrid-layout="centercenter1col-wide"],
-  [data-engrid-layout="centerright1col"] {
-    // .en__component--advrow .body-header,
-    // .en__component--advrow .body-banner,
-    // .en__component--advrow .body-bannerOverlay,
-    // .en__component--advrow .body-top,
-    // .en__component--advrow .body-side,
-    // .en__component--advrow .body-main,
-    // .en__component--advrow .body-bottom,
-    // .en__component--advrow .body-footer {
-    //   padding-left: 3.5rem;
-    //   padding-right: 3.5rem;
-    // }
+  &[data-engrid-layout*="1col"] {
+    .page-alert,
+    .content-header,
+    .body-bannerOverlay,
+    .body-side,
+    .body-footerOutside,
+    .page-backgroundImageOverlay {
+      display: none !important;
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      border: 0;
+      padding: 0;
+      white-space: nowrap;
+      -webkit-clip-path: inset(100%);
+      clip-path: inset(100%);
+      clip: rect(0 0 0 0);
+      overflow: hidden;
+    }
 
-    // .en__component--advrow .body-header {
-    //   padding-top: 4rem;
-    // }
+    .body-headerOutside {
+      margin-top: 2rem;
+      margin-bottom: 2rem;
+      grid-column: bc;
+    }
 
-    // .en__component--advrow .body-footer {
-    //   padding-bottom: 4rem;
-    // }
-
-    // .body-headerOutside {
-    //   margin-top: 4rem;
-    //   margin-bottom: 4rem;
-    // }
-
-    // [class^="body-"] {
-    //   border-left: 1px solid black;
-    //   border-right: 1px solid black;
-    // }
+    .content-preFooter {
+      grid-column: pc;
+      background-size: contain;
+    }
 
     .content-preFooter.pseudo-subgrid > div {
-      grid-column: cc;
+      grid-column: bc;
     }
 
     .content-footer.pseudo-subgrid > div {
-      grid-column: cc;
+      grid-column: bc;
+    }
+
+    @media only screen and (min-width: $one_col_content-column_min-width) {
+      /* This should use a more robust solution for adding a gradient overlay to the background image, but below the overlay text */
+      .body-header {
+        border-top: 0 !important;
+        min-height: 12px;
+        padding-bottom: 30px;
+        &:before {
+          content: "";
+          position: absolute;
+          display: block;
+          height: 12px;
+          width: 100%;
+          background: url("https://www.oxfam.ca/wp-content/uploads/2018/08/toptop.jpg")
+            center center no-repeat;
+          background-size: cover;
+          background-position: left;
+          z-index: 0 !important;
+          box-shadow: none !important;
+        }
+      }
+
+      .body-footer {
+        margin-bottom: 5rem;
+      }
+
+      .content-preFooter > div {
+        grid-column: cc;
+      }
+
+      .content-footer > div {
+        grid-column: cc;
+      }
+
+      &:not(#en__pagebuilder) .page-backgroundImage::after {
+        content: "";
+        background-image: radial-gradient(
+          circle at 50% 0,
+          rgba(0, 0, 0, 0.3),
+          transparent 53%
+        );
+        z-index: 0;
+        grid-column: pc;
+        height: 100%;
+        left: 0;
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        background-color: #333;
+        opacity: 0.5;
+      }
     }
   }
-}
+  @media only screen and (max-width: #{$two_col_content-column_min-width + 100px}) {
+    .footer-wrapper {
+      flex-direction: column;
 
-/*
-* ##########################################################
-* # ENGRID - Content Column Breakpoint Styling
-* # LAYOUT - Center ANY - [class^="layout-center"][class$="1col"]
-* ##########################################################
-*/
-
-/* Sum of all MAX values of the Body Columns + 1px */
-// @media screen and (min-width: 1231px) {
-//   [data-engrid-layout="centerleft1col"],
-//   [data-engrid-layout="centercenter1col"],
-//   [data-engrid-layout="centercenter1col-wide"],
-//   [data-engrid-layout="centerright1col"] {
-//     .content-preFooter {
-//       background-size: cover;
-//     }
-//   }
-// }
-
-[data-engrid-subtheme="emergency"] {
-  // EN Library Component: Code block: Oxfam Canada - Emergency Theme Override
-  // Emergency Theme Override
-  /* Overrides the base styles to create an "Emergency Theme" */
-
-  .en__submit button {
-    background-color: #ff1d34 !important;
-    border-color: #ff1d34 !important;
+      .yd-col.yd-ft-left {
+        display: flex;
+        flex-direction: column;
+      }
+    }
   }
 
-  .en__submit button:focus,
-  .en__submit button:hover,
-  button.cta.primary:focus,
-  button.cta.primary:hover {
-    background-color: #b4243f !important;
-  }
+  &[data-engrid-subtheme="emergency"] {
+    // EN Library Component: Code block: Oxfam Canada - Emergency Theme Override
+    // Emergency Theme Override
+    /* Overrides the base styles to create an "Emergency Theme" */
 
-  button:focus,
-  button:hover {
-    background-color: #b4243f !important;
-  }
+    --color_primary: #ff1d34;
+    --engrid__page_background-color: #000000;
 
-  .en__contactDetails__select:checked + .en__contactDetails__rows:after,
-  .en__field__input--checkbox:checked + .en__field__label:after {
-    content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='21' height='16' viewBox='0 0 21 16'><path fill='%23FF1D34' fill-rule='nonzero' d='M18.76.16L6.68 12.113l-4.44-4.392a.555.555 0 0 0-.779 0L.161 9.006a.541.541 0 0 0 0 .771L6.29 15.84a.555.555 0 0 0 .78 0l13.77-13.624a.541.541 0 0 0 0-.771L19.539.16a.555.555 0 0 0-.779 0z'/></svg>") !important;
-  }
+    .en__contactDetails__select:checked + .en__contactDetails__rows:after,
+    .en__field__input--checkbox:checked + .en__field__label:after {
+      content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='21' height='16' viewBox='0 0 21 16'><path fill='%23FF1D34' fill-rule='nonzero' d='M18.76.16L6.68 12.113l-4.44-4.392a.555.555 0 0 0-.779 0L.161 9.006a.541.541 0 0 0 0 .771L6.29 15.84a.555.555 0 0 0 .78 0l13.77-13.624a.541.541 0 0 0 0-.771L19.539.16a.555.555 0 0 0-.779 0z'/></svg>") !important;
+    }
 
-  .en__field__input--radio:checked + .en__field__label:before {
-    background-color: #ff1d34 !important;
-  }
+    #enModal .enModal-container .accent {
+      color: var(--color_primary) !important;
+    }
 
-  .en__contactDetails__select:checked + .en__contactDetails__rows:before,
-  .en__field__input--checkbox:checked + .en__field__label:before {
-    color: #ff1d34 !important;
-  }
-
-  .en__contactDetails__select:checked + .en__contactDetails__rows:after,
-  .en__field__input--checkbox:checked + .en__field__label:after {
-    color: #ff1d34 !important;
-  }
-
-  .en__field--donationAmt.en__field--radio
-    .en__field__item--other.has-value
-    input,
-  .en__field--donationAmt.en__field--radio
-    .en__field__item--other:not(.en__field__item--hidden)
-    input,
-  .en__field--donationAmt.en__field--radio input[type="radio"]:checked + label,
-  .give-by-select .en__field--radio .en__field__item--other.has-value input,
-  .give-by-select
-    .en__field--radio
-    .en__field__item--other:not(.en__field__item--hidden)
-    input,
-  .give-by-select .en__field--radio input[type="radio"]:checked + label,
-  .radio-to-buttons .en__field--radio .en__field__item--other.has-value input,
-  .radio-to-buttons
-    .en__field--radio
-    .en__field__item--other:not(.en__field__item--hidden)
-    input,
-  .radio-to-buttons .en__field--radio input[type="radio"]:checked + label {
-    background-color: #ff1d34 !important;
-    border-color: #ff1d34 !important;
-  }
-
-  .en__tweetButton__send,
-  .en__tweetButton__sent {
-    background-color: #ff1d34 !important;
-  }
-
-  #enModal .enModal-container .accent {
-    color: #ff1d34 !important;
-  }
-
-  &:before {
-    background: url("https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/strip-emergency-desktop.png?v=1520436486000") !important;
-  }
-
-  .body-header:before {
-    background: url("https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/strip-emergency-desktop.png?v=1520436486000") !important;
-  }
-
-  .footer-block-three {
-    background: url("https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/strip-emergency-desktop.png?v=1520436486000") !important;
-  }
-
-  &,
-  .footer-block-two {
-    background-color: #000000 !important;
-  }
-
-  // EN Library Component: Code block: Red Emergency Page Styling
-  // Red Emergency page styling block - red geopattern and buttons
-  /* Temporary Styles to for "Emergency" red look and feel */
-
-  /* 2. change the hover or active behavior of the recurring and donation amount label */
-  button,
-  .en__field--recurrpay label.en__field__label.en__field__label--item:hover,
-  .en__field--recurrpay input[type="radio"]:checked + label,
-  .en__field--donationAmt label.en__field__label.en__field__label--item:hover,
-  .en__field--donationAmt input[type="radio"]:checked + label {
-    background-color: #ff1d34 !important;
-  }
-
-  header#yd-donationheader,
-  section.form-sidebar,
-  section.wrapper .main .form-large,
-  .footer-block-three {
-    background-image: url("https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/strip-emergency-desktop.png?v=1520436486000") !important;
+    &:before,
+    .body-header:before,
+    .footer-block-three,
+    header#yd-donationheader,
+    section.form-sidebar,
+    section.wrapper .main .form-large {
+      background: url("https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/strip-emergency-desktop.png?v=1520436486000");
+    }
   }
 }
