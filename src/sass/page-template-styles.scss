@@ -258,6 +258,17 @@
 }
 
 /* Add your custom theme styles here */
+[data-engrid-embedded] {
+  .content-header,
+  .content-footer,
+  ._hj_feedback_container,
+  .body-headerOutside {
+    display: none !important;
+  }
+  &::before {
+    content: none !important;
+  }
+}
 [data-engrid-theme="oxfamca"] {
   @mixin until-tablet {
     // STYLES

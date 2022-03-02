@@ -19,10 +19,10 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Tuesday, February 22, 2022 @ 20:33:40 ET
- *  By: bryancasler
- *  ENGrid styles: v0.9.9
- *  ENGrid scripts: v0.9.11
+ *  Date: Tuesday, March 1, 2022 @ 20:04:45 ET
+ *  By: fernando
+ *  ENGrid styles: v0.10.4
+ *  ENGrid scripts: v0.10.4
  *
  *  Created by 4Site Studios
  *  Come work with us or join our team, we would love to hear from you
@@ -3150,6 +3150,33 @@ body:not(#en__pagebuilder):not([data-engrid-debug]) .i1-hide-label .en__field:fi
   --engrid__body-side_margin:var(--engrid__body-main_margin);
   --engrid__body-side_padding:var(--engrid__body-main_padding);
   --root_font-size:16px;
+}
+
+[data-engrid-theme] #en__digitalWallet{
+  flex-basis:100%;
+  margin-bottom:var(--fields_spacing-block);
+  padding:0;
+}
+[data-engrid-theme] #en__digitalWallet>div[style]:not([class]){
+  flex-basis:0 !important;
+}
+[data-engrid-theme] #en__digitalWallet .en__digitalWallet__button{
+  display:inline-block;
+  flex-basis:50%;
+  flex-grow:1;
+  height:auto;
+  margin-bottom:var(--fields_spacing-block);
+  margin-top:calc(var(--fields_spacing-inline)*.5);
+  padding-left:var(--fields_spacing-inline);
+  padding-right:var(--fields_spacing-inline);
+  width:auto !important;
+}
+[data-engrid-theme] #en__digitalWallet .en__digitalWallet__button .en__digitalWallet__container{
+  margin-bottom:0;
+  width:100%;
+}
+
+[data-engrid-theme]{
   --recurring-frequency__button_font-family:var(--button_font-family);
   --recurring-frequency__button_font-size:var(--button_font-size);
   --recurring-frequency__button_font-weight:var(--button_font-weight);
@@ -5112,6 +5139,7 @@ body:not(#en__pagebuilder)[data-engrid-no-body-bannerOverlay] .en__component--ad
   --engrid__embedded_body_padding:0px;
   --engrid__embedded_body_margin:0px;
   background-image:none;
+  min-height:0;
 }
 [data-engrid-embedded] .en__component--advrow,[data-engrid-embedded] .en__component--advrow>*{
   grid-template-columns:[pc-start lpc-start] minmax(0, 0) [lpc-end cc-start lcc-start] minmax(0, 0) [lcc-end bc-start lbc-start] minmax(0, 50vw) [lbc-end rbc-start] minmax(0, 50vw) [rbc-end bc-end rcc-start] minmax(0, 0) [rcc-end cc-end rpc-start] minmax(0, 0) [rpc-end pc-end] !important;
@@ -5119,8 +5147,8 @@ body:not(#en__pagebuilder)[data-engrid-no-body-bannerOverlay] .en__component--ad
 [data-engrid-embedded] .en__component--advrow .body-banner:before,[data-engrid-embedded] .en__component--advrow .body-bannerOverlay:before,[data-engrid-embedded] .en__component--advrow .body-bottom:before,[data-engrid-embedded] .en__component--advrow .body-footer:before,[data-engrid-embedded] .en__component--advrow .body-header:before,[data-engrid-embedded] .en__component--advrow .body-main:before,[data-engrid-embedded] .en__component--advrow .body-side:before,[data-engrid-embedded] .en__component--advrow .body-title:before,[data-engrid-embedded] .en__component--advrow .body-top:before{
   box-shadow:none !important;
 }
-[data-engrid-embedded] .page-backgroundImage,[data-engrid-embedded] .page-backgroundImageOverlay{
-  display:none;
+[data-engrid-embedded] .hide-iframe,[data-engrid-embedded] .page-backgroundImage,[data-engrid-embedded] .page-backgroundImageOverlay{
+  display:none !important;
 }
 @media screen and (min-width:500px){
   [data-engrid-layout=centercenter1col] #engrid>.en__component--advrow,[data-engrid-layout=centercenter1col] form>.en__component--advrow{
@@ -6318,6 +6346,9 @@ body:not([data-engrid-debug]) #debug-bar{
 #en__pagebuilder img:not([alt]){
   outline:1px dashed var(--error__color);
 }
+#en__pagebuilder img[src*=".mp4"]{
+  border:5px solid var(--error__color);
+}
 #en__pagebuilder .body-bannerOverlay{
   background-color:var(--engrid__body-banner_background-color) !important;
   grid-row:body-bannerOverlay !important;
@@ -6754,6 +6785,12 @@ body:not([data-engrid-debug]) #debug-bar{
   --engrid__body_padding:0px 60px;
   --engrid__body-headerOutside_padding:0;
   --engrid__page_background-color:#44841a;
+}
+[data-engrid-embedded] ._hj_feedback_container,[data-engrid-embedded] .body-headerOutside,[data-engrid-embedded] .content-footer,[data-engrid-embedded] .content-header{
+  display:none !important;
+}
+[data-engrid-embedded]:before{
+  content:none !important;
 }
 [data-engrid-theme=oxfamca] .en__captcha{
   margin:20px auto auto;
