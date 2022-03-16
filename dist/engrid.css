@@ -19,7 +19,7 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Tuesday, March 1, 2022 @ 20:04:45 ET
+ *  Date: Tuesday, March 15, 2022 @ 22:36:23 ET
  *  By: fernando
  *  ENGrid styles: v0.10.4
  *  ENGrid scripts: v0.10.4
@@ -6853,9 +6853,9 @@ body:not([data-engrid-debug]) #debug-bar{
   content:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='21' height='16' viewBox='0 0 21 16'><path fill='%23F57E20' fill-rule='nonzero' d='M18.76.16L6.68 12.113l-4.44-4.392a.555.555 0 0 0-.779 0L.161 9.006a.541.541 0 0 0 0 .771L6.29 15.84a.555.555 0 0 0 .78 0l13.77-13.624a.541.541 0 0 0 0-.771L19.539.16a.555.555 0 0 0-.779 0z'/></svg>");
   display:flex;
   font-size:.99936em;
-  height:16px;
+  height:23px;
   left:5px;
-  padding-bottom:23px;
+  padding-bottom:4px;
   position:absolute;
   width:21px;
 }
