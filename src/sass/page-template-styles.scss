@@ -45,9 +45,9 @@
   --default_line-height: initial;
 
   // TYPOGRAPHY H1
-  --h1_font-family: OxfamHeadline;
+  --h1_font-family: var(--native-fonts__sans-serif);
   --h1_color: initial;
-  --h1_font-size: calc(0.05552rem * 48);
+  --h1_font-size: 3.5rem;
   --h1_font-weight: 900;
   --h1_line-height: var(--h1_font-size);
 
