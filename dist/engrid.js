@@ -17,10 +17,10 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Saturday, December 11, 2021 @ 17:47:48 ET
- *  By: bryancasler
- *  ENGrid styles: v0.6.13
- *  ENGrid scripts: v0.6.16
+ *  Date: Thursday, April 7, 2022 @ 21:08:15 ET
+ *  By: fernando
+ *  ENGrid styles: v0.11.0
+ *  ENGrid scripts: v0.11.5
  *
  *  Created by 4Site Studios
  *  Come work with us or join our team, we would love to hear from you
@@ -28,12 +28,12 @@
  *
  */
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ 2705:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DispatchError = void 0;
@@ -63,6 +63,7 @@ exports.DispatchError = DispatchError;
 /***/ 9885:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DispatcherBase = void 0;
@@ -312,6 +313,7 @@ exports.DispatcherBase = DispatcherBase;
 /***/ 1637:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DispatcherWrapper = void 0;
@@ -439,6 +441,7 @@ exports.DispatcherWrapper = DispatcherWrapper;
 /***/ 4155:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventListBase = void 0;
@@ -490,6 +493,7 @@ exports.EventListBase = EventListBase;
 /***/ 2849:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseDispatcherBase = void 0;
@@ -572,6 +576,7 @@ exports.PromiseDispatcherBase = PromiseDispatcherBase;
 /***/ 4220:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SubscriptionChangeEventDispatcher = void 0;
@@ -603,6 +608,7 @@ exports.SubscriptionChangeEventDispatcher = SubscriptionChangeEventDispatcher;
 /***/ 7278:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseSubscription = void 0;
@@ -665,6 +671,7 @@ exports.PromiseSubscription = PromiseSubscription;
 /***/ 8326:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Subscription = void 0;
@@ -718,6 +725,7 @@ exports.Subscription = Subscription;
 /***/ 516:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.HandlingBase = void 0;
@@ -812,6 +820,7 @@ exports.HandlingBase = HandlingBase;
 /***/ 4844:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 /*!
  * Strongly Typed Events for TypeScript - Core
@@ -850,6 +859,7 @@ Object.defineProperty(exports, "SubscriptionChangeEventDispatcher", ({ enumerabl
 /***/ 5638:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventManagement = void 0;
@@ -889,6 +899,7 @@ exports.EventManagement = EventManagement;
 /***/ 4402:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventDispatcher = void 0;
@@ -960,6 +971,7 @@ exports.EventDispatcher = EventDispatcher;
 /***/ 9411:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventHandlingBase = void 0;
@@ -981,6 +993,7 @@ exports.EventHandlingBase = EventHandlingBase;
 /***/ 2453:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventList = void 0;
@@ -1012,6 +1025,7 @@ exports.EventList = EventList;
 /***/ 7891:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.NonUniformEventList = void 0;
@@ -1058,6 +1072,7 @@ exports.NonUniformEventList = NonUniformEventList;
 /***/ 3111:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 /*!
  * Strongly Typed Events for TypeScript - Core
@@ -1084,6 +1099,7 @@ Object.defineProperty(exports, "NonUniformEventList", ({ enumerable: true, get: 
 /***/ 4729:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SignalDispatcher = void 0;
@@ -1140,6 +1156,7 @@ exports.SignalDispatcher = SignalDispatcher;
 /***/ 4243:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SignalHandlingBase = void 0;
@@ -1172,6 +1189,7 @@ exports.SignalHandlingBase = SignalHandlingBase;
 /***/ 7991:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SignalList = void 0;
@@ -1214,6 +1232,7 @@ exports.SignalList = SignalList;
 /***/ 1254:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 /*!
  * Strongly Typed Events for TypeScript - Promise Signals
@@ -1238,6 +1257,7 @@ Object.defineProperty(exports, "SignalList", ({ enumerable: true, get: function 
 /***/ 9360:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.NonUniformSimpleEventList = void 0;
@@ -1284,6 +1304,7 @@ exports.NonUniformSimpleEventList = NonUniformSimpleEventList;
 /***/ 4624:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SimpleEventDispatcher = void 0;
@@ -1352,6 +1373,7 @@ exports.SimpleEventDispatcher = SimpleEventDispatcher;
 /***/ 1269:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SimpleEventHandlingBase = void 0;
@@ -1373,6 +1395,7 @@ exports.SimpleEventHandlingBase = SimpleEventHandlingBase;
 /***/ 5570:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SimpleEventList = void 0;
@@ -1404,6 +1427,7 @@ exports.SimpleEventList = SimpleEventList;
 /***/ 5931:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.NonUniformSimpleEventList = exports.SimpleEventList = exports.SimpleEventHandlingBase = exports.SimpleEventDispatcher = void 0;
@@ -1422,6 +1446,7 @@ Object.defineProperty(exports, "SimpleEventList", ({ enumerable: true, get: func
 /***/ 5363:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 var __webpack_unused_export__;
 
 /*!
@@ -1476,9 +1501,1107 @@ __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_p
 
 /***/ }),
 
+/***/ 6377:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+// A library of seedable RNGs implemented in Javascript.
+//
+// Usage:
+//
+// var seedrandom = require('seedrandom');
+// var random = seedrandom(1); // or any seed.
+// var x = random();       // 0 <= x < 1.  Every bit is random.
+// var x = random.quick(); // 0 <= x < 1.  32 bits of randomness.
+
+// alea, a 53-bit multiply-with-carry generator by Johannes Baagøe.
+// Period: ~2^116
+// Reported to pass all BigCrush tests.
+var alea = __webpack_require__(4832);
+
+// xor128, a pure xor-shift generator by George Marsaglia.
+// Period: 2^128-1.
+// Reported to fail: MatrixRank and LinearComp.
+var xor128 = __webpack_require__(8652);
+
+// xorwow, George Marsaglia's 160-bit xor-shift combined plus weyl.
+// Period: 2^192-2^32
+// Reported to fail: CollisionOver, SimpPoker, and LinearComp.
+var xorwow = __webpack_require__(801);
+
+// xorshift7, by François Panneton and Pierre L'ecuyer, takes
+// a different approach: it adds robustness by allowing more shifts
+// than Marsaglia's original three.  It is a 7-shift generator
+// with 256 bits, that passes BigCrush with no systmatic failures.
+// Period 2^256-1.
+// No systematic BigCrush failures reported.
+var xorshift7 = __webpack_require__(2030);
+
+// xor4096, by Richard Brent, is a 4096-bit xor-shift with a
+// very long period that also adds a Weyl generator. It also passes
+// BigCrush with no systematic failures.  Its long period may
+// be useful if you have many generators and need to avoid
+// collisions.
+// Period: 2^4128-2^32.
+// No systematic BigCrush failures reported.
+var xor4096 = __webpack_require__(3618);
+
+// Tyche-i, by Samuel Neves and Filipe Araujo, is a bit-shifting random
+// number generator derived from ChaCha, a modern stream cipher.
+// https://eden.dei.uc.pt/~sneves/pubs/2011-snfa2.pdf
+// Period: ~2^127
+// No systematic BigCrush failures reported.
+var tychei = __webpack_require__(9049);
+
+// The original ARC4-based prng included in this library.
+// Period: ~2^1600
+var sr = __webpack_require__(1971);
+
+sr.alea = alea;
+sr.xor128 = xor128;
+sr.xorwow = xorwow;
+sr.xorshift7 = xorshift7;
+sr.xor4096 = xor4096;
+sr.tychei = tychei;
+
+module.exports = sr;
+
+
+/***/ }),
+
+/***/ 4832:
+/***/ (function(module, exports, __webpack_require__) {
+
+/* module decorator */ module = __webpack_require__.nmd(module);
+var __WEBPACK_AMD_DEFINE_RESULT__;// A port of an algorithm by Johannes Baagøe <baagoe@baagoe.com>, 2010
+// http://baagoe.com/en/RandomMusings/javascript/
+// https://github.com/nquinlan/better-random-numbers-for-javascript-mirror
+// Original work is under MIT license -
+
+// Copyright (C) 2010 by Johannes Baagøe <baagoe@baagoe.org>
+//
+// Permission is hereby granted, free of charge, to any person obtaining a copy
+// of this software and associated documentation files (the "Software"), to deal
+// in the Software without restriction, including without limitation the rights
+// to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+// copies of the Software, and to permit persons to whom the Software is
+// furnished to do so, subject to the following conditions:
+// 
+// The above copyright notice and this permission notice shall be included in
+// all copies or substantial portions of the Software.
+// 
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+// IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+// FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+// AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+// LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+// OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+// THE SOFTWARE.
+
+
+
+(function(global, module, define) {
+
+function Alea(seed) {
+  var me = this, mash = Mash();
+
+  me.next = function() {
+    var t = 2091639 * me.s0 + me.c * 2.3283064365386963e-10; // 2^-32
+    me.s0 = me.s1;
+    me.s1 = me.s2;
+    return me.s2 = t - (me.c = t | 0);
+  };
+
+  // Apply the seeding algorithm from Baagoe.
+  me.c = 1;
+  me.s0 = mash(' ');
+  me.s1 = mash(' ');
+  me.s2 = mash(' ');
+  me.s0 -= mash(seed);
+  if (me.s0 < 0) { me.s0 += 1; }
+  me.s1 -= mash(seed);
+  if (me.s1 < 0) { me.s1 += 1; }
+  me.s2 -= mash(seed);
+  if (me.s2 < 0) { me.s2 += 1; }
+  mash = null;
+}
+
+function copy(f, t) {
+  t.c = f.c;
+  t.s0 = f.s0;
+  t.s1 = f.s1;
+  t.s2 = f.s2;
+  return t;
+}
+
+function impl(seed, opts) {
+  var xg = new Alea(seed),
+      state = opts && opts.state,
+      prng = xg.next;
+  prng.int32 = function() { return (xg.next() * 0x100000000) | 0; }
+  prng.double = function() {
+    return prng() + (prng() * 0x200000 | 0) * 1.1102230246251565e-16; // 2^-53
+  };
+  prng.quick = prng;
+  if (state) {
+    if (typeof(state) == 'object') copy(state, xg);
+    prng.state = function() { return copy(xg, {}); }
+  }
+  return prng;
+}
+
+function Mash() {
+  var n = 0xefc8249d;
+
+  var mash = function(data) {
+    data = data.toString();
+    for (var i = 0; i < data.length; i++) {
+      n += data.charCodeAt(i);
+      var h = 0.02519603282416938 * n;
+      n = h >>> 0;
+      h -= n;
+      h *= n;
+      n = h >>> 0;
+      h -= n;
+      n += h * 0x100000000; // 2^32
+    }
+    return (n >>> 0) * 2.3283064365386963e-10; // 2^-32
+  };
+
+  return mash;
+}
+
+
+if (module && module.exports) {
+  module.exports = impl;
+} else if (__webpack_require__.amdD && __webpack_require__.amdO) {
+  !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() { return impl; }).call(exports, __webpack_require__, exports, module),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+} else {
+  this.alea = impl;
+}
+
+})(
+  this,
+   true && module,    // present in node.js
+  __webpack_require__.amdD   // present with an AMD loader
+);
+
+
+
+
+/***/ }),
+
+/***/ 9049:
+/***/ (function(module, exports, __webpack_require__) {
+
+/* module decorator */ module = __webpack_require__.nmd(module);
+var __WEBPACK_AMD_DEFINE_RESULT__;// A Javascript implementaion of the "Tyche-i" prng algorithm by
+// Samuel Neves and Filipe Araujo.
+// See https://eden.dei.uc.pt/~sneves/pubs/2011-snfa2.pdf
+
+(function(global, module, define) {
+
+function XorGen(seed) {
+  var me = this, strseed = '';
+
+  // Set up generator function.
+  me.next = function() {
+    var b = me.b, c = me.c, d = me.d, a = me.a;
+    b = (b << 25) ^ (b >>> 7) ^ c;
+    c = (c - d) | 0;
+    d = (d << 24) ^ (d >>> 8) ^ a;
+    a = (a - b) | 0;
+    me.b = b = (b << 20) ^ (b >>> 12) ^ c;
+    me.c = c = (c - d) | 0;
+    me.d = (d << 16) ^ (c >>> 16) ^ a;
+    return me.a = (a - b) | 0;
+  };
+
+  /* The following is non-inverted tyche, which has better internal
+   * bit diffusion, but which is about 25% slower than tyche-i in JS.
+  me.next = function() {
+    var a = me.a, b = me.b, c = me.c, d = me.d;
+    a = (me.a + me.b | 0) >>> 0;
+    d = me.d ^ a; d = d << 16 ^ d >>> 16;
+    c = me.c + d | 0;
+    b = me.b ^ c; b = b << 12 ^ d >>> 20;
+    me.a = a = a + b | 0;
+    d = d ^ a; me.d = d = d << 8 ^ d >>> 24;
+    me.c = c = c + d | 0;
+    b = b ^ c;
+    return me.b = (b << 7 ^ b >>> 25);
+  }
+  */
+
+  me.a = 0;
+  me.b = 0;
+  me.c = 2654435769 | 0;
+  me.d = 1367130551;
+
+  if (seed === Math.floor(seed)) {
+    // Integer seed.
+    me.a = (seed / 0x100000000) | 0;
+    me.b = seed | 0;
+  } else {
+    // String seed.
+    strseed += seed;
+  }
+
+  // Mix in string seed, then discard an initial batch of 64 values.
+  for (var k = 0; k < strseed.length + 20; k++) {
+    me.b ^= strseed.charCodeAt(k) | 0;
+    me.next();
+  }
+}
+
+function copy(f, t) {
+  t.a = f.a;
+  t.b = f.b;
+  t.c = f.c;
+  t.d = f.d;
+  return t;
+};
+
+function impl(seed, opts) {
+  var xg = new XorGen(seed),
+      state = opts && opts.state,
+      prng = function() { return (xg.next() >>> 0) / 0x100000000; };
+  prng.double = function() {
+    do {
+      var top = xg.next() >>> 11,
+          bot = (xg.next() >>> 0) / 0x100000000,
+          result = (top + bot) / (1 << 21);
+    } while (result === 0);
+    return result;
+  };
+  prng.int32 = xg.next;
+  prng.quick = prng;
+  if (state) {
+    if (typeof(state) == 'object') copy(state, xg);
+    prng.state = function() { return copy(xg, {}); }
+  }
+  return prng;
+}
+
+if (module && module.exports) {
+  module.exports = impl;
+} else if (__webpack_require__.amdD && __webpack_require__.amdO) {
+  !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() { return impl; }).call(exports, __webpack_require__, exports, module),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+} else {
+  this.tychei = impl;
+}
+
+})(
+  this,
+   true && module,    // present in node.js
+  __webpack_require__.amdD   // present with an AMD loader
+);
+
+
+
+
+/***/ }),
+
+/***/ 8652:
+/***/ (function(module, exports, __webpack_require__) {
+
+/* module decorator */ module = __webpack_require__.nmd(module);
+var __WEBPACK_AMD_DEFINE_RESULT__;// A Javascript implementaion of the "xor128" prng algorithm by
+// George Marsaglia.  See http://www.jstatsoft.org/v08/i14/paper
+
+(function(global, module, define) {
+
+function XorGen(seed) {
+  var me = this, strseed = '';
+
+  me.x = 0;
+  me.y = 0;
+  me.z = 0;
+  me.w = 0;
+
+  // Set up generator function.
+  me.next = function() {
+    var t = me.x ^ (me.x << 11);
+    me.x = me.y;
+    me.y = me.z;
+    me.z = me.w;
+    return me.w ^= (me.w >>> 19) ^ t ^ (t >>> 8);
+  };
+
+  if (seed === (seed | 0)) {
+    // Integer seed.
+    me.x = seed;
+  } else {
+    // String seed.
+    strseed += seed;
+  }
+
+  // Mix in string seed, then discard an initial batch of 64 values.
+  for (var k = 0; k < strseed.length + 64; k++) {
+    me.x ^= strseed.charCodeAt(k) | 0;
+    me.next();
+  }
+}
+
+function copy(f, t) {
+  t.x = f.x;
+  t.y = f.y;
+  t.z = f.z;
+  t.w = f.w;
+  return t;
+}
+
+function impl(seed, opts) {
+  var xg = new XorGen(seed),
+      state = opts && opts.state,
+      prng = function() { return (xg.next() >>> 0) / 0x100000000; };
+  prng.double = function() {
+    do {
+      var top = xg.next() >>> 11,
+          bot = (xg.next() >>> 0) / 0x100000000,
+          result = (top + bot) / (1 << 21);
+    } while (result === 0);
+    return result;
+  };
+  prng.int32 = xg.next;
+  prng.quick = prng;
+  if (state) {
+    if (typeof(state) == 'object') copy(state, xg);
+    prng.state = function() { return copy(xg, {}); }
+  }
+  return prng;
+}
+
+if (module && module.exports) {
+  module.exports = impl;
+} else if (__webpack_require__.amdD && __webpack_require__.amdO) {
+  !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() { return impl; }).call(exports, __webpack_require__, exports, module),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+} else {
+  this.xor128 = impl;
+}
+
+})(
+  this,
+   true && module,    // present in node.js
+  __webpack_require__.amdD   // present with an AMD loader
+);
+
+
+
+
+/***/ }),
+
+/***/ 3618:
+/***/ (function(module, exports, __webpack_require__) {
+
+/* module decorator */ module = __webpack_require__.nmd(module);
+var __WEBPACK_AMD_DEFINE_RESULT__;// A Javascript implementaion of Richard Brent's Xorgens xor4096 algorithm.
+//
+// This fast non-cryptographic random number generator is designed for
+// use in Monte-Carlo algorithms. It combines a long-period xorshift
+// generator with a Weyl generator, and it passes all common batteries
+// of stasticial tests for randomness while consuming only a few nanoseconds
+// for each prng generated.  For background on the generator, see Brent's
+// paper: "Some long-period random number generators using shifts and xors."
+// http://arxiv.org/pdf/1004.3115v1.pdf
+//
+// Usage:
+//
+// var xor4096 = require('xor4096');
+// random = xor4096(1);                        // Seed with int32 or string.
+// assert.equal(random(), 0.1520436450538547); // (0, 1) range, 53 bits.
+// assert.equal(random.int32(), 1806534897);   // signed int32, 32 bits.
+//
+// For nonzero numeric keys, this impelementation provides a sequence
+// identical to that by Brent's xorgens 3 implementaion in C.  This
+// implementation also provides for initalizing the generator with
+// string seeds, or for saving and restoring the state of the generator.
+//
+// On Chrome, this prng benchmarks about 2.1 times slower than
+// Javascript's built-in Math.random().
+
+(function(global, module, define) {
+
+function XorGen(seed) {
+  var me = this;
+
+  // Set up generator function.
+  me.next = function() {
+    var w = me.w,
+        X = me.X, i = me.i, t, v;
+    // Update Weyl generator.
+    me.w = w = (w + 0x61c88647) | 0;
+    // Update xor generator.
+    v = X[(i + 34) & 127];
+    t = X[i = ((i + 1) & 127)];
+    v ^= v << 13;
+    t ^= t << 17;
+    v ^= v >>> 15;
+    t ^= t >>> 12;
+    // Update Xor generator array state.
+    v = X[i] = v ^ t;
+    me.i = i;
+    // Result is the combination.
+    return (v + (w ^ (w >>> 16))) | 0;
+  };
+
+  function init(me, seed) {
+    var t, v, i, j, w, X = [], limit = 128;
+    if (seed === (seed | 0)) {
+      // Numeric seeds initialize v, which is used to generates X.
+      v = seed;
+      seed = null;
+    } else {
+      // String seeds are mixed into v and X one character at a time.
+      seed = seed + '\0';
+      v = 0;
+      limit = Math.max(limit, seed.length);
+    }
+    // Initialize circular array and weyl value.
+    for (i = 0, j = -32; j < limit; ++j) {
+      // Put the unicode characters into the array, and shuffle them.
+      if (seed) v ^= seed.charCodeAt((j + 32) % seed.length);
+      // After 32 shuffles, take v as the starting w value.
+      if (j === 0) w = v;
+      v ^= v << 10;
+      v ^= v >>> 15;
+      v ^= v << 4;
+      v ^= v >>> 13;
+      if (j >= 0) {
+        w = (w + 0x61c88647) | 0;     // Weyl.
+        t = (X[j & 127] ^= (v + w));  // Combine xor and weyl to init array.
+        i = (0 == t) ? i + 1 : 0;     // Count zeroes.
+      }
+    }
+    // We have detected all zeroes; make the key nonzero.
+    if (i >= 128) {
+      X[(seed && seed.length || 0) & 127] = -1;
+    }
+    // Run the generator 512 times to further mix the state before using it.
+    // Factoring this as a function slows the main generator, so it is just
+    // unrolled here.  The weyl generator is not advanced while warming up.
+    i = 127;
+    for (j = 4 * 128; j > 0; --j) {
+      v = X[(i + 34) & 127];
+      t = X[i = ((i + 1) & 127)];
+      v ^= v << 13;
+      t ^= t << 17;
+      v ^= v >>> 15;
+      t ^= t >>> 12;
+      X[i] = v ^ t;
+    }
+    // Storing state as object members is faster than using closure variables.
+    me.w = w;
+    me.X = X;
+    me.i = i;
+  }
+
+  init(me, seed);
+}
+
+function copy(f, t) {
+  t.i = f.i;
+  t.w = f.w;
+  t.X = f.X.slice();
+  return t;
+};
+
+function impl(seed, opts) {
+  if (seed == null) seed = +(new Date);
+  var xg = new XorGen(seed),
+      state = opts && opts.state,
+      prng = function() { return (xg.next() >>> 0) / 0x100000000; };
+  prng.double = function() {
+    do {
+      var top = xg.next() >>> 11,
+          bot = (xg.next() >>> 0) / 0x100000000,
+          result = (top + bot) / (1 << 21);
+    } while (result === 0);
+    return result;
+  };
+  prng.int32 = xg.next;
+  prng.quick = prng;
+  if (state) {
+    if (state.X) copy(state, xg);
+    prng.state = function() { return copy(xg, {}); }
+  }
+  return prng;
+}
+
+if (module && module.exports) {
+  module.exports = impl;
+} else if (__webpack_require__.amdD && __webpack_require__.amdO) {
+  !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() { return impl; }).call(exports, __webpack_require__, exports, module),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+} else {
+  this.xor4096 = impl;
+}
+
+})(
+  this,                                     // window object or global
+   true && module,    // present in node.js
+  __webpack_require__.amdD   // present with an AMD loader
+);
+
+
+/***/ }),
+
+/***/ 2030:
+/***/ (function(module, exports, __webpack_require__) {
+
+/* module decorator */ module = __webpack_require__.nmd(module);
+var __WEBPACK_AMD_DEFINE_RESULT__;// A Javascript implementaion of the "xorshift7" algorithm by
+// François Panneton and Pierre L'ecuyer:
+// "On the Xorgshift Random Number Generators"
+// http://saluc.engr.uconn.edu/refs/crypto/rng/panneton05onthexorshift.pdf
+
+(function(global, module, define) {
+
+function XorGen(seed) {
+  var me = this;
+
+  // Set up generator function.
+  me.next = function() {
+    // Update xor generator.
+    var X = me.x, i = me.i, t, v, w;
+    t = X[i]; t ^= (t >>> 7); v = t ^ (t << 24);
+    t = X[(i + 1) & 7]; v ^= t ^ (t >>> 10);
+    t = X[(i + 3) & 7]; v ^= t ^ (t >>> 3);
+    t = X[(i + 4) & 7]; v ^= t ^ (t << 7);
+    t = X[(i + 7) & 7]; t = t ^ (t << 13); v ^= t ^ (t << 9);
+    X[i] = v;
+    me.i = (i + 1) & 7;
+    return v;
+  };
+
+  function init(me, seed) {
+    var j, w, X = [];
+
+    if (seed === (seed | 0)) {
+      // Seed state array using a 32-bit integer.
+      w = X[0] = seed;
+    } else {
+      // Seed state using a string.
+      seed = '' + seed;
+      for (j = 0; j < seed.length; ++j) {
+        X[j & 7] = (X[j & 7] << 15) ^
+            (seed.charCodeAt(j) + X[(j + 1) & 7] << 13);
+      }
+    }
+    // Enforce an array length of 8, not all zeroes.
+    while (X.length < 8) X.push(0);
+    for (j = 0; j < 8 && X[j] === 0; ++j);
+    if (j == 8) w = X[7] = -1; else w = X[j];
+
+    me.x = X;
+    me.i = 0;
+
+    // Discard an initial 256 values.
+    for (j = 256; j > 0; --j) {
+      me.next();
+    }
+  }
+
+  init(me, seed);
+}
+
+function copy(f, t) {
+  t.x = f.x.slice();
+  t.i = f.i;
+  return t;
+}
+
+function impl(seed, opts) {
+  if (seed == null) seed = +(new Date);
+  var xg = new XorGen(seed),
+      state = opts && opts.state,
+      prng = function() { return (xg.next() >>> 0) / 0x100000000; };
+  prng.double = function() {
+    do {
+      var top = xg.next() >>> 11,
+          bot = (xg.next() >>> 0) / 0x100000000,
+          result = (top + bot) / (1 << 21);
+    } while (result === 0);
+    return result;
+  };
+  prng.int32 = xg.next;
+  prng.quick = prng;
+  if (state) {
+    if (state.x) copy(state, xg);
+    prng.state = function() { return copy(xg, {}); }
+  }
+  return prng;
+}
+
+if (module && module.exports) {
+  module.exports = impl;
+} else if (__webpack_require__.amdD && __webpack_require__.amdO) {
+  !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() { return impl; }).call(exports, __webpack_require__, exports, module),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+} else {
+  this.xorshift7 = impl;
+}
+
+})(
+  this,
+   true && module,    // present in node.js
+  __webpack_require__.amdD   // present with an AMD loader
+);
+
+
+
+/***/ }),
+
+/***/ 801:
+/***/ (function(module, exports, __webpack_require__) {
+
+/* module decorator */ module = __webpack_require__.nmd(module);
+var __WEBPACK_AMD_DEFINE_RESULT__;// A Javascript implementaion of the "xorwow" prng algorithm by
+// George Marsaglia.  See http://www.jstatsoft.org/v08/i14/paper
+
+(function(global, module, define) {
+
+function XorGen(seed) {
+  var me = this, strseed = '';
+
+  // Set up generator function.
+  me.next = function() {
+    var t = (me.x ^ (me.x >>> 2));
+    me.x = me.y; me.y = me.z; me.z = me.w; me.w = me.v;
+    return (me.d = (me.d + 362437 | 0)) +
+       (me.v = (me.v ^ (me.v << 4)) ^ (t ^ (t << 1))) | 0;
+  };
+
+  me.x = 0;
+  me.y = 0;
+  me.z = 0;
+  me.w = 0;
+  me.v = 0;
+
+  if (seed === (seed | 0)) {
+    // Integer seed.
+    me.x = seed;
+  } else {
+    // String seed.
+    strseed += seed;
+  }
+
+  // Mix in string seed, then discard an initial batch of 64 values.
+  for (var k = 0; k < strseed.length + 64; k++) {
+    me.x ^= strseed.charCodeAt(k) | 0;
+    if (k == strseed.length) {
+      me.d = me.x << 10 ^ me.x >>> 4;
+    }
+    me.next();
+  }
+}
+
+function copy(f, t) {
+  t.x = f.x;
+  t.y = f.y;
+  t.z = f.z;
+  t.w = f.w;
+  t.v = f.v;
+  t.d = f.d;
+  return t;
+}
+
+function impl(seed, opts) {
+  var xg = new XorGen(seed),
+      state = opts && opts.state,
+      prng = function() { return (xg.next() >>> 0) / 0x100000000; };
+  prng.double = function() {
+    do {
+      var top = xg.next() >>> 11,
+          bot = (xg.next() >>> 0) / 0x100000000,
+          result = (top + bot) / (1 << 21);
+    } while (result === 0);
+    return result;
+  };
+  prng.int32 = xg.next;
+  prng.quick = prng;
+  if (state) {
+    if (typeof(state) == 'object') copy(state, xg);
+    prng.state = function() { return copy(xg, {}); }
+  }
+  return prng;
+}
+
+if (module && module.exports) {
+  module.exports = impl;
+} else if (__webpack_require__.amdD && __webpack_require__.amdO) {
+  !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() { return impl; }).call(exports, __webpack_require__, exports, module),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+} else {
+  this.xorwow = impl;
+}
+
+})(
+  this,
+   true && module,    // present in node.js
+  __webpack_require__.amdD   // present with an AMD loader
+);
+
+
+
+
+/***/ }),
+
+/***/ 1971:
+/***/ ((module, exports, __webpack_require__) => {
+
+var __WEBPACK_AMD_DEFINE_RESULT__;/*
+Copyright 2014 David Bau.
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be
+included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+*/
+
+(function (pool, math) {
+//
+// The following constants are related to IEEE 754 limits.
+//
+
+// Detect the global object, even if operating in strict mode.
+// http://stackoverflow.com/a/14387057/265298
+var global = (0, eval)('this'),
+    width = 256,        // each RC4 output is 0 <= x < 256
+    chunks = 6,         // at least six RC4 outputs for each double
+    digits = 52,        // there are 52 significant digits in a double
+    rngname = 'random', // rngname: name for Math.random and Math.seedrandom
+    startdenom = math.pow(width, chunks),
+    significance = math.pow(2, digits),
+    overflow = significance * 2,
+    mask = width - 1,
+    nodecrypto;         // node.js crypto module, initialized at the bottom.
+
+//
+// seedrandom()
+// This is the seedrandom function described above.
+//
+function seedrandom(seed, options, callback) {
+  var key = [];
+  options = (options == true) ? { entropy: true } : (options || {});
+
+  // Flatten the seed string or build one from local entropy if needed.
+  var shortseed = mixkey(flatten(
+    options.entropy ? [seed, tostring(pool)] :
+    (seed == null) ? autoseed() : seed, 3), key);
+
+  // Use the seed to initialize an ARC4 generator.
+  var arc4 = new ARC4(key);
+
+  // This function returns a random double in [0, 1) that contains
+  // randomness in every bit of the mantissa of the IEEE 754 value.
+  var prng = function() {
+    var n = arc4.g(chunks),             // Start with a numerator n < 2 ^ 48
+        d = startdenom,                 //   and denominator d = 2 ^ 48.
+        x = 0;                          //   and no 'extra last byte'.
+    while (n < significance) {          // Fill up all significant digits by
+      n = (n + x) * width;              //   shifting numerator and
+      d *= width;                       //   denominator and generating a
+      x = arc4.g(1);                    //   new least-significant-byte.
+    }
+    while (n >= overflow) {             // To avoid rounding up, before adding
+      n /= 2;                           //   last byte, shift everything
+      d /= 2;                           //   right using integer math until
+      x >>>= 1;                         //   we have exactly the desired bits.
+    }
+    return (n + x) / d;                 // Form the number within [0, 1).
+  };
+
+  prng.int32 = function() { return arc4.g(4) | 0; }
+  prng.quick = function() { return arc4.g(4) / 0x100000000; }
+  prng.double = prng;
+
+  // Mix the randomness into accumulated entropy.
+  mixkey(tostring(arc4.S), pool);
+
+  // Calling convention: what to return as a function of prng, seed, is_math.
+  return (options.pass || callback ||
+      function(prng, seed, is_math_call, state) {
+        if (state) {
+          // Load the arc4 state from the given state if it has an S array.
+          if (state.S) { copy(state, arc4); }
+          // Only provide the .state method if requested via options.state.
+          prng.state = function() { return copy(arc4, {}); }
+        }
+
+        // If called as a method of Math (Math.seedrandom()), mutate
+        // Math.random because that is how seedrandom.js has worked since v1.0.
+        if (is_math_call) { math[rngname] = prng; return seed; }
+
+        // Otherwise, it is a newer calling convention, so return the
+        // prng directly.
+        else return prng;
+      })(
+  prng,
+  shortseed,
+  'global' in options ? options.global : (this == math),
+  options.state);
+}
+math['seed' + rngname] = seedrandom;
+
+//
+// ARC4
+//
+// An ARC4 implementation.  The constructor takes a key in the form of
+// an array of at most (width) integers that should be 0 <= x < (width).
+//
+// The g(count) method returns a pseudorandom integer that concatenates
+// the next (count) outputs from ARC4.  Its return value is a number x
+// that is in the range 0 <= x < (width ^ count).
+//
+function ARC4(key) {
+  var t, keylen = key.length,
+      me = this, i = 0, j = me.i = me.j = 0, s = me.S = [];
+
+  // The empty key [] is treated as [0].
+  if (!keylen) { key = [keylen++]; }
+
+  // Set up S using the standard key scheduling algorithm.
+  while (i < width) {
+    s[i] = i++;
+  }
+  for (i = 0; i < width; i++) {
+    s[i] = s[j = mask & (j + key[i % keylen] + (t = s[i]))];
+    s[j] = t;
+  }
+
+  // The "g" method returns the next (count) outputs as one number.
+  (me.g = function(count) {
+    // Using instance members instead of closure state nearly doubles speed.
+    var t, r = 0,
+        i = me.i, j = me.j, s = me.S;
+    while (count--) {
+      t = s[i = mask & (i + 1)];
+      r = r * width + s[mask & ((s[i] = s[j = mask & (j + t)]) + (s[j] = t))];
+    }
+    me.i = i; me.j = j;
+    return r;
+    // For robust unpredictability, the function call below automatically
+    // discards an initial batch of values.  This is called RC4-drop[256].
+    // See http://google.com/search?q=rsa+fluhrer+response&btnI
+  })(width);
+}
+
+//
+// copy()
+// Copies internal state of ARC4 to or from a plain object.
+//
+function copy(f, t) {
+  t.i = f.i;
+  t.j = f.j;
+  t.S = f.S.slice();
+  return t;
+};
+
+//
+// flatten()
+// Converts an object tree to nested arrays of strings.
+//
+function flatten(obj, depth) {
+  var result = [], typ = (typeof obj), prop;
+  if (depth && typ == 'object') {
+    for (prop in obj) {
+      try { result.push(flatten(obj[prop], depth - 1)); } catch (e) {}
+    }
+  }
+  return (result.length ? result : typ == 'string' ? obj : obj + '\0');
+}
+
+//
+// mixkey()
+// Mixes a string seed into a key that is an array of integers, and
+// returns a shortened string seed that is equivalent to the result key.
+//
+function mixkey(seed, key) {
+  var stringseed = seed + '', smear, j = 0;
+  while (j < stringseed.length) {
+    key[mask & j] =
+      mask & ((smear ^= key[mask & j] * 19) + stringseed.charCodeAt(j++));
+  }
+  return tostring(key);
+}
+
+//
+// autoseed()
+// Returns an object for autoseeding, using window.crypto and Node crypto
+// module if available.
+//
+function autoseed() {
+  try {
+    var out;
+    if (nodecrypto && (out = nodecrypto.randomBytes)) {
+      // The use of 'out' to remember randomBytes makes tight minified code.
+      out = out(width);
+    } else {
+      out = new Uint8Array(width);
+      (global.crypto || global.msCrypto).getRandomValues(out);
+    }
+    return tostring(out);
+  } catch (e) {
+    var browser = global.navigator,
+        plugins = browser && browser.plugins;
+    return [+new Date, global, plugins, global.screen, tostring(pool)];
+  }
+}
+
+//
+// tostring()
+// Converts an array of charcodes to a string
+//
+function tostring(a) {
+  return String.fromCharCode.apply(0, a);
+}
+
+//
+// When seedrandom.js is loaded, we immediately mix a few bits
+// from the built-in RNG into the entropy pool.  Because we do
+// not want to interfere with deterministic PRNG state later,
+// seedrandom will not call math.random on its own again after
+// initialization.
+//
+mixkey(math.random(), pool);
+
+//
+// Nodejs and AMD support: export the implementation as a module using
+// either convention.
+//
+if ( true && module.exports) {
+  module.exports = seedrandom;
+  // When in node.js, try using crypto package for autoseeding.
+  try {
+    nodecrypto = __webpack_require__(5042);
+  } catch (ex) {}
+} else if (true) {
+  !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() { return seedrandom; }).call(exports, __webpack_require__, exports, module),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+}
+
+// End anonymous scope, and pass initial values.
+})(
+  [],     // pool: entropy pool starts empty
+  Math    // math: package containing random, pow, and seedrandom
+);
+
+
+/***/ }),
+
+/***/ 7650:
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var seedrandom = __webpack_require__(6377);
+var self = __webpack_require__(1987);
+
+module.exports = self;
+
+
+
+/***/ }),
+
+/***/ 1987:
+/***/ (function(module) {
+
+;(function() {
+	var self = {};
+
+	if(Math.seedrandom) seedrandom = Math.seedrandom;
+
+	var isArray = function($){
+		return Object.prototype.toString.call( $ ) === '[object Array]'
+	}
+
+	var extend = function(obj) {
+		for (var i = 1; i < arguments.length; i++) for (var key in arguments[i]) obj[key] = arguments[i][key];
+		return obj;
+	}
+
+	var seedify = function(seed){
+		if (/(number|string)/i.test(Object.prototype.toString.call(seed).match(/^\[object (.*)\]$/)[1])) return seed;
+		if (isNaN(seed)) return Number(String((this.strSeed = seed)).split('').map(function(x){return x.charCodeAt(0)}).join(''));
+		return seed;
+	}
+
+	var seedRand = function(func,min,max){
+		return Math.floor(func() * (max - min + 1)) + min;
+	}
+
+	self.shuffle = function(arr,seed){
+		if (!isArray(arr)) return null;
+		seed = seedify(seed) || 'none';
+
+		var size = arr.length;
+		var rng = seedrandom(seed);
+		var resp = [];
+		var keys = [];
+
+		for(var i=0;i<size;i++) keys.push(i);
+		for(var i=0;i<size;i++){
+			var r = seedRand(rng,0,keys.length-1);
+			var g = keys[r];
+			keys.splice(r,1);
+			resp.push(arr[g]);
+		}
+		return resp;
+	}
+
+	self.unshuffle = function(arr,seed){
+		if (!isArray(arr)) return null;
+		seed = seedify(seed) || 'none';
+
+		var size = arr.length;
+		var rng = seedrandom(seed);
+		var resp = [];
+		var map = [];
+		var keys = [];
+
+		for(var i=0;i<size;i++) {
+			resp.push(null);
+			keys.push(i);
+		}
+
+		for(var i=0;i<size;i++){
+			var r = seedRand(rng,0,keys.length-1);
+			var g = keys[r];
+			keys.splice(r,1);
+			resp[g]=arr[i];
+		}
+
+		return resp;
+	}
+
+	if(true){
+		module.exports=self;
+	} else {}
+}.call(this));
+
+
+/***/ }),
+
 /***/ 6357:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.NonUniformPromiseEventList = void 0;
@@ -1525,6 +2648,7 @@ exports.NonUniformPromiseEventList = NonUniformPromiseEventList;
 /***/ 5072:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseEventDispatcher = void 0;
@@ -1590,6 +2714,7 @@ exports.PromiseEventDispatcher = PromiseEventDispatcher;
 /***/ 7873:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseEventHandlingBase = void 0;
@@ -1611,6 +2736,7 @@ exports.PromiseEventHandlingBase = PromiseEventHandlingBase;
 /***/ 4414:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseEventList = void 0;
@@ -1642,6 +2768,7 @@ exports.PromiseEventList = PromiseEventList;
 /***/ 6586:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 /*!
  * Strongly Typed Events for TypeScript - Core
@@ -1668,6 +2795,7 @@ Object.defineProperty(exports, "NonUniformPromiseEventList", ({ enumerable: true
 /***/ 4383:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DispatchError = void 0;
@@ -1697,6 +2825,7 @@ exports.DispatchError = DispatchError;
 /***/ 894:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DispatcherBase = void 0;
@@ -1946,6 +3075,7 @@ exports.DispatcherBase = DispatcherBase;
 /***/ 9757:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DispatcherWrapper = void 0;
@@ -2073,6 +3203,7 @@ exports.DispatcherWrapper = DispatcherWrapper;
 /***/ 5930:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventListBase = void 0;
@@ -2124,6 +3255,7 @@ exports.EventListBase = EventListBase;
 /***/ 7541:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseDispatcherBase = void 0;
@@ -2206,6 +3338,7 @@ exports.PromiseDispatcherBase = PromiseDispatcherBase;
 /***/ 2545:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SubscriptionChangeEventDispatcher = void 0;
@@ -2237,6 +3370,7 @@ exports.SubscriptionChangeEventDispatcher = SubscriptionChangeEventDispatcher;
 /***/ 8452:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseSubscription = void 0;
@@ -2299,6 +3433,7 @@ exports.PromiseSubscription = PromiseSubscription;
 /***/ 365:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Subscription = void 0;
@@ -2352,6 +3487,7 @@ exports.Subscription = Subscription;
 /***/ 954:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.HandlingBase = void 0;
@@ -2446,6 +3582,7 @@ exports.HandlingBase = HandlingBase;
 /***/ 2874:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 /*!
  * Strongly Typed Events for TypeScript - Core
@@ -2484,6 +3621,7 @@ Object.defineProperty(exports, "SubscriptionChangeEventDispatcher", ({ enumerabl
 /***/ 4796:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventManagement = void 0;
@@ -2523,6 +3661,7 @@ exports.EventManagement = EventManagement;
 /***/ 5890:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseSignalDispatcher = void 0;
@@ -2574,6 +3713,7 @@ exports.PromiseSignalDispatcher = PromiseSignalDispatcher;
 /***/ 205:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseSignalHandlingBase = void 0;
@@ -2595,6 +3735,7 @@ exports.PromiseSignalHandlingBase = PromiseSignalHandlingBase;
 /***/ 3146:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseSignalList = void 0;
@@ -2626,6 +3767,7 @@ exports.PromiseSignalList = PromiseSignalList;
 /***/ 6838:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 /*!
  * Strongly Typed Events for TypeScript - Promise Signals
@@ -2650,6 +3792,7 @@ Object.defineProperty(exports, "PromiseSignalList", ({ enumerable: true, get: fu
 /***/ 6463:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DispatchError = void 0;
@@ -2679,6 +3822,7 @@ exports.DispatchError = DispatchError;
 /***/ 1368:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DispatcherBase = void 0;
@@ -2928,6 +4072,7 @@ exports.DispatcherBase = DispatcherBase;
 /***/ 6982:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DispatcherWrapper = void 0;
@@ -3055,6 +4200,7 @@ exports.DispatcherWrapper = DispatcherWrapper;
 /***/ 2177:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventListBase = void 0;
@@ -3106,6 +4252,7 @@ exports.EventListBase = EventListBase;
 /***/ 2300:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseDispatcherBase = void 0;
@@ -3188,6 +4335,7 @@ exports.PromiseDispatcherBase = PromiseDispatcherBase;
 /***/ 4303:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SubscriptionChangeEventDispatcher = void 0;
@@ -3219,6 +4367,7 @@ exports.SubscriptionChangeEventDispatcher = SubscriptionChangeEventDispatcher;
 /***/ 9703:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseSubscription = void 0;
@@ -3281,6 +4430,7 @@ exports.PromiseSubscription = PromiseSubscription;
 /***/ 4683:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Subscription = void 0;
@@ -3334,6 +4484,7 @@ exports.Subscription = Subscription;
 /***/ 5673:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.HandlingBase = void 0;
@@ -3428,6 +4579,7 @@ exports.HandlingBase = HandlingBase;
 /***/ 8486:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 /*!
  * Strongly Typed Events for TypeScript - Core
@@ -3466,6 +4618,7 @@ Object.defineProperty(exports, "SubscriptionChangeEventDispatcher", ({ enumerabl
 /***/ 8209:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventManagement = void 0;
@@ -3505,6 +4658,7 @@ exports.EventManagement = EventManagement;
 /***/ 4537:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.NonUniformPromiseSimpleEventList = void 0;
@@ -3551,6 +4705,7 @@ exports.NonUniformPromiseSimpleEventList = NonUniformPromiseSimpleEventList;
 /***/ 8921:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseSimpleEventDispatcher = void 0;
@@ -3609,6 +4764,7 @@ exports.PromiseSimpleEventDispatcher = PromiseSimpleEventDispatcher;
 /***/ 532:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseSimpleEventHandlingBase = void 0;
@@ -3630,6 +4786,7 @@ exports.PromiseSimpleEventHandlingBase = PromiseSimpleEventHandlingBase;
 /***/ 7929:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseSimpleEventList = void 0;
@@ -3661,6 +4818,7 @@ exports.PromiseSimpleEventList = PromiseSimpleEventList;
 /***/ 9176:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 /*!
  * Strongly Typed Events for TypeScript - Core
@@ -3687,6 +4845,7 @@ Object.defineProperty(exports, "PromiseSimpleEventList", ({ enumerable: true, ge
 /***/ 8181:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DispatchError = void 0;
@@ -3716,6 +4875,7 @@ exports.DispatchError = DispatchError;
 /***/ 3040:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DispatcherBase = void 0;
@@ -3965,6 +5125,7 @@ exports.DispatcherBase = DispatcherBase;
 /***/ 3122:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DispatcherWrapper = void 0;
@@ -4092,6 +5253,7 @@ exports.DispatcherWrapper = DispatcherWrapper;
 /***/ 7955:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventListBase = void 0;
@@ -4143,6 +5305,7 @@ exports.EventListBase = EventListBase;
 /***/ 2490:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseDispatcherBase = void 0;
@@ -4225,6 +5388,7 @@ exports.PromiseDispatcherBase = PromiseDispatcherBase;
 /***/ 1002:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SubscriptionChangeEventDispatcher = void 0;
@@ -4256,6 +5420,7 @@ exports.SubscriptionChangeEventDispatcher = SubscriptionChangeEventDispatcher;
 /***/ 9347:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseSubscription = void 0;
@@ -4318,6 +5483,7 @@ exports.PromiseSubscription = PromiseSubscription;
 /***/ 2229:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.Subscription = void 0;
@@ -4371,6 +5537,7 @@ exports.Subscription = Subscription;
 /***/ 1605:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.HandlingBase = void 0;
@@ -4465,6 +5632,7 @@ exports.HandlingBase = HandlingBase;
 /***/ 3310:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 /*!
  * Strongly Typed Events for TypeScript - Core
@@ -4503,6 +5671,7 @@ Object.defineProperty(exports, "SubscriptionChangeEventDispatcher", ({ enumerabl
 /***/ 2234:
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventManagement = void 0;
@@ -4542,6 +5711,7 @@ exports.EventManagement = EventManagement;
 /***/ 3861:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
@@ -4587,9 +5757,13 @@ function isShadowRoot(node) {
 }
 
 
+;// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/math.js
+var math_max = Math.max;
+var math_min = Math.min;
+var round = Math.round;
 ;// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getBoundingClientRect.js
 
-var round = Math.round;
+
 function getBoundingClientRect(element, includeScale) {
   if (includeScale === void 0) {
     includeScale = false;
@@ -4605,23 +5779,23 @@ function getBoundingClientRect(element, includeScale) {
     // Fallback to 1 in case both values are `0`
 
     if (offsetWidth > 0) {
-      scaleX = rect.width / offsetWidth || 1;
+      scaleX = round(rect.width) / offsetWidth || 1;
     }
 
     if (offsetHeight > 0) {
-      scaleY = rect.height / offsetHeight || 1;
+      scaleY = round(rect.height) / offsetHeight || 1;
     }
   }
 
   return {
-    width: round(rect.width / scaleX),
-    height: round(rect.height / scaleY),
-    top: round(rect.top / scaleY),
-    right: round(rect.right / scaleX),
-    bottom: round(rect.bottom / scaleY),
-    left: round(rect.left / scaleX),
-    x: round(rect.left / scaleX),
-    y: round(rect.top / scaleY)
+    width: rect.width / scaleX,
+    height: rect.height / scaleY,
+    top: rect.top / scaleY,
+    right: rect.right / scaleX,
+    bottom: rect.bottom / scaleY,
+    left: rect.left / scaleX,
+    x: rect.left / scaleX,
+    y: rect.top / scaleY
   };
 }
 ;// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/dom-utils/getWindowScroll.js
@@ -4704,10 +5878,11 @@ function isScrollParent(element) {
 
 
 
+
 function isElementScaled(element) {
   var rect = element.getBoundingClientRect();
-  var scaleX = rect.width / element.offsetWidth || 1;
-  var scaleY = rect.height / element.offsetHeight || 1;
+  var scaleX = round(rect.width) / element.offsetWidth || 1;
+  var scaleY = round(rect.height) / element.offsetHeight || 1;
   return scaleX !== 1 || scaleY !== 1;
 } // Returns the composite rect of an element relative to its offsetParent.
 // Composite means it takes into account transforms as well as layout.
@@ -5399,10 +6574,6 @@ function popperOffsets(_ref) {
   fn: popperOffsets,
   data: {}
 });
-;// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/utils/math.js
-var math_max = Math.max;
-var math_min = Math.min;
-var math_round = Math.round;
 ;// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/modifiers/computeStyles.js
 
 
@@ -5428,8 +6599,8 @@ function roundOffsetsByDPR(_ref) {
   var win = window;
   var dpr = win.devicePixelRatio || 1;
   return {
-    x: math_round(math_round(x * dpr) / dpr) || 0,
-    y: math_round(math_round(y * dpr) / dpr) || 0
+    x: round(x * dpr) / dpr || 0,
+    y: round(y * dpr) / dpr || 0
   };
 }
 
@@ -5444,14 +6615,23 @@ function mapToStyles(_ref2) {
       position = _ref2.position,
       gpuAcceleration = _ref2.gpuAcceleration,
       adaptive = _ref2.adaptive,
-      roundOffsets = _ref2.roundOffsets;
+      roundOffsets = _ref2.roundOffsets,
+      isFixed = _ref2.isFixed;
+  var _offsets$x = offsets.x,
+      x = _offsets$x === void 0 ? 0 : _offsets$x,
+      _offsets$y = offsets.y,
+      y = _offsets$y === void 0 ? 0 : _offsets$y;
 
-  var _ref3 = roundOffsets === true ? roundOffsetsByDPR(offsets) : typeof roundOffsets === 'function' ? roundOffsets(offsets) : offsets,
-      _ref3$x = _ref3.x,
-      x = _ref3$x === void 0 ? 0 : _ref3$x,
-      _ref3$y = _ref3.y,
-      y = _ref3$y === void 0 ? 0 : _ref3$y;
+  var _ref3 = typeof roundOffsets === 'function' ? roundOffsets({
+    x: x,
+    y: y
+  }) : {
+    x: x,
+    y: y
+  };
 
+  x = _ref3.x;
+  y = _ref3.y;
   var hasX = offsets.hasOwnProperty('x');
   var hasY = offsets.hasOwnProperty('y');
   var sideX = left;
@@ -5476,16 +6656,18 @@ function mapToStyles(_ref2) {
     offsetParent = offsetParent;
 
     if (placement === enums_top || (placement === left || placement === right) && variation === end) {
-      sideY = bottom; // $FlowFixMe[prop-missing]
-
-      y -= offsetParent[heightProp] - popperRect.height;
+      sideY = bottom;
+      var offsetY = isFixed && win.visualViewport ? win.visualViewport.height : // $FlowFixMe[prop-missing]
+      offsetParent[heightProp];
+      y -= offsetY - popperRect.height;
       y *= gpuAcceleration ? 1 : -1;
     }
 
     if (placement === left || (placement === enums_top || placement === bottom) && variation === end) {
-      sideX = right; // $FlowFixMe[prop-missing]
-
-      x -= offsetParent[widthProp] - popperRect.width;
+      sideX = right;
+      var offsetX = isFixed && win.visualViewport ? win.visualViewport.width : // $FlowFixMe[prop-missing]
+      offsetParent[widthProp];
+      x -= offsetX - popperRect.width;
       x *= gpuAcceleration ? 1 : -1;
     }
   }
@@ -5493,6 +6675,17 @@ function mapToStyles(_ref2) {
   var commonStyles = Object.assign({
     position: position
   }, adaptive && unsetSides);
+
+  var _ref4 = roundOffsets === true ? roundOffsetsByDPR({
+    x: x,
+    y: y
+  }) : {
+    x: x,
+    y: y
+  };
+
+  x = _ref4.x;
+  y = _ref4.y;
 
   if (gpuAcceleration) {
     var _Object$assign;
@@ -5503,9 +6696,9 @@ function mapToStyles(_ref2) {
   return Object.assign({}, commonStyles, (_Object$assign2 = {}, _Object$assign2[sideY] = hasY ? y + "px" : '', _Object$assign2[sideX] = hasX ? x + "px" : '', _Object$assign2.transform = '', _Object$assign2));
 }
 
-function computeStyles(_ref4) {
-  var state = _ref4.state,
-      options = _ref4.options;
+function computeStyles(_ref5) {
+  var state = _ref5.state,
+      options = _ref5.options;
   var _options$gpuAccelerat = options.gpuAcceleration,
       gpuAcceleration = _options$gpuAccelerat === void 0 ? true : _options$gpuAccelerat,
       _options$adaptive = options.adaptive,
@@ -5520,7 +6713,8 @@ function computeStyles(_ref4) {
     variation: getVariation(state.placement),
     popper: state.elements.popper,
     popperRect: state.rects.popper,
-    gpuAcceleration: gpuAcceleration
+    gpuAcceleration: gpuAcceleration,
+    isFixed: state.options.strategy === 'fixed'
   };
 
   if (state.modifiersData.popperOffsets != null) {
@@ -5641,6 +6835,7 @@ function applyStyles_effect(_ref2) {
 });
 ;// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/modifiers/offset.js
 
+ // eslint-disable-next-line import/no-unused-modules
 
 function distanceAndSkiddingToXY(placement, rects, offset) {
   var basePlacement = getBasePlacement(placement);
@@ -5849,7 +7044,7 @@ function getInnerBoundingClientRect(element) {
 }
 
 function getClientRectFromMixedType(element, clippingParent) {
-  return clippingParent === viewport ? rectToClientRect(getViewportRect(element)) : isHTMLElement(clippingParent) ? getInnerBoundingClientRect(clippingParent) : rectToClientRect(getDocumentRect(getDocumentElement(element)));
+  return clippingParent === viewport ? rectToClientRect(getViewportRect(element)) : isElement(clippingParent) ? getInnerBoundingClientRect(clippingParent) : rectToClientRect(getDocumentRect(getDocumentElement(element)));
 } // A "clipping parent" is an overflowable container with the characteristic of
 // clipping (or hiding) overflowing elements with a position different from
 // `initial`
@@ -6178,6 +7373,10 @@ function getAltAxis(axis) {
 function within(min, value, max) {
   return math_max(min, math_min(value, max));
 }
+function withinMaxClamp(min, value, max) {
+  var v = within(min, value, max);
+  return v > max ? max : v;
+}
 ;// CONCATENATED MODULE: ./node_modules/@popperjs/core/lib/modifiers/preventOverflow.js
 
 
@@ -6224,6 +7423,14 @@ function preventOverflow(_ref) {
   var tetherOffsetValue = typeof tetherOffset === 'function' ? tetherOffset(Object.assign({}, state.rects, {
     placement: state.placement
   })) : tetherOffset;
+  var normalizedTetherOffsetValue = typeof tetherOffsetValue === 'number' ? {
+    mainAxis: tetherOffsetValue,
+    altAxis: tetherOffsetValue
+  } : Object.assign({
+    mainAxis: 0,
+    altAxis: 0
+  }, tetherOffsetValue);
+  var offsetModifierState = state.modifiersData.offset ? state.modifiersData.offset[state.placement] : null;
   var data = {
     x: 0,
     y: 0
@@ -6233,13 +7440,15 @@ function preventOverflow(_ref) {
     return;
   }
 
-  if (checkMainAxis || checkAltAxis) {
+  if (checkMainAxis) {
+    var _offsetModifierState$;
+
     var mainSide = mainAxis === 'y' ? enums_top : left;
     var altSide = mainAxis === 'y' ? bottom : right;
     var len = mainAxis === 'y' ? 'height' : 'width';
     var offset = popperOffsets[mainAxis];
-    var min = popperOffsets[mainAxis] + overflow[mainSide];
-    var max = popperOffsets[mainAxis] - overflow[altSide];
+    var min = offset + overflow[mainSide];
+    var max = offset - overflow[altSide];
     var additive = tether ? -popperRect[len] / 2 : 0;
     var minLen = variation === start ? referenceRect[len] : popperRect[len];
     var maxLen = variation === start ? -popperRect[len] : -referenceRect[len]; // We need to include the arrow in the calculation so the arrow doesn't go
@@ -6259,36 +7468,45 @@ function preventOverflow(_ref) {
     // width or height)
 
     var arrowLen = within(0, referenceRect[len], arrowRect[len]);
-    var minOffset = isBasePlacement ? referenceRect[len] / 2 - additive - arrowLen - arrowPaddingMin - tetherOffsetValue : minLen - arrowLen - arrowPaddingMin - tetherOffsetValue;
-    var maxOffset = isBasePlacement ? -referenceRect[len] / 2 + additive + arrowLen + arrowPaddingMax + tetherOffsetValue : maxLen + arrowLen + arrowPaddingMax + tetherOffsetValue;
+    var minOffset = isBasePlacement ? referenceRect[len] / 2 - additive - arrowLen - arrowPaddingMin - normalizedTetherOffsetValue.mainAxis : minLen - arrowLen - arrowPaddingMin - normalizedTetherOffsetValue.mainAxis;
+    var maxOffset = isBasePlacement ? -referenceRect[len] / 2 + additive + arrowLen + arrowPaddingMax + normalizedTetherOffsetValue.mainAxis : maxLen + arrowLen + arrowPaddingMax + normalizedTetherOffsetValue.mainAxis;
     var arrowOffsetParent = state.elements.arrow && getOffsetParent(state.elements.arrow);
     var clientOffset = arrowOffsetParent ? mainAxis === 'y' ? arrowOffsetParent.clientTop || 0 : arrowOffsetParent.clientLeft || 0 : 0;
-    var offsetModifierValue = state.modifiersData.offset ? state.modifiersData.offset[state.placement][mainAxis] : 0;
-    var tetherMin = popperOffsets[mainAxis] + minOffset - offsetModifierValue - clientOffset;
-    var tetherMax = popperOffsets[mainAxis] + maxOffset - offsetModifierValue;
+    var offsetModifierValue = (_offsetModifierState$ = offsetModifierState == null ? void 0 : offsetModifierState[mainAxis]) != null ? _offsetModifierState$ : 0;
+    var tetherMin = offset + minOffset - offsetModifierValue - clientOffset;
+    var tetherMax = offset + maxOffset - offsetModifierValue;
+    var preventedOffset = within(tether ? math_min(min, tetherMin) : min, offset, tether ? math_max(max, tetherMax) : max);
+    popperOffsets[mainAxis] = preventedOffset;
+    data[mainAxis] = preventedOffset - offset;
+  }
 
-    if (checkMainAxis) {
-      var preventedOffset = within(tether ? math_min(min, tetherMin) : min, offset, tether ? math_max(max, tetherMax) : max);
-      popperOffsets[mainAxis] = preventedOffset;
-      data[mainAxis] = preventedOffset - offset;
-    }
+  if (checkAltAxis) {
+    var _offsetModifierState$2;
 
-    if (checkAltAxis) {
-      var _mainSide = mainAxis === 'x' ? enums_top : left;
+    var _mainSide = mainAxis === 'x' ? enums_top : left;
 
-      var _altSide = mainAxis === 'x' ? bottom : right;
+    var _altSide = mainAxis === 'x' ? bottom : right;
 
-      var _offset = popperOffsets[altAxis];
+    var _offset = popperOffsets[altAxis];
 
-      var _min = _offset + overflow[_mainSide];
+    var _len = altAxis === 'y' ? 'height' : 'width';
 
-      var _max = _offset - overflow[_altSide];
+    var _min = _offset + overflow[_mainSide];
 
-      var _preventedOffset = within(tether ? math_min(_min, tetherMin) : _min, _offset, tether ? math_max(_max, tetherMax) : _max);
+    var _max = _offset - overflow[_altSide];
 
-      popperOffsets[altAxis] = _preventedOffset;
-      data[altAxis] = _preventedOffset - _offset;
-    }
+    var isOriginSide = [enums_top, left].indexOf(basePlacement) !== -1;
+
+    var _offsetModifierValue = (_offsetModifierState$2 = offsetModifierState == null ? void 0 : offsetModifierState[altAxis]) != null ? _offsetModifierState$2 : 0;
+
+    var _tetherMin = isOriginSide ? _min : _offset - referenceRect[_len] - popperRect[_len] - _offsetModifierValue + normalizedTetherOffsetValue.altAxis;
+
+    var _tetherMax = isOriginSide ? _offset + referenceRect[_len] + popperRect[_len] - _offsetModifierValue - normalizedTetherOffsetValue.altAxis : _max;
+
+    var _preventedOffset = tether && isOriginSide ? withinMaxClamp(_tetherMin, _offset, _tetherMax) : within(tether ? _tetherMin : _min, _offset, tether ? _tetherMax : _max);
+
+    popperOffsets[altAxis] = _preventedOffset;
+    data[altAxis] = _preventedOffset - _offset;
   }
 
   state.modifiersData[name] = data;
@@ -6483,7 +7701,7 @@ var popper_createPopper = /*#__PURE__*/popperGenerator({
 
 ;// CONCATENATED MODULE: ./node_modules/tippy.js/dist/tippy.esm.js
 /**!
-* tippy.js v6.3.1
+* tippy.js v6.3.7
 * (c) 2017-2021 atomiks
 * MIT License
 */
@@ -6498,6 +7716,9 @@ var SVG_ARROW_CLASS = "tippy-svg-arrow";
 var TOUCH_OPTIONS = {
   passive: true,
   capture: true
+};
+var TIPPY_DEFAULT_APPEND_TO = function TIPPY_DEFAULT_APPEND_TO() {
+  return document.body;
 };
 
 function tippy_esm_hasOwnProperty(obj, key) {
@@ -6624,7 +7845,7 @@ function getOwnerDocument(elementOrElements) {
       element = _normalizeToArray[0]; // Elements created via a <template> have an ownerDocument with no reference to the body
 
 
-  return (element == null ? void 0 : (_element$ownerDocumen = element.ownerDocument) == null ? void 0 : _element$ownerDocumen.body) ? element.ownerDocument : document;
+  return element != null && (_element$ownerDocumen = element.ownerDocument) != null && _element$ownerDocumen.body ? element.ownerDocument : document;
 }
 function isCursorOutsideInteractiveBorder(popperTreeData, event) {
   var clientX = event.clientX,
@@ -6659,6 +7880,26 @@ function updateTransitionEndListener(box, action, listener) {
   ['transitionend', 'webkitTransitionEnd'].forEach(function (event) {
     box[method](event, listener);
   });
+}
+/**
+ * Compared to xxx.contains, this function works for dom structures with shadow
+ * dom
+ */
+
+function actualContains(parent, child) {
+  var target = child;
+
+  while (target) {
+    var _target$getRootNode;
+
+    if (parent.contains(target)) {
+      return true;
+    }
+
+    target = target.getRootNode == null ? void 0 : (_target$getRootNode = target.getRootNode()) == null ? void 0 : _target$getRootNode.host;
+  }
+
+  return false;
 }
 
 var currentInput = {
@@ -6723,8 +7964,8 @@ function bindGlobalEventListeners() {
 }
 
 var isBrowser = typeof window !== 'undefined' && typeof document !== 'undefined';
-var ua = isBrowser ? navigator.userAgent : '';
-var isIE = /MSIE |Trident\//.test(ua);
+var isIE11 = isBrowser ? // @ts-ignore
+!!window.msCrypto : false;
 
 function createMemoryLeakWarning(method) {
   var txt = method === 'destroy' ? 'n already-' : ' ';
@@ -6797,9 +8038,7 @@ var renderProps = {
   zIndex: 9999
 };
 var defaultProps = Object.assign({
-  appendTo: function appendTo() {
-    return document.body;
-  },
+  appendTo: TIPPY_DEFAULT_APPEND_TO,
   aria: {
     content: 'auto',
     expanded: 'auto'
@@ -6834,7 +8073,7 @@ var defaultProps = Object.assign({
   touch: true,
   trigger: 'mouseenter focus',
   triggerTarget: null
-}, pluginProps, {}, renderProps);
+}, pluginProps, renderProps);
 var defaultKeys = Object.keys(defaultProps);
 var setDefaultProps = function setDefaultProps(partialProps) {
   /* istanbul ignore else */
@@ -6852,12 +8091,14 @@ function getExtendedPassedProps(passedProps) {
         defaultValue = plugin.defaultValue;
 
     if (name) {
-      acc[name] = passedProps[name] !== undefined ? passedProps[name] : defaultValue;
+      var _name;
+
+      acc[name] = passedProps[name] !== undefined ? passedProps[name] : (_name = defaultProps[name]) != null ? _name : defaultValue;
     }
 
     return acc;
   }, {});
-  return Object.assign({}, passedProps, {}, pluginProps);
+  return Object.assign({}, passedProps, pluginProps);
 }
 function getDataAttributeProps(reference, plugins) {
   var propKeys = plugins ? Object.keys(getExtendedPassedProps(Object.assign({}, defaultProps, {
@@ -6888,7 +8129,7 @@ function evaluateProps(reference, props) {
   var out = Object.assign({}, props, {
     content: invokeWithArgsOrReturn(props.content, [reference])
   }, props.ignoreAttributes ? {} : getDataAttributeProps(reference, props.plugins));
-  out.aria = Object.assign({}, defaultProps.aria, {}, out.aria);
+  out.aria = Object.assign({}, defaultProps.aria, out.aria);
   out.aria = {
     expanded: out.aria.expanded === 'auto' ? props.interactive : out.aria.expanded,
     content: out.aria.content === 'auto' ? props.interactive ? null : 'describedby' : out.aria.content
@@ -7049,7 +8290,7 @@ var mouseMoveListeners = []; // Used by `hideAll()`
 
 var mountedInstances = [];
 function createTippy(reference, passedProps) {
-  var props = evaluateProps(reference, Object.assign({}, defaultProps, {}, getExtendedPassedProps(removeUndefinedProps(passedProps)))); // ===========================================================================
+  var props = evaluateProps(reference, Object.assign({}, defaultProps, getExtendedPassedProps(removeUndefinedProps(passedProps)))); // ===========================================================================
   // 🔒 Private members
   // ===========================================================================
 
@@ -7147,10 +8388,9 @@ function createTippy(reference, passedProps) {
       instance.clearDelayTimeouts();
     }
   });
-  popper.addEventListener('mouseleave', function (event) {
+  popper.addEventListener('mouseleave', function () {
     if (instance.props.interactive && instance.props.trigger.indexOf('mouseenter') >= 0) {
       getDocument().addEventListener('mousemove', debouncedOnMouseMove);
-      debouncedOnMouseMove(event);
     }
   });
   return instance; // ===========================================================================
@@ -7170,7 +8410,7 @@ function createTippy(reference, passedProps) {
     var _instance$props$rende;
 
     // @ts-ignore
-    return !!((_instance$props$rende = instance.props.render) == null ? void 0 : _instance$props$rende.$$tippy);
+    return !!((_instance$props$rende = instance.props.render) != null && _instance$props$rende.$$tippy);
   }
 
   function getCurrentTarget() {
@@ -7197,8 +8437,12 @@ function createTippy(reference, passedProps) {
     return getValueAtIndexOrReturn(instance.props.delay, isShow ? 0 : 1, defaultProps.delay);
   }
 
-  function handleStyles() {
-    popper.style.pointerEvents = instance.props.interactive && instance.state.isVisible ? '' : 'none';
+  function handleStyles(fromHide) {
+    if (fromHide === void 0) {
+      fromHide = false;
+    }
+
+    popper.style.pointerEvents = instance.props.interactive && !fromHide ? '' : 'none';
     popper.style.zIndex = "" + instance.props.zIndex;
   }
 
@@ -7209,7 +8453,7 @@ function createTippy(reference, passedProps) {
 
     pluginsHooks.forEach(function (pluginHooks) {
       if (pluginHooks[hook]) {
-        pluginHooks[hook].apply(void 0, args);
+        pluginHooks[hook].apply(pluginHooks, args);
       }
     });
 
@@ -7275,15 +8519,18 @@ function createTippy(reference, passedProps) {
       if (didTouchMove || event.type === 'mousedown') {
         return;
       }
-    } // Clicked on interactive popper
+    }
 
+    var actualTarget = event.composedPath && event.composedPath()[0] || event.target; // Clicked on interactive popper
 
-    if (instance.props.interactive && popper.contains(event.target)) {
+    if (instance.props.interactive && actualContains(popper, actualTarget)) {
       return;
     } // Clicked on the event listeners target
 
 
-    if (getCurrentTarget().contains(event.target)) {
+    if (normalizeToArray(instance.props.triggerTarget || reference).some(function (el) {
+      return actualContains(el, actualTarget);
+    })) {
       if (currentInput.isTouch) {
         return;
       }
@@ -7411,7 +8658,7 @@ function createTippy(reference, passedProps) {
           break;
 
         case 'focus':
-          on(isIE ? 'focusout' : 'blur', onBlurOrFocusOut);
+          on(isIE11 ? 'focusout' : 'blur', onBlurOrFocusOut);
           break;
 
         case 'focusin':
@@ -7637,7 +8884,7 @@ function createTippy(reference, passedProps) {
 
     var node = getCurrentTarget();
 
-    if (instance.props.interactive && appendTo === defaultProps.appendTo || appendTo === 'parent') {
+    if (instance.props.interactive && appendTo === TIPPY_DEFAULT_APPEND_TO || appendTo === 'parent') {
       parentNode = node.parentNode;
     } else {
       parentNode = invokeWithArgsOrReturn(appendTo, [node]);
@@ -7649,6 +8896,7 @@ function createTippy(reference, passedProps) {
       parentNode.appendChild(popper);
     }
 
+    instance.state.isMounted = true;
     createPopperInstance();
     /* istanbul ignore else */
 
@@ -7751,7 +8999,7 @@ function createTippy(reference, passedProps) {
     invokeHook('onBeforeUpdate', [instance, partialProps]);
     removeListeners();
     var prevProps = instance.props;
-    var nextProps = evaluateProps(reference, Object.assign({}, instance.props, {}, partialProps, {
+    var nextProps = evaluateProps(reference, Object.assign({}, prevProps, removeUndefinedProps(partialProps), {
       ignoreAttributes: true
     }));
     instance.props = nextProps;
@@ -7878,7 +9126,6 @@ function createTippy(reference, passedProps) {
       // popper has been positioned for the first time
 
       (_instance$popperInsta2 = instance.popperInstance) == null ? void 0 : _instance$popperInsta2.forceUpdate();
-      instance.state.isMounted = true;
       invokeHook('onMount', [instance]);
 
       if (instance.props.animation && getIsDefaultRenderFn()) {
@@ -7923,7 +9170,7 @@ function createTippy(reference, passedProps) {
 
     cleanupInteractiveMouseListeners();
     removeDocumentPress();
-    handleStyles();
+    handleStyles(true);
 
     if (getIsDefaultRenderFn()) {
       var _getDefaultTemplateCh4 = getDefaultTemplateChildren(),
@@ -8109,10 +9356,19 @@ var createSingleton = function createSingleton(tippyInstances, optionalProps) {
 
   var individualInstances = tippyInstances;
   var references = [];
+  var triggerTargets = [];
   var currentTarget;
   var overrides = optionalProps.overrides;
   var interceptSetPropsCleanups = [];
   var shownOnCreate = false;
+
+  function setTriggerTargets() {
+    triggerTargets = individualInstances.map(function (instance) {
+      return normalizeToArray(instance.props.triggerTarget || instance.reference);
+    }).reduce(function (acc, item) {
+      return acc.concat(item);
+    }, []);
+  }
 
   function setReferences() {
     references = individualInstances.map(function (instance) {
@@ -8150,7 +9406,7 @@ var createSingleton = function createSingleton(tippyInstances, optionalProps) {
 
 
   function prepareInstance(singleton, target) {
-    var index = references.indexOf(target); // bail-out
+    var index = triggerTargets.indexOf(target); // bail-out
 
     if (target === currentTarget) {
       return;
@@ -8163,13 +9419,16 @@ var createSingleton = function createSingleton(tippyInstances, optionalProps) {
     }, {});
     singleton.setProps(Object.assign({}, overrideProps, {
       getReferenceClientRect: typeof overrideProps.getReferenceClientRect === 'function' ? overrideProps.getReferenceClientRect : function () {
-        return target.getBoundingClientRect();
+        var _references$index;
+
+        return (_references$index = references[index]) == null ? void 0 : _references$index.getBoundingClientRect();
       }
     }));
   }
 
   enableInstances(false);
   setReferences();
+  setTriggerTargets();
   var plugin = {
     fn: function fn() {
       return {
@@ -8199,7 +9458,7 @@ var createSingleton = function createSingleton(tippyInstances, optionalProps) {
   };
   var singleton = tippy(div(), Object.assign({}, removeProperties(optionalProps, ['overrides']), {
     plugins: [plugin].concat(optionalProps.plugins || []),
-    triggerTarget: references,
+    triggerTarget: triggerTargets,
     popperOptions: Object.assign({}, optionalProps.popperOptions, {
       modifiers: [].concat(((_optionalProps$popper = optionalProps.popperOptions) == null ? void 0 : _optionalProps$popper.modifiers) || [], [applyStylesModifier])
     })
@@ -8226,13 +9485,13 @@ var createSingleton = function createSingleton(tippyInstances, optionalProps) {
     } // target is a child tippy instance
 
 
-    if (individualInstances.includes(target)) {
+    if (individualInstances.indexOf(target) >= 0) {
       var ref = target.reference;
       return prepareInstance(singleton, ref);
     } // target is a ReferenceElement
 
 
-    if (references.includes(target)) {
+    if (references.indexOf(target) >= 0) {
       return prepareInstance(singleton, target);
     }
   };
@@ -8275,9 +9534,10 @@ var createSingleton = function createSingleton(tippyInstances, optionalProps) {
     individualInstances = nextInstances;
     enableInstances(false);
     setReferences();
-    interceptSetProps(singleton);
+    setTriggerTargets();
+    interceptSetPropsCleanups = interceptSetProps(singleton);
     singleton.setProps({
-      triggerTarget: references
+      triggerTarget: triggerTargets
     });
   };
 
@@ -8308,7 +9568,9 @@ function delegate(targets, props) {
     trigger: 'manual',
     touch: false
   });
-  var childProps = Object.assign({}, nativeProps, {
+  var childProps = Object.assign({
+    touch: defaultProps.touch
+  }, nativeProps, {
     showOnCreate: true
   });
   var returnValue = tippy(targets, parentProps);
@@ -8434,7 +9696,7 @@ var animateFill = {
     var _instance$props$rende;
 
     // @ts-ignore
-    if (!((_instance$props$rende = instance.props.render) == null ? void 0 : _instance$props$rende.$$tippy)) {
+    if (!((_instance$props$rende = instance.props.render) != null && _instance$props$rende.$$tippy)) {
       if (false) {}
 
       return {};
@@ -8557,6 +9819,7 @@ var followCursor = {
 
       if (isCursorOverReference || !instance.props.interactive) {
         instance.setProps({
+          // @ts-ignore - unneeded DOMRect properties
           getReferenceClientRect: function getReferenceClientRect() {
             var rect = reference.getBoundingClientRect();
             var x = clientX;
@@ -8693,6 +9956,7 @@ var inlinePositioning = {
     var placement;
     var cursorRectIndex = -1;
     var isInternalUpdate = false;
+    var triedPlacements = [];
     var modifier = {
       name: 'tippyInlinePositioning',
       enabled: true,
@@ -8701,8 +9965,14 @@ var inlinePositioning = {
         var state = _ref2.state;
 
         if (isEnabled()) {
-          if (placement !== state.placement) {
+          if (triedPlacements.indexOf(state.placement) !== -1) {
+            triedPlacements = [];
+          }
+
+          if (placement !== state.placement && triedPlacements.indexOf(state.placement) === -1) {
+            triedPlacements.push(state.placement);
             instance.setProps({
+              // @ts-ignore - unneeded DOMRect properties
               getReferenceClientRect: function getReferenceClientRect() {
                 return _getReferenceClientRect(state.placement);
               }
@@ -8739,10 +10009,11 @@ var inlinePositioning = {
           var cursorRect = rects.find(function (rect) {
             return rect.left - 2 <= event.clientX && rect.right + 2 >= event.clientX && rect.top - 2 <= event.clientY && rect.bottom + 2 >= event.clientY;
           });
-          cursorRectIndex = rects.indexOf(cursorRect);
+          var index = rects.indexOf(cursorRect);
+          cursorRectIndex = index > -1 ? index : cursorRectIndex;
         }
       },
-      onUntrigger: function onUntrigger() {
+      onHidden: function onHidden() {
         cursorRectIndex = -1;
       }
     };
@@ -8883,6 +10154,13 @@ tippy.setDefaultProps({
 //# sourceMappingURL=tippy.esm.js.map
 
 
+/***/ }),
+
+/***/ 5042:
+/***/ (() => {
+
+/* (ignored) */
+
 /***/ })
 
 /******/ 	});
@@ -8899,19 +10177,34 @@ tippy.setDefaultProps({
 /******/ 		}
 /******/ 		// Create a new module (and put it into the cache)
 /******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
+/******/ 			id: moduleId,
+/******/ 			loaded: false,
 /******/ 			exports: {}
 /******/ 		};
 /******/ 	
 /******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
+/******/ 		__webpack_modules__[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+/******/ 	
+/******/ 		// Flag the module as loaded
+/******/ 		module.loaded = true;
 /******/ 	
 /******/ 		// Return the exports of the module
 /******/ 		return module.exports;
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/amd define */
+/******/ 	(() => {
+/******/ 		__webpack_require__.amdD = function () {
+/******/ 			throw new Error('define cannot be used indirect');
+/******/ 		};
+/******/ 	})();
+/******/ 	
+/******/ 	/* webpack/runtime/amd options */
+/******/ 	(() => {
+/******/ 		__webpack_require__.amdO = {};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -8929,10 +10222,20 @@ tippy.setDefaultProps({
 /******/ 		__webpack_require__.o = (obj, prop) => (Object.prototype.hasOwnProperty.call(obj, prop))
 /******/ 	})();
 /******/ 	
+/******/ 	/* webpack/runtime/node module decorator */
+/******/ 	(() => {
+/******/ 		__webpack_require__.nmd = (module) => {
+/******/ 			module.paths = [];
+/******/ 			if (!module.children) module.children = [];
+/******/ 			return module;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
 
 ;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/deprecated.js
 // A way to gracefully handle deprecation.
@@ -8984,9 +10287,14 @@ const OptionsDefaults = {
     CapitalizeFields: false,
     ClickToExpand: true,
     CurrencySymbol: "$",
+    AddCurrencySymbol: true,
     ThousandsSeparator: "",
     DecimalSeparator: ".",
     DecimalPlaces: 2,
+    MinAmount: 1,
+    MaxAmount: 100000,
+    MinAmountMessage: "Amount must be at least $1",
+    MaxAmountMessage: "Amount must be less than $100,000",
     SkipToMainContentLink: true,
     SrcDefer: true,
     NeverBounceAPI: null,
@@ -9079,71 +10387,47 @@ const TranslateOptionsDefaults = {
 
 class Loader {
     constructor() {
+        this.logger = new EngridLogger("Loader", "gold", "black", "🔁");
         this.cssElement = document.querySelector('link[href*="engrid."][rel="stylesheet"]');
         this.jsElement = document.querySelector('script[src*="engrid."]');
     }
     // Returns true if ENgrid should reload (that means the current ENgrid is not the right one)
     // Returns false if ENgrid should not reload (that means the current ENgrid is the right one)
     reload() {
-        var _a, _b, _c;
+        var _a, _b, _c, _d, _e;
         const isLoaded = engrid_ENGrid.getBodyData("loaded");
         let assets = this.getOption("assets");
-        const enIsLoaded = engrid_ENGrid.checkNested(window.EngagingNetworks, "require", "_defined", "enjs");
-        if (isLoaded) {
-            if (engrid_ENGrid.debug)
-                console.log("ENgrid Loader: LOADED");
+        if (isLoaded || !assets) {
+            this.logger.success("LOADED");
             return false;
         }
-        if (!assets) {
-            if (!enIsLoaded) {
-                if (engrid_ENGrid.debug)
-                    console.log("ENgrid Loader: EngagingNetworks Script NOT LOADED");
-                assets = "flush";
-            }
-            else {
-                if (engrid_ENGrid.debug)
-                    console.log("ENgrid Loader: LOADED");
-                return false;
-            }
-        }
         // Load the right ENgrid
-        if (engrid_ENGrid.debug)
-            console.log("ENgrid Loader: RELOADING");
+        this.logger.log("RELOADING");
         engrid_ENGrid.setBodyData("loaded", "true"); // Set the loaded flag, so the next time we don't reload
         // Fetch the desired repo, assets location, and override JS/CSS
-        const engrid_repo = this.getOption("repo-name");
-        const engrid_repo_owner = this.getOption("repo-owner");
+        const theme = engrid_ENGrid.getBodyData("theme");
+        const engrid_repo = (_a = this.getOption("repo-name")) !== null && _a !== void 0 ? _a : `engrid-${theme}`;
+        const engrid_repo_owner = (_b = this.getOption("repo-owner")) !== null && _b !== void 0 ? _b : "4site-interactive-studios";
         let engrid_js_url = "";
         let engrid_css_url = "";
         switch (assets) {
             case "local":
-                if (engrid_ENGrid.debug)
-                    console.log("ENgrid Loader: LOADING LOCAL");
-                // Find a way to guess local URL if there's no engrid_repo
-                if (!engrid_repo) {
-                    const theme = engrid_ENGrid.getBodyData("theme");
-                    engrid_js_url = `https://engrid-${theme}.test/dist/engrid.js`;
-                    engrid_css_url = `https://engrid-${theme}.test/dist/engrid.css`;
-                }
-                else {
-                    engrid_js_url = `https://engrid-${engrid_repo}.test/dist/engrid.js`;
-                    engrid_css_url = `https://engrid-${engrid_repo}.test/dist/engrid.css`;
-                }
+                this.logger.log("LOADING LOCAL");
+                engrid_js_url = `https://${engrid_repo}.test/dist/engrid.js`;
+                engrid_css_url = `https://${engrid_repo}.test/dist/engrid.css`;
                 break;
             case "flush":
-                if (engrid_ENGrid.debug)
-                    console.log("ENgrid Loader: FLUSHING CACHE");
+                this.logger.log("FLUSHING CACHE");
                 const timestamp = Date.now();
-                const jsCurrentURL = new URL(((_a = this.jsElement) === null || _a === void 0 ? void 0 : _a.getAttribute("src")) || "");
+                const jsCurrentURL = new URL(((_c = this.jsElement) === null || _c === void 0 ? void 0 : _c.getAttribute("src")) || "");
                 jsCurrentURL.searchParams.set("v", timestamp.toString());
                 engrid_js_url = jsCurrentURL.toString();
-                const cssCurrentURL = new URL(((_b = this.cssElement) === null || _b === void 0 ? void 0 : _b.getAttribute("href")) || "");
+                const cssCurrentURL = new URL(((_d = this.cssElement) === null || _d === void 0 ? void 0 : _d.getAttribute("href")) || "");
                 cssCurrentURL.searchParams.set("v", timestamp.toString());
                 engrid_css_url = cssCurrentURL.toString();
                 break;
             default:
-                if (engrid_ENGrid.debug)
-                    console.log("ENgrid Loader: LOADING EXTERNAL");
+                this.logger.log("LOADING EXTERNAL");
                 engrid_js_url =
                     "https://cdn.jsdelivr.net/gh/" +
                         engrid_repo_owner +
@@ -9163,7 +10447,7 @@ class Loader {
         }
         this.setCssFile(engrid_css_url);
         this.setJsFile(engrid_js_url);
-        (_c = this.jsElement) === null || _c === void 0 ? void 0 : _c.remove();
+        (_e = this.jsElement) === null || _e === void 0 ? void 0 : _e.remove();
         return true;
     }
     getOption(key) {
@@ -9207,6 +10491,7 @@ var dist = __webpack_require__(5363);
 
 class EnForm {
     constructor() {
+        this.logger = new EngridLogger("EnForm");
         this._onSubmit = new dist/* SignalDispatcher */.nz();
         this._onValidate = new dist/* SignalDispatcher */.nz();
         this._onError = new dist/* SignalDispatcher */.nz();
@@ -9221,18 +10506,15 @@ class EnForm {
     }
     dispatchSubmit() {
         this._onSubmit.dispatch();
-        if (engrid_ENGrid.debug)
-            console.log("dispatchSubmit");
+        this.logger.log("dispatchSubmit");
     }
     dispatchValidate() {
         this._onValidate.dispatch();
-        if (engrid_ENGrid.debug)
-            console.log("dispatchValidate");
+        this.logger.log("dispatchValidate");
     }
     dispatchError() {
         this._onError.dispatch();
-        if (engrid_ENGrid.debug)
-            console.log("dispatchError");
+        this.logger.log("dispatchError");
     }
     submitForm() {
         const enForm = document.querySelector("form .en__submit button");
@@ -9242,8 +10524,7 @@ class EnForm {
             if (enModal)
                 enModal.classList.add("is-submitting");
             enForm.click();
-            if (engrid_ENGrid.debug)
-                console.log("submitForm");
+            this.logger.log("submitForm");
         }
     }
     get onSubmit() {
@@ -9274,16 +10555,20 @@ class DonationAmount {
         // Watch Radios Inputs for Changes
         document.addEventListener("change", (e) => {
             const element = e.target;
-            if (element && element.name == radios) {
-                element.value = this.removeCommas(element.value);
-                this.amount = parseFloat(element.value);
+            if (element) {
+                if (element.name == radios) {
+                    this.amount = parseFloat(element.value);
+                }
+                else if (element.name == other) {
+                    element.value = this.preformatFloat(element.value);
+                    this.amount = parseFloat(element.value);
+                }
             }
         });
         // Watch Other Amount Field
         const otherField = document.querySelector(`[name='${this._other}']`);
         if (otherField) {
             otherField.addEventListener("keyup", (e) => {
-                otherField.value = this.removeCommas(otherField.value);
                 this.amount = parseFloat(otherField.value);
             });
         }
@@ -9355,17 +10640,26 @@ class DonationAmount {
         const otherWrapper = otherField.parentNode;
         otherWrapper.classList.add("en__field__item--hidden");
     }
-    // Remove commas
-    removeCommas(v) {
-        // replace 5,00 with 5.00
-        if (v.length > 3 && v.charAt(v.length - 3) == ",") {
-            v = v.substr(0, v.length - 3) + "." + v.substr(v.length - 2, 2);
+    preformatFloat(float) {
+        if (!float) {
+            return "";
         }
-        else if (v.length > 2 && v.charAt(v.length - 2) == ",") {
-            v = v.substr(0, v.length - 2) + "." + v.substr(v.length - 1, 1);
+        //Index of first comma
+        const posC = float.indexOf(",");
+        if (posC === -1) {
+            //No commas found, treat as float
+            return float;
         }
-        // replace any remaining commas
-        return v.replace(/,/g, "");
+        //Index of first full stop
+        const posFS = float.indexOf(".");
+        if (posFS === -1) {
+            //Uses commas and not full stops - swap them (e.g. 1,23 --> 1.23)
+            return float.replace(/\,/g, ".");
+        }
+        //Uses both commas and full stops - ensure correct order and remove 1000s separators
+        return posC < posFS
+            ? float.replace(/\,/g, "")
+            : float.replace(/\./g, "").replace(",", ".");
     }
 }
 
@@ -9384,12 +10678,21 @@ class engrid_ENGrid {
     }
     // Return any parameter from the URL
     static getUrlParameter(name) {
-        name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
-        var regex = new RegExp("[\\?&]" + name + "=([^&#]*)");
-        var results = regex.exec(location.search);
-        return results === null
-            ? ""
-            : decodeURIComponent(results[1].replace(/\+/g, " "));
+        const searchParams = new URLSearchParams(window.location.search);
+        // Add support for array on the name ending with []
+        if (name.endsWith("[]")) {
+            let values = [];
+            searchParams.forEach((value, key) => {
+                if (key.startsWith(name.replace("[]", ""))) {
+                    values.push(new Object({ [key]: value }));
+                }
+            });
+            return values.length > 0 ? values : null;
+        }
+        if (searchParams.has(name)) {
+            return searchParams.get(name) || true;
+        }
+        return null;
     }
     // Return the field value from its name. It works on any field type.
     // Multiple values (from checkboxes or multi-select) are returned as single string
@@ -9426,6 +10729,18 @@ class engrid_ENGrid {
         });
         this.enParseDependencies();
         return;
+    }
+    // Create a hidden input field
+    static createHiddenInput(name, value = "") {
+        const input = document.createElement("input");
+        input.type = "hidden";
+        input.name = name;
+        input.classList.add("en__field__input");
+        input.classList.add("en__field__input--text");
+        input.classList.add("engrid-added-input");
+        input.value = value;
+        engrid_ENGrid.enForm.appendChild(input);
+        return input;
     }
     // Trigger EN Dependencies
     static enParseDependencies() {
@@ -9477,6 +10792,12 @@ class engrid_ENGrid {
                     break;
                 case "emailsubscribeform":
                     return "SUBSCRIBEFORM";
+                    break;
+                case "supporterhub":
+                    return "SUPPORTERHUB";
+                    break;
+                case "unsubscribe":
+                    return "UNSUBSCRIBE";
                     break;
                 default:
                     return "DONATION";
@@ -9592,6 +10913,32 @@ class engrid_ENGrid {
             obj = obj[args[i]];
         }
         return true;
+    }
+    static setError(querySelector, errorMessage) {
+        const errorElement = document.querySelector(querySelector);
+        if (errorElement) {
+            errorElement.classList.add("en__field--validationFailed");
+            let errorMessageElement = errorElement.querySelector(".en__field__error");
+            if (!errorMessageElement) {
+                errorMessageElement = document.createElement("div");
+                errorMessageElement.classList.add("en__field__error");
+                errorMessageElement.innerHTML = errorMessage;
+                errorElement.insertBefore(errorMessageElement, errorElement.firstChild);
+            }
+            else {
+                errorMessageElement.innerHTML = errorMessage;
+            }
+        }
+    }
+    static removeError(querySelector) {
+        const errorElement = document.querySelector(querySelector);
+        if (errorElement) {
+            errorElement.classList.remove("en__field--validationFailed");
+            const errorMessageElement = errorElement.querySelector(".en__field__error");
+            if (errorMessageElement) {
+                errorElement.removeChild(errorMessageElement);
+            }
+        }
     }
 }
 
@@ -9804,17 +11151,7 @@ class App extends engrid_ENGrid {
         this._fees = ProcessingFees.getInstance();
         this._amount = DonationAmount.getInstance("transaction.donationAmt", "transaction.donationAmt.other");
         this._frequency = DonationFrequency.getInstance();
-        this.shouldScroll = () => {
-            // If you find a error, scroll
-            if (document.querySelector(".en__errorHeader")) {
-                return true;
-            }
-            // Try to match the iframe referrer URL by testing valid EN Page URLs
-            let referrer = document.referrer;
-            let enURLPattern = new RegExp(/^(.*)\/(page)\/(\d+.*)/);
-            // Scroll if the Regex matches, don't scroll otherwise
-            return enURLPattern.test(referrer);
-        };
+        this.logger = new EngridLogger("App", "black", "white", "🍏");
         const loader = new Loader();
         this.options = Object.assign(Object.assign({}, OptionsDefaults), options);
         // Add Options to window
@@ -9844,17 +11181,27 @@ class App extends engrid_ENGrid {
         };
     }
     run() {
-        // Enable debug if available is the first thing
+        if (!engrid_ENGrid.checkNested(window.EngagingNetworks, "require", "_defined", "enjs")) {
+            this.logger.danger("Engaging Networks JS Framework NOT FOUND");
+            setTimeout(() => {
+                this.run();
+            }, 10);
+            return;
+        }
+        // If there's an option object on the page, override the defaults
+        if (window.hasOwnProperty("EngridPageOptions")) {
+            this.options = Object.assign(Object.assign({}, this.options), window.EngridPageOptions);
+            // Add Options to window
+            window.EngridOptions = this.options;
+        }
         if (this.options.Debug || App.getUrlParameter("debug") == "true")
+            // Enable debug if available is the first thing
             App.setBodyData("debug", "");
-        // Page Background
-        new PageBackground();
         // TODO: Abstract everything to the App class so we can remove custom-methods
         inputPlaceholder();
         preventAutocomplete();
         watchInmemField();
         watchGiveBySelectField();
-        SetEnFieldOtherAmountRadioStepValue();
         simpleUnsubscribe();
         contactDetailLabels();
         easyEdit();
@@ -9887,16 +11234,17 @@ class App extends engrid_ENGrid {
         this._form.onError.subscribe(() => this.onError());
         this._form.onValidate.subscribe(() => this.onValidate());
         // Event Listener Examples
-        this._amount.onAmountChange.subscribe((s) => console.log(`Live Amount: ${s}`));
+        this._amount.onAmountChange.subscribe((s) => this.logger.success(`Live Amount: ${s}`));
         this._frequency.onFrequencyChange.subscribe((s) => {
-            console.log(`Live Frequency: ${s}`);
+            this.logger.success(`Live Frequency: ${s}`);
             setTimeout(() => {
                 this._amount.load();
             }, 150);
         });
-        this._form.onSubmit.subscribe((s) => console.log("Submit: ", s));
-        this._form.onError.subscribe((s) => console.log("Error:", s));
+        this._form.onSubmit.subscribe((s) => this.logger.success("Submit: " + s));
+        this._form.onError.subscribe((s) => this.logger.danger("Error: " + s));
         window.enOnSubmit = () => {
+            this._form.submit = true;
             this._form.dispatchSubmit();
             return this._form.submit;
         };
@@ -9904,11 +11252,12 @@ class App extends engrid_ENGrid {
             this._form.dispatchError();
         };
         window.enOnValidate = () => {
+            this._form.validate = true;
             this._form.dispatchValidate();
             return this._form.validate;
         };
         // iFrame Logic
-        this.loadIFrame();
+        new iFrame();
         // Live Variables
         new LiveVariables(this.options);
         // Dynamically set Recurrency Frequency
@@ -9917,6 +11266,10 @@ class App extends engrid_ENGrid {
         new UpsellLightbox();
         // Amount Labels
         new AmountLabel();
+        // Engrid Data Replacement
+        new DataReplace();
+        // ENgrid Hide Script
+        new DataHide();
         // On the end of the script, after all subscribers defined, let's load the current value
         this._amount.load();
         this._frequency.load();
@@ -9959,88 +11312,54 @@ class App extends engrid_ENGrid {
         if (this.options.NeverBounceAPI)
             new NeverBounce(this.options.NeverBounceAPI, this.options.NeverBounceDateField, this.options.NeverBounceStatusField, this.options.NeverBounceDateFormat);
         new ShowIfAmount();
+        new OtherAmount();
+        new MinMaxAmount();
+        new Ticker();
+        // Page Background
+        new PageBackground();
         this.setDataAttributes();
+        engrid_ENGrid.setBodyData("data-engrid-scripts-js-loading", "finished");
     }
     onLoad() {
         if (this.options.onLoad) {
             this.options.onLoad();
-        }
-        if (this.inIframe()) {
-            // Scroll to top of iFrame
-            if (App.debug)
-                console.log("iFrame Event - window.onload");
-            sendIframeHeight();
-            window.parent.postMessage({
-                scroll: this.shouldScroll(),
-            }, "*");
-            // On click fire the resize event
-            document.addEventListener("click", (e) => {
-                if (App.debug)
-                    console.log("iFrame Event - click");
-                setTimeout(() => {
-                    sendIframeHeight();
-                }, 100);
-            });
         }
     }
     onResize() {
         if (this.options.onResize) {
             this.options.onResize();
         }
-        if (this.inIframe()) {
-            if (App.debug)
-                console.log("iFrame Event - window.onload");
-            sendIframeHeight();
-        }
     }
     onValidate() {
         if (this.options.onValidate) {
-            if (App.debug)
-                console.log("Client onValidate Triggered");
+            this.logger.log("Client onValidate Triggered");
             this.options.onValidate();
         }
     }
     onSubmit() {
         if (this.options.onSubmit) {
-            if (App.debug)
-                console.log("Client onSubmit Triggered");
+            this.logger.log("Client onSubmit Triggered");
             this.options.onSubmit();
-        }
-        if (this.inIframe()) {
-            sendIframeFormStatus("submit");
         }
     }
     onError() {
         if (this.options.onError) {
-            if (App.debug)
-                console.log("Client onError Triggered");
+            this.logger.danger("Client onError Triggered");
             this.options.onError();
-        }
-    }
-    inIframe() {
-        try {
-            return window.self !== window.top;
-        }
-        catch (e) {
-            return true;
-        }
-    }
-    loadIFrame() {
-        if (this.inIframe()) {
-            // Add the data-engrid-embedded attribute when inside an iFrame if it wasn't already added by a script in the Page Template
-            App.setBodyData("embedded", "");
-            // Fire the resize event
-            if (App.debug)
-                console.log("iFrame Event - First Resize");
-            sendIframeHeight();
         }
     }
     // Use this function to add any Data Attributes to the Body tag
     setDataAttributes() {
-        // Add a body banner data attribute if the banner contains no image
-        // @TODO Should this account for video?
-        // @TODO Should we merge this with the script that checks the background image?
-        if (!document.querySelector(".body-banner img")) {
+        // Add the Page Type as a Data Attribute on the video
+        if (engrid_ENGrid.checkNested(window, "pageJson", "pageType")) {
+            App.setBodyData("page-type", window.pageJson.pageType);
+            this.logger.log("Page Type: " + window.pageJson.pageType);
+        }
+        else {
+            this.logger.log("Page Type: Not Found");
+        }
+        // Add a body banner data attribute if the banner contains no image or video
+        if (!document.querySelector(".body-banner img, .body-banner video")) {
             App.setBodyData("body-banner", "empty");
         }
         // Add a page-alert data attribute if it is empty
@@ -10103,8 +11422,8 @@ class App extends engrid_ENGrid {
         if (!document.querySelector(".content-footer *")) {
             App.setBodyData("no-content-footer", "");
         }
-        // Add a page-backgroundImage data attribute if it is empty
-        if (!document.querySelector(".page-backgroundImage *")) {
+        // Add a page-backgroundImage banner data attribute if the page background image contains no image or video
+        if (!document.querySelector(".page-backgroundImage img, .page-backgroundImage video")) {
             App.setBodyData("no-page-backgroundImage", "");
         }
         // Add a page-backgroundImageOverlay data attribute if it is empty
@@ -10142,15 +11461,16 @@ class AmountLabel {
     }
     // Should we run the script?
     shouldRun() {
-        return engrid_ENGrid.getPageType() === "DONATION";
+        return !!(engrid_ENGrid.getPageType() === "DONATION" &&
+            engrid_ENGrid.getOption("AddCurrencySymbol"));
     }
     // Fix Amount Labels
     fixAmountLabels() {
         let amounts = document.querySelectorAll(".en__field--donationAmt label");
+        const currencySymbol = engrid_ENGrid.getOption("CurrencySymbol") || "";
         amounts.forEach((element) => {
             if (!isNaN(element.innerText)) {
-                element.innerText =
-                    engrid_ENGrid.getOption("CurrencySymbol") + element.innerText;
+                element.innerText = currencySymbol + element.innerText;
             }
         });
     }
@@ -10503,7 +11823,6 @@ const enInput = (() => {
     // get DOM elements
     const init = () => {
         const formInput = document.querySelectorAll(".en__field--text, .en__field--email:not(.en__field--checkbox), .en__field--telephone, .en__field--number, .en__field--textarea, .en__field--select, .en__field--checkbox");
-        const otherInputs = document.querySelectorAll(".en__field__input--other");
         Array.from(formInput).forEach((e) => {
             // @TODO Currently checkboxes always return as having a value, since they do but they're just not checked. Need to update and account for that, should also do Radio's while we're at it
             let element = e.querySelector("input, textarea, select");
@@ -10511,25 +11830,6 @@ const enInput = (() => {
                 e.classList.add("has-value");
             }
             bindEvents(e);
-        });
-        /* @TODO Review Engaging Networks to see if this is still needed */
-        /************************************
-         * Automatically select other radio input when an amount is entered into it.
-         ***********************************/
-        Array.from(otherInputs).forEach((e) => {
-            ["focus", "input"].forEach((evt) => {
-                e.addEventListener(evt, (ev) => {
-                    const target = ev.target;
-                    if (target && target.parentNode && target.parentNode.parentNode) {
-                        const targetWrapper = target.parentNode;
-                        targetWrapper.classList.remove("en__field__item--hidden");
-                        if (targetWrapper.parentNode) {
-                            const lastRadioInput = targetWrapper.parentNode.querySelector(".en__field__item:nth-last-child(2) input");
-                            lastRadioInput.checked = !0;
-                        }
-                    }
-                }, false);
-            });
         });
     };
     return {
@@ -10731,19 +12031,29 @@ const debugBar = () => {
     }
 };
 const inputPlaceholder = () => {
-    // FIND ALL COMMON INPUT FIELDS
-    let enFieldDonationAmt = document.querySelector(".en__field--donationAmt.en__field--withOther .en__field__input--other");
+    // Personal Information
     let enFieldFirstName = document.querySelector("input#en__field_supporter_firstName");
     let enFieldLastName = document.querySelector("input#en__field_supporter_lastName");
     let enFieldEmailAddress = document.querySelector("input#en__field_supporter_emailAddress");
-    let enFieldPhoneNumber = document.querySelector("#inputen__field_supporter_phoneNumber");
+    let enFieldPhoneNumber = document.querySelector("input#en__field_supporter_phoneNumber");
+    let enFieldPhoneNumberRequired = document.querySelector(".en__mandatory > * > input#en__field_supporter_phoneNumber");
     let enFieldPhoneNumber2 = document.querySelector("input#en__field_supporter_phoneNumber2");
+    let enFieldPhoneNumber2Required = document.querySelector(".en__mandatory > * > input#en__field_supporter_phoneNumber2");
+    // Address
     let enFieldCountry = document.querySelector("input#en__field_supporter_country");
     let enFieldAddress1 = document.querySelector("input#en__field_supporter_address1");
     let enFieldAddress2 = document.querySelector("input#en__field_supporter_address2");
     let enFieldCity = document.querySelector("input#en__field_supporter_city");
-    // let enFieldRegion = document.querySelector("input#en__field_supporter_region") as HTMLInputElement
+    let enFieldRegion = document.querySelector("input#en__field_supporter_region");
     let enFieldPostcode = document.querySelector("input#en__field_supporter_postcode");
+    // Donation
+    let enFieldDonationAmt = document.querySelector(".en__field--donationAmt.en__field--withOther .en__field__input--other");
+    let enFieldCcnumber = document.querySelector("input#en__field_transaction_ccnumber");
+    let enFieldCcexpire = document.querySelector("input#en__field_transaction_ccexpire");
+    let enFieldCcvv = document.querySelector("input#en__field_transaction_ccvv");
+    let enFieldBankAccountNumber = document.querySelector("input#en__field_supporter_bankAccountNumber");
+    let enFieldBankRoutingNumber = document.querySelector("input#en__field_supporter_bankRoutingNumber");
+    // In Honor
     let enFieldHonname = document.querySelector("input#en__field_transaction_honname");
     let enFieldInfname = document.querySelector("input#en__field_transaction_infname");
     let enFieldInfemail = document.querySelector("input#en__field_transaction_infemail");
@@ -10752,21 +12062,36 @@ const inputPlaceholder = () => {
     let enFieldInfadd2 = document.querySelector("input#en__field_transaction_infadd2");
     let enFieldInfcity = document.querySelector("input#en__field_transaction_infcity");
     let enFieldInfpostcd = document.querySelector("input#en__field_transaction_infpostcd");
+    // Miscillaneous
     let enFieldGftrsn = document.querySelector("input#en__field_transaction_gftrsn");
-    let enFieldCcnumber = document.querySelector("input#en__field_transaction_ccnumber");
-    let enFieldCcexpire = document.querySelector("input#en__field_transaction_ccexpire");
-    let enFieldCcvv = document.querySelector("input#en__field_transaction_ccvv");
-    let enFieldBankAccountNumber = document.querySelector("input#en__field_supporter_bankAccountNumber");
-    let enFieldBankRoutingNumber = document.querySelector("input#en__field_supporter_bankRoutingNumber");
+    // Shipping Infromation
+    let enFieldShippingFirstName = document.querySelector("input#en__field_transaction_shipfname");
+    let enFieldShippingLastName = document.querySelector("input#en__field_transaction_shiplname");
+    let enFieldShippingEmailAddress = document.querySelector("input#en__field_transaction_shipemail");
+    let enFieldShippingCountry = document.querySelector("input#en__field_transaction_shipcountry");
+    let enFieldShippingAddress1 = document.querySelector("input#en__field_transaction_shipadd1");
+    let enFieldShippingAddress2 = document.querySelector("input#en__field_transaction_shipadd2");
+    let enFieldShippingCity = document.querySelector("input#en__field_transaction_shipcity");
+    let enFieldShippingRegion = document.querySelector("input#en__field_transaction_shipregion");
+    let enFieldShippingPostcode = document.querySelector("input#en__field_transaction_shippostcode");
+    // Billing Infromation
+    let enFieldBillingCountry = document.querySelector("input#en__field_supporter_billingCountry");
+    let enFieldBillingAddress1 = document.querySelector("input#en__field_supporter_billingAddress1");
+    let enFieldBillingAddress2 = document.querySelector("input#en__field_supporter_billingAddress2");
+    let enFieldBillingCity = document.querySelector("input#en__field_supporter_billingCity");
+    let enFieldBillingRegion = document.querySelector("input#en__field_supporter_billingRegion");
+    let enFieldBillingPostcode = document.querySelector("input#en__field_supporter_billingPostcode");
     // CHANGE FIELD INPUT TYPES
     if (enFieldDonationAmt) {
-        enFieldDonationAmt.setAttribute("inputmode", "numeric");
+        enFieldDonationAmt.setAttribute("inputmode", "decimal");
+    }
+    // ADD THE MISSING LABEL FOR IMPROVED ACCESSABILITY
+    if (enFieldDonationAmt) {
+        enFieldDonationAmt.setAttribute("aria-label", "Enter your custom donation amount");
     }
     // ADD FIELD PLACEHOLDERS
     const enAddInputPlaceholder = document.querySelector("[data-engrid-add-input-placeholders]");
-    if (enAddInputPlaceholder && enFieldDonationAmt) {
-        enFieldDonationAmt.placeholder = "Other Amount";
-    }
+    // Personal Information
     if (enAddInputPlaceholder && enFieldFirstName) {
         enFieldFirstName.placeholder = "First Name";
     }
@@ -10776,12 +12101,27 @@ const inputPlaceholder = () => {
     if (enAddInputPlaceholder && enFieldEmailAddress) {
         enFieldEmailAddress.placeholder = "Email Address";
     }
-    if (enAddInputPlaceholder && enFieldPhoneNumber) {
+    if (enAddInputPlaceholder &&
+        enFieldPhoneNumber &&
+        enFieldPhoneNumberRequired) {
         enFieldPhoneNumber.placeholder = "Phone Number";
     }
-    if (enAddInputPlaceholder && enFieldPhoneNumber2) {
+    else if (enAddInputPlaceholder &&
+        enFieldPhoneNumber &&
+        !enFieldPhoneNumberRequired) {
+        enFieldPhoneNumber.placeholder = "Phone Number (Optional)";
+    }
+    if (enAddInputPlaceholder &&
+        enFieldPhoneNumber2 &&
+        enFieldPhoneNumber2Required) {
+        enFieldPhoneNumber2.placeholder = "000-000-0000";
+    }
+    else if (enAddInputPlaceholder &&
+        enFieldPhoneNumber2 &&
+        !enFieldPhoneNumber2Required) {
         enFieldPhoneNumber2.placeholder = "000-000-0000 (Optional)";
     }
+    // Address
     if (enAddInputPlaceholder && enFieldCountry) {
         enFieldCountry.placeholder = "Country";
     }
@@ -10794,36 +12134,15 @@ const inputPlaceholder = () => {
     if (enAddInputPlaceholder && enFieldCity) {
         enFieldCity.placeholder = "City";
     }
-    // if (enAddInputPlaceholder && enFieldRegion){enFieldRegion.placeholder = "TBD";}
+    if (enAddInputPlaceholder && enFieldRegion) {
+        enFieldRegion.placeholder = "Region";
+    }
     if (enAddInputPlaceholder && enFieldPostcode) {
         enFieldPostcode.placeholder = "Postal Code";
     }
-    if (enAddInputPlaceholder && enFieldHonname) {
-        enFieldHonname.placeholder = "Honoree Name";
-    }
-    if (enAddInputPlaceholder && enFieldInfname) {
-        enFieldInfname.placeholder = "Recipient Name";
-    }
-    if (enAddInputPlaceholder && enFieldInfemail) {
-        enFieldInfemail.placeholder = "Recipient Email Address";
-    }
-    if (enAddInputPlaceholder && enFieldInfcountry) {
-        enFieldInfcountry.placeholder = "TBD";
-    }
-    if (enAddInputPlaceholder && enFieldInfadd1) {
-        enFieldInfadd1.placeholder = "Recipient Street Address";
-    }
-    if (enAddInputPlaceholder && enFieldInfadd2) {
-        enFieldInfadd2.placeholder = "Recipient Apt., ste., bldg.";
-    }
-    if (enAddInputPlaceholder && enFieldInfcity) {
-        enFieldInfcity.placeholder = "Recipient City";
-    }
-    if (enAddInputPlaceholder && enFieldInfpostcd) {
-        enFieldInfpostcd.placeholder = "Recipient Postal Code";
-    }
-    if (enAddInputPlaceholder && enFieldGftrsn) {
-        enFieldGftrsn.placeholder = "Reason for your gift";
+    // Donation
+    if (enAddInputPlaceholder && enFieldDonationAmt) {
+        enFieldDonationAmt.placeholder = "Other";
     }
     if (enAddInputPlaceholder && enFieldCcnumber) {
         enFieldCcnumber.placeholder = "•••• •••• •••• ••••";
@@ -10839,6 +12158,82 @@ const inputPlaceholder = () => {
     }
     if (enAddInputPlaceholder && enFieldBankRoutingNumber) {
         enFieldBankRoutingNumber.placeholder = "Bank Routing Number";
+    }
+    // In Honor
+    if (enAddInputPlaceholder && enFieldHonname) {
+        enFieldHonname.placeholder = "Honoree Name";
+    }
+    if (enAddInputPlaceholder && enFieldInfname) {
+        enFieldInfname.placeholder = "Recipient Name";
+    }
+    if (enAddInputPlaceholder && enFieldInfemail) {
+        enFieldInfemail.placeholder = "Recipient Email Address";
+    }
+    if (enAddInputPlaceholder && enFieldInfcountry) {
+        enFieldInfcountry.placeholder = "Country";
+    }
+    if (enAddInputPlaceholder && enFieldInfadd1) {
+        enFieldInfadd1.placeholder = "Recipient Street Address";
+    }
+    if (enAddInputPlaceholder && enFieldInfadd2) {
+        enFieldInfadd2.placeholder = "Recipient Apt., ste., bldg.";
+    }
+    if (enAddInputPlaceholder && enFieldInfcity) {
+        enFieldInfcity.placeholder = "Recipient City";
+    }
+    if (enAddInputPlaceholder && enFieldInfpostcd) {
+        enFieldInfpostcd.placeholder = "Recipient Postal Code";
+    }
+    // Miscillaneous
+    if (enAddInputPlaceholder && enFieldGftrsn) {
+        enFieldGftrsn.placeholder = "Reason for your gift";
+    }
+    // Shipping Infromation
+    if (enAddInputPlaceholder && enFieldShippingFirstName) {
+        enFieldShippingFirstName.placeholder = "Shipping First Name";
+    }
+    if (enAddInputPlaceholder && enFieldShippingLastName) {
+        enFieldShippingLastName.placeholder = "Shipping Last Name";
+    }
+    if (enAddInputPlaceholder && enFieldShippingEmailAddress) {
+        enFieldShippingEmailAddress.placeholder = "Shipping Email Address";
+    }
+    if (enAddInputPlaceholder && enFieldShippingCountry) {
+        enFieldShippingCountry.placeholder = "Shipping Country";
+    }
+    if (enAddInputPlaceholder && enFieldShippingAddress1) {
+        enFieldShippingAddress1.placeholder = "Shipping Street Address";
+    }
+    if (enAddInputPlaceholder && enFieldShippingAddress2) {
+        enFieldShippingAddress2.placeholder = "Shipping Apt., ste., bldg.";
+    }
+    if (enAddInputPlaceholder && enFieldShippingCity) {
+        enFieldShippingCity.placeholder = "Shipping City";
+    }
+    if (enAddInputPlaceholder && enFieldShippingRegion) {
+        enFieldShippingRegion.placeholder = "Shipping Region";
+    }
+    if (enAddInputPlaceholder && enFieldShippingPostcode) {
+        enFieldShippingPostcode.placeholder = "Shipping Postal Code";
+    }
+    // Billing Information
+    if (enAddInputPlaceholder && enFieldBillingCountry) {
+        enFieldBillingCountry.placeholder = "Billing Country";
+    }
+    if (enAddInputPlaceholder && enFieldBillingAddress1) {
+        enFieldBillingAddress1.placeholder = "Billing Street Address";
+    }
+    if (enAddInputPlaceholder && enFieldBillingAddress2) {
+        enFieldBillingAddress2.placeholder = "Billing Apt., ste., bldg.";
+    }
+    if (enAddInputPlaceholder && enFieldBillingCity) {
+        enFieldBillingCity.placeholder = "Billing City";
+    }
+    if (enAddInputPlaceholder && enFieldBillingRegion) {
+        enFieldBillingRegion.placeholder = "Billing Region";
+    }
+    if (enAddInputPlaceholder && enFieldBillingPostcode) {
+        enFieldBillingPostcode.placeholder = "Billing Postal Code";
     }
 };
 const preventAutocomplete = () => {
@@ -10973,19 +12368,6 @@ let field_expiration_parts = document.querySelectorAll(".en__field--ccexpire .en
 const field_country = document.getElementById("en__field_supporter_country");
 let field_expiration_month = field_expiration_parts[0];
 let field_expiration_year = field_expiration_parts[1];
-/* The Donation Other Giving Amount is a "Number" type input field.
-   It also has its step value set to .01 so it increments up/down by once whole cent.
-   This step also client-side prevents users from entering a fraction of a penny.
-   And it has a min set to 5 so nothing less can be submitted
-*/
-const SetEnFieldOtherAmountRadioStepValue = () => {
-    const enFieldOtherAmountRadio = document.querySelector(".en__field--donationAmt .en__field__input--other");
-    if (enFieldOtherAmountRadio) {
-        enFieldOtherAmountRadio.setAttribute("step", ".01");
-        enFieldOtherAmountRadio.setAttribute("type", "number");
-        enFieldOtherAmountRadio.setAttribute("min", "5");
-    }
-};
 /*
  * Helpers
  */
@@ -11247,24 +12629,171 @@ else {
 
 ;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/iframe.js
 
-const sendIframeHeight = () => {
-    let height = document.body.offsetHeight;
-    console.log("Sending iFrame height of: ", height, "px"); // check the message is being sent correctly
-    window.parent.postMessage({
-        frameHeight: height,
-        pageNumber: engrid_ENGrid.getPageNumber(),
-        pageCount: engrid_ENGrid.getPageCount(),
-        giftProcess: engrid_ENGrid.getGiftProcess(),
-    }, "*");
-};
-const sendIframeFormStatus = (status) => {
-    window.parent.postMessage({
-        status: status,
-        pageNumber: engrid_ENGrid.getPageNumber(),
-        pageCount: engrid_ENGrid.getPageCount(),
-        giftProcess: engrid_ENGrid.getGiftProcess(),
-    }, "*");
-};
+
+class iFrame {
+    constructor() {
+        this._form = EnForm.getInstance();
+        this.logger = new EngridLogger("iFrame", "brown", "gray", "📡");
+        if (this.inIframe()) {
+            // Add the data-engrid-embedded attribute when inside an iFrame if it wasn't already added by a script in the Page Template
+            engrid_ENGrid.setBodyData("embedded", "");
+            // Fire the resize event
+            this.logger.log("First Resize");
+            this.sendIframeHeight();
+            // Listen for the resize event
+            window.addEventListener("resize", this.sendIframeHeight.bind(this));
+            window.addEventListener("load", (event) => {
+                // Scroll to top of iFrame
+                this.logger.log("iFrame Event - window.onload");
+                this.sendIframeHeight();
+                window.parent.postMessage({
+                    scroll: this.shouldScroll(),
+                }, "*");
+                // On click fire the resize event
+                document.addEventListener("click", (e) => {
+                    this.logger.log("Event - click");
+                    setTimeout(() => {
+                        this.sendIframeHeight();
+                    }, 100);
+                });
+            });
+            // Listen for the form submit event
+            this._form.onSubmit.subscribe((e) => {
+                this.logger.log("Event - onSubmit");
+                this.sendIframeFormStatus("submit");
+            });
+            // If the iFrame is Chained, check if the form has data
+            if (this.isChained() && this.hasPayment()) {
+                this.logger.log("Chained iFrame");
+                this.sendIframeFormStatus("chained");
+                this.hideFormComponents();
+                this.addChainedBanner();
+            }
+        }
+        else {
+            // Parent Page Logic
+            window.addEventListener("message", (event) => {
+                const iframe = this.getIFrameByEvent(event);
+                if (iframe) {
+                    if (event.data.hasOwnProperty("frameHeight")) {
+                        iframe.style.height = event.data.frameHeight + "px";
+                    }
+                    else if (event.data.hasOwnProperty("scroll") &&
+                        event.data.scroll > 0) {
+                        const elDistanceToTop = window.pageYOffset + iframe.getBoundingClientRect().top;
+                        let scrollTo = elDistanceToTop + event.data.scroll;
+                        window.scrollTo({
+                            top: scrollTo,
+                            left: 0,
+                            behavior: "smooth",
+                        });
+                        this.logger.log("Scrolling Window To " + scrollTo);
+                    }
+                }
+            });
+        }
+    }
+    sendIframeHeight() {
+        let height = document.body.offsetHeight;
+        this.logger.log("Sending iFrame height of: " + height + "px"); // check the message is being sent correctly
+        window.parent.postMessage({
+            frameHeight: height,
+            pageNumber: engrid_ENGrid.getPageNumber(),
+            pageCount: engrid_ENGrid.getPageCount(),
+            giftProcess: engrid_ENGrid.getGiftProcess(),
+        }, "*");
+    }
+    sendIframeFormStatus(status) {
+        window.parent.postMessage({
+            status: status,
+            pageNumber: engrid_ENGrid.getPageNumber(),
+            pageCount: engrid_ENGrid.getPageCount(),
+            giftProcess: engrid_ENGrid.getGiftProcess(),
+        }, "*");
+    }
+    getIFrameByEvent(event) {
+        return [].slice
+            .call(document.getElementsByTagName("iframe"))
+            .filter((iframe) => {
+            return iframe.contentWindow === event.source;
+        })[0];
+    }
+    shouldScroll() {
+        // If you find a error, scroll
+        if (document.querySelector(".en__errorHeader")) {
+            return true;
+        }
+        // If it's a chained iFrame, don't scroll
+        if (this.isChained()) {
+            return false;
+        }
+        // Try to match the iframe referrer URL by testing valid EN Page URLs
+        let referrer = document.referrer;
+        let enURLPattern = new RegExp(/^(.*)\/(page)\/(\d+.*)/);
+        // Scroll if the Regex matches, don't scroll otherwise
+        return enURLPattern.test(referrer);
+    }
+    inIframe() {
+        try {
+            return window.self !== window.top;
+        }
+        catch (e) {
+            return true;
+        }
+    }
+    isChained() {
+        return !!engrid_ENGrid.getUrlParameter("chain");
+    }
+    hasPayment() {
+        const payment = engrid_ENGrid.getFieldValue("transaction.paymenttype");
+        const ccnumber = engrid_ENGrid.getFieldValue("transaction.ccnumber");
+        return payment || ccnumber;
+    }
+    hideFormComponents() {
+        this.logger.log("Hiding Form Components");
+        const en__component = document.querySelectorAll(".body-main > div");
+        en__component.forEach((component, index) => {
+            if (component.classList.contains("hide") === false &&
+                component.classList.contains("hide-iframe") === false &&
+                component.classList.contains("radio-to-buttons_donationAmt") ===
+                    false &&
+                index < en__component.length - 1) {
+                component.classList.add("hide-iframe");
+                component.classList.add("hide-chained");
+            }
+        });
+        this.sendIframeHeight();
+    }
+    showFormComponents() {
+        this.logger.log("Showing Form Components");
+        const en__component = document.querySelectorAll(".body-main > div.hide-chained");
+        en__component.forEach((component) => {
+            component.classList.remove("hide-iframe");
+            component.classList.remove("hide-chained");
+        });
+        this.sendIframeHeight();
+    }
+    addChainedBanner() {
+        var _a, _b;
+        this.logger.log("Adding Chained Banner");
+        const banner = document.createElement("div");
+        const lastComponent = document.querySelector(".body-main > div:last-of-type");
+        banner.classList.add("en__component");
+        banner.classList.add("en__component--banner");
+        banner.classList.add("en__component--banner--chained");
+        banner.innerHTML = `<div class="en__component__content"><div class="en__component__content__inner"><div class="en__component__content__text"><p>
+      Giving as <strong>${engrid_ENGrid.getFieldValue("supporter.firstName")} ${engrid_ENGrid.getFieldValue("supporter.lastName")}</strong> 
+      with <strong>${engrid_ENGrid.getFieldValue("transaction.paymenttype").toUpperCase()}</strong>
+      (<a href="#" class="en__component__content__link">change</a>)</p></div></div></div>`;
+        (_a = lastComponent === null || lastComponent === void 0 ? void 0 : lastComponent.parentNode) === null || _a === void 0 ? void 0 : _a.insertBefore(banner, lastComponent);
+        (_b = banner
+            .querySelector(".en__component__content__link")) === null || _b === void 0 ? void 0 : _b.addEventListener("click", (e) => {
+            e.preventDefault();
+            this.showFormComponents();
+            banner.remove();
+        });
+    }
+}
 
 ;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/media-attribution.js
 /*
@@ -11405,6 +12934,10 @@ class LiveVariables {
     }
     loadingSubmitButton() {
         const submit = document.querySelector(".en__submit button");
+        // Don't add the Loading element if the button is from an Ajax form (like the supporter hub)
+        if (submit.closest(".en__hubOverlay") !== null) {
+            return true;
+        }
         let submitButtonOriginalHTML = submit.innerHTML;
         let submitButtonProcessingHTML = "<span class='loader-wrapper'><span class='loader loader-quart'></span><span class='submit-button-text-wrapper'>" +
             submitButtonOriginalHTML +
@@ -11507,11 +13040,11 @@ class UpsellLightbox {
         this._amount = DonationAmount.getInstance();
         this._fees = ProcessingFees.getInstance();
         this._frequency = DonationFrequency.getInstance();
+        this.logger = new EngridLogger("UpsellLightbox", "black", "pink", "🪟");
         let options = "EngridUpsell" in window ? window.EngridUpsell : {};
         this.options = Object.assign(Object.assign({}, UpsellOptionsDefaults), options);
         if (!this.shouldRun()) {
-            if (engrid_ENGrid.debug)
-                console.log("Upsell script should NOT run");
+            this.logger.log("Upsell script should NOT run");
             // If we're not on a Donation Page, get out
             return;
         }
@@ -11608,8 +13141,7 @@ class UpsellLightbox {
         if (otherField) {
             otherField.addEventListener("keyup", this.popupOtherField.bind(this));
         }
-        if (engrid_ENGrid.debug)
-            console.log("Upsell script rendered");
+        this.logger.log("Upsell script rendered");
     }
     // Should we run the script?
     shouldRun() {
@@ -11658,6 +13190,8 @@ class UpsellLightbox {
             let val = this.options.amountRange[i];
             if (upsellAmount == 0 && amount <= val.max) {
                 upsellAmount = val.suggestion;
+                if (upsellAmount === 0)
+                    return 0;
                 if (typeof upsellAmount !== "number") {
                     const suggestionMath = upsellAmount.replace("amount", amount.toFixed(2));
                     upsellAmount = parseFloat(Function('"use strict";return (' + suggestionMath + ")")());
@@ -11679,18 +13213,15 @@ class UpsellLightbox {
         if (freq == "onetime" &&
             !this.overlay.classList.contains("is-submitting") &&
             upsellAmount > 0) {
-            if (engrid_ENGrid.debug) {
-                console.log("Upsell Frequency", this._frequency.frequency);
-                console.log("Upsell Amount", this._amount.amount);
-                console.log("Upsell Suggested Amount", upsellAmount);
-            }
+            this.logger.log("Upsell Frequency " + this._frequency.frequency);
+            this.logger.log("Upsell Amount " + this._amount.amount);
+            this.logger.log("Upsell Suggested Amount " + upsellAmount);
             return true;
         }
         return false;
     }
     open() {
-        if (engrid_ENGrid.debug)
-            console.log("Upsell Script Triggered");
+        this.logger.log("Upsell script opened");
         if (!this.shouldOpen()) {
             // In the circumstance when the form fails to validate via server-side validation, the page will reload
             // When that happens, we should place the original amount saved in sessionStorage into the upsell original amount field
@@ -11741,8 +13272,7 @@ class UpsellLightbox {
         e.preventDefault();
         if (e.target instanceof Element &&
             ((_a = document.querySelector("#upsellYesButton")) === null || _a === void 0 ? void 0 : _a.contains(e.target))) {
-            if (engrid_ENGrid.debug)
-                console.log("Upsold");
+            this.logger.success("Upsold");
             this.setOriginalAmount(this._amount.amount.toString());
             const upsoldAmount = this.getUpsellAmount();
             this._frequency.setFrequency("monthly");
@@ -11790,11 +13320,14 @@ class UpsellLightbox {
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/show-hide-radio-checkboxes.js
+
 class ShowHideRadioCheckboxes {
     constructor(elements, classes) {
+        this.logger = new EngridLogger("ShowHideRadioCheckboxes", "black", "lightblue", "👁");
         this.elements = document.getElementsByName(elements);
         this.classes = classes;
         this.hideAll();
+        this.logger.log("New:", this.classes, this.elements);
         for (let i = 0; i < this.elements.length; i++) {
             let element = this.elements[i];
             if (element.checked) {
@@ -11815,20 +13348,24 @@ class ShowHideRadioCheckboxes {
     }
     // Hide Single Element Div
     hide(item) {
-        let inputValue = item.value;
+        let inputValue = item.value.replace(/\s/g, "");
         document.querySelectorAll("." + this.classes + inputValue).forEach((el) => {
             // Consider toggling "hide" class so these fields can be displayed when in a debug state
-            if (el instanceof HTMLElement)
+            if (el instanceof HTMLElement) {
                 el.style.display = "none";
+                this.logger.log("Hiding", el);
+            }
         });
     }
     // Show Single Element Div
     show(item) {
-        let inputValue = item.value;
+        let inputValue = item.value.replace(/\s/g, "");
         document.querySelectorAll("." + this.classes + inputValue).forEach((el) => {
             // Consider toggling "hide" class so these fields can be displayed when in a debug state
-            if (el instanceof HTMLElement)
+            if (el instanceof HTMLElement) {
                 el.style.display = "";
+                this.logger.log("Showing", el);
+            }
         });
         if (item.type == "checkbox" && !item.checked) {
             this.hide(item);
@@ -12045,8 +13582,8 @@ class TranslateFields {
                 break;
             case "AU":
             case "AUS":
-                this.setStateValues("Province/State", [
-                    { label: "Select Province/State", value: "" },
+                this.setStateValues("Province / State", [
+                    { label: "Select", value: "" },
                     { label: "New South Wales", value: "NSW" },
                     { label: "Victoria", value: "VIC" },
                     { label: "Queensland", value: "QLD" },
@@ -12058,8 +13595,8 @@ class TranslateFields {
                 ]);
                 break;
             case "Australia":
-                this.setStateValues("Province/State", [
-                    { label: "Select Province/State", value: "" },
+                this.setStateValues("Province / State", [
+                    { label: "Select", value: "" },
                     { label: "New South Wales", value: "New South Wales" },
                     { label: "Victoria", value: "Victoria" },
                     { label: "Queensland", value: "Queensland" },
@@ -12188,8 +13725,8 @@ class TranslateFields {
                 break;
             case "CA":
             case "CAN":
-                this.setStateValues("Province/State", [
-                    { label: "Select Province/State", value: "" },
+                this.setStateValues("Province / Territory", [
+                    { label: "Select", value: "" },
                     { label: "Alberta", value: "AB" },
                     { label: "British Columbia", value: "BC" },
                     { label: "Manitoba", value: "MB" },
@@ -12206,8 +13743,8 @@ class TranslateFields {
                 ]);
                 break;
             case "Canada":
-                this.setStateValues("Province/State", [
-                    { label: "Select Province/State", value: "" },
+                this.setStateValues("Province / Territory", [
+                    { label: "Select", value: "" },
                     { label: "Alberta", value: "Alberta" },
                     { label: "British Columbia", value: "British Columbia" },
                     { label: "Manitoba", value: "Manitoba" },
@@ -12300,7 +13837,7 @@ class TranslateFields {
                 ]);
                 break;
             default:
-                this.setStateValues("Province/State", null);
+                this.setStateValues("Province / State", null);
                 break;
         }
     }
@@ -12371,7 +13908,7 @@ class TranslateFields {
 class SimpleCountrySelect {
     constructor() {
         this.countryWrapper = document.querySelector(".simple_country_select");
-        this.countrySelect = document.querySelector("#en__field_supporter_country");
+        this.countrySelect = document.querySelector("select#en__field_supporter_country");
         this.country = null;
         const engridAutofill = get("engrid-autofill");
         const submissionFailed = !!(engrid_ENGrid.checkNested(window.EngagingNetworks, "require", "_defined", "enjs", "checkSubmissionFailed") && window.EngagingNetworks.require._defined.enjs.checkSubmissionFailed());
@@ -12724,10 +14261,14 @@ class NeverBounce {
         this.emailWrapper = document.querySelector(".en__field--emailAddress");
         this.nbDate = null;
         this.nbStatus = null;
+        this.logger = new EngridLogger("NeverBounce", "#039bc4", "#dfdfdf", "📧");
+        this.shouldRun = true;
+        this.nbLoaded = false;
+        this.emailField = document.getElementById("en__field_supporter_emailAddress");
         window._NBSettings = {
             apiKey: this.apiKey,
             autoFieldHookup: false,
-            inputLatency: 500,
+            inputLatency: 1500,
             displayPoweredBy: false,
             loadingMessage: "Validating...",
             softRejectMessage: "Invalid email",
@@ -12735,27 +14276,41 @@ class NeverBounce {
             feedback: false,
         };
         engrid_ENGrid.loadJS("https://cdn.neverbounce.com/widget/dist/NeverBounce.js");
-        this.init();
+        if (this.emailField) {
+            if (this.emailField.value)
+                this.shouldRun = false;
+            this.emailField.addEventListener("change", (e) => {
+                var _a;
+                if (!this.nbLoaded) {
+                    this.shouldRun = true;
+                    this.init();
+                    if ((_a = this.emailField) === null || _a === void 0 ? void 0 : _a.value) {
+                        setTimeout(function () {
+                            window._nb.fields
+                                .get(document.querySelector("[data-nb-id]"))[0]
+                                .forceUpdate();
+                        }, 100);
+                    }
+                }
+            });
+            window.setTimeout(() => {
+                this.init();
+            }, 1000);
+        }
         this.form.onValidate.subscribe(() => (this.form.validate = this.validate()));
     }
     init() {
-        this.emailField = document.getElementById("en__field_supporter_emailAddress");
+        if (this.nbLoaded || !this.shouldRun)
+            return;
+        this.logger.log("Init Function");
         if (this.dateField && document.getElementsByName(this.dateField).length)
             this.nbDate = document.querySelector("[name='" + this.dateField + "']");
         if (this.statusField && document.getElementsByName(this.statusField).length)
             this.nbStatus = document.querySelector("[name='" + this.statusField + "']");
         if (!this.emailField) {
-            if (engrid_ENGrid.debug)
-                console.log("Engrid Neverbounce: E-mail Field Not Found");
+            this.logger.log("E-mail Field Not Found");
             return;
         }
-        if (!this.emailField) {
-            if (engrid_ENGrid.debug)
-                console.log("Engrid Neverbounce: E-mail Field Not Found", this.emailField);
-            return;
-        }
-        if (engrid_ENGrid.debug)
-            console.log("Engrid Neverbounce External Script Loaded");
         this.wrap(this.emailField, document.createElement("div"));
         const parentNode = this.emailField.parentNode;
         parentNode.id = "nb-wrapper";
@@ -12765,67 +14320,57 @@ class NeverBounce {
             '<div id="nb-feedback" class="en__field__error nb-hidden">Enter a valid email.</div>';
         this.insertAfter(nbCustomMessageHTML, this.emailField);
         const NBClass = this;
-        window.addEventListener("load", function () {
-            document
-                .getElementsByTagName("body")[0]
-                .addEventListener("nb:registered", function (event) {
-                const field = document.querySelector('[data-nb-id="' + event.detail.id + '"]');
-                field.addEventListener("nb:loading", function (e) {
-                    engrid_ENGrid.disableSubmit("Validating Your Email");
-                });
-                // Never Bounce: Do work when input changes or when API responds with an error
-                field.addEventListener("nb:clear", function (e) {
-                    NBClass.setEmailStatus("clear");
-                    engrid_ENGrid.enableSubmit();
-                    if (NBClass.nbDate)
-                        NBClass.nbDate.value = "";
-                    if (NBClass.nbStatus)
-                        NBClass.nbStatus.value = "";
-                });
-                // Never Bounce: Do work when results have an input that does not look like an email (i.e. missing @ or no .com/.net/etc...)
-                field.addEventListener("nb:soft-result", function (e) {
-                    NBClass.setEmailStatus("soft-result");
-                    if (NBClass.nbDate)
-                        NBClass.nbDate.value = "";
-                    if (NBClass.nbStatus)
-                        NBClass.nbStatus.value = "";
-                    engrid_ENGrid.enableSubmit();
-                });
-                // Never Bounce: When results have been received
-                field.addEventListener("nb:result", function (e) {
-                    if (e.detail.result.is(window._nb.settings.getAcceptedStatusCodes())) {
-                        NBClass.setEmailStatus("valid");
-                        if (NBClass.nbDate)
-                            NBClass.nbDate.value = engrid_ENGrid.formatDate(new Date(), NBClass.dateFormat);
-                        if (NBClass.nbStatus)
-                            NBClass.nbStatus.value = (e).detail.result.response.result;
-                    }
-                    else {
-                        NBClass.setEmailStatus("invalid");
-                        if (NBClass.nbDate)
-                            NBClass.nbDate.value = "";
-                        if (NBClass.nbStatus)
-                            NBClass.nbStatus.value = "";
-                    }
-                    engrid_ENGrid.enableSubmit();
-                });
-                if (field.value) {
-                    console.log(field);
-                    setTimeout(function () {
-                        window._nb.fields
-                            .get(document.querySelector("[data-nb-id]"))[0]
-                            .forceUpdate();
-                    }, 100);
-                }
+        document
+            .getElementsByTagName("body")[0]
+            .addEventListener("nb:registered", function (event) {
+            const field = document.querySelector('[data-nb-id="' + event.detail.id + '"]');
+            field.addEventListener("nb:loading", function (e) {
+                engrid_ENGrid.disableSubmit("Validating Your Email");
             });
-            // Never Bounce: Register field with the widget and broadcast nb:registration event
-            window._nb.fields.registerListener(NBClass.emailField, true);
+            // Never Bounce: Do work when input changes or when API responds with an error
+            field.addEventListener("nb:clear", function (e) {
+                NBClass.setEmailStatus("clear");
+                engrid_ENGrid.enableSubmit();
+                if (NBClass.nbDate)
+                    NBClass.nbDate.value = "";
+                if (NBClass.nbStatus)
+                    NBClass.nbStatus.value = "";
+            });
+            // Never Bounce: Do work when results have an input that does not look like an email (i.e. missing @ or no .com/.net/etc...)
+            field.addEventListener("nb:soft-result", function (e) {
+                NBClass.setEmailStatus("soft-result");
+                if (NBClass.nbDate)
+                    NBClass.nbDate.value = "";
+                if (NBClass.nbStatus)
+                    NBClass.nbStatus.value = "";
+                engrid_ENGrid.enableSubmit();
+            });
+            // Never Bounce: When results have been received
+            field.addEventListener("nb:result", function (e) {
+                if (e.detail.result.is(window._nb.settings.getAcceptedStatusCodes())) {
+                    NBClass.setEmailStatus("valid");
+                    if (NBClass.nbDate)
+                        NBClass.nbDate.value = engrid_ENGrid.formatDate(new Date(), NBClass.dateFormat);
+                    if (NBClass.nbStatus)
+                        NBClass.nbStatus.value = (e).detail.result.response.result;
+                }
+                else {
+                    NBClass.setEmailStatus("invalid");
+                    if (NBClass.nbDate)
+                        NBClass.nbDate.value = "";
+                    if (NBClass.nbStatus)
+                        NBClass.nbStatus.value = "";
+                }
+                engrid_ENGrid.enableSubmit();
+            });
         });
+        // Never Bounce: Register field with the widget and broadcast nb:registration event
+        window._nb.fields.registerListener(NBClass.emailField, true);
+        this.nbLoaded = true;
     }
     clearStatus() {
         if (!this.emailField) {
-            if (engrid_ENGrid.debug)
-                console.log("Engrid Neverbounce: E-mail Field Not Found");
+            this.logger.log("E-mail Field Not Found");
             return;
         }
         this.emailField.classList.remove("rm-error");
@@ -12844,11 +14389,9 @@ class NeverBounce {
             errorField.remove();
     }
     setEmailStatus(status) {
-        if (engrid_ENGrid.debug)
-            console.log("Neverbounce Status:", status);
+        this.logger.log("Status:", status);
         if (!this.emailField) {
-            if (engrid_ENGrid.debug)
-                console.log("Engrid Neverbounce: E-mail Field Not Found");
+            this.logger.log("E-mail Field Not Found");
             return;
         }
         // Search page for the NB Wrapper div and set as variable
@@ -12913,11 +14456,6 @@ class NeverBounce {
         var _a;
         (_a = referenceNode === null || referenceNode === void 0 ? void 0 : referenceNode.parentNode) === null || _a === void 0 ? void 0 : _a.insertBefore(el, referenceNode.nextSibling);
     }
-    //  to insert HTML before a DIV
-    insertBefore(el, referenceNode) {
-        var _a;
-        (_a = referenceNode === null || referenceNode === void 0 ? void 0 : referenceNode.parentNode) === null || _a === void 0 ? void 0 : _a.insertBefore(el, referenceNode);
-    }
     //  to Wrap HTML around a DIV
     wrap(el, wrapper) {
         var _a;
@@ -12926,9 +14464,8 @@ class NeverBounce {
     }
     validate() {
         var _a;
-        if (!this.emailField) {
-            if (engrid_ENGrid.debug)
-                console.log("Engrid Neverbounce validate(): E-mail Field Not Found. Returning true.");
+        if (!this.emailField || !this.shouldRun || !this.nbLoaded) {
+            this.logger.log("validate(): Should Not Run. Returning true.");
             return true;
         }
         if (this.nbStatus) {
@@ -12988,7 +14525,7 @@ class ProgressBar {
 ;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/remember-me.js
 
 
-const tippy = __webpack_require__(3861)/* ["default"] */ .ZP;
+const tippy = (__webpack_require__(3861)/* ["default"] */ .ZP);
 class RememberMe {
     constructor(options) {
         this._form = EnForm.getInstance();
@@ -13268,14 +14805,14 @@ class RememberMe {
 class ShowIfAmount {
     constructor() {
         this._amount = DonationAmount.getInstance();
+        this.logger = new EngridLogger("ShowIfAmount", "yellow", "black", "👀");
         this._elements = document.querySelectorAll('[class*="showifamount"]');
         if (this._elements.length > 0) {
             this._amount.onAmountChange.subscribe(() => this.init());
             this.init();
             return;
         }
-        if (engrid_ENGrid.debug)
-            console.log("Show If Amount: NO ELEMENTS FOUND");
+        this.logger.log("Show If Amount: NO ELEMENTS FOUND");
     }
     init() {
         const amount = this._amount.amount;
@@ -13302,8 +14839,7 @@ class ShowIfAmount {
         if (showifamountClass) {
             let amountCheck = showifamountClass.split("-").slice(-1)[0];
             if (amount < Number(amountCheck)) {
-                if (engrid_ENGrid.debug)
-                    console.log("Show If Amount (lessthan):", element);
+                this.logger.log("(lessthan):", element);
                 element.classList.add("engrid-open");
             }
             else {
@@ -13316,8 +14852,7 @@ class ShowIfAmount {
         if (showifamountClass) {
             let amountCheck = showifamountClass.split("-").slice(-1)[0];
             if (amount <= Number(amountCheck)) {
-                if (engrid_ENGrid.debug)
-                    console.log("Show If Amount (lessthanorequalto):", element);
+                this.logger.log("(lessthanorequalto):", element);
                 element.classList.add("engrid-open");
             }
             else {
@@ -13330,8 +14865,7 @@ class ShowIfAmount {
         if (showifamountClass) {
             let amountCheck = showifamountClass.split("-").slice(-1)[0];
             if (amount == Number(amountCheck)) {
-                if (engrid_ENGrid.debug)
-                    console.log("Show If Amount (equalto):", element);
+                this.logger.log("(equalto):", element);
                 element.classList.add("engrid-open");
             }
             else {
@@ -13344,8 +14878,7 @@ class ShowIfAmount {
         if (showifamountClass) {
             let amountCheck = showifamountClass.split("-").slice(-1)[0];
             if (amount >= Number(amountCheck)) {
-                if (engrid_ENGrid.debug)
-                    console.log("Show If Amount (greaterthanorequalto):", element);
+                this.logger.log("(greaterthanorequalto):", element);
                 element.classList.add("engrid-open");
             }
             else {
@@ -13358,8 +14891,7 @@ class ShowIfAmount {
         if (showifamountClass) {
             let amountCheck = showifamountClass.split("-").slice(-1)[0];
             if (amount > Number(amountCheck)) {
-                if (engrid_ENGrid.debug)
-                    console.log("Show If Amount (greaterthan):", element);
+                this.logger.log("(greaterthan):", element);
                 element.classList.add("engrid-open");
             }
             else {
@@ -13372,15 +14904,364 @@ class ShowIfAmount {
         if (showifamountClass) {
             let amountCheckMin = showifamountClass.split("-").slice(-2, -1)[0];
             let amountCheckMax = showifamountClass.split("-").slice(-1)[0];
-            if (amount > Number(amountCheckMin) &&
-                amount < Number(amountCheckMax)) {
-                if (engrid_ENGrid.debug)
-                    console.log("Show If Amount (between):", element);
+            if (amount > Number(amountCheckMin) && amount < Number(amountCheckMax)) {
+                this.logger.log("(between):", element);
                 element.classList.add("engrid-open");
             }
             else {
                 element.classList.remove("engrid-open");
             }
+        }
+    }
+}
+
+;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/other-amount.js
+// This class automatically select other radio input when an amount is entered into it.
+
+class OtherAmount {
+    constructor() {
+        this.logger = new EngridLogger("OtherAmount", "green", "black", "💰");
+        "focusin input".split(" ").forEach((e) => {
+            var _a;
+            // We're attaching this event to the body because sometimes the other amount input is not in the DOM yet and comes via AJAX.
+            (_a = document.querySelector("body")) === null || _a === void 0 ? void 0 : _a.addEventListener(e, (event) => {
+                const target = event.target;
+                if (target.classList.contains("en__field__input--other")) {
+                    this.logger.log("Other Amount Field Focused");
+                    this.setRadioInput();
+                }
+            });
+        });
+    }
+    setRadioInput() {
+        const target = document.querySelector(".en__field--donationAmt .en__field__input--other");
+        if (target && target.parentNode && target.parentNode.parentNode) {
+            const targetWrapper = target.parentNode;
+            targetWrapper.classList.remove("en__field__item--hidden");
+            if (targetWrapper.parentNode) {
+                const lastRadioInput = targetWrapper.parentNode.querySelector(".en__field__item:nth-last-child(2) input");
+                lastRadioInput.checked = !0;
+            }
+        }
+    }
+}
+
+;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/logger.js
+
+/**
+ * A better logger. It only works if debug is enabled.
+ */
+class EngridLogger {
+    constructor(prefix, color, background, emoji) {
+        this.prefix = "";
+        this.color = "black";
+        this.background = "white";
+        this.emoji = "";
+        if (emoji) {
+            this.emoji = emoji;
+        }
+        else {
+            switch (color) {
+                case "red":
+                    this.emoji = "🔴";
+                    break;
+                case "green":
+                    this.emoji = "🟢";
+                    break;
+                case "blue":
+                    this.emoji = "🔵";
+                    break;
+                case "yellow":
+                    this.emoji = "🟡";
+                    this.background = "black";
+                    break;
+                case "purple":
+                    this.emoji = "🟣";
+                    break;
+                case "black":
+                default:
+                    this.emoji = "⚫";
+                    break;
+            }
+        }
+        if (prefix) {
+            this.prefix = `[ENgrid ${prefix}]`;
+        }
+        if (color) {
+            this.color = color;
+        }
+        if (background) {
+            this.background = background;
+        }
+    }
+    get log() {
+        if (!engrid_ENGrid.debug) {
+            return () => { };
+        }
+        return console.log.bind(window.console, "%c" + this.emoji + " " + this.prefix + " %s", `color: ${this.color}; background: ${this.background}; font-size: 1.2em; padding: 4px; border-radius: 2px; font-family: monospace;`);
+    }
+    get success() {
+        if (!engrid_ENGrid.debug) {
+            return () => { };
+        }
+        return console.log.bind(window.console, "%c ✅ " + this.prefix + " %s", `color: green; background: white; font-size: 1.2em; padding: 4px; border-radius: 2px; font-family: monospace;`);
+    }
+    get danger() {
+        if (!engrid_ENGrid.debug) {
+            return () => { };
+        }
+        return console.log.bind(window.console, "%c ⛔️ " + this.prefix + " %s", `color: red; background: white; font-size: 1.2em; padding: 4px; border-radius: 2px; font-family: monospace;`);
+    }
+    get warn() {
+        if (!engrid_ENGrid.debug) {
+            return () => { };
+        }
+        return console.warn.bind(window.console, "%c" + this.emoji + " " + this.prefix + " %s", `color: ${this.color}; background: ${this.background}; font-size: 1.2em; padding: 4px; border-radius: 2px; font-family: monospace;`);
+    }
+    get dir() {
+        if (!engrid_ENGrid.debug) {
+            return () => { };
+        }
+        return console.dir.bind(window.console, "%c" + this.emoji + " " + this.prefix + " %s", `color: ${this.color}; background: ${this.background}; font-size: 1.2em; padding: 4px; border-radius: 2px; font-family: monospace;`);
+    }
+    get error() {
+        if (!engrid_ENGrid.debug) {
+            return () => { };
+        }
+        return console.error.bind(window.console, "%c" + this.emoji + " " + this.prefix + " %s", `color: ${this.color}; background: ${this.background}; font-size: 1.2em; padding: 4px; border-radius: 2px; font-family: monospace;`);
+    }
+}
+
+;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/min-max-amount.js
+// This script checks if the donations amounts are numbers and if they are, appends the correct currency symbol
+
+class MinMaxAmount {
+    constructor() {
+        var _a, _b;
+        this._form = EnForm.getInstance();
+        this._amount = DonationAmount.getInstance();
+        this.minAmount = (_a = engrid_ENGrid.getOption("MinAmount")) !== null && _a !== void 0 ? _a : 1;
+        this.maxAmount = (_b = engrid_ENGrid.getOption("MaxAmount")) !== null && _b !== void 0 ? _b : 100000;
+        this.minAmountMessage = engrid_ENGrid.getOption("MinAmountMessage");
+        this.maxAmountMessage = engrid_ENGrid.getOption("MaxAmountMessage");
+        this.logger = new EngridLogger("MinMaxAmount", "white", "purple", "🔢");
+        if (!this.shouldRun()) {
+            // If we're not on a Donation Page, get out
+            return;
+        }
+        this._amount.onAmountChange.subscribe((s) => window.setTimeout(this.liveValidate.bind(this), 1000) // Wait 1 second for the amount to be updated
+        );
+        this._form.onValidate.subscribe(this.enOnValidate.bind(this));
+    }
+    // Should we run the script?
+    shouldRun() {
+        return engrid_ENGrid.getPageType() === "DONATION";
+    }
+    // Don't submit the form if the amount is not valid
+    enOnValidate() {
+        const otherAmount = document.querySelector("[name='transaction.donationAmt.other']");
+        if (this._amount.amount < this.minAmount) {
+            this.logger.log("Amount is less than min amount: " + this.minAmount);
+            if (otherAmount) {
+                otherAmount.focus();
+            }
+            this._form.validate = false;
+        }
+        else if (this._amount.amount > this.maxAmount) {
+            this.logger.log("Amount is greater than max amount: " + this.maxAmount);
+            if (otherAmount) {
+                otherAmount.focus();
+            }
+            this._form.validate = false;
+        }
+        window.setTimeout(this.liveValidate.bind(this), 300);
+    }
+    // Disable Submit Button if the amount is not valid
+    liveValidate() {
+        if (this._amount.amount < this.minAmount) {
+            this.logger.log("Amount is less than min amount: " + this.minAmount);
+            engrid_ENGrid.setError(".en__field--withOther", this.minAmountMessage || "Invalid Amount");
+        }
+        else if (this._amount.amount > this.maxAmount) {
+            this.logger.log("Amount is greater than max amount: " + this.maxAmount);
+            engrid_ENGrid.setError(".en__field--withOther", this.maxAmountMessage || "Invalid Amount");
+        }
+        else {
+            engrid_ENGrid.removeError(".en__field--withOther");
+        }
+    }
+}
+
+;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/ticker.js
+
+class Ticker {
+    constructor() {
+        this.shuffleSeed = __webpack_require__(7650);
+        this.items = [];
+        this.tickerElement = document.querySelector(".engrid-ticker");
+        this.logger = new EngridLogger("Ticker", "black", "beige", "🔁");
+        if (!this.shouldRun()) {
+            this.logger.log("Not running");
+            // If we don't find a ticker, get out
+            return;
+        }
+        const tickerList = document.querySelectorAll(".engrid-ticker li");
+        if (tickerList.length > 0) {
+            for (let i = 0; i < tickerList.length; i++) {
+                this.items.push(tickerList[i].innerText);
+            }
+        }
+        this.render();
+        return;
+    }
+    // Should we run the script?
+    shouldRun() {
+        return this.tickerElement !== null;
+    }
+    getSeed() {
+        return new Date().getDate() + engrid_ENGrid.getPageID();
+    }
+    // Get Items
+    getItems() {
+        const total = this.tickerElement.getAttribute("data-total") || "50";
+        this.logger.log("Getting " + total + "items");
+        const seed = this.getSeed();
+        const items = this.shuffleSeed.shuffle(this.items, seed);
+        const now = new Date();
+        const hour = now.getHours();
+        const minute = now.getMinutes();
+        let pointer = Math.round((hour * 60 + minute) / 5);
+        if (pointer >= items.length) {
+            pointer = 0;
+        }
+        const ret = items.slice(pointer, pointer + total).reverse();
+        return ret;
+    }
+    // Render
+    render() {
+        var _a, _b, _c;
+        this.logger.log("Rendering");
+        const items = this.getItems();
+        let ticker = document.createElement("div");
+        ticker.classList.add("en__component");
+        ticker.classList.add("en__component--ticker");
+        let str = '<div class="ticker">';
+        for (let i = 0; i < items.length; i++) {
+            str += '<div class="ticker__item">' + items[i] + "</div>";
+        }
+        str = '<div id="engrid-ticker">' + str + "</div></div>";
+        ticker.innerHTML = str;
+        (_b = (_a = this.tickerElement) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.insertBefore(ticker, this.tickerElement);
+        (_c = this.tickerElement) === null || _c === void 0 ? void 0 : _c.remove();
+    }
+}
+
+;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/data-replace.js
+
+class DataReplace {
+    constructor() {
+        this.logger = new EngridLogger("DataReplace", "#333333", "#00f3ff", "⤵️");
+        this.enElements = new Array();
+        this.logger.log("Constructor");
+        this.searchElements();
+        if (!this.shouldRun()) {
+            this.logger.error("No Elements Found");
+            return;
+        }
+        this.replaceAll();
+    }
+    searchElements() {
+        const enElements = document.querySelectorAll(`
+      .en__component--copyblock,
+      .en__component--codeblock,
+      .en__field
+      `);
+        if (enElements.length > 0) {
+            enElements.forEach((item) => {
+                if (item instanceof HTMLElement &&
+                    item.innerHTML.includes("{engrid_data~")) {
+                    this.enElements.push(item);
+                }
+            });
+        }
+    }
+    shouldRun() {
+        this.logger.log("Elements Found:", this.enElements);
+        return this.enElements.length > 0;
+    }
+    replaceAll() {
+        const regEx = /{engrid_data~\[([\w-]+)\]~?\[?(.+?)?\]?}/g;
+        this.enElements.forEach((item) => {
+            const array = item.innerHTML.matchAll(regEx);
+            for (const match of array) {
+                this.replaceItem(item, match);
+            }
+        });
+    }
+    replaceItem(where, [item, key, defaultValue]) {
+        var _a;
+        let value = (_a = engrid_ENGrid.getUrlParameter(`engrid_data[${key}]`)) !== null && _a !== void 0 ? _a : defaultValue;
+        if (typeof value === "string") {
+            value = value.replace(/\r?\\n|\n|\r/g, "<br>");
+        }
+        else {
+            value = "";
+        }
+        this.logger.log("Replacing", key, value);
+        where.innerHTML = where.innerHTML.replace(item, value);
+    }
+}
+
+;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/data-hide.js
+
+class DataHide {
+    constructor() {
+        this.logger = new EngridLogger("DataHide", "#333333", "#f0f0f0", "🙈");
+        this.enElements = new Array();
+        this.logger.log("Constructor");
+        this.enElements = engrid_ENGrid.getUrlParameter("engrid_hide[]");
+        if (!this.enElements || this.enElements.length === 0) {
+            this.logger.log("No Elements Found");
+            return;
+        }
+        this.logger.log("Elements Found:", this.enElements);
+        this.hideAll();
+    }
+    hideAll() {
+        this.enElements.forEach((element) => {
+            const item = Object.keys(element)[0];
+            const type = Object.values(element)[0];
+            this.hideItem(item, type);
+        });
+        return;
+    }
+    hideItem(item, type) {
+        const regEx = /engrid_hide\[([\w-]+)\]/g;
+        const itemData = [...item.matchAll(regEx)].map((match) => match[1])[0];
+        switch (type) {
+            case "id":
+                const element = document.getElementById(itemData);
+                if (element) {
+                    this.logger.log("Hiding By ID", itemData, element);
+                    element.setAttribute("hidden-via-url-argument", "");
+                }
+                else {
+                    this.logger.error("Element Not Found By ID", itemData);
+                }
+                break;
+            case "class":
+            default:
+                const elements = document.getElementsByClassName(itemData);
+                if (elements.length > 0) {
+                    for (let i = 0; i < elements.length; i++) {
+                        this.logger.log("Hiding By Class", itemData, elements[i]);
+                        elements[i].setAttribute("hidden-via-url-argument", "");
+                    }
+                }
+                else {
+                    this.logger.log("No Elements Found By Class", itemData);
+                }
+                break;
         }
     }
 }
@@ -13418,12 +15299,32 @@ class ShowIfAmount {
 
 
 
+
+
+
+
+
+
 // Events
 
 
 ;// CONCATENATED MODULE: ./src/scripts/main.js
 const customScript = function () {
   console.log("ENGrid client scripts are executing"); // Add your client scripts here
+
+  const backgroundImage = ["https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-1.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-2.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-3.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-4.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-5.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-6.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-7.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-8.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-9.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-10.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-11.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-12.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-13.jpg?v=1578587000000"]; // Check if Body has a data-engrid-no-page-backgroundImage attribute
+
+  if (document.querySelector("[data-engrid-no-page-backgroundImage]") !== null) {
+    const randomImage = backgroundImage[Math.floor(Math.random() * backgroundImage.length)];
+    console.log(randomImage);
+    const pageBackground = document.querySelector(".page-backgroundImage");
+
+    if (pageBackground) {
+      pageBackground.style.setProperty("--engrid__page-backgroundImage_url", `url(${randomImage})`);
+      document.body.setAttribute("data-engrid-page-background", "image");
+      document.body.removeAttribute("data-engrid-no-page-backgroundImage");
+    }
+  }
 };
 ;// CONCATENATED MODULE: ./src/index.ts
  // Uses ENGrid via NPM
