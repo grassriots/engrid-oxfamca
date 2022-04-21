@@ -17,10 +17,10 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Thursday, April 7, 2022 @ 21:08:15 ET
- *  By: fernando
- *  ENGrid styles: v0.11.0
- *  ENGrid scripts: v0.11.5
+ *  Date: Thursday, April 21, 2022 @ 12:48:32 ET
+ *  By: bryancasler
+ *  ENGrid styles: v0.11.9
+ *  ENGrid scripts: v0.11.9
  *
  *  Created by 4Site Studios
  *  Come work with us or join our team, we would love to hear from you
@@ -10306,6 +10306,7 @@ const OptionsDefaults = {
     TranslateFields: true,
     Debug: false,
     RememberMe: false,
+    RegionLongFormat: "",
 };
 
 ;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/interfaces/upsell-options.js
@@ -10780,13 +10781,20 @@ class engrid_ENGrid {
     static getPageType() {
         if ("pageJson" in window && "pageType" in window.pageJson) {
             switch (window.pageJson.pageType) {
+                case "donation":
+                case "premiumgift":
+                    return "DONATION";
+                    break;
                 case "e-card":
                     return "ECARD";
                     break;
                 case "otherdatacapture":
+                case "survey":
                     return "SURVEY";
                     break;
                 case "emailtotarget":
+                    return "EMAILTOTARGET";
+                    break;
                 case "advocacypetition":
                     return "ADVOCACY";
                     break;
@@ -10800,11 +10808,11 @@ class engrid_ENGrid {
                     return "UNSUBSCRIBE";
                     break;
                 default:
-                    return "DONATION";
+                    return "UNKNOWN";
             }
         }
         else {
-            return "DONATION";
+            return "UNKNOWN";
         }
     }
     // Set body engrid data attributes
@@ -11315,6 +11323,8 @@ class App extends engrid_ENGrid {
         new OtherAmount();
         new MinMaxAmount();
         new Ticker();
+        new AddNameToMessage();
+        new ExpandRegionName();
         // Page Background
         new PageBackground();
         this.setDataAttributes();
@@ -15124,7 +15134,7 @@ class Ticker {
     // Get Items
     getItems() {
         const total = this.tickerElement.getAttribute("data-total") || "50";
-        this.logger.log("Getting " + total + "items");
+        this.logger.log("Getting " + total + " items");
         const seed = this.getSeed();
         const items = this.shuffleSeed.shuffle(this.items, seed);
         const now = new Date();
@@ -15145,7 +15155,7 @@ class Ticker {
         let ticker = document.createElement("div");
         ticker.classList.add("en__component");
         ticker.classList.add("en__component--ticker");
-        let str = '<div class="ticker">';
+        let str = `<div class="ticker">`;
         for (let i = 0; i < items.length; i++) {
             str += '<div class="ticker__item">' + items[i] + "</div>";
         }
@@ -15153,6 +15163,10 @@ class Ticker {
         ticker.innerHTML = str;
         (_b = (_a = this.tickerElement) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.insertBefore(ticker, this.tickerElement);
         (_c = this.tickerElement) === null || _c === void 0 ? void 0 : _c.remove();
+        const tickerWidth = document.querySelector(".ticker").offsetWidth.toString();
+        ticker.style.setProperty("--ticker-size", tickerWidth);
+        this.logger.log("Ticker Size: " + ticker.style.getPropertyValue("--ticker-size"));
+        this.logger.log("Ticker Width: " + tickerWidth);
     }
 }
 
@@ -15266,8 +15280,99 @@ class DataHide {
     }
 }
 
+;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/add-name-to-message.js
+/*
+ Adds first and last name when First Name and Last Name fields lose focus if name shortcodes aren't present
+*/
+
+class AddNameToMessage {
+    constructor() {
+        if (!this.shouldRun()) {
+            // Don't run the script if the page isn't email to target
+            return;
+        }
+        this.replaceNameShortcode("#en__field_supporter_firstName", "#en__field_supporter_lastName");
+    }
+    shouldRun() {
+        return engrid_ENGrid.getPageType() === "EMAILTOTARGET";
+    }
+    replaceNameShortcode(fName, lName) {
+        const firstName = document.querySelector(fName);
+        const lastName = document.querySelector(lName);
+        let message = document.querySelector('[name="contact.message"]');
+        let addedFirstName = false;
+        let addedLastName = false;
+        if (message) {
+            if (message.value.includes("{user_data~First Name") || message.value.includes("{user_data~Last Name")) {
+                return;
+            }
+            else {
+                if (!message.value.includes("{user_data~First Name") && firstName) {
+                    firstName.addEventListener("blur", (e) => {
+                        const target = e.target;
+                        if (message && !addedFirstName) {
+                            addedFirstName = true;
+                            message.value = message.value.concat("\n" + target.value);
+                        }
+                    });
+                }
+                if (!message.value.includes("{user_data~Last Name") && lastName) {
+                    lastName.addEventListener("blur", (e) => {
+                        const target = e.target;
+                        if (message && !addedLastName) {
+                            addedLastName = true;
+                            message.value = message.value.concat(" " + target.value);
+                        }
+                    });
+                }
+            }
+        }
+    }
+}
+
+;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/expand-region-name.js
+// Populates hidden supporter field "Region Long Format" with expanded name (e.g FL becomes Florida)
+
+
+class ExpandRegionName {
+    constructor() {
+        this._form = EnForm.getInstance();
+        if (this.shouldRun()) {
+            this._form.onSubmit.subscribe(() => this.expandRegion());
+        }
+    }
+    shouldRun() {
+        return engrid_ENGrid.getOption("RegionLongFormat") !== "";
+    }
+    expandRegion() {
+        const userRegion = document.querySelector('[name="supporter.region"]'); // User entered region on the page
+        const expandedRegionField = engrid_ENGrid.getOption("RegionLongFormat");
+        const hiddenRegion = document.querySelector(expandedRegionField); // Hidden region long form field
+        if (!userRegion) {
+            if (engrid_ENGrid.debug)
+                console.log("No region field to populate the hidden region field with");
+            return; // Don't populate hidden region field if user region field isn't on page
+        }
+        if (userRegion.tagName === "SELECT" && "options" in userRegion && hiddenRegion && "value" in hiddenRegion) {
+            const regionValue = userRegion.options[userRegion.selectedIndex].innerText;
+            hiddenRegion.value = regionValue;
+            if (engrid_ENGrid.debug)
+                console.log("Populated 'Region Long Format' field", hiddenRegion.value);
+        }
+        else if (userRegion.tagName === "INPUT" && hiddenRegion && "value" in hiddenRegion) {
+            const regionValue = userRegion.value;
+            hiddenRegion.value = regionValue;
+            if (engrid_ENGrid.debug)
+                console.log("Populated 'Region Long Format' field", hiddenRegion.value);
+        }
+        return;
+    }
+}
+
 ;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/index.js
  // Runs first so it can change the DOM markup before any markup dependent code fires
+
+
 
 
 
