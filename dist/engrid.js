@@ -17,7 +17,7 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Thursday, April 21, 2022 @ 12:48:32 ET
+ *  Date: Wednesday, August 31, 2022 @ 12:45:12 ET
  *  By: bryancasler
  *  ENGrid styles: v0.11.9
  *  ENGrid scripts: v0.11.9
@@ -15429,6 +15429,58 @@ const customScript = function () {
       document.body.setAttribute("data-engrid-page-background", "image");
       document.body.removeAttribute("data-engrid-no-page-backgroundImage");
     }
+  } // Accessibility Audit Enhancements from Jason Thomas <jason@artisanapps.io>
+  //remove the skip to content link, which makes no sense when the content is inside an iframe
+
+
+  function inIframe() {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
+  }
+
+  if (inIframe()) {
+    let elem = document.querySelector(".skip-link");
+
+    if (elem) {
+      elem.remove();
+    }
+  }
+
+  function makeBetterNumberInput(field) {
+    field.setAttribute("type", "text");
+    field.setAttribute("pattern", "[0-9]*"); //modern browsers will validate the field for number entry
+
+    field.setAttribute("inputmode", "numeric"); //most devices with virtual keyboards will show the number pad
+  }
+
+  let ccField = document.getElementById("en__field_transaction_ccnumber");
+
+  if (ccField) {
+    //add a hidden aria-live region to announce the calculated credit card icon to screen readers
+    //the content is set via CSS
+    let liveUpdate = document.createElement("span");
+    liveUpdate.className = "live-card-sr-region";
+    liveUpdate.setAttribute("aria-live", "polite");
+    ccField.parentNode.append(liveUpdate); //don't use type=number, which causes agents to treat it like a number spinner
+
+    makeBetterNumberInput(ccField);
+  }
+
+  let cvvField = document.getElementById("en__field_transaction_ccvv");
+
+  if (cvvField) {
+    //don't use type=tel, which is semantically incorrect
+    makeBetterNumberInput(cvvField);
+  } //add a label to the CC expiry year, for screen readers
+
+
+  let ccExpYear = document.querySelector('[autocomplete="cc-exp-year"]');
+
+  if (ccExpYear) {
+    ccExpYear.setAttribute("aria-label", "Expiration Year");
   }
 };
 ;// CONCATENATED MODULE: ./src/index.ts

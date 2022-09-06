@@ -19,7 +19,7 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Thursday, April 21, 2022 @ 12:48:32 ET
+ *  Date: Wednesday, August 31, 2022 @ 12:45:12 ET
  *  By: bryancasler
  *  ENGrid styles: v0.11.9
  *  ENGrid scripts: v0.11.9
@@ -6908,8 +6908,8 @@ body:not([data-engrid-debug]) #debug-bar{
   --color_off-black:#3b3b3b;
   --success:#3c3;
   --warning:#fcac00;
-  --error:#f12222;
-  --error__color:#f12222;
+  --error:#e60f0f;
+  --error__color:#e60f0f;
   --color_primary:#f16e22;
   --color_primary_overlay:#fff;
   --scale-up_20pct:1.2;
@@ -7424,6 +7424,31 @@ body:not([data-engrid-debug]) #debug-bar{
 }
 [data-engrid-theme=oxfamca][data-engrid-subtheme=emergency] .body-header:before,[data-engrid-theme=oxfamca][data-engrid-subtheme=emergency] .footer-block-three,[data-engrid-theme=oxfamca][data-engrid-subtheme=emergency] header#yd-donationheader,[data-engrid-theme=oxfamca][data-engrid-subtheme=emergency] section.form-sidebar,[data-engrid-theme=oxfamca][data-engrid-subtheme=emergency] section.wrapper .main .form-large,[data-engrid-theme=oxfamca][data-engrid-subtheme=emergency]:before{
   background:url(https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/strip-emergency-desktop.png?v=1520436486000);
+}
+[data-engrid-theme=oxfamca] .en__field__input--checkbox:focus+.en__field__label,[data-engrid-theme=oxfamca] .en__field__input--radio:focus+.en__field__label{
+  outline-style:auto;
+}
+[data-engrid-theme=oxfamca] .live-card-sr-region{
+  clip:rect(0, 0, 0, 0);
+  border:0;
+  height:1px;
+  margin:-1px;
+  overflow:hidden;
+  padding:0;
+  position:absolute;
+  width:1px;
+}
+[data-engrid-theme=oxfamca] .live-card-type-amex+.live-card-sr-region:before{
+  content:"American Express";
+}
+[data-engrid-theme=oxfamca] .live-card-type-discover+.live-card-sr-region:before{
+  content:"Discover Card";
+}
+[data-engrid-theme=oxfamca] .live-card-type-mastercard+.live-card-sr-region:before{
+  content:"Mastercard";
+}
+[data-engrid-theme=oxfamca] .live-card-type-visa+.live-card-sr-region:before{
+  content:"Visa";
 }
 body{
   opacity:1;

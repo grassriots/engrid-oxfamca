@@ -17,8 +17,8 @@
   // SEMANTIC COLOR PALETTE
   --success: #33cc33;
   --warning: #fcac00;
-  --error: #f12222;
-  --error__color: #f12222;
+  --error: #e60f0f; /*this ensures 4.5:1 contrast of white and error red*/
+  --error__color: #e60f0f; /*this ensures 4.5:1 contrast of white and error red*/
 
   // PRIMARY COLORS
   --color_primary: #f16e22;
@@ -805,5 +805,36 @@
     section.wrapper .main .form-large {
       background: url("https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/strip-emergency-desktop.png?v=1520436486000");
     }
+  }
+
+  // Accessibility Audit Enhancements from Jason Thomas <jason@artisanapps.io>
+  .en__field__input--checkbox:focus + .en__field__label,
+  .en__field__input--radio:focus + .en__field__label {
+    /*this fixes checkbox focus ring display in firefox*/
+    outline-style: auto;
+  }
+
+  /*we will use CSS content to inform screen readers of the dynamically detected CC type */
+  .live-card-sr-region {
+    border: 0;
+    clip: rect(0, 0, 0, 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+  }
+  .live-card-type-amex + .live-card-sr-region:before {
+    content: "American Express";
+  }
+  .live-card-type-discover + .live-card-sr-region:before {
+    content: "Discover Card";
+  }
+  .live-card-type-mastercard + .live-card-sr-region:before {
+    content: "Mastercard";
+  }
+  .live-card-type-visa + .live-card-sr-region:before {
+    content: "Visa";
   }
 }
