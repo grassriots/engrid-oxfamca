@@ -83,7 +83,7 @@ export const customScript = function () {
 
   // Close upsell lightbox if captcha expires
   const upsellLightbox = document.querySelector("#enModal");
-  window._grecaptchaExpireCallback = function() {
-      upsellLightbox.classList.add("is-hidden");
-  }
+  window._grecaptchaExpireCallback = function () {
+    upsellLightbox.classList.add("is-hidden");
+  };
 };
