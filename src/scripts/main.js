@@ -83,7 +83,19 @@ export const customScript = function () {
 
   // Close upsell lightbox if captcha expires
   const upsellLightbox = document.querySelector("#enModal");
-  window._grecaptchaExpireCallback = function () {
-    upsellLightbox.classList.add("is-hidden");
-  };
+  if (window.hasOwnProperty("_grecaptchaExpireCallback")) {
+    const originalCallback = window._grecaptchaExpireCallback;
+    window._grecaptchaExpireCallback = function () {
+      originalCallback();
+      if (upsellLightbox) {
+        upsellLightbox.classList.add("is-hidden");
+        document.body.removeAttribute("data-engrid-has-lightbox");
+        const submitButton = document.querySelector(".en__submit button");
+        if (submitButton) {
+          submitButton.removeAttribute("disabled");
+          submitButton.innerHTML = submitButton.innerText;
+        }
+      }
+    };
+  }
 };

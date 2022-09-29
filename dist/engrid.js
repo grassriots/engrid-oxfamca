@@ -17,8 +17,8 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Tuesday, September 27, 2022 @ 17:20:55 ET
- *  By: ryanoliver
+ *  Date: Thursday, September 29, 2022 @ 14:59:26 ET
+ *  By: fernando
  *  ENGrid styles: v0.11.9
  *  ENGrid scripts: v0.11.9
  *
@@ -15486,9 +15486,24 @@ const customScript = function () {
 
   const upsellLightbox = document.querySelector("#enModal");
 
-  window._grecaptchaExpireCallback = function () {
-    upsellLightbox.classList.add("is-hidden");
-  };
+  if (window.hasOwnProperty("_grecaptchaExpireCallback")) {
+    const originalCallback = window._grecaptchaExpireCallback;
+
+    window._grecaptchaExpireCallback = function () {
+      originalCallback();
+
+      if (upsellLightbox) {
+        upsellLightbox.classList.add("is-hidden");
+        document.body.removeAttribute("data-engrid-has-lightbox");
+        const submitButton = document.querySelector(".en__submit button");
+
+        if (submitButton) {
+          submitButton.removeAttribute("disabled");
+          submitButton.innerHTML = submitButton.innerText;
+        }
+      }
+    };
+  }
 };
 ;// CONCATENATED MODULE: ./src/index.ts
  // Uses ENGrid via NPM
