@@ -17,10 +17,10 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Monday, March 21, 2022 @ 11:30:11 ET
- *  By: fernando
- *  ENGrid styles: v0.10.12
- *  ENGrid scripts: v0.10.19
+ *  Date: Wednesday, August 31, 2022 @ 12:45:12 ET
+ *  By: bryancasler
+ *  ENGrid styles: v0.11.9
+ *  ENGrid scripts: v0.11.9
  *
  *  Created by 4Site Studios
  *  Come work with us or join our team, we would love to hear from you
@@ -10306,6 +10306,7 @@ const OptionsDefaults = {
     TranslateFields: true,
     Debug: false,
     RememberMe: false,
+    RegionLongFormat: "",
 };
 
 ;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/interfaces/upsell-options.js
@@ -10387,54 +10388,47 @@ const TranslateOptionsDefaults = {
 
 class Loader {
     constructor() {
-        this.logger = new EngridLogger("Logger", "gold", "black", "🔁");
+        this.logger = new EngridLogger("Loader", "gold", "black", "🔁");
         this.cssElement = document.querySelector('link[href*="engrid."][rel="stylesheet"]');
         this.jsElement = document.querySelector('script[src*="engrid."]');
     }
     // Returns true if ENgrid should reload (that means the current ENgrid is not the right one)
     // Returns false if ENgrid should not reload (that means the current ENgrid is the right one)
     reload() {
-        var _a, _b, _c;
+        var _a, _b, _c, _d, _e;
         const isLoaded = engrid_ENGrid.getBodyData("loaded");
         let assets = this.getOption("assets");
         if (isLoaded || !assets) {
-            this.logger.success("ENgrid Loader: LOADED");
+            this.logger.success("LOADED");
             return false;
         }
         // Load the right ENgrid
-        this.logger.log("ENgrid Loader: RELOADING");
+        this.logger.log("RELOADING");
         engrid_ENGrid.setBodyData("loaded", "true"); // Set the loaded flag, so the next time we don't reload
         // Fetch the desired repo, assets location, and override JS/CSS
-        const engrid_repo = this.getOption("repo-name");
-        const engrid_repo_owner = this.getOption("repo-owner");
+        const theme = engrid_ENGrid.getBodyData("theme");
+        const engrid_repo = (_a = this.getOption("repo-name")) !== null && _a !== void 0 ? _a : `engrid-${theme}`;
+        const engrid_repo_owner = (_b = this.getOption("repo-owner")) !== null && _b !== void 0 ? _b : "4site-interactive-studios";
         let engrid_js_url = "";
         let engrid_css_url = "";
         switch (assets) {
             case "local":
-                this.logger.log("ENgrid Loader: LOADING LOCAL");
-                // Find a way to guess local URL if there's no engrid_repo
-                if (!engrid_repo) {
-                    const theme = engrid_ENGrid.getBodyData("theme");
-                    engrid_js_url = `https://engrid-${theme}.test/dist/engrid.js`;
-                    engrid_css_url = `https://engrid-${theme}.test/dist/engrid.css`;
-                }
-                else {
-                    engrid_js_url = `https://engrid-${engrid_repo}.test/dist/engrid.js`;
-                    engrid_css_url = `https://engrid-${engrid_repo}.test/dist/engrid.css`;
-                }
+                this.logger.log("LOADING LOCAL");
+                engrid_js_url = `https://${engrid_repo}.test/dist/engrid.js`;
+                engrid_css_url = `https://${engrid_repo}.test/dist/engrid.css`;
                 break;
             case "flush":
-                this.logger.log("ENgrid Loader: FLUSHING CACHE");
+                this.logger.log("FLUSHING CACHE");
                 const timestamp = Date.now();
-                const jsCurrentURL = new URL(((_a = this.jsElement) === null || _a === void 0 ? void 0 : _a.getAttribute("src")) || "");
+                const jsCurrentURL = new URL(((_c = this.jsElement) === null || _c === void 0 ? void 0 : _c.getAttribute("src")) || "");
                 jsCurrentURL.searchParams.set("v", timestamp.toString());
                 engrid_js_url = jsCurrentURL.toString();
-                const cssCurrentURL = new URL(((_b = this.cssElement) === null || _b === void 0 ? void 0 : _b.getAttribute("href")) || "");
+                const cssCurrentURL = new URL(((_d = this.cssElement) === null || _d === void 0 ? void 0 : _d.getAttribute("href")) || "");
                 cssCurrentURL.searchParams.set("v", timestamp.toString());
                 engrid_css_url = cssCurrentURL.toString();
                 break;
             default:
-                this.logger.log("ENgrid Loader: LOADING EXTERNAL");
+                this.logger.log("LOADING EXTERNAL");
                 engrid_js_url =
                     "https://cdn.jsdelivr.net/gh/" +
                         engrid_repo_owner +
@@ -10454,7 +10448,7 @@ class Loader {
         }
         this.setCssFile(engrid_css_url);
         this.setJsFile(engrid_js_url);
-        (_c = this.jsElement) === null || _c === void 0 ? void 0 : _c.remove();
+        (_e = this.jsElement) === null || _e === void 0 ? void 0 : _e.remove();
         return true;
     }
     getOption(key) {
@@ -10686,6 +10680,16 @@ class engrid_ENGrid {
     // Return any parameter from the URL
     static getUrlParameter(name) {
         const searchParams = new URLSearchParams(window.location.search);
+        // Add support for array on the name ending with []
+        if (name.endsWith("[]")) {
+            let values = [];
+            searchParams.forEach((value, key) => {
+                if (key.startsWith(name.replace("[]", ""))) {
+                    values.push(new Object({ [key]: value }));
+                }
+            });
+            return values.length > 0 ? values : null;
+        }
         if (searchParams.has(name)) {
             return searchParams.get(name) || true;
         }
@@ -10777,13 +10781,20 @@ class engrid_ENGrid {
     static getPageType() {
         if ("pageJson" in window && "pageType" in window.pageJson) {
             switch (window.pageJson.pageType) {
+                case "donation":
+                case "premiumgift":
+                    return "DONATION";
+                    break;
                 case "e-card":
                     return "ECARD";
                     break;
                 case "otherdatacapture":
+                case "survey":
                     return "SURVEY";
                     break;
                 case "emailtotarget":
+                    return "EMAILTOTARGET";
+                    break;
                 case "advocacypetition":
                     return "ADVOCACY";
                     break;
@@ -10797,11 +10808,11 @@ class engrid_ENGrid {
                     return "UNSUBSCRIBE";
                     break;
                 default:
-                    return "DONATION";
+                    return "UNKNOWN";
             }
         }
         else {
-            return "DONATION";
+            return "UNKNOWN";
         }
     }
     // Set body engrid data attributes
@@ -11194,8 +11205,6 @@ class App extends engrid_ENGrid {
         if (this.options.Debug || App.getUrlParameter("debug") == "true")
             // Enable debug if available is the first thing
             App.setBodyData("debug", "");
-        // Page Background
-        new PageBackground();
         // TODO: Abstract everything to the App class so we can remove custom-methods
         inputPlaceholder();
         preventAutocomplete();
@@ -11265,6 +11274,10 @@ class App extends engrid_ENGrid {
         new UpsellLightbox();
         // Amount Labels
         new AmountLabel();
+        // Engrid Data Replacement
+        new DataReplace();
+        // ENgrid Hide Script
+        new DataHide();
         // On the end of the script, after all subscribers defined, let's load the current value
         this._amount.load();
         this._frequency.load();
@@ -11310,6 +11323,10 @@ class App extends engrid_ENGrid {
         new OtherAmount();
         new MinMaxAmount();
         new Ticker();
+        new AddNameToMessage();
+        new ExpandRegionName();
+        // Page Background
+        new PageBackground();
         this.setDataAttributes();
         engrid_ENGrid.setBodyData("data-engrid-scripts-js-loading", "finished");
     }
@@ -15117,7 +15134,7 @@ class Ticker {
     // Get Items
     getItems() {
         const total = this.tickerElement.getAttribute("data-total") || "50";
-        this.logger.log("Getting " + total + "items");
+        this.logger.log("Getting " + total + " items");
         const seed = this.getSeed();
         const items = this.shuffleSeed.shuffle(this.items, seed);
         const now = new Date();
@@ -15138,7 +15155,7 @@ class Ticker {
         let ticker = document.createElement("div");
         ticker.classList.add("en__component");
         ticker.classList.add("en__component--ticker");
-        let str = '<div class="ticker">';
+        let str = `<div class="ticker">`;
         for (let i = 0; i < items.length; i++) {
             str += '<div class="ticker__item">' + items[i] + "</div>";
         }
@@ -15146,11 +15163,218 @@ class Ticker {
         ticker.innerHTML = str;
         (_b = (_a = this.tickerElement) === null || _a === void 0 ? void 0 : _a.parentElement) === null || _b === void 0 ? void 0 : _b.insertBefore(ticker, this.tickerElement);
         (_c = this.tickerElement) === null || _c === void 0 ? void 0 : _c.remove();
+        const tickerWidth = document.querySelector(".ticker").offsetWidth.toString();
+        ticker.style.setProperty("--ticker-size", tickerWidth);
+        this.logger.log("Ticker Size: " + ticker.style.getPropertyValue("--ticker-size"));
+        this.logger.log("Ticker Width: " + tickerWidth);
+    }
+}
+
+;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/data-replace.js
+
+class DataReplace {
+    constructor() {
+        this.logger = new EngridLogger("DataReplace", "#333333", "#00f3ff", "⤵️");
+        this.enElements = new Array();
+        this.logger.log("Constructor");
+        this.searchElements();
+        if (!this.shouldRun()) {
+            this.logger.error("No Elements Found");
+            return;
+        }
+        this.replaceAll();
+    }
+    searchElements() {
+        const enElements = document.querySelectorAll(`
+      .en__component--copyblock,
+      .en__component--codeblock,
+      .en__field
+      `);
+        if (enElements.length > 0) {
+            enElements.forEach((item) => {
+                if (item instanceof HTMLElement &&
+                    item.innerHTML.includes("{engrid_data~")) {
+                    this.enElements.push(item);
+                }
+            });
+        }
+    }
+    shouldRun() {
+        this.logger.log("Elements Found:", this.enElements);
+        return this.enElements.length > 0;
+    }
+    replaceAll() {
+        const regEx = /{engrid_data~\[([\w-]+)\]~?\[?(.+?)?\]?}/g;
+        this.enElements.forEach((item) => {
+            const array = item.innerHTML.matchAll(regEx);
+            for (const match of array) {
+                this.replaceItem(item, match);
+            }
+        });
+    }
+    replaceItem(where, [item, key, defaultValue]) {
+        var _a;
+        let value = (_a = engrid_ENGrid.getUrlParameter(`engrid_data[${key}]`)) !== null && _a !== void 0 ? _a : defaultValue;
+        if (typeof value === "string") {
+            value = value.replace(/\r?\\n|\n|\r/g, "<br>");
+        }
+        else {
+            value = "";
+        }
+        this.logger.log("Replacing", key, value);
+        where.innerHTML = where.innerHTML.replace(item, value);
+    }
+}
+
+;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/data-hide.js
+
+class DataHide {
+    constructor() {
+        this.logger = new EngridLogger("DataHide", "#333333", "#f0f0f0", "🙈");
+        this.enElements = new Array();
+        this.logger.log("Constructor");
+        this.enElements = engrid_ENGrid.getUrlParameter("engrid_hide[]");
+        if (!this.enElements || this.enElements.length === 0) {
+            this.logger.log("No Elements Found");
+            return;
+        }
+        this.logger.log("Elements Found:", this.enElements);
+        this.hideAll();
+    }
+    hideAll() {
+        this.enElements.forEach((element) => {
+            const item = Object.keys(element)[0];
+            const type = Object.values(element)[0];
+            this.hideItem(item, type);
+        });
+        return;
+    }
+    hideItem(item, type) {
+        const regEx = /engrid_hide\[([\w-]+)\]/g;
+        const itemData = [...item.matchAll(regEx)].map((match) => match[1])[0];
+        switch (type) {
+            case "id":
+                const element = document.getElementById(itemData);
+                if (element) {
+                    this.logger.log("Hiding By ID", itemData, element);
+                    element.setAttribute("hidden-via-url-argument", "");
+                }
+                else {
+                    this.logger.error("Element Not Found By ID", itemData);
+                }
+                break;
+            case "class":
+            default:
+                const elements = document.getElementsByClassName(itemData);
+                if (elements.length > 0) {
+                    for (let i = 0; i < elements.length; i++) {
+                        this.logger.log("Hiding By Class", itemData, elements[i]);
+                        elements[i].setAttribute("hidden-via-url-argument", "");
+                    }
+                }
+                else {
+                    this.logger.log("No Elements Found By Class", itemData);
+                }
+                break;
+        }
+    }
+}
+
+;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/add-name-to-message.js
+/*
+ Adds first and last name when First Name and Last Name fields lose focus if name shortcodes aren't present
+*/
+
+class AddNameToMessage {
+    constructor() {
+        if (!this.shouldRun()) {
+            // Don't run the script if the page isn't email to target
+            return;
+        }
+        this.replaceNameShortcode("#en__field_supporter_firstName", "#en__field_supporter_lastName");
+    }
+    shouldRun() {
+        return engrid_ENGrid.getPageType() === "EMAILTOTARGET";
+    }
+    replaceNameShortcode(fName, lName) {
+        const firstName = document.querySelector(fName);
+        const lastName = document.querySelector(lName);
+        let message = document.querySelector('[name="contact.message"]');
+        let addedFirstName = false;
+        let addedLastName = false;
+        if (message) {
+            if (message.value.includes("{user_data~First Name") || message.value.includes("{user_data~Last Name")) {
+                return;
+            }
+            else {
+                if (!message.value.includes("{user_data~First Name") && firstName) {
+                    firstName.addEventListener("blur", (e) => {
+                        const target = e.target;
+                        if (message && !addedFirstName) {
+                            addedFirstName = true;
+                            message.value = message.value.concat("\n" + target.value);
+                        }
+                    });
+                }
+                if (!message.value.includes("{user_data~Last Name") && lastName) {
+                    lastName.addEventListener("blur", (e) => {
+                        const target = e.target;
+                        if (message && !addedLastName) {
+                            addedLastName = true;
+                            message.value = message.value.concat(" " + target.value);
+                        }
+                    });
+                }
+            }
+        }
+    }
+}
+
+;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/expand-region-name.js
+// Populates hidden supporter field "Region Long Format" with expanded name (e.g FL becomes Florida)
+
+
+class ExpandRegionName {
+    constructor() {
+        this._form = EnForm.getInstance();
+        if (this.shouldRun()) {
+            this._form.onSubmit.subscribe(() => this.expandRegion());
+        }
+    }
+    shouldRun() {
+        return engrid_ENGrid.getOption("RegionLongFormat") !== "";
+    }
+    expandRegion() {
+        const userRegion = document.querySelector('[name="supporter.region"]'); // User entered region on the page
+        const expandedRegionField = engrid_ENGrid.getOption("RegionLongFormat");
+        const hiddenRegion = document.querySelector(expandedRegionField); // Hidden region long form field
+        if (!userRegion) {
+            if (engrid_ENGrid.debug)
+                console.log("No region field to populate the hidden region field with");
+            return; // Don't populate hidden region field if user region field isn't on page
+        }
+        if (userRegion.tagName === "SELECT" && "options" in userRegion && hiddenRegion && "value" in hiddenRegion) {
+            const regionValue = userRegion.options[userRegion.selectedIndex].innerText;
+            hiddenRegion.value = regionValue;
+            if (engrid_ENGrid.debug)
+                console.log("Populated 'Region Long Format' field", hiddenRegion.value);
+        }
+        else if (userRegion.tagName === "INPUT" && hiddenRegion && "value" in hiddenRegion) {
+            const regionValue = userRegion.value;
+            hiddenRegion.value = regionValue;
+            if (engrid_ENGrid.debug)
+                console.log("Populated 'Region Long Format' field", hiddenRegion.value);
+        }
+        return;
     }
 }
 
 ;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/index.js
  // Runs first so it can change the DOM markup before any markup dependent code fires
+
+
+
+
 
 
 
@@ -15205,6 +15429,58 @@ const customScript = function () {
       document.body.setAttribute("data-engrid-page-background", "image");
       document.body.removeAttribute("data-engrid-no-page-backgroundImage");
     }
+  } // Accessibility Audit Enhancements from Jason Thomas <jason@artisanapps.io>
+  //remove the skip to content link, which makes no sense when the content is inside an iframe
+
+
+  function inIframe() {
+    try {
+      return window.self !== window.top;
+    } catch (e) {
+      return true;
+    }
+  }
+
+  if (inIframe()) {
+    let elem = document.querySelector(".skip-link");
+
+    if (elem) {
+      elem.remove();
+    }
+  }
+
+  function makeBetterNumberInput(field) {
+    field.setAttribute("type", "text");
+    field.setAttribute("pattern", "[0-9]*"); //modern browsers will validate the field for number entry
+
+    field.setAttribute("inputmode", "numeric"); //most devices with virtual keyboards will show the number pad
+  }
+
+  let ccField = document.getElementById("en__field_transaction_ccnumber");
+
+  if (ccField) {
+    //add a hidden aria-live region to announce the calculated credit card icon to screen readers
+    //the content is set via CSS
+    let liveUpdate = document.createElement("span");
+    liveUpdate.className = "live-card-sr-region";
+    liveUpdate.setAttribute("aria-live", "polite");
+    ccField.parentNode.append(liveUpdate); //don't use type=number, which causes agents to treat it like a number spinner
+
+    makeBetterNumberInput(ccField);
+  }
+
+  let cvvField = document.getElementById("en__field_transaction_ccvv");
+
+  if (cvvField) {
+    //don't use type=tel, which is semantically incorrect
+    makeBetterNumberInput(cvvField);
+  } //add a label to the CC expiry year, for screen readers
+
+
+  let ccExpYear = document.querySelector('[autocomplete="cc-exp-year"]');
+
+  if (ccExpYear) {
+    ccExpYear.setAttribute("aria-label", "Expiration Year");
   }
 };
 ;// CONCATENATED MODULE: ./src/index.ts
