@@ -19,8 +19,8 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Wednesday, August 31, 2022 @ 12:45:12 ET
- *  By: bryancasler
+ *  Date: Monday, May 1, 2023 @ 15:52:22 ET
+ *  By: fernando
  *  ENGrid styles: v0.11.9
  *  ENGrid scripts: v0.11.9
  *
@@ -7182,7 +7182,7 @@ body:not([data-engrid-debug]) #debug-bar{
   height:12px;
   width:100%;
 }
-@media (max-width:26.5525em){
+@media (max-width:425px){
   [data-engrid-theme=oxfamca][data-engrid-layout] .body-headerOutside p.no-margin{
     margin-bottom:0;
     margin-top:0;
@@ -7195,7 +7195,7 @@ body:not([data-engrid-debug]) #debug-bar{
     --donation-amount__button_count:2;
   }
 }
-@media (max-width:47.99em){
+@media (max-width:767px){
   [data-engrid-theme=oxfamca][data-engrid-layout] .emailImage{
     float:none !important;
     height:auto !important;
@@ -7215,7 +7215,7 @@ body:not([data-engrid-debug]) #debug-bar{
   justify-content:center;
   padding:30px 0;
 }
-@media (max-width:47.99em){
+@media (max-width:767px){
   [data-engrid-theme=oxfamca] .footer-wrapper{
     display:block;
   }
