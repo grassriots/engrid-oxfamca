@@ -80,4 +80,84 @@ export const customScript = function () {
   if (ccExpYear) {
     ccExpYear.setAttribute("aria-label", "Expiration Year");
   }
+
+  // Get the elements with the specified classes
+  let paypalElement = document.querySelector('.en__field__item.paypal');
+  let cardElement = document.querySelector('.en__field__item.card');
+
+  function setPaymentType(paymentType) {
+    // Get the select element by its name
+    const enFieldPaymentType = document.getElementsByName("transaction.paymenttype")[0];
+
+    if (enFieldPaymentType) {
+        // Find the option with the matching value
+        const options = enFieldPaymentType.options;
+        let foundOption;
+
+        for (let i = 0; i < options.length; i++) {
+            const option = options[i];
+            if (option.value.toLowerCase() === paymentType.toLowerCase()) {
+                foundOption = option;
+                break;
+            }
+        }
+
+        if (foundOption) {
+            // Set the selected property of the found option to true
+            foundOption.selected = true;
+
+            // Dispatch a change event to simulate user interaction
+            const event = new Event("change");
+            enFieldPaymentType.dispatchEvent(event);
+        } else {
+            // If no matching option is found, set the value directly
+            enFieldPaymentType.value = paymentType;
+        }
+    }
+    console.log("Setting payment type to: " + paymentType);
+}
+
+// Add click event listeners to the elements
+if (paypalElement) {
+  paypalElement.addEventListener('click', function() {
+    console.log('clicked paypal');  
+    setPaymentType('paypal');
+  });
+}
+
+if (cardElement) {
+  cardElement.addEventListener('click', function() {
+      console.log('clicked card');
+      setPaymentType('vi');
+  });
+}
+
+
+
+  let submitButton = document.getElementsByClassName('en__submit')[0];
+  
+  submitButton.addEventListener("click", function() {
+    let form = submitButton.closest("form");
+
+    let paymentfield = document.getElementsByName("transaction.paymenttype")[0];
+    console.log('Payment type: ', paymentfield);
+    console.log("Button clicked!");
+    form.submit();
+
+});
+/*document.addEventListener("click", function(event) {
+  // Check if the clicked element has the class 'submitButton'
+  if (event.target.classList.contains("en__submit")) {
+    console.log('clicked');
+      // Find the closest form element based on the button
+      var form = event.target.closest("form");
+
+      // Check if a form is found
+      if (form) {
+        console.log('submit form');
+          // Trigger the form submission
+          form.submit();
+      }
+  }
+});*/
 };
