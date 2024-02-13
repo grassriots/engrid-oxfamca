@@ -85,19 +85,61 @@ export const customScript = function () {
   let paypalElement = document.querySelector('.en__field__item.paypal');
   let cardElement = document.querySelector('.en__field__item.card');
 
-  function setPaymentType(paymentType) {
+//dumpGlobalVar implementation (manages the iframes);
+
+function dumpGlobalVar() {
+
+
+  // EN is not reading the global variable because their JS file loads before ENgrid, so we're going to HACK TOWN
+  // Clean up the VGS iFrames
+  window.setTimeout(() => {
+      const vgsIElements = document.querySelectorAll(".en__field__input--vgs");
+      if (vgsIElements.length > 0) {
+          // Create a mutation observer that cleans the VGS Elements before anything is rendered
+          const observer = new MutationObserver((mutations) => {
+              mutations.forEach((mutation) => {
+                  if (mutation.type === "childList" && mutation.addedNodes.length > 0)
+                      mutation.addedNodes.forEach((node) => {
+                          if (node.nodeName === "IFRAME" &&
+                              mutation.previousSibling &&
+                              mutation.previousSibling.nodeName === "IFRAME") {
+                              // Delete the previous sibling
+                              mutation.previousSibling.remove();
+                          }
+                      });
+              });
+          });
+          // Observe the VGS Elements
+          vgsIElements.forEach((vgsIElement) => {
+              observer.observe(vgsIElement, { childList: true });
+          });
+          //if (ENGrid.checkNested(window.EngagingNetworks, "require", "_defined", "enjs", "vgs")) {
+              window.EngagingNetworks.require._defined.enjs.vgs.init();
+          //}
+          //else {
+
+        //  }
+      }
+  }, 1000);
+}
+
+
+  function setPaymentType() {
+    console.log('triggered setPaymentType');
     // Get the select element by its name
-    const enFieldPaymentType = document.getElementsByName("transaction.paymenttype")[0];
+    const enFieldPaymentType = document.querySelector("#en__field_transaction_paymenttype");
 
     if (enFieldPaymentType) {
+      console.log('field payment type ',enFieldPaymentType);
         // Find the option with the matching value
         const options = enFieldPaymentType.options;
         let foundOption;
 
         for (let i = 0; i < options.length; i++) {
             const option = options[i];
-            if (option.value.toLowerCase() === paymentType.toLowerCase()) {
+            if (option.value.toLowerCase() === "visa" || option.value.toLowerCase() === "vi") {
                 foundOption = option;
+                enFieldPaymentType.selectedIndex = i;
                 break;
             }
         }
@@ -109,40 +151,51 @@ export const customScript = function () {
             // Dispatch a change event to simulate user interaction
             const event = new Event("change");
             enFieldPaymentType.dispatchEvent(event);
-        } else {
-            // If no matching option is found, set the value directly
-            enFieldPaymentType.value = paymentType;
         }
     }
-    console.log("Setting payment type to: " + paymentType);
+    console.log("Setting payment type to: " + enFieldPaymentType.selectedIndex);
 }
 
 // Add click event listeners to the elements
-if (paypalElement) {
+/*if (paypalElement) {
   paypalElement.addEventListener('click', function() {
     console.log('clicked paypal');  
-    setPaymentType('paypal');
+    setPaymentType();
   });
-}
+}*/
 
-if (cardElement) {
+/*if (cardElement) {
   cardElement.addEventListener('click', function() {
       console.log('clicked card');
-      setPaymentType('vi');
+      setPaymentType();
   });
-}
+}/*
 
 
 
   let submitButton = document.getElementsByClassName('en__submit')[0];
   
-  submitButton.addEventListener("click", function() {
+  submitButton.addEventListener("click", function(evt) {
+    evt.preventDefault(); // Prevent the default form submission behavior
     let form = submitButton.closest("form");
 
     let paymentfield = document.getElementsByName("transaction.paymenttype")[0];
     console.log('Payment type: ', paymentfield);
     console.log("Button clicked!");
+    // Get the transaction.ccnumber field
+    const ccNumberField = document.querySelector('#en__field_transaction_ccnumber');
+
+    // Check if the field exists
+    if (ccNumberField) {
+      const cardNumberInput = '4222222222222220';
+      console.log('iframe: ',cardNumberInput);
+      const liveCardTypeNA = document.querySelector('.live-card-type-na');
+      console.log('input hidden: ', liveCardTypeNA);
+      //ccnumberVGS = cardNumberInput.getAttribute('value').trim();
+      liveCardTypeNA.setAttribute('value', cardNumberInput);
+    }
     form.submit();
+
 
 });
 /*document.addEventListener("click", function(event) {
@@ -160,4 +213,6 @@ if (cardElement) {
       }
   }
 });*/
+dumpGlobalVar();
+setPaymentType();
 };
