@@ -17,8 +17,8 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Thursday, March 28, 2024 @ 12:15:17 ET
- *  By: peteleaning
+ *  Date: Tuesday, March 12, 2024 @ 16:41:50 ET
+ *  By: ewerter
  *  ENGrid styles: v0.14.12
  *  ENGrid scripts: v0.14.12
  *
@@ -19143,7 +19143,8 @@ const AppVersion = "0.14.12";
 const customScript = function () {
   console.log("ENGrid client scripts are executing"); // Add your client scripts here
 
-  const backgroundImage = ["https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-1.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-2.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-3.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-4.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-5.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-6.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-7.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-8.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-9.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-10.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-11.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-12.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-13.jpg?v=1578587000000"]; // Check if Body has a data-engrid-no-page-backgroundImage attribute
+  const backgroundImage = [//"https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/Shortfall+Campaign+-+Donation+Page+-+Plain+Background.png?v=1709580281000",
+  "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/Shortfall+Campaign+-+Donation+Page+-+Plain+Background.jpg?v=1709580270000"]; // Check if Body has a data-engrid-no-page-backgroundImage attribute
 
   if (document.querySelector("[data-engrid-no-page-backgroundImage]") !== null) {
     const randomImage = backgroundImage[Math.floor(Math.random() * backgroundImage.length)];
@@ -19299,6 +19300,19 @@ const customScript = function () {
     }
 
     console.log("Setting payment type to: " + enFieldPaymentType.selectedIndex);
+  } //lazy loading for footer
+
+
+  function setLazyLoading() {
+    const footerImg = document.querySelectorAll('a.footer-logo');
+    footerImg.forEach(function (footerImg) {
+      // Check if the <a> element contains an <img> tag
+      var imgElement = footerImg.querySelector('img'); // If an <img> tag is found within the <a> element, do something
+
+      if (imgElement) {
+        imgElement.setAttribute("loading", "lazy");
+      }
+    });
   } // Add click event listeners to the elements
 
   /*if (paypalElement) {
@@ -19362,6 +19376,7 @@ const customScript = function () {
   preSelectDonationValue();
   dumpGlobalVar();
   setPaymentType();
+  setLazyLoading;
 };
 ;// CONCATENATED MODULE: ./src/index.ts
  // Uses ENGrid via NPM

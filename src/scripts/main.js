@@ -2,19 +2,8 @@ export const customScript = function () {
   console.log("ENGrid client scripts are executing");
   // Add your client scripts here
   const backgroundImage = [
-    "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-1.jpg?v=1578587000000",
-    "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-2.jpg?v=1578587000000",
-    "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-3.jpg?v=1578587000000",
-    "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-4.jpg?v=1578587000000",
-    "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-5.jpg?v=1578587000000",
-    "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-6.jpg?v=1578587000000",
-    "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-7.jpg?v=1578587000000",
-    "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-8.jpg?v=1578587000000",
-    "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-9.jpg?v=1578587000000",
-    "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-10.jpg?v=1578587000000",
-    "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-11.jpg?v=1578587000000",
-    "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-12.jpg?v=1578587000000",
-    "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-13.jpg?v=1578587000000",
+    //"https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/Shortfall+Campaign+-+Donation+Page+-+Plain+Background.png?v=1709580281000",
+    "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/Shortfall+Campaign+-+Donation+Page+-+Plain+Background.jpg?v=1709580270000"
   ];
   // Check if Body has a data-engrid-no-page-backgroundImage attribute
   if (
@@ -173,6 +162,21 @@ function dumpGlobalVar() {
     console.log("Setting payment type to: " + enFieldPaymentType.selectedIndex);
 }
 
+//lazy loading for footer
+
+function setLazyLoading(){
+  const footerImg = document.querySelectorAll('a.footer-logo');
+  footerImg.forEach(function(footerImg) {
+    // Check if the <a> element contains an <img> tag
+    var imgElement = footerImg.querySelector('img');
+    
+    // If an <img> tag is found within the <a> element, do something
+    if (imgElement) {
+       imgElement.setAttribute("loading","lazy");
+    }
+  });
+}
+
 // Add click event listeners to the elements
 /*if (paypalElement) {
   paypalElement.addEventListener('click', function() {
@@ -233,4 +237,5 @@ function dumpGlobalVar() {
 preSelectDonationValue();
 dumpGlobalVar();
 setPaymentType();
+setLazyLoading();
 };
