@@ -2,9 +2,9 @@ const exec = require("child_process").execSync;
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const webpack = require("webpack");
 const author = require("os").userInfo().username;
-let engridScriptStylesVersion = exec("npm list @4site/engrid-styles")
+let engridScriptStylesVersion = exec("npm list @grassriotsinc/engrid-styles")
   .toString("utf8")
-  .split("@4site/engrid-styles@")[1]
+  .split("@grassriotsinc/engrid-styles@")[1]
   .split("\n")[0];
 const engridScriptScriptsVersion = exec("npm list @4site/engrid-common")
   .toString("utf8")
