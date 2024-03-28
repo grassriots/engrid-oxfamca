@@ -123,6 +123,23 @@ function dumpGlobalVar() {
   }, 1000);
 }
 
+  function preSelectDonationValue(){
+    params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v});
+    var donationPreSelect =  params["transaction.donationAmt"];
+    var ichange = new Event('change');
+    if (donationPreSelect != undefined){
+       window.setTimeout(function(){
+           if (document.querySelector('.en__field--donationAmt .en__field__item input[value="' + donationPreSelect + '"]').classList.contains('en__field__input--other')){
+            document.querySelector('.en__field--withOther').classList.add('en__field--withOther--active');
+            document.querySelector('.en__field__input--other').value = donationPreSelect;
+            document.querySelector('.en__field__input--other').dispatchEvent(ichange);
+            document.querySelector('.en__field__input--other').focus();
+        } else {
+            document.querySelector('.en__field--donationAmt .en__field__item input[value="' + donationPreSelect + '"]').checked = true;
+        }
+      },300);
+    }
+  }
 
   function setPaymentType() {
     console.log('triggered setPaymentType');
@@ -213,6 +230,7 @@ function dumpGlobalVar() {
       }
   }
 });*/
+preSelectDonationValue();
 dumpGlobalVar();
 setPaymentType();
 };

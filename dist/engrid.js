@@ -17,8 +17,8 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Friday, February 23, 2024 @ 06:25:56 ET
- *  By: ewerter
+ *  Date: Thursday, March 28, 2024 @ 11:24:21 ET
+ *  By: peteleaning
  *  ENGrid styles: v0.14.12
  *  ENGrid scripts: v0.14.12
  *
@@ -19246,6 +19246,28 @@ const customScript = function () {
     }, 1000);
   }
 
+  function preSelectDonationValue() {
+    params = {};
+    location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (s, k, v) {
+      params[k] = v;
+    });
+    var donationPreSelect = params["transaction.donationAmt"];
+    var ichange = new Event('change');
+
+    if (donationPreSelect != undefined) {
+      window.setTimeout(function () {
+        if (document.querySelector('.en__field--donationAmt .en__field__item input[value="' + donationPreSelect + '"]').classList.contains('en__field__input--other')) {
+          document.querySelector('.en__field--withOther').classList.add('en__field--withOther--active');
+          document.querySelector('.en__field__input--other').value = donationPreSelect;
+          document.querySelector('.en__field__input--other').dispatchEvent(ichange);
+          document.querySelector('.en__field__input--other').focus();
+        } else {
+          document.querySelector('.en__field--donationAmt .en__field__item input[value="' + donationPreSelect + '"]').checked = true;
+        }
+      }, 300);
+    }
+  }
+
   function setPaymentType() {
     console.log('triggered setPaymentType'); // Get the select element by its name
 
@@ -19337,6 +19359,7 @@ const customScript = function () {
   });*/
 
 
+  preSelectDonationValue();
   dumpGlobalVar();
   setPaymentType();
 };
