@@ -17,7 +17,7 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Thursday, March 28, 2024 @ 11:24:21 ET
+ *  Date: Thursday, March 28, 2024 @ 12:15:17 ET
  *  By: peteleaning
  *  ENGrid styles: v0.14.12
  *  ENGrid scripts: v0.14.12
@@ -19247,7 +19247,7 @@ const customScript = function () {
   }
 
   function preSelectDonationValue() {
-    params = {};
+    var params = {};
     location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (s, k, v) {
       params[k] = v;
     });

@@ -124,7 +124,7 @@ function dumpGlobalVar() {
 }
 
   function preSelectDonationValue(){
-    params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v});
+    var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v});
     var donationPreSelect =  params["transaction.donationAmt"];
     var ichange = new Event('change');
     if (donationPreSelect != undefined){
