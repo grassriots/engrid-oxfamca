@@ -1,7 +1,7 @@
 export const customScript = function () {
   console.log("ENGrid client scripts are executing");
   // Add your client scripts here
-  const backgroundImage = [
+  /*const backgroundImage = [
     //"https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/Shortfall+Campaign+-+Donation+Page+-+Plain+Background.png?v=1709580281000",
     "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/Shortfall+Campaign+-+Donation+Page+-+Plain+Background.jpg?v=1709580270000"
   ];
@@ -21,7 +21,7 @@ export const customScript = function () {
       document.body.setAttribute("data-engrid-page-background", "image");
       document.body.removeAttribute("data-engrid-no-page-backgroundImage");
     }
-  }
+  }*/
 
   // Accessibility Audit Enhancements from Jason Thomas <jason@artisanapps.io>
   //remove the skip to content link, which makes no sense when the content is inside an iframe

@@ -17,7 +17,7 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Monday, March 18, 2024 @ 17:10:36 ET
+ *  Date: Monday, April 1, 2024 @ 09:51:53 ET
  *  By: ewerter
  *  ENGrid styles: v1.0.3
  *  ENGrid scripts: v0.14.12
@@ -15228,6 +15228,7 @@ class RememberMe {
             </label>
           </div>
         </div>
+<<<<<<< HEAD
 			`;
             const targetField = this.getElementByFirstSelector(this.fieldOptInSelectorTarget);
             if (targetField && targetField.parentNode) {
