@@ -17,10 +17,10 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Thursday, March 28, 2024 @ 12:15:17 ET
- *  By: peteleaning
- *  ENGrid styles: v0.14.12
- *  ENGrid scripts: v0.14.12
+ *  Date: Monday, April 1, 2024 @ 18:25:11 ET
+ *  By: ewerter
+ *  ENGrid styles: v0.14.17
+ *  ENGrid scripts: v0.14.17
  *
  *  Created by 4Site Studios
  *  Come work with us or join our team, we would love to hear from you
@@ -10343,6 +10343,8 @@ const UpsellOptionsDefaults = {
     minAmount: 0,
     canClose: true,
     submitOnClose: false,
+    oneTime: true,
+    annual: false,
     disablePaymentMethods: [],
     skipUpsell: false,
 };
@@ -11268,12 +11270,12 @@ class engrid_ENGrid {
             const paymentTypeOption = Array.from(enFieldPaymentType.options).find((option) => option.value.toLowerCase() === paymentType.toLowerCase());
             if (paymentTypeOption) {
                 paymentTypeOption.selected = true;
-                const event = new Event("change");
-                enFieldPaymentType.dispatchEvent(event);
             }
             else {
                 enFieldPaymentType.value = paymentType;
             }
+            const event = new Event("change");
+            enFieldPaymentType.dispatchEvent(event);
         }
     }
 }
@@ -11697,6 +11699,8 @@ class App extends engrid_ENGrid {
         new CountryDisable();
         // Premium Gift Features
         new PremiumGift();
+        // Supporter Hub Features
+        new SupporterHub();
         // Digital Wallets Features
         if (engrid_ENGrid.getPageType() === "DONATION") {
             new DigitalWallets();
@@ -11718,6 +11722,8 @@ class App extends engrid_ENGrid {
         //Exit Intent Lightbox
         new ExitIntentLightbox();
         new UrlParamsToBodyAttrs();
+        new FastFormFill();
+        new SetAttr();
         //Debug panel
         if (this.options.Debug ||
             window.sessionStorage.hasOwnProperty(DebugPanel.debugSessionStorageKey)) {
@@ -13250,16 +13256,20 @@ class UpsellLightbox {
     renderLightbox() {
         const title = this.options.title
             .replace("{new-amount}", "<span class='upsell_suggestion'></span>")
-            .replace("{old-amount}", "<span class='upsell_amount'></span>");
+            .replace("{old-amount}", "<span class='upsell_amount'></span>")
+            .replace("{old-frequency}", "<span class='upsell_frequency'></span>");
         const paragraph = this.options.paragraph
             .replace("{new-amount}", "<span class='upsell_suggestion'></span>")
-            .replace("{old-amount}", "<span class='upsell_amount'></span>");
+            .replace("{old-amount}", "<span class='upsell_amount'></span>")
+            .replace("{old-frequency}", "<span class='upsell_frequency'></span>");
         const yes = this.options.yesLabel
             .replace("{new-amount}", "<span class='upsell_suggestion'></span>")
-            .replace("{old-amount}", "<span class='upsell_amount'></span>");
+            .replace("{old-amount}", "<span class='upsell_amount'></span>")
+            .replace("{old-frequency}", "<span class='upsell_frequency'></span>");
         const no = this.options.noLabel
             .replace("{new-amount}", "<span class='upsell_suggestion'></span>")
-            .replace("{old-amount}", "<span class='upsell_amount'></span>");
+            .replace("{old-amount}", "<span class='upsell_amount'></span>")
+            .replace("{old-frequency}", "<span class='upsell_frequency'></span>");
         const markup = `
             <div class="upsellLightboxContainer" id="goMonthly">
               <!-- ideal image size is 480x650 pixels -->
@@ -13375,6 +13385,10 @@ class UpsellLightbox {
         live_upsell_amount.forEach((elem) => (elem.innerHTML = this.getAmountTxt(suggestedAmount)));
         live_amount.forEach((elem) => (elem.innerHTML = this.getAmountTxt(this._amount.amount + this._fees.fee)));
     }
+    liveFrequency() {
+        const live_upsell_frequency = document.querySelectorAll(".upsell_frequency");
+        live_upsell_frequency.forEach((elem) => (elem.innerHTML = this.getFrequencyTxt()));
+    }
     // Return the Suggested Upsell Amount
     getUpsellAmount() {
         var _a, _b;
@@ -13404,14 +13418,13 @@ class UpsellLightbox {
             : this.options.minAmount;
     }
     shouldOpen() {
-        const freq = this._frequency.frequency;
         const upsellAmount = this.getUpsellAmount();
         const paymenttype = engrid_ENGrid.getFieldValue("transaction.paymenttype") || "";
         // If frequency is not onetime or
         // the modal is already opened or
         // there's no suggestion for this donation amount,
         // we should not open
-        if (freq == "onetime" &&
+        if (this.freqAllowed() &&
             !this.shouldSkip() &&
             !this.options.disablePaymentMethods.includes(paymenttype.toLowerCase()) &&
             !this.overlay.classList.contains("is-submitting") &&
@@ -13422,6 +13435,16 @@ class UpsellLightbox {
             return true;
         }
         return false;
+    }
+    // Return true if the current frequency is allowed by the options
+    freqAllowed() {
+        const freq = this._frequency.frequency;
+        const allowed = [];
+        if (this.options.oneTime)
+            allowed.push("onetime");
+        if (this.options.annual)
+            allowed.push("annual");
+        return allowed.includes(freq);
     }
     open() {
         this.logger.log("Upsell script opened");
@@ -13438,6 +13461,7 @@ class UpsellLightbox {
             return true;
         }
         this.liveAmounts();
+        this.liveFrequency();
         this.overlay.classList.remove("is-hidden");
         this._form.submit = false;
         engrid_ENGrid.setBodyData("has-lightbox", "");
@@ -13508,6 +13532,15 @@ class UpsellLightbox {
         const dec_places = amount % 1 == 0 ? 0 : (_d = engrid_ENGrid.getOption("DecimalPlaces")) !== null && _d !== void 0 ? _d : 2;
         const amountTxt = engrid_ENGrid.formatNumber(amount, dec_places, dec_separator, thousands_separator);
         return amount > 0 ? symbol + amountTxt : "";
+    }
+    getFrequencyTxt() {
+        const freqTxt = {
+            onetime: "one-time",
+            monthly: "monthly",
+            annual: "annual",
+        };
+        const frequency = this._frequency.frequency;
+        return frequency in freqTxt ? freqTxt[frequency] : frequency;
     }
     checkOtherAmount(value) {
         const otherInput = document.querySelector(".upsellOtherAmountInput");
@@ -19064,11 +19097,154 @@ class ExitIntentLightbox {
     }
 }
 
+;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/supporter-hub.js
+// Component that adds 4Site Special Features to the Supporter Hub Page
+
+class SupporterHub {
+    constructor() {
+        this.logger = new EngridLogger("SupporterHub", "black", "pink", "🛖");
+        this._form = EnForm.getInstance();
+        if (!this.shoudRun())
+            return;
+        this.logger.log("Enabled");
+        this.watch();
+    }
+    shoudRun() {
+        return ("pageJson" in window &&
+            "pageType" in window.pageJson &&
+            window.pageJson.pageType === "supporterhub");
+    }
+    watch() {
+        const form = engrid_ENGrid.enForm;
+        // Create a observer to watch the Form for overlays
+        const observer = new MutationObserver((mutations) => {
+            mutations.forEach((mutation) => {
+                if (mutation.type === "childList") {
+                    mutation.addedNodes.forEach((node) => {
+                        if (node.nodeName === "DIV") {
+                            const overlay = node;
+                            if (overlay.classList.contains("en__hubOverlay")) {
+                                this.logger.log("Overlay found");
+                                this.creditCardUpdate(node);
+                            }
+                        }
+                    });
+                }
+            });
+        });
+        // Start observing the Link ID #plaid-link-button
+        observer.observe(form, {
+            childList: true,
+            subtree: true,
+        });
+        // Run the Credit Card Update function in case the overlay is already present on page load
+        const hubOverlay = document.querySelector(".en__hubOverlay");
+        if (hubOverlay) {
+            this.creditCardUpdate(hubOverlay);
+        }
+    }
+    creditCardUpdate(overlay) {
+        window.setTimeout(() => {
+            // Check if the overlay has Credit Card field and Update Button
+            const ccField = overlay.querySelector("#en__hubPledge__field--ccnumber"), updateButton = overlay.querySelector(".en__hubUpdateCC__toggle");
+            if (ccField && updateButton) {
+                // When field gets focus, click the update button
+                ccField.addEventListener("focus", () => {
+                    this.logger.log("Credit Card field focused");
+                    updateButton.click();
+                });
+            }
+        }, 300);
+    }
+}
+
+;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/fast-form-fill.js
+/**
+ * This class adds body data attributes if all mandatory inputs, on specific form blocks, are filled.
+ * Related styling (to hide elements) can be found in "fast-form-fill.scss".
+ *
+ * To activate: add the custom class "fast-personal-details" or "fast-address-details"
+ * to the relevant form block.
+ */
+
+class FastFormFill {
+    constructor() {
+        this.logger = new EngridLogger("FastFormFill", "white", "magenta", "📌");
+        const fastPersonalDetailsFormBlock = document.querySelector(".en__component--formblock.fast-personal-details");
+        if (fastPersonalDetailsFormBlock) {
+            if (this.allMandatoryInputsAreFilled(fastPersonalDetailsFormBlock)) {
+                this.logger.log("Personal details - All mandatory inputs are filled");
+                engrid_ENGrid.setBodyData("hide-fast-personal-details", "true");
+            }
+            else {
+                this.logger.log("Personal details - Not all mandatory inputs are filled");
+                engrid_ENGrid.setBodyData("hide-fast-personal-details", "false");
+            }
+        }
+        const fastAddressDetailsFormBlock = document.querySelector(".en__component--formblock.fast-address-details");
+        if (fastAddressDetailsFormBlock) {
+            if (this.allMandatoryInputsAreFilled(fastAddressDetailsFormBlock)) {
+                this.logger.log("Address details - All mandatory inputs are filled");
+                engrid_ENGrid.setBodyData("hide-fast-address-details", "true");
+            }
+            else {
+                this.logger.log("Address details - Not all mandatory inputs are filled");
+                engrid_ENGrid.setBodyData("hide-fast-address-details", "false");
+            }
+        }
+    }
+    allMandatoryInputsAreFilled(formBlock) {
+        const fields = formBlock.querySelectorAll(".en__mandatory input, .en__mandatory select, .en__mandatory textarea");
+        return [...fields].every((input) => {
+            if (input.type === "radio" || input.type === "checkbox") {
+                const inputs = document.querySelectorAll('[name="' + input.name + '"]');
+                return [...inputs].some((radioOrCheckbox) => radioOrCheckbox.checked);
+            }
+            else {
+                return input.value !== null && input.value.trim() !== "";
+            }
+        });
+    }
+}
+
+;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/set-attr.js
+/*+
+  The class is used to set body attributes via click handlers.
+  The format is "setattr--{attribute}--{value}".
+  e.g. setattr--data-engrid-hide-fast-address-details--true
+ */
+
+class SetAttr {
+    constructor() {
+        this.logger = new EngridLogger("SetAttr", "black", "yellow", "📌");
+        const enGrid = document.getElementById("engrid");
+        if (enGrid) {
+            enGrid.addEventListener("click", (e) => {
+                const clickedEl = e.target;
+                const clickedElClassNames = clickedEl.className.split(" ");
+                if (clickedElClassNames.some((className) => className.startsWith("setattr--"))) {
+                    clickedEl.classList.forEach((className) => {
+                        //Check element has class with format "setattr--attribute--value"
+                        const match = className.match(/^setattr--(.+)--(.+)$/i);
+                        if (match && match[1] && match[2]) {
+                            this.logger.log(`Clicked element with class "${className}". Setting body attribute "${match[1]}" to "${match[2]}"`);
+                            engrid_ENGrid.setBodyData(match[1].replace("data-engrid-", ""), match[2]);
+                        }
+                    });
+                }
+            });
+        }
+    }
+}
+
 ;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/version.js
-const AppVersion = "0.14.12";
+const AppVersion = "0.14.17";
 
 ;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/index.js
  // Runs first so it can change the DOM markup before any markup dependent code fires
+
+
+
 
 
 
@@ -19299,7 +19475,44 @@ const customScript = function () {
     }
 
     console.log("Setting payment type to: " + enFieldPaymentType.selectedIndex);
-  } // Add click event listeners to the elements
+  } //Workaround for gift swap list
+
+
+  let checkedDonationButton;
+  let searchString = 'transaction_donationAmt';
+
+  function checkDefaultValues() {
+    console.log('triggered checkdefaultvalue()');
+    let donationButton = document.getElementsByClassName('en__field__input--radio');
+
+    for (var i = 0; i < donationButton.length; i++) {
+      if (donationButton[i].checked) {
+        //console.log("Checkbox " + donationButton[i].id + " is checked");
+        if (donationButton[i].id.includes(searchString)) {
+          console.log("Checkbox with id " + donationButton[i].id + " contains the string '" + searchString + "'");
+          checkedDonationButton = donationButton[i].id;
+        }
+      }
+    }
+
+    console.log('The id is: ', checkedDonationButton);
+    return checkedDonationButton;
+  }
+
+  let frequencyInput = document.getElementById('en__field_transaction_recurrfreq0');
+  frequencyInput.addEventListener('change', function () {
+    console.log('triggered changedFrequency');
+    let checkedDonationButton = checkDefaultValues();
+    let donationButtons = document.getElementsByClassName('en__field__input--radio');
+
+    for (let i = 0; i < donationButtons.length; i++) {
+      if (donationButtons[i].checked && donationButtons[i].id === checkedDonationButton) {
+        console.log("Checked donation button matches checkedDonationButton");
+        console.log(donationButtons[i].checked);
+        console.log(donationButtons[i].id);
+      }
+    }
+  }); // Add click event listeners to the elements
 
   /*if (paypalElement) {
     paypalElement.addEventListener('click', function() {
@@ -19358,8 +19571,8 @@ const customScript = function () {
     }
   });*/
 
-
   preSelectDonationValue();
+  checkDefaultValues();
   dumpGlobalVar();
   setPaymentType();
 };
