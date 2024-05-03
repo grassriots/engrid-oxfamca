@@ -1,0 +1,1160 @@
+// @TODO Style mandatory checkboxes https://d.pr/i/KAZKV6
+
+[data-engrid-theme] {
+  // FIELD SPACING
+  --fields_spacing-inline: 0.5rem;
+  --fields_spacing-block: 0.5rem;
+
+  // TYPOGRAPHY LABEL
+  --label_font-family: var(--default_font-family);
+  // --label_color: initial;
+  --label_font-size: var(--default_font-size);
+  --label_font-weight: initial;
+  --label_line-height: initial;
+  --label_text-transform: initial;
+  --label_letter-spacing: initial;
+
+  // TYPOGRAPHY INPUT
+  --input_font-family: var(--default_font-family);
+  // --input_color: #000000;
+  --input_font-size: var(--default_font-size);
+  --input_font-weight: initial;
+  --input_line-height: initial;
+  // --input_background-color: #fafafa;
+  --input_border-width: 1px;
+  // --input_border-color: #dfdfe1;
+  --input_border-radius: 6px;
+  // --input_placeholder-color: var(--color_light-gray);
+  --input_placeholder-opacity: initial;
+  --input_placeholder-font-weight: initial;
+  --input_box-shadow: inset 0 2px 2px -1px rgba(74, 74, 104, 0.1);
+  --input_padding: 1ch 1.2ch;
+
+  // TYPOGRAPHY INPUT:FOCUS
+  // TYPOGRAPHY INPUT:HOVER
+  // --input_color_hover: var(--input_color);
+  // --input_background-color_hover: var(--input_background-color);
+  // --input_border-color_hover: #767677;
+  // --input_border-bottom-color_hover: var(--input_border-color_hover);
+  --input_box-shadow_hover: var(--input_box-shadow);
+
+  // TYPOGRAPHY RADIO
+  --radio_content: "";
+  // --radio_color: var(--input_color);
+  // --radio_background-color: var(--input_background-color);
+  --radio_border-width: var(--input_border-width);
+  // --radio_border-color: var(--input_border-color);
+  --radio_border-radius: 50%;
+  --radio_box-shadow: none;
+  --radio_font-family: var(
+    --p_font-family
+  ); // @TODO This should probably inherit from --inputs instead of --p, but maybe there was a reason it wasn't
+  --radio_font-size: var(
+    --p_font-size
+  ); // @TODO This should probably inherit from --inputs instead of --p, but maybe there was a reason it wasn't
+  --radio_font-weight: var(
+    --p_font-weight
+  ); // @TODO This should probably inherit from --inputs instead of --p, but maybe there was a reason it wasn't
+  --radio_line-height: var(
+    --p_line-height
+  ); // @TODO This should probably inherit from --inputs instead of --p, but maybe there was a reason it wasn't
+  --radio_width: 20px; // REM's can result in fractional pixel values. By defining integers values you avoid oblong radio buttons ( https://d.pr/v/2ApFvk ).
+  --radio_height: 20px; // REM's can result in fractional pixel values. By defining integers values  you avoid oblong radio buttons ( https://d.pr/v/2ApFvk ).
+  --radio_top: 0px;
+  --radio_text-transform: initial;
+
+  // TYPOGRAPHY RADIO INPUT:FOCUS
+  // TYPOGRAPHY RADIO INPUT:HOVER
+  // --radio_color_hover: var(--radio_color);
+  // --radio_background-color_hover: var(--radio_background-color);
+  // --radio_border-color_hover: var(--input_border-color_hover);
+  --radio_box-shadow_hover: inset 0 0 0 6px #f5f5f5;
+
+  // TYPOGRAPHY RADIO INPUT:SELECTED
+  // --radio_color_selected: var(--radio_color_hover);
+  // --radio_background-color_selected: var(--radio_background-color_hover);
+  // --radio_border-color_selected: var(--input_border-color_hover);
+  --radio_box-shadow_selected: inset 0 0 0 6px #000000;
+
+  // TYPOGRAPHY CHECKBOX
+  // --checkbox_color: var(--color_black);
+  // --checkbox_background-color: var(--radio_background-color);
+  --checkbox_border-width: var(--input_border-width);
+  // --checkbox_border-color: var(--radio_border-color);
+  --checkbox_border-radius: var(--input_border-radius);
+  --checkbox_font-family: var(--radio_font-family);
+  --checkbox_font-size: var(--radio_font-size);
+  --checkbox_font-weight: var(--radio_font-weight);
+  --checkbox_line-height: var(--radio_line-height);
+  --checkbox_width: var(--radio_width);
+  --checkbox_height: var(--radio_height);
+  --checkbox_top: 0px;
+  --checkbox_padding-top: 0px;
+  --checkbox_padding-left: 0px;
+  --checkbox_text-transform: var(--radio_text-transform);
+  --checkbox_check_font-size: var(--radio_font-size);
+
+  // TYPOGRAPHY CHECKBOX INPUT:FOCUS
+  // TYPOGRAPHY CHECKBOX INPUT:HOVER
+  // --checkbox_color_hover: var(--checkbox_color);
+  // --checkbox_background-color_hover: var(--radio_background-color_hover);
+  // --checkbox_border-color_hover: var(--radio_border-color_hover);
+
+  // TYPOGRAPHY CHECKBOX INPUT:CHECKED
+  --checkbox_content_checked: "\2713"; // ✓
+  // --checkbox_color_checked: var(--checkbox_color_hover);
+  // --checkbox_background-color_checked: var(--radio_background-color_hover);
+  // --checkbox_border-color_checked: var(--color_black);
+
+  // TYPOGRAPHY SELECT
+  --select_font-family: var(--input_font-family);
+  // --select_color: var(--input_color);
+  --select_font-size: var(--input_font-size);
+  --select_font-weight: initial;
+  --select_line-height: var(--input_line-height);
+  // --select_background-color: var(--input_background-color);
+  --select_border-width: var(--input_border-width);
+  // --select_border-color: var(--input_border-color);
+  --select_border-radius: var(--input_border-radius);
+  // --select_placeholder-color: var(--input_placeholder-color);
+  --select_placeholder-opacity: var(--input_placeholder-opacity);
+  --select_placeholder-font-weight: var(--input_placeholder-font-weight);
+  --select_box-shadow: var(--input_box-shadow);
+  --select_padding: var(--input_padding);
+  --select_padding-right: 2.4ch;
+
+  // TYPOGRAPHY SELECT:FOCUS
+  // TYPOGRAPHY SELECT:HOVER
+  // --select_color_hover: var(--select_color);
+  // --select_background-color_hover: var(--select_background-color);
+  // --select_border-color_hover: var(--input_border-color_hover);
+  // --select_border-bottom-color_hover: var(--select_border-color_hover);
+  --select_box-shadow_hover: var(--input_box-shadow_hover);
+
+  // TYPOGRAPHY TEXTAREA
+  --textarea_font-family: var(--input_font-family);
+  // --textarea_color: var(--input_color);
+  --textarea_font-size: var(--input_font-size);
+  --textarea_font-weight: initial;
+  --textarea_line-height: initial;
+  // --textarea_background-color: var(--input_background-color);
+  --textarea_border-width: var(--input_border-width);
+  // --textarea_border-color: var(--input_border-color);
+  --textarea_border-radius: var(--input_border-radius);
+  // --textarea_placeholder-color: var(--color_light-gray);
+  --textarea_box-shadow: var(--input_box-shadow);
+  --textarea_padding: var(--input_padding);
+  --textarea_min-height: calc(1ch + (var(--textarea_font-size) * 10));
+
+  // TYPOGRAPHY TEXTAREA:FOCUS
+  // TYPOGRAPHY TEXTAREA:HOVER
+  // --textarea_color_hover: var(--textarea_color);
+  // --textarea_background-color_hover: var(--textarea_background-color);
+  // --textarea_border-color_hover: var(--input_border-color_hover);
+  // --textarea_border-bottom-color_hover: var(--textarea_border-color_hover);
+  --textarea_box-shadow_hover: var(--input_box-shadow_hover);
+}
+
+/************************************
+ * Form Block and Survey Block Components
+ * Why 20 pre-defined options? To cover a single form component with all of the following: * 1. First Name (50%) | 2. Last Name (50%) * 3. Email (100%) * 4. Email Opt-in (100%) * 5. Phone (100%) * 6. Phone Opt-in (100%) * 7. Street (100%) * 8. Street 2 (100%) * 9. City (33%) | 10. State (33%) | 11. Zip (33%) * 12. Country (100%) * 13. Giving Frequency (100%) * 14. Giving Amount (100%) * 15. Gift Type (100%) * 16. Credit Card Number (100%) * 17. Credit Card Expiration (50%) | 18. Credit Card CVV (50%) * 19. Custom Field (100%) * 20. Custom Field (100%)
+ ***********************************/
+
+// Form Blocks and Survey Blocks need a negative horizontal margin so the contents inside it can have a horizontal padding applied.
+.en__component--formblock,
+.en__component--svblock,
+.en__registrants__registrantDetails {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-left: calc(var(--fields_spacing-inline) * -1);
+  margin-right: calc(var(--fields_spacing-inline) * -1);
+
+  // All first child elements of a form block should have horizontal padding applied
+  > * {
+    padding-left: var(--fields_spacing-inline);
+    padding-right: var(--fields_spacing-inline);
+  }
+
+  .en__field {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    padding-bottom: 0rem;
+    margin-bottom: var(--fields_spacing-block);
+    // align-self: flex-end;
+
+    // Helps when the field label gets additional content added to it. https://d.pr/v/9rFaiW
+    // Exclude Survey Block questions from having justify-content: space-between; because they have numbers included with them. https://cln.sh/0d6G0Jn9
+    .en__field__label:not(.en__field__label--item):not([for*="svquestion"]),
+    .en__field__helpText {
+      // padding-top: 0rem;
+      // padding-bottom: 0rem;
+      // margin-top: 0.25rem;
+      position: relative;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .en__field__element {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+
+      // The submit buttons needs horizontal padding.
+      .en__submit {
+        padding-left: var(--fields_spacing-inline);
+        padding-right: var(--fields_spacing-inline);
+
+        // Remove horizontal padding for this single field's component
+        &.en__rangeFieldLabels {
+          padding-left: 0;
+          padding-right: 0;
+          margin-bottom: var(--fields_spacing-block);
+        }
+      }
+
+      // Compound field wrappers need a negative horizontal margin
+      &.en__field__element--checkbox,
+      &.en__field__element--radio,
+      &.en__field__element--rating,
+      &.en__field__element--imgselect,
+      &.en__field__element--splittext,
+      &.en__field__element--tripletext,
+      &.en__field__element--splitselect,
+      &.en__field__element--tripleselect,
+      &.en__field__element--withOther {
+        margin-left: calc(var(--fields_spacing-inline) * -1);
+        margin-right: calc(var(--fields_spacing-inline) * -1);
+
+        // Fields inside a compound field wrapper need horizontal padding
+        .en__field__item,
+        > [data-unhidden] {
+          padding-left: var(--fields_spacing-inline);
+          padding-right: var(--fields_spacing-inline);
+          padding-top: calc(var(--fields_spacing-block) * 0.5);
+          padding-bottom: var(
+            --fields_spacing-block
+          ); // @TODO this should be the same as padding-top I believe, but needs more testing
+        }
+      }
+    }
+
+    .en__field__element {
+      > input,
+      > select,
+      > textarea,
+      > .en__field__input--vgs {
+        margin-top: calc(var(--fields_spacing-inline) * 0.5);
+        margin-bottom: var(--fields_spacing-block);
+      }
+    }
+
+    // "With other" compound fields need a negative horizontal margin on their wrapper
+    &.en__field--withOther {
+      .en__field__element {
+        margin-left: calc(var(--fields_spacing-inline) * -1);
+        margin-right: calc(var(--fields_spacing-inline) * -1);
+
+        // Fields inside a compound field wrapper need horizontal padding
+        .en__field__item {
+          padding-left: var(--fields_spacing-inline);
+          padding-right: var(--fields_spacing-inline);
+        }
+      }
+    }
+  }
+
+  /* Helper Class .direction-column (recording: https://cln.sh/3nPmz4Nb) */
+  /* Makes the Surveys and Questions field types have their Radio and Checkbox fields appear in a column. */
+  &.direction-column .en__field--radio,
+  &.direction-column .en__field--checkbox,
+  .en__field.en__field--radio.en__field--survey,
+  .en__field.en__field--checkbox.en__field--survey,
+  .en__field.en__field--radio.en__field--question,
+  .en__field.en__field--checkbox.en__field--question {
+    .en__field__element {
+      display: grid;
+      grid-auto-rows: auto;
+      margin-bottom: var(--fields_spacing-block);
+      align-items: center;
+      width: fit-content;
+      max-width: 100%;
+    }
+  }
+
+  @at-root .en__component--eccheckout__additional {
+    .en__field__element--radio.en__field__element {
+      display: grid;
+      grid-auto-rows: auto;
+      margin-bottom: var(--fields_spacing-block);
+      align-items: center;
+      width: fit-content;
+      max-width: 100%;
+    }
+  }
+
+  /* Helper Class .inline-other (recording: https://cln.sh/cJCcfYnD) */
+  /* If your Checkbox or Radio selects are in a column, this will make it so the Other Input appears to the side of the Checkbox or Radio select that makes it appear */
+  /* Be mindful of using this, a user with limited vision might not see it appear to the side */
+  &.inline-other .en__field--radio.en__field--withOther--active,
+  &.inline-other .en__field--checkbox.en__field--withOther--active {
+    .en__field__element {
+      grid-template-columns: min-content;
+    }
+
+    .en__field__item {
+      grid-column: span 2;
+
+      &:nth-last-child(2),
+      &:nth-last-child(1) {
+        grid-column: span 1;
+      }
+
+      /* If your label is not short (e.g. "Other") then you may need to hand-tune its width depending on the display scenarios */
+      &:nth-last-child(2) label {
+        word-break: keep-all;
+      }
+    }
+  }
+}
+
+/************************************
+ * Labels
+ ***********************************/
+label {
+  font-family: var(--label_font-family);
+  color: var(--label_color);
+  font-size: var(--label_font-size);
+  font-weight: var(--label_font-weight);
+  line-height: var(--label_line-height);
+  display: flex;
+  text-transform: var(--label_text-transform);
+  letter-spacing: var(--label_letter-spacing);
+}
+
+// The old approach of "label a.label-tooltip" is no longer prefered because on error EN uses the label name, including the tooltip name. Our new approach makes it a sibling element wrapping both it and the label in a span tag.
+label a.label-tooltip {
+  text-transform: none;
+  right: 0;
+  text-decoration: underline;
+  color: var(--label_color);
+  font-weight: 400;
+  margin-left: var(--fields_spacing-inline);
+  margin-right: var(--fields_spacing-inline);
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+// New approach that adds tooltips as siblins to the label and wraps them both in a span
+// Before and After Comparison: https://cln.sh/nfw5C99L
+.label-wrapper {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  gap: calc(var(--fields_spacing-inline) / 2)
+    calc(var(--fields_spacing-inline) * 2);
+
+  a.label-tooltip {
+    font-family: var(--label_font-family);
+    color: var(--a_color);
+    font-size: var(--label_font-size);
+    font-weight: var(--a_font-weight);
+    line-height: var(--label_line-height);
+    text-transform: var(--label_text-transform);
+    letter-spacing: var(--label_letter-spacing);
+    text-decoration: var(--a_text-decoration);
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/************************************
+ * Inputs
+ * The use of "input.en__field__input" is needed to provide enough specificity to suprass class selectors like ".en__field__input--calendar" in enPage.css
+ ***********************************/
+input,
+input.en__field__input {
+  font-family: var(--input_font-family);
+  color: var(--input_color);
+  font-size: var(--input_font-size);
+  font-weight: var(--input_font-weight);
+  line-height: var(--input_line-height);
+  background-color: var(--input_background-color);
+  border-width: var(--input_border-width);
+  border-color: var(--input_border-color);
+  border-radius: var(--input_border-radius);
+  height: auto; // Shared between input, textarea, and select
+  max-width: 100%; // Shared between input, textarea, and select
+  width: 100%; // Shared between input, textarea, and select
+  min-width: initial; // Shared between input, textarea, and select
+  display: block; // Shared between input, textarea, and select
+  // -webkit-box-sizing: border-box; // Shared between input, textarea, and select
+  box-sizing: border-box; // Shared between input, textarea, and select
+  margin: 0rem; // Shared between input, textarea, and select
+  padding: var(--input_padding);
+  transition: box-shadow 0.25s, border-color 0.25s ease-in-out; // Shared between input, textarea, and select
+  border-style: solid; // Shared between input, textarea, and select
+
+  &:focus,
+  &:hover {
+    color: var(--input_color_hover);
+    background-color: var(--input_background-color_hover);
+    border-color: var(--input_border-color_hover);
+    border-bottom-color: var(--input_border-bottom-color_hover);
+    // outline: none; // Shared between input:focus, textarea:focus, and select:focus
+    // --input_placeholder-color: hsl(0, 0%, 67%);
+  }
+}
+.en__field__input--vgs {
+  --en-vgs-width: 100%;
+  --en-vgs-borderWidth: var(--input_border-width);
+  --en-vgs-borderStyle: solid;
+  --en-vgs-borderColor: var(--input_border-color);
+  --en-vgs-borderRadius: var(--input_border-radius);
+  --en-vgs-backgroundColor: var(--input_background-color);
+  --en-vgs-fontSize: var(--input_font-size);
+
+  width: 100%;
+  transition: box-shadow 0.25s, border-color 0.25s ease-in-out; // Shared between input, textarea, and select
+  &:hover {
+    background-color: var(--input_background-color_hover);
+    border-color: var(--input_border-color_hover);
+    border-bottom-color: var(--input_border-bottom-color_hover);
+  }
+  &.vgs-collect-container__focused {
+    background-color: var(--input_background-color_hover);
+    border-color: var(--input_border-color_hover);
+    border-bottom-color: var(--input_border-bottom-color_hover);
+    outline-style: auto;
+    outline-color: -webkit-focus-ring-color;
+
+    /* Firefox has its own focus ring styling */
+    @-moz-document url-prefix() {
+      outline: 1px dotted #000000;
+    }
+  }
+  iframe {
+    border-radius: var(--input_border-radius);
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="textarea"],
+input[type="date"],
+input[type="tel"],
+input[type="password"] {
+  box-shadow: var(--input_box-shadow);
+
+  &:focus,
+  &:hover {
+    box-shadow: var(--input_box-shadow_hover);
+  }
+}
+
+// Remove the padding and box shadow on the range slider
+input[type="range"] {
+  padding-left: 0;
+  padding-right: 0;
+  border: 0;
+  box-shadow: none;
+}
+
+// Removes the input shadow added by iOS 5 and later
+// https://stackoverflow.com/questions/23211656/remove-ios-input-shadow
+// https://app.productive.io/2650-4site-interactive-studios-inc/tasks/1498132
+// Should not apply in page builder or it can cause unintentional regressions https://d.pr/i/Z4Rl2l:not(#EN__RootElement)
+input[type="text"],
+:not(#EN__RootElement) input[type="email"],
+:not(#EN__RootElement) input[type="number"],
+:not(#EN__RootElement) input[type="tel"] {
+  appearance: textfield;
+}
+
+/************************************
+* Radio Select Fields
+***********************************/
+input[type="radio"] {
+  + label {
+    cursor: pointer;
+    align-items: center;
+    display: flex;
+    padding-top: MAX(
+      0px,
+      calc(var(--radio_top) * -1)
+    ); // Padding offset to account for negative height on the radio
+    font-family: var(--radio_font-family);
+    font-size: var(--radio_font-size);
+    font-weight: var(--radio_font-weight);
+    line-height: var(--radio_line-height);
+    text-transform: var(--radio_text-transform);
+
+    &:before {
+      content: var(--radio_content);
+      justify-content: center;
+      align-items: center;
+      margin-right: MAX(
+        var(--fields_spacing-inline),
+        1ch,
+        0.5rem
+      ); // Uppercase "MAX" to bybass CSS-Sass naming conflict https://github.com/fancyapps/fancybox/issues/2182#issuecomment-763374376
+      color: var(--radio_color);
+      background-color: var(--radio_background-color);
+      border-style: solid;
+      border-width: var(--radio_border-width);
+      border-color: var(--radio_border-color);
+      border-radius: var(--radio_border-radius);
+      height: var(--radio_height);
+      width: var(--radio_width);
+      min-width: var(
+        --radio_width
+      ); // Prevent radios getting squished https://d.pr/i/87br13
+      box-shadow: var(--radio_box-shadow);
+      display: flex;
+      position: relative;
+      top: var(--radio_top);
+    }
+  }
+
+  &:focus + label:before,
+  &:hover + label:before {
+    color: var(--radio_color_hover);
+    background-color: var(--radio_background-color_hover);
+    border-color: var(--radio_border-color_hover);
+    box-shadow: var(--radio_box-shadow_hover);
+  }
+
+  &:not(:checked) + label:before {
+    color: transparent;
+  }
+
+  &:checked + label:before {
+    color: var(--radio_color_selected);
+    background-color: var(--radio_background-color_selected);
+    border-color: var(--radio_border-color_selected);
+    box-shadow: var(--radio_box-shadow_selected);
+  }
+}
+
+/************************************
+* Checkbox Fields
+***********************************/
+input[type="checkbox"] {
+  + label {
+    cursor: pointer;
+    content: "";
+    align-items: center;
+    display: flex;
+    padding-top: MAX(
+      0px,
+      calc(var(--checkbox_top) * -1)
+    ); // Padding offset to account for negative height on the checkbox
+    font-family: var(--checkbox_font-family);
+    font-size: var(--checkbox_font-size);
+    font-weight: var(--checkbox_font-weight);
+    line-height: var(--checkbox_line-height);
+    text-transform: var(--checkbox_text-transform);
+
+    &:before {
+      content: "";
+      justify-content: center;
+      align-items: center;
+      margin-right: MAX(
+        var(--fields_spacing-inline),
+        1ch,
+        0.5rem
+      ); // Uppercase "MAX" to bybass CSS-Sass naming conflict https://github.com/fancyapps/fancybox/issues/2182#issuecomment-763374376
+      color: var(--checkbox_color);
+      background-color: var(--checkbox_background-color);
+      border-style: solid;
+      border-width: var(--checkbox_border-width);
+      border-color: var(--checkbox_border-color);
+      border-radius: var(--checkbox_border-radius);
+      height: var(--checkbox_height);
+      width: var(--checkbox_width);
+      min-width: var(
+        --checkbox_width
+      ); // Prevent checkboxes getting squished https://d.pr/i/87br13
+      display: flex;
+      flex: 0 0 auto;
+      position: relative;
+      top: var(--checkbox_top);
+      padding-top: var(--checkbox_padding-top);
+      padding-left: var(--checkbox_padding-left);
+    }
+  }
+
+  &:focus + label:before,
+  &:hover + label:before {
+    color: var(--checkbox_color_hover);
+    background-color: var(--checkbox_background-color_hover);
+    border-color: var(--checkbox_border-color_hover);
+  }
+
+  &:not(:checked) + label:before {
+    color: transparent;
+  }
+
+  &:checked + label:before {
+    content: var(--checkbox_content_checked);
+    color: var(--checkbox_color_checked);
+    background-color: var(--checkbox_background-color_checked);
+    border-color: var(--checkbox_border-color_checked);
+    // box-shadow: inset 0 0 0 var(--checkbox_border-width) var(--checkbox_border-color);
+  }
+}
+
+/************************************
+* Tweet to Target Fields
+* For checkboxes with only an input and no label
+* @TODO See if "en__contactDetails__select" styling can be merged in
+***********************************/
+
+.en__twitterTarget__select {
+  cursor: pointer;
+  content: "";
+  visibility: hidden; // Used to hide parent while keeping its pseduo element visible
+  max-width: min-content;
+  padding-top: MAX(
+    0px,
+    calc(var(--checkbox_top) * -1)
+  ); // Padding offset to account for negative height on the checkbox
+
+  &:before {
+    visibility: visible; // Used to keep psuedo element visible while hiding the parent
+    content: "";
+    justify-content: center;
+    align-items: center;
+    // margin-right: var(--fields_spacing-inline);
+    color: var(--checkbox_color);
+    background-color: var(--checkbox_background-color);
+    border-style: solid;
+    border-width: var(--checkbox_border-width);
+    border-color: var(--checkbox_border-color);
+    border-radius: var(--checkbox_border-radius);
+    height: var(--checkbox_height);
+    width: var(--checkbox_width);
+    min-width: var(
+      --checkbox_width
+    ); // Prevent checkboxes getting squished https://d.pr/i/87br13
+    display: flex;
+    position: relative;
+    top: var(--checkbox_top);
+    padding-top: var(--checkbox_padding-top);
+    padding-left: var(--checkbox_padding-left);
+  }
+
+  &:focus:before,
+  &:hover:before {
+    color: var(--checkbox_color_hover);
+    background-color: var(--checkbox_background-color_hover);
+    border-color: var(--checkbox_border-color_hover);
+  }
+
+  &:not(:checked):before {
+    color: transparent;
+  }
+
+  &:checked:before {
+    content: var(--checkbox_content_checked);
+    color: var(--checkbox_color_checked);
+    background-color: var(--checkbox_background-color_checked);
+    border-color: var(--checkbox_border-color_checked);
+    // box-shadow: inset 0 0 0 var(--checkbox_border-width) var(--checkbox_border-color);
+  }
+}
+
+/************************************
+* Premium Gift Selects
+* For radio selects with only an input and no label
+* @TODO See if "en__contactDetails__select" styling can be merged in
+***********************************/
+
+.en__pg__select input {
+  cursor: pointer;
+  // visibility: hidden; // Used to hide parent while keeping its pseduo element visible. Commented out because it was also preventing the radio from being navigated to with the keyboard
+  position: relative; // Used to hide the field while keeping its pseduo element visible
+  left: -9999px; // Used to hide the field while keeping its pseduo element visible
+  max-width: min-content;
+  content: "";
+  min-height: var(
+    --radio_height
+  ); // Give it a min height to match the pseduo element
+
+  &:before {
+    // visibility: visible; // Used to keep psuedo element visible while hiding the parent
+    position: relative; // Used to hide the field while keeping its pseduo element visible
+    left: 9999px; // Used to hide the field while keeping its pseduo element visible
+    content: var(--radio_content);
+    justify-content: center;
+    align-items: center;
+    // margin-right: var(--fields_spacing-inline);
+    color: var(--radio_color);
+    background-color: var(--radio_background-color);
+    border-style: solid;
+    border-width: var(--radio_border-width);
+    border-color: var(--radio_border-color);
+    border-radius: var(--radio_border-radius);
+    height: var(--radio_height);
+    width: var(--radio_width);
+    min-width: var(
+      --radio_width
+    ); // Prevent radios getting squished https://d.pr/i/87br13
+    box-shadow: var(--radio_box-shadow);
+    display: flex; // Changed from inline-flex to flex
+    // position: relative;
+    // top: var(--radio_top);
+  }
+
+  &:focus:before,
+  &:hover:before {
+    color: var(--radio_color_hover);
+    background-color: var(--radio_background-color_hover);
+    border-color: var(--radio_border-color_hover);
+    box-shadow: var(--radio_box-shadow_hover);
+  }
+
+  &:not(:checked):before {
+    color: transparent;
+  }
+
+  &:checked:before {
+    color: var(--radio_color_selected);
+    background-color: var(--radio_background-color_selected);
+    border-color: var(--radio_border-color_selected);
+    box-shadow: var(--radio_box-shadow_selected);
+  }
+}
+
+.en__pg--selected .en__pg__select input[type="radio"] {
+  outline: none;
+}
+
+// Firefox Hack for Radio INPUT
+@-moz-document url-prefix() {
+  .en__pg__select input[type="radio"] {
+    visibility: visible !important;
+    width: var(--radio_height);
+    accent-color: var(--radio_color_selected);
+    // transform: scale(1.4);
+    appearance: initial; // Because Firefox follows the HTML spec and won't allow pseudo elements on elements that don't allow for content: https://stackoverflow.com/a/59591634
+    outline: none; // Because Firefox follows the HTML spec and won't allow pseudo elements on elements that don't allow for content: https://stackoverflow.com/a/59591634
+    border: none; // Because Firefox follows the HTML spec and won't allow pseudo elements on elements that don't allow for content: https://stackoverflow.com/a/59591634
+    position: initial; // Because Firefox follows the HTML spec and won't allow pseudo elements on elements that don't allow for content: https://stackoverflow.com/a/59591634
+    background: transparent;
+    &:before {
+      position: initial; // Because Firefox follows the HTML spec and won't allow pseudo elements on elements that don't allow for content: https://stackoverflow.com/a/59591634
+    }
+  }
+}
+
+/************************************
+* Radio Select, Checkbox, and Email to Target Contact Fields
+***********************************/
+
+/* Custom Styling for Radio & Checkbox Inputs */
+input.en__field__input--radio,
+input.en__field__input--checkbox,
+input.en__contactDetails__select {
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: inset(50%);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  white-space: nowrap;
+}
+
+.en__field__input--radio:focus + .en__field__label,
+.en__field__input--checkbox:focus + .en__field__label,
+.en__contactDetails__select:focus + .en__contactDetails__rows {
+  outline: -webkit-focus-ring-color auto 1px;
+  outline-offset: calc(
+    max(var(--fields_spacing-inline), var(--fields_spacing-block)) - 3px
+  );
+}
+
+.en__field--radio[class*="en__field--NOT_TAGGED_"] .en__field__element,
+.en__field--checkbox[class*="en__field--NOT_TAGGED_"] .en__field__element {
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/************************************
+ * Select Fields
+ ***********************************/
+select,
+select.en__field__input--select,
+select.en__field__input--splitselect,
+select.en__field__input--tripleselect {
+  font-family: var(--select_font-family);
+  color: var(--select_color);
+  font-size: var(--select_font-size);
+  font-weight: var(--select_font-weight);
+  line-height: var(--select_line-height);
+  background-color: var(--select_background-color);
+  border-width: var(--select_border-width);
+  border-color: var(--select_border-color);
+  border-radius: var(--select_border-radius);
+  cursor: pointer;
+  height: auto; // Shared between input, textarea, and select
+  max-width: 100%; // Shared between input, textarea, and select
+  width: 100%; // Shared between input, textarea, and select
+  min-width: initial; // Shared between input, textarea, and select
+  display: block; // Shared between input, textarea, and select
+  // -webkit-box-sizing: border-box; // Shared between input, textarea, and select
+  box-sizing: border-box; // Shared between input, textarea, and select
+  margin: 0rem; // Shared between input, textarea, and select
+  padding: var(--select_padding);
+  box-shadow: var(--select_box-shadow);
+  transition: box-shadow 0.25s, border-color 0.25s ease-in-out; // Shared between input, textarea, and select
+  border-style: solid; // Shared between input, textarea, and select
+  appearance: none; // This hides the native down arrow and replaces it with our custom down arrow set as the background-image
+  padding-right: var(--select_padding-right);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb(0, 0, 0)'></polygon></svg>");
+  background-origin: content-box;
+  background-position: calc(100% + 1.2ch + (0.375rem / 2)) center;
+  background-repeat: no-repeat;
+  background-size: 0.5625rem 0.375rem;
+
+  &:focus,
+  &:hover {
+    color: var(--select_color_hover);
+    background-color: var(--select_background-color_hover);
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb(0, 0, 0)'></polygon></svg>");
+    border-color: var(--select_border-color_hover);
+    border-bottom-color: var(--select_border-bottom-color_hover);
+    // outline: none; // Shared between input:focus, textarea:focus, and select:focus
+    box-shadow: var(--select_box-shadow_hover);
+    // --input_placeholder-color: hsl(0, 0%, 67%);
+  }
+}
+
+/************************************
+ * Textarea Fields
+ ***********************************/
+textarea,
+.en__field__input--textarea,
+.en__contactMessage__plainText {
+  font-family: var(--textarea_font-family);
+  color: var(--textarea_color);
+  font-size: var(--textarea_font-size);
+  font-weight: var(--textarea_font-weight);
+  line-height: var(--textarea_line-height);
+  background-color: var(--textarea_background-color);
+  border-width: var(--textarea_border-width);
+  border-color: var(--textarea_border-color);
+  border-radius: var(--textarea_border-radius);
+  height: auto; // Shared between input, textarea, and select
+  max-width: 100%; // Shared between input, textarea, and select
+  width: 100%; // Shared between input, textarea, and select
+  min-width: initial; // Shared between input, textarea, and select
+  display: block; // Shared between input, textarea, and select
+  // -webkit-box-sizing: border-box; // Shared between input, textarea, and select
+  box-sizing: border-box; // Shared between input, textarea, and select
+  margin: 0rem; // Shared between input, textarea, and select
+  padding: var(--textarea_padding);
+  border-style: solid; // Shared between input, textarea, and select
+  box-shadow: var(--textarea_box-shadow);
+  transition: box-shadow 0.25s, border-color 0.25s ease-in-out; // Shared between input, textarea, and select
+  min-height: var(--textarea_min-height);
+  resize: vertical;
+
+  &:focus,
+  &:hover {
+    color: var(--textarea_color_hover);
+    background-color: var(--textarea_background-color_hover);
+    border-color: var(--textarea_border-color_hover);
+    border-bottom-color: var(--textarea_border-bottom-color_hover);
+    // outline: none; // Shared between input:focus, textarea:focus, and select:focus
+    box-shadow: var(--textarea_box-shadow_hover);
+    // --input_placeholder-color: hsl(0, 0%, 67%);
+  }
+}
+
+/************************************
+ * Split Text and Split Select Fields
+ ***********************************/
+.en__field__element--splittext,
+.en__field__element--splitselect {
+  .en__field__item {
+    flex-basis: calc(100% / 2);
+  }
+}
+
+/************************************
+ * Triple Text and Triple Select Fields
+ ***********************************/
+.en__field__element--tripletext,
+.en__field__element--tripleselect {
+  .en__field__item {
+    flex-basis: calc(100% / 3);
+  }
+}
+
+/************************************
+ * Image Select Field
+ ***********************************/
+.en__imageSelectField__image {
+  padding-bottom: var(--fields_spacing-block);
+}
+
+.en__field__element--imgselect {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.en__field--imgselect .en__field__item {
+  flex-basis: calc(100% / 3);
+}
+
+.en__imageSelectField__control {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .en__field__input--imageSelectField {
+    width: auto;
+  }
+}
+
+.en__field--imgselect .en__imageSelectField {
+  display: flex;
+  flex-direction: column;
+}
+
+/************************************
+ * Email to Target: Contact Fields
+ ***********************************/
+.en__contactDetails__rows {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  flex-basis: 100%;
+  margin-left: calc(var(--checkbox_width) + var(--fields_spacing-inline));
+}
+
+.en__contacts:not(.en__contacts--hideCheck) .en__contactDetails__rows:before {
+  content: "";
+  position: absolute;
+  height: var(--checkbox_height);
+  width: var(--checkbox_width);
+  min-width: var(
+    --checkbox_width
+  ); // Prevent checkboxes getting squished https://d.pr/i/87br13
+  // left: -2rem;
+  display: inline-block;
+  vertical-align: middle;
+  border: 1px solid var(--color_black);
+  // -webkit-box-shadow: inset 0 0 0 5px var(--color_white);
+  box-shadow: inset 0 0 0 5px var(--color_white);
+  background-color: var(--color_white);
+  cursor: pointer;
+  // -webkit-transition-duration: 0.25s;
+  transition-duration: 0.25s;
+  // -webkit-transition-property: border-color, background-color;
+  transition-property: border-color, background-color;
+  top: 5px;
+  left: 0;
+}
+
+.en__contactDetails__rows:before {
+  color: var(--checkbox_color);
+  border-radius: var(--checkbox_border-radius);
+  border-width: var(--checkbox_border-width);
+  background-color: var(--checkbox_background-color);
+  // -webkit-box-shadow: none;
+  box-shadow: none;
+}
+
+// @TODO In addition to a "Checked" state, add a hover for checked and unchecked states
+// e.g. .en__contactDetails__select + .en__contactDetails__rows:hover:before
+// This might also include adding a cursor effect to show that the label is clickable
+
+// @TODO Change the checkbox checkmark to use an SVG Data URI or similar
+// @BODY Currently, the checkbox checkmark uses the checkmark character, but if the font doesn't have this character or the designer wants to use something else, it falls apart. We should switch to an "image" based solution. Ideally, it would be a data-uri and not require a separate image asset. This should be added as default and client SCSS variable where the necessary CSS are mapped to custom properties.
+// REF: Cross browser tested radio / checkbox stylings https://codepen.io/aaroniker/pen/ZEYoxEY
+
+.en__contacts:not(.en__contacts--hideCheck)
+  .en__contactDetails__select:checked
+  + .en__contactDetails__rows:before {
+  color: var(--checkbox_color_checked);
+  background-color: var(--checkbox_background-color_checked);
+  // -webkit-box-shadow: inset 0 0 0 0 var(--checkbox_background-color);
+  box-shadow: inset 0 0 0 0 var(--checkbox_background-color);
+  border-width: var(--checkbox_border-width);
+  border-color: var(--checkbox_border-color_checked);
+}
+
+// @TODO This entire checkbox could better inherit, in order to match, the styling of checkboxes
+.en__contacts:not(.en__contacts--hideCheck)
+  .en__contactDetails__select:checked
+  + .en__contactDetails__rows::after {
+  // Needs an SVG safe color passed in https://stackoverflow.com/questions/25477819/scss-variable-in-background-image-with-svg-image-data-uri
+  // content: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='21' height='16' viewBox='0 0 21 16'><path fill="#color-white" fill-rule='nonzero' d='M18.76.16L6.68 12.113l-4.44-4.392a.555.555 0 0 0-.779 0L.161 9.006a.541.541 0 0 0 0 .771L6.29 15.84a.555.555 0 0 0 .78 0l13.77-13.624a.541.541 0 0 0 0-.771L19.539.16a.555.555 0 0 0-.779 0z'/></svg>");
+  // fill: var(--color_primary);
+  content: var(
+    --checkbox_content_checked
+  ); // REF: https://www.toptal.com/designers/htmlarrows/symbols/check-mark/
+  position: absolute;
+  left: 3px;
+  top: 5px;
+  // width: 21px;
+  // height: 16px;
+  color: var(--checkbox_color_checked);
+  // background-color: var(--checkbox_background-color_checked);
+  cursor: pointer;
+  font-family: var(--checkbox_font-family);
+  font-size: var(--checkbox_font-size);
+  font-weight: var(--checkbox_font-weight);
+  line-height: var(--checkbox_line-height);
+}
+
+/************************************
+ * A notice shown below a field via JS
+ * Example: https://pastebin.com/raw/RERZudKH
+ ***********************************/
+.en__field__notice {
+  order: 3;
+}
+
+/************************************
+ * Number Input Spinner Field
+ * Remove Number Input Spinners https://stackoverflow.com/a/4298216
+ ***********************************/
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
+/************************************
+ * Field Placeholder Styling
+ * @TODO Can this be simplified because we use Autoprefixer?
+ ***********************************/
+/* Chrome, Firefox, Opera, Safari 10.1+ */
+::-webkit-input-placeholder {
+  color: var(--input_placeholder-color);
+  opacity: var(--input_placeholder-opacity);
+  font-weight: var(--input_placeholder-font-weight);
+}
+
+/* Firefox */
+:-ms-input-placeholder {
+  color: var(--input_placeholder-color);
+  opacity: var(--input_placeholder-opacity);
+  font-weight: var(--input_placeholder-font-weight);
+}
+
+/* Firefox */
+::-ms-input-placeholder {
+  color: var(--input_placeholder-color);
+  opacity: var(--input_placeholder-opacity);
+  font-weight: var(--input_placeholder-font-weight);
+}
+
+/* Firefox */
+::placeholder {
+  color: var(--input_placeholder-color);
+  opacity: var(--input_placeholder-opacity);
+  font-weight: var(--input_placeholder-font-weight);
+}
+
+/* Internet Explorer 10-11 */
+:-ms-input-placeholder {
+  color: var(--input_placeholder-color);
+  opacity: var(--input_placeholder-opacity);
+  font-weight: var(--input_placeholder-font-weight);
+}
+
+/* Microsoft Edge */
+::-ms-input-placeholder {
+  color: var(--input_placeholder-color);
+  opacity: var(--input_placeholder-opacity);
+  font-weight: var(--input_placeholder-font-weight);
+}
+
+[data-engrid-theme] select[data-selected-value=""] {
+  color: var(--select_placeholder-color);
+  opacity: var(--select_placeholder-opacity);
+  font-weight: var(--select_placeholder-font-weight);
+}
+
+/************************************
+ * Hidden Input Field
+ ***********************************/
+
+/* In the event Theme CSS causes a hidden field to become displayed, force its display to remain hidden */
+/* This was an issue originally reported by EN staff, not sure if it still persists with recent styling updates */
+.en__hidden {
+  display: none !important;
+}
+
+/* QA Needed: EN's hidden input field */
+.en__field--hidden {
+  display: block;
+  width: 100% !important;
+}
+
+/************************************
+ * Disabled Fields
+ ***********************************/
+input[disabled],
+textarea[disabled],
+input[readonly],
+textarea[readonly] {
+  cursor: not-allowed;
+}
+
+/************************************
+ * Captcha
+ ***********************************/
+
+.en__captcha {
+  padding-bottom: 0;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/************************************
+ * Inline Country Styling
+ ***********************************/
+// .inline-country .en__field--country {
+//   position: absolute;
+//   right: 0;
+//   align-items: flex-end;
+
+//   select {
+//     width: 80px;
+//     // z-index: 1;
+//     background-color: transparent;
+//     // -webkit-box-shadow: none;
+//     box-shadow: none;
+//     text-align-last: right;
+//   }
+// }
+
+/************************************
+ * Live currency
+ ***********************************/
+// When live currency is active, hide radio labels until replacement is done
+
+body[data-engrid-live-currency="active"] {
+  .en__field--donationAmt
+    .en__field__item:not([data-engrid-currency-symbol-updated="true"])
+    label {
+    color: transparent !important;
+  }
+}

@@ -1,0 +1,55 @@
+[data-engrid-theme] {
+  .en__component--callcontactblock {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+
+    .en__contact__detail {
+      flex-wrap: wrap;
+      .en__overlay {
+        position: initial;
+      }
+    }
+    .en__contacts {
+      padding: 0;
+      background-color: initial;
+    }
+
+    .en__contact__main {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    // Because we use flexbox for the parent, we need the overlay to be 100% width or it will only occupy the minimal horizontal space it needs and visually look broken
+    .en__overlay--callcontact {
+      width: 100%;
+    }
+  }
+
+  .en__component--callsurveyblock {
+    .en__c2c__survey__rate {
+      max-width: 100%;
+      gap: 1rem;
+    }
+
+    .en__field__element--textarea {
+      width: 100%;
+    }
+
+    .en__c2c__survey__rate .en__button {
+      opacity: 1;
+      margin-bottom: 0;
+    }
+
+    @media screen and (max-width: 768px) {
+      .en__c2c__survey__rate {
+        flex-direction: column;
+      }
+
+      .en__button {
+        width: 100%;
+      }
+    }
+  }
+}

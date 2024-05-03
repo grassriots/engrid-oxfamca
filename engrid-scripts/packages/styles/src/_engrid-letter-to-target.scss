@@ -1,0 +1,26 @@
+// Removes padding around contact block, and recipients, on Letter to Target pages
+.en__component--contactblock,
+.en__contact__detail {
+  padding: initial;
+}
+
+// Removes left margin from Contact record checbox shown next to recipient on Letter to Target pages
+.en__contactDetails__select,
+.en__contacts--hideCheck .en__contactDetails__rows {
+  margin-left: 0;
+}
+
+/* EN sets background of the contact block to white making it not ideal for non-white backgrounds. This resets it to an initial state "transparent". */
+.en__component--contactblock,
+.en__contact__detail,
+.en__contact__toggle,
+.en__contact--open .en__contact__toggle {
+  background-color: initial;
+}
+
+// Helps style the contact block to look like normal Inputs and Textareas
+.en__contactSubject input,
+.en__contactMessage--typePlainText textarea {
+  margin-top: calc(var(--fields_spacing-inline) * 0.5);
+  margin-bottom: var(--fields_spacing-block);
+}

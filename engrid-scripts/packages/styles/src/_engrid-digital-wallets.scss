@@ -1,0 +1,84 @@
+[data-engrid-theme] {
+  #en__digitalWallet,
+  .en__digitalWallet__container {
+    max-width: 100% !important;
+  }
+
+  #en__digitalWallet {
+    flex-basis: 100%;
+    padding: 0;
+    font-size: var(--submit__button_font-size);
+    // flex-direction: column;
+
+    > div[style]:not([class]) {
+      flex-basis: 0 !important;
+    }
+
+    .en__digitalWallet__button {
+      display: inline-block;
+      width: auto !important;
+      flex-basis: 100%;
+      flex-grow: 1;
+      height: auto;
+    }
+
+    .en__digitalWallet__container {
+      width: 100%;
+      padding-right: 0;
+      padding-left: 0;
+      margin-bottom: 14px !important; // The digital wallets adds their own inline styles we need to overwrite
+
+      iframe {
+        min-height: 22px !important;
+      }
+    }
+  }
+
+  &[data-conditonally-hide-show-digital-wallet-elements]
+    #en__digitalWallet
+    .en__digitalWallet__container {
+    padding-right: var(--fields_spacing-inline);
+    padding-left: var(--fields_spacing-inline);
+    padding-top: 0; //var(--submit__button_padding-top)
+    padding-bottom: 0; // var(--submit__button_padding-bottom)
+    max-width: 100% !important; // The digital wallets adds their own inline styles we need to overwrite
+    margin-top: 2rem !important; // The digital wallets adds their own inline styles we need to overwrite
+    margin-bottom: 1rem !important; // The digital wallets adds their own inline styles we need to overwrite
+  }
+
+  /* prettier-ignore */
+  &:not(#en__pagebuilder):not([data-engrid-debug])[data-conditonally-hide-show-digital-wallet-elements]{
+
+      // Show If
+      &:not([data-engrid-payment-type-option-apple-pay="true"]) .showif-apple-pay-available,
+      &:not([data-engrid-payment-type-option-google-pay="true"]) .showif-google-pay-available,
+      &:not([data-engrid-payment-type-option-paypal-one-touch="true"]) .showif-paypal-one-touch-available,
+      &:not([data-engrid-payment-type-option-venmo="true"]) .showif-venmo-available,
+      &:not([data-engrid-payment-type="stripedigitalwallet"]) .showif-stripedigitalwallet-selected,
+      &:not([data-engrid-payment-type="paypaltouch"]) .showif-paypaltouch-selected {
+        display: none;
+      }
+
+      // Hide If
+      &[data-engrid-payment-type="stripedigitalwallet"] .hideif-stripedigitalwallet-selected,
+      &[data-engrid-payment-type="paypaltouch"] .hideif-paypaltouch-selected {
+        display: none;
+      }
+
+      // Hide the PayPal One Touch / Venmo Give By Selector when a recurring gift is selected as it is not currently supported by EN
+      &[data-engrid-transaction-recurring="y"] .en__field--giveBySelect.paypaltouch{
+        display: none;
+      }
+
+      // If the PayPal One Touch / Venmo option is enabled, hide Vanilla Paypal when a one-time gift is selected so only one PayPal option is ever visible at a time{
+      &[data-engrid-transaction-recurring="n"][data-engrid-payment-type-option-paypal-one-touch="true"] .en__field--giveBySelect.paypal{
+        display: none;
+      }
+  }
+
+  /* Mattch the Plaid iFrame so we can apply a background color as soon as it appears on screen, normally there is a slight delay. We use the same background color that Plaid natively uses. */
+  iframe.plaid-link-iframe,
+  iframe[id^="plaid-link-iframe"] {
+    background-color: rgba(144, 144, 144, 0.98);
+  }
+}

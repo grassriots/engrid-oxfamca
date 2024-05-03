@@ -1,0 +1,138 @@
+/*
+* ####################################################################################################################
+* # ENGRID Layout - Embedded Layout for Seamless Embedding
+* ####################################################################################################################
+*/
+
+[data-engrid-embedded] {
+  background-image: none;
+  min-height: 0;
+
+  // Remove each sections background colors
+  --engrid__embedded_page_background-color: transparent !important;
+
+  --engrid__page_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__content_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__body_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__page-alert_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__content-header_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__body-headerOutside_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__body-header_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__body-title_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__body-banner_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__body-bannerOverlay_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__body-top_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__body-side_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__body-main_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__body-bottom_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__body-footer_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__body-footerOutside_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__content-footerSpacer_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__content-preFooter_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__content-footer_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__page-backgroundImage_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__page-backgroundImageOverlay_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+  --engrid__page-customCode_background-color: var(
+    --engrid__embedded_page_background-color
+  );
+
+  --engrid__body_box-shadow: none;
+  --engrid__body_border-radius: none !important;
+  --engrid__embedded_body_padding: 0px;
+  --engrid__embedded_body_margin: 0px;
+
+  /* prettier-ignore */
+  .en__component--advrow,
+  .en__component--advrow > *{
+    grid-template-columns:
+    [
+      pc-start lpc-start]  minmax(0px, 0px)   [lpc-end
+      cc-start lcc-start]  minmax(0px, 0px)   [lcc-end
+      bc-start lbc-start]  minmax(0px, 50vw)  [lbc-end
+      rbc-start]           minmax(0px, 50vw)  [rbc-end bc-end
+      rcc-start]           minmax(0px, 0px)   [rcc-end cc-end
+      rpc-start]           minmax(0px, 0px)   [rpc-end pc-end               
+    ] !important;
+  }
+
+  .page-backgroundImage,
+  .page-backgroundImageOverlay,
+  .hide-iframe {
+    display: none !important;
+  }
+}
+
+@mixin engrid_embedded-mobile-body {
+  [data-engrid-embedded] {
+    #engrid > .en__component--advrow > *,
+    form > .en__component--advrow > * {
+      --engrid__body_border-radius: 0px;
+
+      --engrid__body_padding: var(--engrid__embedded_body_padding);
+      --engrid__body-headerOutside_padding: var(--engrid__body_padding);
+      --engrid__body-header_padding: var(--engrid__body_padding);
+      --engrid__body-title_padding: var(--engrid__body_padding);
+      --engrid__body-banner_padding: var(--engrid__body_padding);
+      --engrid__body-bannerOverlay_padding: var(--engrid__body_padding);
+      --engrid__body-top_padding: var(--engrid__body_padding);
+      --engrid__body-main_padding: var(--engrid__body_padding);
+      --engrid__body-bottom_padding: var(--engrid__body_padding);
+      --engrid__body-footer_padding: var(--engrid__body_padding);
+      --engrid__body-footerOutside_padding: var(--engrid__body_padding);
+
+      --engrid__body_margin: var(--engrid__embedded_body_margin);
+      --engrid__body-headerOutside_margin: var(--engrid__body_margin);
+      --engrid__body-header_margin: var(--engrid__body_margin);
+      --engrid__body-title_margin: var(--engrid__body_margin);
+      --engrid__body-banner_margin: var(--engrid__body_margin);
+      --engrid__body-bannerOverlay_margin: var(--engrid__body_margin);
+      --engrid__body-top_margin: var(--engrid__body_margin);
+      --engrid__body-main_margin: var(--engrid__body_margin);
+      --engrid__body-bottom_margin: var(--engrid__body_margin);
+      --engrid__body-footer_margin: var(--engrid__body_margin);
+      --engrid__body-footerOutside_margin: var(--engrid__body_margin);
+    }
+  }
+}

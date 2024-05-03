@@ -1,0 +1,94 @@
+[data-engrid-theme] {
+  // --error__color: #ff530a;
+  // --error__color_grayscale: #949494;
+  // --error__color_faded: #fff8f4;
+  // --error__background-color: #fff8f4;
+  --error__border-width: var(--input_border-width);
+}
+
+/************************************
+* Error Messages
+***********************************/
+
+/* Page Level Errors */
+.en__errorHeader {
+  padding: 0.5rem 2rem;
+  color: var(--error__color);
+  font-weight: 700;
+  text-align: center;
+  background-color: var(--error__background-color);
+}
+
+.en__errorList > .en__error {
+  padding: 0.5rem 2rem;
+  list-style: none;
+  color: var(--error__color);
+  text-align: center;
+  background-color: var(--error__background-color);
+}
+
+.en__errorList > .en__error:last-child {
+  border-bottom: 5px solid var(--error__color);
+}
+
+/* Field Level Inline Errors */
+/* Pick up the normal spacing on the error element to contunue form pacing continues as expected when in an error state */
+.en__component .en__field__error {
+  color: var(--error__color);
+  font-size: calc(max(75%, 10px));
+  font-family: var(--p_font-family);
+  font-weight: var(--p_font-weight);
+  line-height: var(--p_line-height);
+  order: 3;
+}
+
+/************************************
+ * Field Placeholder Styling
+ * @TODO Can this be simplified because we use Autoprefixer?
+ ***********************************/
+[class*="validationFail"]:not(.has-focus):not(.has-value) {
+  --input_placeholder-color: var(--error__color);
+}
+
+[class*="validationFail"] label {
+  color: var(--error__color);
+}
+
+[class*="validationFail"]:not(.has-value):not(.has-focus) [type],
+[class*="validationFail"]:not(.has-value):not(.has-focus) textarea,
+[class*="validationFail"]:not(.has-value):not(.has-focus) select {
+  border-color: var(--error__color);
+  background-color: var(--error__color_faded);
+}
+
+[class*="validationFail"]:not(.has-value):not(.has-focus) select {
+  color: var(--error__color);
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' width='32' height='24' viewBox='0 0 32 24'><polygon points='0,0 32,0 16,24' style='fill: rgb(255, 83, 10)'></polygon></svg>");
+}
+
+.en__field--radio[class*="validationFail"]
+  .en__field--checkbox[class*="validationFail"] {
+  border-color: var(--error__color);
+}
+
+.radio-to-buttons_donationAmt
+  .en__field--donationAmt.en__field--withOther[class*="validationFail"]
+  .en__field__element--radio {
+  border-radius: var(--donation-amount__button_border-radius);
+  margin-bottom: 0.5rem;
+}
+
+.radio-to-buttons_donationAmt
+  .en__field--donationAmt.en__field--withOther[class*="validationFail"]
+  .en__field__error {
+  border-radius: var(--donation-amount__button_border-radius);
+}
+
+.en__field--validationFailed
+  .en__field__input--vgs:not(.vgs-collect-container__focused) {
+  &.vgs-collect-container__invalid,
+  &.vgs-collect-container__empty {
+    border-color: var(--error__color);
+    background-color: var(--error__color_faded);
+  }
+}

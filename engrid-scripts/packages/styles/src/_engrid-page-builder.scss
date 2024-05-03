@@ -1,0 +1,494 @@
+// Styles Related to the Engaging Networks Page Builder
+[data-engrid-theme] {
+  --pagebuilder__background-color: #c1c0c0;
+}
+
+/*
+* ##########################################################
+* # Page Builder Custom Styles
+* ##########################################################
+*/
+
+// Styles Related to the Page-Builder
+#en__pagebuilder {
+  // If in page builder, give the background a better color so that input fields stand out
+  background-color: var(--pagebuilder__background-color) !important;
+  opacity: 1;
+
+  /* When in page builder we want to center the content area on the page and must reduce it by 50px to make it visible because of the sidebar */
+  width: calc(100% - 51px);
+
+  /* If the user accidentally deletes all content from the form, prevent it from completely collapsing in on itself and making it impossible for the user to add new content */
+  form {
+    min-height: 25px !important;
+  }
+
+  /* Sometimes our styles might cause a code blocks title and label to display inline, rather than in rows. This should help prevent that https://d.pr/v/vXlAUM */
+  .en__placeholder__text {
+    flex-direction: column !important;
+  }
+
+  // To help page editors identify images missing alt attributes which improve accesability
+  img:not([alt]) {
+    outline: 1px dashed var(--error__color);
+  }
+
+  img[src*=".mp4"] {
+    border: 5px solid var(--error__color); // Highlight the "image" if the src is set with an MP4, this works in Safari but not other browsers at the moment https://bugs.chromium.org/p/chromium/issues/detail?id=791658
+  }
+
+  // When in page builder display Overlay sections after their counterparts and not overtop of their target grid row. This way content editors can more easily interact with them
+  .body-bannerOverlay {
+    grid-row: body-bannerOverlay !important;
+    background-color: var(--engrid__body-banner_background-color) !important;
+  }
+
+  // When in page builder display Overlay sections after their counterparts and not overtop of their target grid row. This way content editors can more easily interact with them
+  .page-backgroundImageOverlay {
+    grid-row: page-backgroundImageOverlay !important;
+    background-color: var(--engrid__body-banner_background-color) !important;
+  }
+
+  // Helps position the Engaging Networks pagebuilder tabs that are shown on hover of the Advanced Row
+  form
+    > .en__component--advrow.en__component--active
+    .en__component__actions.en__component__actions--advrow {
+    grid-row: page;
+    display: block;
+  }
+
+  .page-backgroundImage img:not([data-src]) {
+    border: 5px solid var(--error__color); // Highlight images not using our method for lazy loading them
+  }
+
+  .page-backgroundImage img[src] {
+    height: 250px; // Resize background images to a reasonable dimension if they visually display in the WYSIWYG
+    width: auto; // Resize background images to a reasonable dimension if they visually display in the WYSIWYG
+  }
+
+  /* Adjust the editable space in the Page Editor so that the content can occupy as much space as possible */
+  .en__container {
+    margin-left: 1px !important;
+    margin-right: 1px !important;
+    margin-bottom: 0px !important;
+    border: none !important;
+  }
+
+  // Prevent this https://cln.sh/3WKFln
+  .en__component--active {
+    box-shadow: 0 0 0 2px #00b2d9;
+    background: rgba(0, 178, 217, 0.2);
+    z-index: 1000;
+    outline-color: #00b2d9;
+    outline-style: solid;
+  }
+
+  [class*="inmem-y" i],
+  [class*="inmem-n" i],
+  [class*="giveBySelect-card" i],
+  [class*="giveBySelect-ach" i],
+  [class*="giveBySelect-check" i],
+  [class*="giveBySelect-paypal" i],
+  [class*="giveBySelect-stripedigitalwallet" i],
+  [class*="giveBySelect-paypaltouch" i],
+  [class*="giveBySelect-digitalwallet" i],
+  [class*="engrid__supporter" i] {
+    background-color: #0000ff1a !important;
+
+    &.pboAdvancedRow__preview .en__component--column {
+      outline-color: #0000ff !important;
+      z-index: 1;
+    }
+
+    // In the event a visually conditional field is marked mandatory, highlight it as this can cause problems
+    .en__mandatory {
+      outline: 5px solid #f12222;
+    }
+  }
+
+  .live-giving-amount,
+  .live-giving-upsell-amount,
+  .live-giving-upsell-amount-raw,
+  .live-giving-frequency {
+    background-color: #00ff001a !important;
+    &.pboAdvancedRow__preview .en__component--column {
+      outline-color: #00ff00 !important;
+      z-index: 1;
+    }
+  }
+
+  .page-backgroundImage img {
+    width: auto !important;
+    height: 350px !important;
+    margin: 0 auto;
+  }
+
+  .page-alert,
+  .content-header,
+  .body-headerOutside,
+  .body-header,
+  .body-title,
+  .body-banner,
+  .body-bannerOverlay,
+  .body-top,
+  .body-side,
+  .body-main,
+  .body-bottom,
+  .body-footer,
+  .body-footerOutside,
+  .content-footerSpacer,
+  .content-preFooter,
+  .content-footer,
+  .page-backgroundImage,
+  .page-backgroundImageOverlay,
+  .page-customCode {
+    min-height: 5rem;
+  }
+
+  .messageOverlay.hidden {
+    visibility: hidden;
+    display: block !important;
+
+    &:only-child:before {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #999999;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+
+    &:only-child {
+      visibility: visible;
+      color: transparent;
+      background-color: transparent;
+    }
+
+    &:only-child .messageOverlay__message {
+      display: none;
+    }
+  }
+
+  .en__pg__imageSelector {
+    display: none; // Fixes a display issue https://d.pr/v/U33TmD
+  }
+
+  /* prettier-ignore */
+  .page-alert .messageOverlay.hidden:only-child:before { content: "Page Alert"; }
+  /* prettier-ignore */
+  .content-header .messageOverlay.hidden:only-child:before { content: "Content Header"; }
+  /* prettier-ignore */
+  .body-headerOutside .messageOverlay.hidden:only-child:before { content: "Body Header Outside"; }
+  /* prettier-ignore */
+  .body-header .messageOverlay.hidden:only-child:before { content: "Body Header (Spacer)"; }
+  /* prettier-ignore */
+  .body-title .messageOverlay.hidden:only-child:before { content: "Body Title (Copy)"; }
+  /* prettier-ignore */
+  .body-banner .messageOverlay.hidden:only-child:before { content: "Body Banner"; }
+  /* prettier-ignore */
+  .body-bannerOverlay .messageOverlay.hidden:only-child:before { content: "Body Banner Overlay"; }
+  /* prettier-ignore */
+  .body-top .messageOverlay.hidden:only-child:before { content: "Body Top (Copy)"; }
+  /* prettier-ignore */
+  .body-side .messageOverlay.hidden:only-child:before { content: "Body Side (DEPRECATED)"; }
+  /* prettier-ignore */
+  .body-main .messageOverlay.hidden:only-child:before { content: "Body Main (Form)"; }
+  /* prettier-ignore */
+  .body-bottom .messageOverlay.hidden:only-child:before { content: "Body Bottom (Copy)"; }
+  /* prettier-ignore */
+  .body-footer .messageOverlay.hidden:only-child:before { content: "Body Footer (Spacer)"; }
+  /* prettier-ignore */
+  .body-footerOutside .messageOverlay.hidden:only-child:before { content: "Body Footer Outside"; }
+  /* prettier-ignore */
+  .content-footerSpacer .messageOverlay.hidden:only-child:before { content: "Content Footer (Spacer)"; }
+  /* prettier-ignore */
+  .content-preFooter .messageOverlay.hidden:only-child:before { content: "Content Pre Footer"; }
+  /* prettier-ignore */
+  .content-footer .messageOverlay.hidden:only-child:before { content: "Content Footer"; }
+  /* prettier-ignore */
+  .page-backgroundImage .messageOverlay.hidden:only-child:before { content: "Page Background Image"; }
+  /* prettier-ignore */
+  .page-backgroundImageOverlay .messageOverlay.hidden:only-child:before { content: "Page Background Image Overlay"; }
+  /* prettier-ignore */
+  .page-customCode .messageOverlay.hidden:only-child:before { content: "Custom Code"; }
+}
+
+/*
+* ##########################################################
+* # Page Builders Custom Layout Editor
+* ##########################################################
+*/
+
+// @TODO The "en__component--advrow" styling will break the Engaging Networks Free and Flexible templates because they might have one or more advanced rows
+#EN__RootElement {
+  .pboAdvancedRow__preview {
+    /* Page builder adds a hidden div to the bottom of the layout, this can result in undesired spacing */
+    .en__component--row:nth-last-child(2) {
+      padding-bottom: 0px;
+    }
+
+    // Vertically and Horizontally center the labels
+    .en__component--advcolumn {
+      align-items: center;
+      display: flex;
+      justify-content: center;
+    }
+
+    .en__component--column {
+      // margin-bottom: 1px; /* Something in EN is causing outlines to overlap, this prevents the issue */
+
+      &.page-alert:before,
+      &.content-header:before,
+      &.body-headerOutside:before,
+      &.body-header:before,
+      &.body-title:before,
+      &.body-banner:before,
+      &.body-bannerOverlay:before,
+      &.body-top:before,
+      &.body-side:before,
+      &.body-main:before,
+      &.body-bottom:before,
+      &.body-footer:before,
+      &.body-footerOutside:before,
+      &.content-footerSpacer:before,
+      &.content-preFooter:before,
+      &.content-footer:before,
+      &.page-backgroundImage:before,
+      &.page-backgroundImageOverlay:before,
+      &.page-customCode:before {
+        padding-left: 5px;
+        padding-right: 5px;
+        font-size: 10px;
+        overflow: hidden;
+      }
+
+      &.page-alert:before {
+        content: "Page Alert";
+      }
+
+      &.content-header:before {
+        content: "Content Header";
+      }
+
+      &.body-headerOutside:before {
+        content: "Body Header Outside";
+      }
+
+      &.body-header:before {
+        content: "Body Header Spacer";
+      }
+
+      &.body-title:before {
+        content: "Body Title";
+      }
+
+      &.body-banner:before {
+        content: "Body Banner";
+      }
+
+      &.body-bannerOverlay:before {
+        content: "Body Banner Overlay";
+      }
+
+      &.body-top:before {
+        content: "Body Top (Copy)";
+      }
+
+      &.body-side:before {
+        content: "Body Side (Legacy)";
+      }
+
+      &.body-main:before {
+        content: "Body Main (Form)";
+      }
+
+      &.body-bottom:before {
+        content: "Body Bottom (Copy)";
+      }
+
+      &.body-footer:before {
+        content: "Body Footer Spacer";
+      }
+
+      &.body-footerOutside:before {
+        content: "Body Footer Outside";
+      }
+
+      &.content-footerSpacer:before {
+        content: "Content Footer Spacer";
+      }
+
+      &.content-preFooter:before {
+        content: "Content Pre Footer";
+      }
+
+      &.content-footer:before {
+        content: "Content Footer";
+      }
+
+      &.page-backgroundImage:before {
+        content: "Page Background Image";
+      }
+
+      &.page-backgroundImageOverlay:before {
+        content: "Page Background Image Overlay";
+      }
+
+      &.page-customCode:before {
+        content: "Page Custom Code";
+      }
+    }
+
+    // .hide {
+    //   background-color: #ff00001a !important;
+    //   &.pboAdvancedRow__preview .en__component--column {
+    //     outline-color: #ff0000 !important;
+    //     z-index: 1;
+    //   }
+    // }
+  }
+
+  // In Page Builder but not in the Advanced Row Preview Modal
+  div:not(.pboAdvancedRow__preview) > .en__component--advrow > {
+    .page-backgroundImage,
+    .page-customCode {
+      background-color: var(--color_transparent) !important;
+    }
+  }
+}
+
+// Style conditional content
+#en__pagebuilder,
+[data-engrid-debug] {
+  [class*="showif"],
+  [class*="hideif"],
+  [class*="engrid__"],
+  .fast-address-details,
+  .fast-personal-details {
+    background-color: #0000ff1a !important;
+  }
+}
+
+//Style interactive content
+#en__pagebuilder,
+[data-engrid-debug] {
+  [class*="setattr"] {
+    background-color: #ffff001a !important;
+  }
+}
+
+#en__pagebuilder .messageOverlay {
+  z-index: 2147483647; // The modal you see when confirming the deletion of a form component.
+}
+
+#en__pagebuilder .en__component--activeTarget .en__component__actions {
+  z-index: 2147483646; // Should be one less than the .messageOverlay so that the delete modal always wins out in the z-index stacking
+}
+
+/*
+* ##########################################################
+* # Page Builder Visual Changes for Editing Restricted Library Components
+* .edit-warning - https://d.pr/i/11bENF
+* .edit-lock - https://d.pr/i/vsA4ao
+* ##########################################################
+*/
+
+.edit-warning {
+  --edit_color: #ffffff;
+  --edit_background-color: #000000;
+  --edit_background-color-faded: rgba(0, 0, 0, 0.2);
+  --edit_text: "Unlink Before Edit";
+}
+
+.edit-lock {
+  --edit_color: #ffffff;
+  --edit_background-color: #f12222;
+  --edit_background-color-faded: rgba(241, 34, 34, 0.2);
+  --edit_text: "Do Not     "; // Creates some space for the "Edit" link that is moved up and invisibly put inline with the rest of the text
+}
+
+/* Style the edit warning and lock messages to match the styling of the component actions */
+#en__pagebuilder [class*="edit-"] {
+  &.en__component.en__component--active.en__component--activeTarget {
+    box-shadow: 0 0 0 2px var(--edit_background-color);
+    outline-color: var(--edit_background-color);
+    background: var(--edit_background-color-faded);
+
+    .en__component__actions {
+      display: block;
+      text-decoration: none;
+      line-height: 30px;
+      font-weight: 700;
+      padding: 0 calc(28px + var(--fields_spacing-inline)) 0
+        calc(28px + var(--fields_spacing-inline));
+      min-width: 30px;
+      text-align: left;
+      white-space: nowrap;
+      padding-top: var(--fields_spacing-block);
+      padding-bottom: var(--fields_spacing-block);
+      margin-left: 8px;
+      padding-left: 0;
+      padding-right: 0;
+      // cursor: move;
+      // background-image: url(https://e-activist.com/ea-demo/frontend/build/3.63.1/images/icons/move-16-white.png) !important;
+      // background-position: 6px 50%;
+      // background-repeat: no-repeat;
+      background-color: var(--edit_background-color);
+      cursor: default;
+
+      &::before {
+        content: var(--edit_text);
+        padding-left: 28px;
+        padding-right: 28px;
+        color: var(--edit_color);
+        font-size: 18px;
+      }
+
+      > a.en__component__action {
+        background-color: var(--edit_background-color);
+      }
+    }
+  }
+}
+
+/* When locked move the edit link up inline with the "Do Not Edit" header so that "Edit" becomes the clickable link */
+#en__pagebuilder
+  .edit-lock.en__component.en__component--active.en__component--activeTarget
+  > .en__component__actions
+  > a.en__component__action {
+  &.en__component__action--settings {
+    transform: translate(-18px, -31px);
+    font-size: 18px;
+    padding: 0;
+    background: none;
+    cursor: default;
+  }
+  &.en__component__action--delete {
+    transform: translate(-33px, 0px);
+  }
+}
+/*
+* ##########################################################
+* # Lazy Loaded Media
+* REF: https://codepen.io/andreasnylin/full/PgGxQv
+* ##########################################################
+*/
+
+#en__pagebuilder img[data-src],
+#en__pagebuilder video[data-src] {
+  background-color: #cccccc;
+  background-size: contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+
+#en__pagebuilder img[data-src] {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj4KICAgIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjY2NjY2NjIj48L3JlY3Q+CiAgICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIyNnB4IiBmaWxsPSIjMzMzMzMzIj5MYXp5IExvYWRlZCBJbWFnZTwvdGV4dD4gICAKPC9zdmc+);
+}
+
+#en__pagebuilder video[data-src] {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA0MDAgMzAwIj4KICAgIDxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMzAwIiBmaWxsPSIjY2NjY2NjIj48L3JlY3Q+CiAgICA8dGV4dCB4PSI1MCUiIHk9IjUwJSIgZG9taW5hbnQtYmFzZWxpbmU9Im1pZGRsZSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9Im1vbm9zcGFjZSIgZm9udC1zaXplPSIyNnB4IiBmaWxsPSIjMzMzMzMzIj5MYXp5IExvYWRlZCBWaWRlbzwvdGV4dD4gICAKPC9zdmc+);
+}

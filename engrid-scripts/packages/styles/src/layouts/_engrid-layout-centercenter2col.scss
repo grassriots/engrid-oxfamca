@@ -1,0 +1,163 @@
+/*
+* ####################################################################################################################
+* # ENGRID Layout - Center Center 2 Column
+* ####################################################################################################################
+*/
+
+$centercenter2col_content-column_max-width: $two_col_content-column_max-width !default; // Overridable in client theme
+$centercenter2col_content-column_min-width: $two_col_content-column_min-width !default; // Overridable in client theme
+$centercenter2col_content-column_min-width_minus-1px: $centercenter2col_content-column_min-width -
+  1px;
+$centercenter2col_body-column_max-width: $two_col_body-column_max-width !default; // Overridable in client theme
+$centercenter2col_body-column_min-width: $two_col_body-column_min-width !default; // Overridable in client theme
+$centercenter2col_body-column_column-1_max-width: calc(
+  $centercenter2col_body-column_max-width / 2
+) !default; // Overridable in client theme
+$centercenter2col_body-column_column-2_max-width: calc(
+  $centercenter2col_body-column_max-width / 2
+) !default; // Overridable in client theme
+$centercenter2col_body-column_offset-width: calc(
+  (
+      $centercenter2col_content-column_max-width -
+        $centercenter2col_body-column_max-width
+    ) / 2
+);
+$centercenter2col_body-column_offset-width-remaining: $centercenter2col_content-column_max-width -
+  $centercenter2col_body-column_max-width -
+  $centercenter2col_body-column_offset-width;
+
+[data-engrid-layout="centercenter2col"] {
+  @media screen and (min-width: $centercenter2col_content-column_min-width) {
+    /* prettier-ignore */
+    form > .en__component--advrow,
+    #engrid > .en__component--advrow{
+      grid-template-columns:
+      [
+        pc-start lpc-start]  minmax(0px, 1fr)                                                                                       [lpc-end
+        cc-start lcc-start]  minmax(0px, $centercenter2col_body-column_offset-width)                                                [lcc-end
+        bc-start lbc-start]  minmax(calc($centercenter2col_body-column_min-width / 2), $centercenter2col_body-column_column-1_max-width)  [lbc-end
+        rbc-start]           minmax(calc($centercenter2col_body-column_min-width / 2), $centercenter2col_body-column_column-2_max-width)  [rbc-end bc-end
+        rcc-start]           minmax(0px, $centercenter2col_body-column_offset-width-remaining)                                      [rcc-end cc-end
+        rpc-start]           minmax(0px, 1fr)                                                                                       [rpc-end pc-end                 
+      ]; 
+    }
+
+    form > .en__component--advrow > * {
+      grid-template-columns:
+        [
+        pc-start lpc-start] minmax(0px, 1fr) [lpc-end
+        cc-start lcc-start] minmax(
+          0px,
+          $centercenter2col_body-column_offset-width
+        )
+        [lcc-end
+        bc-start lbc-start] minmax(
+          0px,
+          calc($centercenter2col_body-column_max-width / 2)
+        )
+        [lbc-end
+        rbc-start] minmax(
+          0px,
+          calc($centercenter2col_body-column_max-width / 2)
+        )
+        [rbc-end bc-end
+        rcc-start] minmax(
+          0px,
+          $centercenter2col_body-column_offset-width-remaining
+        )
+        [rcc-end cc-end
+        rpc-start] minmax(0px, 1fr) [rpc-end pc-end
+        ];
+    }
+
+    form > .en__component--advrow,
+    #engrid > .en__component--advrow {
+      grid-template-rows:
+        [
+        page-start page-alert-start] min-content [page-alert-end
+        content-header-start] min-content [content-header-end
+        body-headerOutside-start] min-content [body-headerOutside-end
+        body-header-start] min-content [body-header-end
+        body-title-start] min-content [body-title-end
+        body-banner-start] min-content [body-banner-end
+        body-bannerOverlay-start] min-content [body-bannerOverlay-end
+        body-top-start] minmax(0px, 1fr) [body-top-end
+        body-side-start] min-content [body-side-end
+        body-main-start] min-content [body-main-end
+        body-bottom-start] min-content [body-bottom-end
+        body-footer-start] min-content [body-footer-end
+        body-footerOutside-start] min-content [body-footerOutside-end
+        content-footerSpacer-start] max-content [content-footerSpacer-end
+        content-preFooter-start] min-content [content-preFooter-end
+        content-footer-start] min-content [content-footer-end
+        page-backgroundImage-start] min-content [page-backgroundImage-end
+        page-backgroundImageOverlay-start] min-content [page-backgroundImageOverlay-end page-end
+        page-customCode-start] min-content [page-customCode-end
+        ];
+    }
+
+    &:not(#en__pagebuilder) .page-backgroundImage {
+      grid-row: page-start / content-footerSpacer-end;
+    }
+
+    form > .en__component--advrow {
+      .body-title,
+      .body-banner,
+      .body-bannerOverlay,
+      .body-top {
+        grid-column: lbc;
+      }
+
+      .body-side,
+      .body-main,
+      .body-bottom {
+        grid-column: rbc;
+      }
+
+      .body-top {
+        grid-row: body-top-start / body-footer-start;
+        // grid-row: body-banner-end / body-bottom-end; // @TODO, CHECK IF THIS IS A BETTER DEFAULT, USED ON AIUSA
+      }
+
+      .body-main {
+        grid-row: body-header-end / body-main-end;
+      }
+    }
+
+    // Let the Banner Span the full width of the two body content columns
+    &[data-engrid-layout_banner="grid-column_bc"] {
+      form > .en__component--advrow {
+        .body-banner,
+        .body-bannerOverlay {
+          grid-column: bc;
+        }
+
+        .body-title,
+        .body-main {
+          grid-row-start: body-bannerOverlay-end;
+        }
+
+        .body-top {
+          grid-row-start: body-title-end;
+        }
+      }
+    }
+
+    // The Free and Flexible Template has no need for a right margin on the second column when displayed on desktop
+    #engrid > .en__component--advrow .en__component--column--2 {
+      .en__component--formblock,
+      .en__component--svblock {
+        margin-right: 0;
+      }
+    }
+
+    @include engrid_hide-background-on-desktop;
+  }
+
+  @media screen and (max-width: $centercenter2col_content-column_min-width_minus-1px) {
+    @include engrid_replace-banner-with-background("centercenter2col");
+    @include engrid_mobile-banner;
+    @include engrid_embedded-mobile-body;
+    // @include remove-body-drop-shadow("centercenter2col"); // No box shadow on two column layouts
+  }
+}

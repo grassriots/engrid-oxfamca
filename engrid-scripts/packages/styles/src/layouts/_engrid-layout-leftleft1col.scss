@@ -1,0 +1,58 @@
+/*
+* ####################################################################################################################
+* # ENGRID Layout - Left Left 1 Column
+* ####################################################################################################################
+*/
+
+$leftleft1col_content-column_max-width: $one_col_content-column_max-width !default; // Overridable in client theme
+$leftleft1col_content-column_min-width: $one_col_content-column_min-width !default; // Overridable in client theme
+$leftleft1col_content-column_min-width_minus-1px: $leftleft1col_content-column_min-width -
+  1px;
+$leftleft1col_body-column_max-width: $one_col_body-column_max-width !default; // Overridable in client theme
+[data-engrid-layout="leftleft1col"] {
+  @media screen and (min-width: $leftleft1col_content-column_min-width) {
+    /* prettier-ignore */
+    form > .en__component--advrow,
+    #engrid > .en__component--advrow{
+      grid-template-columns:
+      [
+        pc-start lpc-start]  minmax(0px, 0px)                                                                          [lpc-end
+        cc-start lcc-start]  minmax(0px, 0px)                                                                          [lcc-end
+        bc-start lbc-start]  minmax(calc($leftleft1col_body-column_max-width / 2), calc($leftleft1col_body-column_max-width / 2))  [lbc-end
+        rbc-start]           minmax(calc($leftleft1col_body-column_max-width / 2), calc($leftleft1col_body-column_max-width / 2))  [rbc-end bc-end
+        rcc-start]           minmax(0px, 0px)                                                                          [rcc-end cc-end
+        rpc-start]           minmax(0px, 1fr)                                                                          [rpc-end pc-end            
+      ]; 
+    }
+
+    form > .en__component--advrow > * {
+      grid-template-columns:
+        [
+        pc-start lpc-start] minmax(0px, 0px) [lpc-end
+        cc-start lcc-start] minmax(0px, 0px) [lcc-end
+        bc-start lbc-start] minmax(
+          0px,
+          calc($leftleft1col_body-column_max-width / 2)
+        )
+        [lbc-end
+        rbc-start] minmax(0px, calc($leftleft1col_body-column_max-width / 2))
+        [rbc-end bc-end
+        rcc-start] minmax(0px, 0px) [rcc-end cc-end
+        rpc-start] minmax(0px, 1fr) [rpc-end pc-end
+        ];
+    }
+
+    &:not(#en__pagebuilder) .page-backgroundImage {
+      grid-row: page-start / content-footerSpacer-end;
+    }
+
+    @include engrid_hide-background-on-desktop;
+  }
+
+  @media screen and (max-width: $leftleft1col_content-column_min-width_minus-1px) {
+    @include engrid_replace-banner-with-background("leftleft1col");
+    @include engrid_mobile-banner;
+    @include engrid_embedded-mobile-body;
+    @include remove-body-drop-shadow("leftleft1col");
+  }
+}
