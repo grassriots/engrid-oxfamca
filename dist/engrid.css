@@ -19,8 +19,8 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Friday, May 3, 2024 @ 09:27:04 ET
- *  By: ewerter
+ *  Date: Friday, May 3, 2024 @ 15:52:20 ET
+ *  By: alex
  *
  *
  *  Created by 4Site Studios
@@ -55,6 +55,7 @@ dl dl,dl ol,dl ul,ol dl,ol ol,ol ul,ul dl,ul ol,ul ul{
   margin:0;
 }
 hr{
+  color:inherit;
   height:0;
   overflow:visible;
 }
@@ -65,9 +66,14 @@ nav ol,nav ul{
   list-style:none;
   padding:0;
 }
+nav li:before{
+  content:"​";
+}
 pre{
+  -ms-overflow-style:scrollbar;
   font-family:monospace,monospace;
   font-size:1em;
+  overflow:auto;
 }
 a{
   background-color:initial;
@@ -108,6 +114,8 @@ svg:not(:root){
 }
 table{
   border-collapse:collapse;
+  border-color:inherit;
+  text-indent:0;
 }
 button,input,select{
   margin:0;
@@ -143,6 +151,7 @@ textarea{
   margin:0;
   overflow:auto;
   resize:vertical;
+  resize:block;
 }
 [type=checkbox],[type=radio]{
   padding:0;
@@ -204,7 +213,7 @@ template{
   display:none;
 }
 [tabindex],a,area,button,input,label,select,summary,textarea{
-  touch-action:manipulation;
+  -ms-touch-action:manipulation;
 }
 [hidden]{
   display:none;

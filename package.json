@@ -6,7 +6,8 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack --watch  --config webpack.prod.js",
-    "build": "npm run production & npm run minify",
+    "build-package": "npm install --prefix ./engrid-scripts",
+    "build": "npm run build-package && npm run production & npm run minify",
     "production": "webpack --config webpack.prod.js",
     "minify": "webpack --config webpack.min.js",
     "update": "npm update @4site/engrid-common @4site/engrid-styles",
@@ -55,13 +56,14 @@
     "webpack-merge": "^5.7.3"
   },
   "dependencies": {
-    "@testewerton/jsbuild": "file:./engrid-scripts/packages/common",
     "@babel/runtime": "^7.14.0",
+    "@testewerton/jsbuild": "file:./engrid-scripts/packages/common",
     "babel": "^6.23.0",
     "clean-webpack-plugin": "^3.0.0",
     "sanitize.css": "^12.0.1",
     "strongly-typed-events": "^1.7.3",
-    "terser-webpack-plugin": "^5.2.3"
+    "terser-webpack-plugin": "^5.2.3",
+    "tippy.js": "^6.3.7"
   },
   "repository": {
     "type": "git",
