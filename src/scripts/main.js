@@ -230,6 +230,13 @@ function dumpGlobalVar() {
       }
   }
 });*/
+let vgsInput = document.querySelectorAll('.card-number-input');
+if(vgsInput.length > 0){
+  console.log(vgsInput);
+  console.log('visible input');
+}else{
+  console.log(vgsInput);
+}
 preSelectDonationValue();
 dumpGlobalVar();
 setPaymentType();

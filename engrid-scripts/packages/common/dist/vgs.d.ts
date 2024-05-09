@@ -6,7 +6,6 @@ export declare class VGS {
     private _form;
     constructor();
     shouldRun(): boolean;
-    setDefaults(): void;
     setPaymentType(): void;
     dumpGlobalVar(): void;
     private validate;

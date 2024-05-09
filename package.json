@@ -64,8 +64,7 @@
     "terser-webpack-plugin": "^5.2.3"
   },
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/4site-interactive-studios/engrid.git"
+    "type": "git"
   },
   "bugs": {
     "url": "https://github.com/4site-interactive-studios/engrid/issues"

@@ -19,7 +19,7 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Friday, May 3, 2024 @ 15:49:44 ET
+ *  Date: Thursday, May 9, 2024 @ 07:40:05 ET
  *  By: ewerter
  *
  *
@@ -8234,11 +8234,6 @@ body{
   opacity:1;
   transition:opacity .2s;
 }
-
-.en__field--ccvv{
-  margin-top:.22em !important;
-}
-
 #en__field_transaction_ccnumber{
   background-image:none !important;
   width:100%;

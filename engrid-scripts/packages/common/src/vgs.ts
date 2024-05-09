@@ -37,7 +37,7 @@ export class VGS {
   constructor() {
     if (!this.shouldRun()) return;
     this.setPaymentType();
-    this.setDefaults();
+    //this.setDefaults();
     this.dumpGlobalVar();
     this._form.onValidate.subscribe(() => {
       if (this._form.validate) {
@@ -53,7 +53,7 @@ export class VGS {
     if (!this.vgsField) return false;
     return true;
   }
-  setDefaults() {
+ /* setDefaults() {
     //EN attempts to define a few default styles for VGS fields based on our text field styling
     //This does not always work, so we will provide our own defaults
     const bodyStyles = getComputedStyle(document.body);
@@ -92,7 +92,7 @@ export class VGS {
       },
       "transaction.ccvv": {
         showCardIcon: false,
-        placeholder: "CVV",
+        placeholder: "1234e",
         hideValue: false,
         // Autocomplete is not customizable
         autoComplete: "cc-csc",
@@ -104,7 +104,7 @@ export class VGS {
     this.options = ENGrid.deepMerge(defaultOptions, options);
     this.logger.log("Theme Options", options);
     this.logger.log("Merged Options", this.options);
-  }
+  }*/
   setPaymentType() {
     // Because the VGS iFrame Communication doesn't change the value of the payment type field, we have to set it to Visa by default
     if (this.paymentTypeField) {

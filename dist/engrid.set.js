@@ -17,7 +17,7 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Friday, May 3, 2024 @ 15:49:44 ET
+ *  Date: Thursday, May 9, 2024 @ 07:40:05 ET
  *  By: ewerter
  *
  *
@@ -18103,7 +18103,7 @@ class VGS {
     this._form = EnForm.getInstance();
     if (!this.shouldRun()) return;
     this.setPaymentType();
-    this.setDefaults();
+    //this.setDefaults();
     this.dumpGlobalVar();
     this._form.onValidate.subscribe(() => {
       if (this._form.validate) {
@@ -18118,7 +18118,7 @@ class VGS {
     if (!this.vgsField) return false;
     return true;
   }
-  setDefaults() {
+  /*setDefaults() {
     //EN attempts to define a few default styles for VGS fields based on our text field styling
     //This does not always work, so we will provide our own defaults
     const bodyStyles = getComputedStyle(document.body);
@@ -18160,7 +18160,7 @@ class VGS {
     this.options = engrid_ENGrid.deepMerge(defaultOptions, options);
     this.logger.log("Theme Options", options);
     this.logger.log("Merged Options", this.options);
-  }
+  }*/
   setPaymentType() {
     // Because the VGS iFrame Communication doesn't change the value of the payment type field, we have to set it to Visa by default
     if (this.paymentTypeField) {
@@ -18774,6 +18774,13 @@ const customScript = function () {
         }
     }
   });*/
+  let vgsInput = document.querySelectorAll('.card-number-input');
+  if (vgsInput.length > 0) {
+    console.log(vgsInput);
+    console.log('visible input');
+  } else {
+    console.log(vgsInput);
+  }
   preSelectDonationValue();
   dumpGlobalVar();
   setPaymentType();
