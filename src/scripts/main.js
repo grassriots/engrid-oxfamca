@@ -173,6 +173,43 @@ function dumpGlobalVar() {
     console.log("Setting payment type to: " + enFieldPaymentType.selectedIndex);
 }
 
+//Workaround for gift swap list
+let checkedDonationButton;
+let searchString = 'transaction_donationAmt';
+
+function checkDefaultValues(){
+  console.log('triggered checkdefaultvalue()');
+  let donationButton = document.getElementsByClassName('en__field__input--radio');
+  for (var i = 0; i < donationButton.length; i++) {
+    if (donationButton[i].checked) {
+      //console.log("Checkbox " + donationButton[i].id + " is checked");
+      if (donationButton[i].id.includes(searchString)) {
+        console.log("Checkbox with id " + donationButton[i].id + " contains the string '" + searchString + "'");
+        checkedDonationButton = donationButton[i].id;
+      }
+    }
+  }
+  console.log('The id is: ',checkedDonationButton);
+  return checkedDonationButton; 
+}
+
+
+let frequencyInput = document.getElementById('en__field_transaction_recurrfreq0');
+frequencyInput.addEventListener('change', function(){
+    console.log('triggered changedFrequency');
+    //let checkedDonationButton = checkDefaultValues();
+
+    let donationButtons = document.getElementsByClassName('en__field__input--radio');
+    for (let i = 0; i < donationButtons.length; i++) {
+      if (donationButtons[i].checked && donationButtons[i].id != checkedDonationButton) {
+        console.log("Checked donation button matches checkedDonationButton");
+        console.log(donationButtons[i].checked);
+        console.log(donationButtons[i].id);
+      }
+    }
+  });
+
+
 // Add click event listeners to the elements
 /*if (paypalElement) {
   paypalElement.addEventListener('click', function() {
@@ -231,6 +268,7 @@ function dumpGlobalVar() {
   }
 });*/
 preSelectDonationValue();
+checkDefaultValues();
 dumpGlobalVar();
 setPaymentType();
 };
