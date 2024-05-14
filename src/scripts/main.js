@@ -174,6 +174,8 @@ function dumpGlobalVar() {
 }
 
 //Workaround for gift swap list
+let selectedButton;
+let associatedLabel;
 let checkedDonationButton;
 let searchString = 'transaction_donationAmt';
 
@@ -190,21 +192,53 @@ function checkDefaultValues(){
     }
   }
   console.log('The id is: ',checkedDonationButton);
-  return checkedDonationButton; 
+  selectedButton =  document.getElementById(checkedDonationButton);
+  associatedLabel = document.querySelector(`label[for="${selectedButton.id}"]`);
+  console.log('The element is: ',selectedButton);
+  console.log('the label is', associatedLabel);
 }
 
 
 let frequencyInput = document.getElementById('en__field_transaction_recurrfreq0');
 frequencyInput.addEventListener('change', function(){
     console.log('triggered changedFrequency');
+    console.log(selectedButton);
     //let checkedDonationButton = checkDefaultValues();
-
     let donationButtons = document.getElementsByClassName('en__field__input--radio');
+    
+    if(selectedButton.length !== null){
+      console.log('element is here');
+    }
+
+    let changeEvent = new Event('change', {
+      bubbles: true, // Whether the event bubbles up through the DOM or not
+    });
+    
     for (let i = 0; i < donationButtons.length; i++) {
       if (donationButtons[i].checked && donationButtons[i].id != checkedDonationButton) {
         console.log("Checked donation button matches checkedDonationButton");
-        console.log(donationButtons[i].checked);
-        console.log(donationButtons[i].id);
+        /*console.log('donation Button ID checked',donationButtons[i].checked.id);
+        console.log('donation Button ID',donat ionButtons[i].id);*/
+          /*selectedButton.dispatchEvent(changeEvent);
+          selectedButton.click();
+          debugger;
+          selectedButton.checked=true;
+          associatedLabel.click();*/
+        setTimeout(function() {
+          console.log('timeout Btn', selectedButton);
+          console.log('timeout label', associatedLabel);
+          selectedButton.dispatchEvent(changeEvent);
+          selectedButton.checked=true;
+          selectedButton.click();
+          debugger;
+          associatedLabel.click();
+          associatedLabel.focus();
+          associatedLabel.setAttribute('tabindex','0');
+          associatedLabel.dispatchEvent(changeEvent);
+          debugger;
+        }, 1300); // Adjust the timeout value as needed
+        
+        
       }
     }
   });

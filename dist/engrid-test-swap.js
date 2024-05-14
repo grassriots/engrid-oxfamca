@@ -17,7 +17,7 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Monday, April 1, 2024 @ 18:25:11 ET
+ *  Date: Tuesday, May 14, 2024 @ 12:47:17 ET
  *  By: ewerter
  *  ENGrid styles: v0.14.17
  *  ENGrid scripts: v0.14.17
@@ -30,7 +30,7 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ 2705:
+/***/ 1172:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -60,14 +60,14 @@ exports.DispatchError = DispatchError;
 
 /***/ }),
 
-/***/ 9885:
+/***/ 6570:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DispatcherBase = void 0;
-const __1 = __webpack_require__(4844);
+const __1 = __webpack_require__(4089);
 /**
  * Base class for implementation of the dispatcher. It facilitates the subscribe
  * and unsubscribe methods based on generic handlers. The TEventType specifies
@@ -310,7 +310,7 @@ exports.DispatcherBase = DispatcherBase;
 
 /***/ }),
 
-/***/ 1637:
+/***/ 2548:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -438,7 +438,7 @@ exports.DispatcherWrapper = DispatcherWrapper;
 
 /***/ }),
 
-/***/ 4155:
+/***/ 7385:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -490,14 +490,14 @@ exports.EventListBase = EventListBase;
 
 /***/ }),
 
-/***/ 2849:
+/***/ 4349:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseDispatcherBase = void 0;
-const __1 = __webpack_require__(4844);
+const __1 = __webpack_require__(4089);
 /**
  * Dispatcher base for dispatchers that use promises. Each promise
  * is awaited before the next is dispatched, unless the event is
@@ -573,14 +573,14 @@ exports.PromiseDispatcherBase = PromiseDispatcherBase;
 
 /***/ }),
 
-/***/ 4220:
+/***/ 8859:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SubscriptionChangeEventDispatcher = void 0;
-const __1 = __webpack_require__(4844);
+const __1 = __webpack_require__(4089);
 /**
  * Dispatcher for subscription changes.
  *
@@ -605,7 +605,7 @@ exports.SubscriptionChangeEventDispatcher = SubscriptionChangeEventDispatcher;
 
 /***/ }),
 
-/***/ 7278:
+/***/ 9983:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -668,7 +668,7 @@ exports.PromiseSubscription = PromiseSubscription;
 
 /***/ }),
 
-/***/ 8326:
+/***/ 9706:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -722,7 +722,7 @@ exports.Subscription = Subscription;
 
 /***/ }),
 
-/***/ 516:
+/***/ 8195:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -817,7 +817,7 @@ exports.HandlingBase = HandlingBase;
 
 /***/ }),
 
-/***/ 4844:
+/***/ 4089:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -832,31 +832,31 @@ exports.HandlingBase = HandlingBase;
  */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SubscriptionChangeEventDispatcher = exports.HandlingBase = exports.PromiseDispatcherBase = exports.PromiseSubscription = exports.DispatchError = exports.EventManagement = exports.EventListBase = exports.DispatcherWrapper = exports.DispatcherBase = exports.Subscription = void 0;
-const DispatcherBase_1 = __webpack_require__(9885);
+const DispatcherBase_1 = __webpack_require__(6570);
 Object.defineProperty(exports, "DispatcherBase", ({ enumerable: true, get: function () { return DispatcherBase_1.DispatcherBase; } }));
-const DispatchError_1 = __webpack_require__(2705);
+const DispatchError_1 = __webpack_require__(1172);
 Object.defineProperty(exports, "DispatchError", ({ enumerable: true, get: function () { return DispatchError_1.DispatchError; } }));
-const DispatcherWrapper_1 = __webpack_require__(1637);
+const DispatcherWrapper_1 = __webpack_require__(2548);
 Object.defineProperty(exports, "DispatcherWrapper", ({ enumerable: true, get: function () { return DispatcherWrapper_1.DispatcherWrapper; } }));
-const EventListBase_1 = __webpack_require__(4155);
+const EventListBase_1 = __webpack_require__(7385);
 Object.defineProperty(exports, "EventListBase", ({ enumerable: true, get: function () { return EventListBase_1.EventListBase; } }));
-const EventManagement_1 = __webpack_require__(5638);
+const EventManagement_1 = __webpack_require__(702);
 Object.defineProperty(exports, "EventManagement", ({ enumerable: true, get: function () { return EventManagement_1.EventManagement; } }));
-const HandlingBase_1 = __webpack_require__(516);
+const HandlingBase_1 = __webpack_require__(8195);
 Object.defineProperty(exports, "HandlingBase", ({ enumerable: true, get: function () { return HandlingBase_1.HandlingBase; } }));
-const PromiseDispatcherBase_1 = __webpack_require__(2849);
+const PromiseDispatcherBase_1 = __webpack_require__(4349);
 Object.defineProperty(exports, "PromiseDispatcherBase", ({ enumerable: true, get: function () { return PromiseDispatcherBase_1.PromiseDispatcherBase; } }));
-const PromiseSubscription_1 = __webpack_require__(7278);
+const PromiseSubscription_1 = __webpack_require__(9983);
 Object.defineProperty(exports, "PromiseSubscription", ({ enumerable: true, get: function () { return PromiseSubscription_1.PromiseSubscription; } }));
-const Subscription_1 = __webpack_require__(8326);
+const Subscription_1 = __webpack_require__(9706);
 Object.defineProperty(exports, "Subscription", ({ enumerable: true, get: function () { return Subscription_1.Subscription; } }));
-const SubscriptionChangeEventHandler_1 = __webpack_require__(4220);
+const SubscriptionChangeEventHandler_1 = __webpack_require__(8859);
 Object.defineProperty(exports, "SubscriptionChangeEventDispatcher", ({ enumerable: true, get: function () { return SubscriptionChangeEventHandler_1.SubscriptionChangeEventDispatcher; } }));
 
 
 /***/ }),
 
-/***/ 5638:
+/***/ 702:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -896,14 +896,14 @@ exports.EventManagement = EventManagement;
 
 /***/ }),
 
-/***/ 4402:
+/***/ 9554:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventDispatcher = void 0;
-const ste_core_1 = __webpack_require__(4844);
+const ste_core_1 = __webpack_require__(4089);
 /**
  * Dispatcher implementation for events. Can be used to subscribe, unsubscribe
  * or dispatch events. Use the ToEvent() method to expose the event.
@@ -968,15 +968,15 @@ exports.EventDispatcher = EventDispatcher;
 
 /***/ }),
 
-/***/ 9411:
+/***/ 7631:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventHandlingBase = void 0;
-const ste_core_1 = __webpack_require__(4844);
-const EventList_1 = __webpack_require__(2453);
+const ste_core_1 = __webpack_require__(4089);
+const EventList_1 = __webpack_require__(2259);
 /**
  * Extends objects with signal event handling capabilities.
  */
@@ -990,15 +990,15 @@ exports.EventHandlingBase = EventHandlingBase;
 
 /***/ }),
 
-/***/ 2453:
+/***/ 2259:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.EventList = void 0;
-const ste_core_1 = __webpack_require__(4844);
-const EventDispatcher_1 = __webpack_require__(4402);
+const ste_core_1 = __webpack_require__(4089);
+const EventDispatcher_1 = __webpack_require__(9554);
 /**
  * Storage class for multiple events that are accessible by name.
  * Events dispatchers are automatically created.
@@ -1022,14 +1022,14 @@ exports.EventList = EventList;
 
 /***/ }),
 
-/***/ 7891:
+/***/ 2720:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.NonUniformEventList = void 0;
-const EventDispatcher_1 = __webpack_require__(4402);
+const EventDispatcher_1 = __webpack_require__(9554);
 /**
  * Similar to EventList, but instead of TArgs, a map of event names ang argument types is provided with TArgsMap.
  */
@@ -1069,7 +1069,7 @@ exports.NonUniformEventList = NonUniformEventList;
 
 /***/ }),
 
-/***/ 3111:
+/***/ 8663:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -1084,26 +1084,26 @@ exports.NonUniformEventList = NonUniformEventList;
  */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.NonUniformEventList = exports.EventList = exports.EventHandlingBase = exports.EventDispatcher = void 0;
-const EventDispatcher_1 = __webpack_require__(4402);
+const EventDispatcher_1 = __webpack_require__(9554);
 Object.defineProperty(exports, "EventDispatcher", ({ enumerable: true, get: function () { return EventDispatcher_1.EventDispatcher; } }));
-const EventHandlingBase_1 = __webpack_require__(9411);
+const EventHandlingBase_1 = __webpack_require__(7631);
 Object.defineProperty(exports, "EventHandlingBase", ({ enumerable: true, get: function () { return EventHandlingBase_1.EventHandlingBase; } }));
-const EventList_1 = __webpack_require__(2453);
+const EventList_1 = __webpack_require__(2259);
 Object.defineProperty(exports, "EventList", ({ enumerable: true, get: function () { return EventList_1.EventList; } }));
-const NonUniformEventList_1 = __webpack_require__(7891);
+const NonUniformEventList_1 = __webpack_require__(2720);
 Object.defineProperty(exports, "NonUniformEventList", ({ enumerable: true, get: function () { return NonUniformEventList_1.NonUniformEventList; } }));
 
 
 /***/ }),
 
-/***/ 4729:
+/***/ 1024:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SignalDispatcher = void 0;
-const ste_core_1 = __webpack_require__(4844);
+const ste_core_1 = __webpack_require__(4089);
 /**
  * The dispatcher handles the storage of subsciptions and facilitates
  * subscription, unsubscription and dispatching of a signal event.
@@ -1153,15 +1153,15 @@ exports.SignalDispatcher = SignalDispatcher;
 
 /***/ }),
 
-/***/ 4243:
+/***/ 8685:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SignalHandlingBase = void 0;
-const ste_core_1 = __webpack_require__(4844);
-const _1 = __webpack_require__(1254);
+const ste_core_1 = __webpack_require__(4089);
+const _1 = __webpack_require__(529);
 /**
  * Extends objects with signal event handling capabilities.
  *
@@ -1186,15 +1186,15 @@ exports.SignalHandlingBase = SignalHandlingBase;
 
 /***/ }),
 
-/***/ 7991:
+/***/ 6305:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SignalList = void 0;
-const ste_core_1 = __webpack_require__(4844);
-const _1 = __webpack_require__(1254);
+const ste_core_1 = __webpack_require__(4089);
+const _1 = __webpack_require__(529);
 /**
  * Storage class for multiple signal events that are accessible by name.
  * Events dispatchers are automatically created.
@@ -1229,7 +1229,7 @@ exports.SignalList = SignalList;
 
 /***/ }),
 
-/***/ 1254:
+/***/ 529:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -1244,24 +1244,24 @@ exports.SignalList = SignalList;
  */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SignalList = exports.SignalHandlingBase = exports.SignalDispatcher = void 0;
-const SignalDispatcher_1 = __webpack_require__(4729);
+const SignalDispatcher_1 = __webpack_require__(1024);
 Object.defineProperty(exports, "SignalDispatcher", ({ enumerable: true, get: function () { return SignalDispatcher_1.SignalDispatcher; } }));
-const SignalHandlingBase_1 = __webpack_require__(4243);
+const SignalHandlingBase_1 = __webpack_require__(8685);
 Object.defineProperty(exports, "SignalHandlingBase", ({ enumerable: true, get: function () { return SignalHandlingBase_1.SignalHandlingBase; } }));
-const SignalList_1 = __webpack_require__(7991);
+const SignalList_1 = __webpack_require__(6305);
 Object.defineProperty(exports, "SignalList", ({ enumerable: true, get: function () { return SignalList_1.SignalList; } }));
 
 
 /***/ }),
 
-/***/ 9360:
+/***/ 7575:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.NonUniformSimpleEventList = void 0;
-const SimpleEventDispatcher_1 = __webpack_require__(4624);
+const SimpleEventDispatcher_1 = __webpack_require__(4889);
 /**
  * Similar to EventList, but instead of TArgs, a map of event names ang argument types is provided with TArgsMap.
  */
@@ -1301,14 +1301,14 @@ exports.NonUniformSimpleEventList = NonUniformSimpleEventList;
 
 /***/ }),
 
-/***/ 4624:
+/***/ 4889:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SimpleEventDispatcher = void 0;
-const ste_core_1 = __webpack_require__(4844);
+const ste_core_1 = __webpack_require__(4089);
 /**
  * The dispatcher handles the storage of subsciptions and facilitates
  * subscription, unsubscription and dispatching of a simple event
@@ -1370,15 +1370,15 @@ exports.SimpleEventDispatcher = SimpleEventDispatcher;
 
 /***/ }),
 
-/***/ 1269:
+/***/ 5164:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SimpleEventHandlingBase = void 0;
-const ste_core_1 = __webpack_require__(4844);
-const SimpleEventList_1 = __webpack_require__(5570);
+const ste_core_1 = __webpack_require__(4089);
+const SimpleEventList_1 = __webpack_require__(8884);
 /**
  * Extends objects with signal event handling capabilities.
  */
@@ -1392,15 +1392,15 @@ exports.SimpleEventHandlingBase = SimpleEventHandlingBase;
 
 /***/ }),
 
-/***/ 5570:
+/***/ 8884:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SimpleEventList = void 0;
-const ste_core_1 = __webpack_require__(4844);
-const SimpleEventDispatcher_1 = __webpack_require__(4624);
+const ste_core_1 = __webpack_require__(4089);
+const SimpleEventDispatcher_1 = __webpack_require__(4889);
 /**
  * Storage class for multiple simple events that are accessible by name.
  * Events dispatchers are automatically created.
@@ -1424,26 +1424,26 @@ exports.SimpleEventList = SimpleEventList;
 
 /***/ }),
 
-/***/ 5931:
+/***/ 2990:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.NonUniformSimpleEventList = exports.SimpleEventList = exports.SimpleEventHandlingBase = exports.SimpleEventDispatcher = void 0;
-const SimpleEventDispatcher_1 = __webpack_require__(4624);
+const SimpleEventDispatcher_1 = __webpack_require__(4889);
 Object.defineProperty(exports, "SimpleEventDispatcher", ({ enumerable: true, get: function () { return SimpleEventDispatcher_1.SimpleEventDispatcher; } }));
-const SimpleEventHandlingBase_1 = __webpack_require__(1269);
+const SimpleEventHandlingBase_1 = __webpack_require__(5164);
 Object.defineProperty(exports, "SimpleEventHandlingBase", ({ enumerable: true, get: function () { return SimpleEventHandlingBase_1.SimpleEventHandlingBase; } }));
-const NonUniformSimpleEventList_1 = __webpack_require__(9360);
+const NonUniformSimpleEventList_1 = __webpack_require__(7575);
 Object.defineProperty(exports, "NonUniformSimpleEventList", ({ enumerable: true, get: function () { return NonUniformSimpleEventList_1.NonUniformSimpleEventList; } }));
-const SimpleEventList_1 = __webpack_require__(5570);
+const SimpleEventList_1 = __webpack_require__(8884);
 Object.defineProperty(exports, "SimpleEventList", ({ enumerable: true, get: function () { return SimpleEventList_1.SimpleEventList; } }));
 
 
 /***/ }),
 
-/***/ 5363:
+/***/ 920:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -1458,8 +1458,8 @@ var __webpack_unused_export__;
  * Released under the MIT license
  */
 __webpack_unused_export__ = ({ value: true });
-__webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = exports.nz = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = exports.FK = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = void 0;
-var ste_core_1 = __webpack_require__(4844);
+__webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = exports.UD = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = exports.IL = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = __webpack_unused_export__ = void 0;
+var ste_core_1 = __webpack_require__(4089);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_core_1.Subscription; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_core_1.DispatcherBase; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_core_1.DispatcherWrapper; } });
@@ -1469,30 +1469,30 @@ __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_c
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_core_1.PromiseSubscription; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_core_1.PromiseDispatcherBase; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_core_1.HandlingBase; } });
-var ste_events_1 = __webpack_require__(3111);
+var ste_events_1 = __webpack_require__(8663);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_events_1.EventDispatcher; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_events_1.EventHandlingBase; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_events_1.EventList; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_events_1.NonUniformEventList; } });
-var ste_simple_events_1 = __webpack_require__(5931);
-Object.defineProperty(exports, "FK", ({ enumerable: true, get: function () { return ste_simple_events_1.SimpleEventDispatcher; } }));
+var ste_simple_events_1 = __webpack_require__(2990);
+Object.defineProperty(exports, "IL", ({ enumerable: true, get: function () { return ste_simple_events_1.SimpleEventDispatcher; } }));
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_simple_events_1.SimpleEventHandlingBase; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_simple_events_1.SimpleEventList; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_simple_events_1.NonUniformSimpleEventList; } });
-var ste_signals_1 = __webpack_require__(1254);
-Object.defineProperty(exports, "nz", ({ enumerable: true, get: function () { return ste_signals_1.SignalDispatcher; } }));
+var ste_signals_1 = __webpack_require__(529);
+Object.defineProperty(exports, "UD", ({ enumerable: true, get: function () { return ste_signals_1.SignalDispatcher; } }));
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_signals_1.SignalHandlingBase; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_signals_1.SignalList; } });
-var ste_promise_events_1 = __webpack_require__(6586);
+var ste_promise_events_1 = __webpack_require__(606);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_promise_events_1.PromiseEventDispatcher; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_promise_events_1.PromiseEventHandlingBase; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_promise_events_1.PromiseEventList; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_promise_events_1.NonUniformPromiseEventList; } });
-var ste_promise_signals_1 = __webpack_require__(6838);
+var ste_promise_signals_1 = __webpack_require__(6042);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_promise_signals_1.PromiseSignalDispatcher; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_promise_signals_1.PromiseSignalHandlingBase; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_promise_signals_1.PromiseSignalList; } });
-var ste_promise_simple_events_1 = __webpack_require__(9176);
+var ste_promise_simple_events_1 = __webpack_require__(4225);
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_promise_simple_events_1.PromiseSimpleEventDispatcher; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_promise_simple_events_1.PromiseSimpleEventHandlingBase; } });
 __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_promise_simple_events_1.PromiseSimpleEventList; } });
@@ -1501,7 +1501,7 @@ __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_p
 
 /***/ }),
 
-/***/ 6377:
+/***/ 7391:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
 // A library of seedable RNGs implemented in Javascript.
@@ -1516,17 +1516,17 @@ __webpack_unused_export__ = ({ enumerable: true, get: function () { return ste_p
 // alea, a 53-bit multiply-with-carry generator by Johannes Baagøe.
 // Period: ~2^116
 // Reported to pass all BigCrush tests.
-var alea = __webpack_require__(4832);
+var alea = __webpack_require__(7180);
 
 // xor128, a pure xor-shift generator by George Marsaglia.
 // Period: 2^128-1.
 // Reported to fail: MatrixRank and LinearComp.
-var xor128 = __webpack_require__(8652);
+var xor128 = __webpack_require__(3181);
 
 // xorwow, George Marsaglia's 160-bit xor-shift combined plus weyl.
 // Period: 2^192-2^32
 // Reported to fail: CollisionOver, SimpPoker, and LinearComp.
-var xorwow = __webpack_require__(801);
+var xorwow = __webpack_require__(3031);
 
 // xorshift7, by François Panneton and Pierre L'ecuyer, takes
 // a different approach: it adds robustness by allowing more shifts
@@ -1534,7 +1534,7 @@ var xorwow = __webpack_require__(801);
 // with 256 bits, that passes BigCrush with no systmatic failures.
 // Period 2^256-1.
 // No systematic BigCrush failures reported.
-var xorshift7 = __webpack_require__(2030);
+var xorshift7 = __webpack_require__(9067);
 
 // xor4096, by Richard Brent, is a 4096-bit xor-shift with a
 // very long period that also adds a Weyl generator. It also passes
@@ -1543,18 +1543,18 @@ var xorshift7 = __webpack_require__(2030);
 // collisions.
 // Period: 2^4128-2^32.
 // No systematic BigCrush failures reported.
-var xor4096 = __webpack_require__(3618);
+var xor4096 = __webpack_require__(6833);
 
 // Tyche-i, by Samuel Neves and Filipe Araujo, is a bit-shifting random
 // number generator derived from ChaCha, a modern stream cipher.
 // https://eden.dei.uc.pt/~sneves/pubs/2011-snfa2.pdf
 // Period: ~2^127
 // No systematic BigCrush failures reported.
-var tychei = __webpack_require__(9049);
+var tychei = __webpack_require__(3717);
 
 // The original ARC4-based prng included in this library.
 // Period: ~2^1600
-var sr = __webpack_require__(1971);
+var sr = __webpack_require__(4801);
 
 sr.alea = alea;
 sr.xor128 = xor128;
@@ -1568,7 +1568,7 @@ module.exports = sr;
 
 /***/ }),
 
-/***/ 4832:
+/***/ 7180:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* module decorator */ module = __webpack_require__.nmd(module);
@@ -1691,7 +1691,7 @@ if (module && module.exports) {
 
 /***/ }),
 
-/***/ 9049:
+/***/ 3717:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* module decorator */ module = __webpack_require__.nmd(module);
@@ -1803,7 +1803,7 @@ if (module && module.exports) {
 
 /***/ }),
 
-/***/ 8652:
+/***/ 3181:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* module decorator */ module = __webpack_require__.nmd(module);
@@ -1893,7 +1893,7 @@ if (module && module.exports) {
 
 /***/ }),
 
-/***/ 3618:
+/***/ 6833:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* module decorator */ module = __webpack_require__.nmd(module);
@@ -2048,7 +2048,7 @@ if (module && module.exports) {
 
 /***/ }),
 
-/***/ 2030:
+/***/ 9067:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* module decorator */ module = __webpack_require__.nmd(module);
@@ -2154,7 +2154,7 @@ if (module && module.exports) {
 
 /***/ }),
 
-/***/ 801:
+/***/ 3031:
 /***/ (function(module, exports, __webpack_require__) {
 
 /* module decorator */ module = __webpack_require__.nmd(module);
@@ -2249,7 +2249,7 @@ if (module && module.exports) {
 
 /***/ }),
 
-/***/ 1971:
+/***/ 4801:
 /***/ ((module, exports, __webpack_require__) => {
 
 var __WEBPACK_AMD_DEFINE_RESULT__;/*
@@ -2491,7 +2491,7 @@ if ( true && module.exports) {
   module.exports = seedrandom;
   // When in node.js, try using crypto package for autoseeding.
   try {
-    nodecrypto = __webpack_require__(5042);
+    nodecrypto = __webpack_require__(1234);
   } catch (ex) {}
 } else if (true) {
   !(__WEBPACK_AMD_DEFINE_RESULT__ = (function() { return seedrandom; }).call(exports, __webpack_require__, exports, module),
@@ -2507,11 +2507,11 @@ if ( true && module.exports) {
 
 /***/ }),
 
-/***/ 7650:
+/***/ 3184:
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-var seedrandom = __webpack_require__(6377);
-var self = __webpack_require__(1987);
+var seedrandom = __webpack_require__(7391);
+var self = __webpack_require__(2287);
 
 module.exports = self;
 
@@ -2519,7 +2519,7 @@ module.exports = self;
 
 /***/ }),
 
-/***/ 1987:
+/***/ 2287:
 /***/ (function(module) {
 
 ;(function() {
@@ -2598,14 +2598,14 @@ module.exports = self;
 
 /***/ }),
 
-/***/ 6357:
+/***/ 1246:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.NonUniformPromiseEventList = void 0;
-const PromiseEventDispatcher_1 = __webpack_require__(5072);
+const PromiseEventDispatcher_1 = __webpack_require__(2330);
 /**
  * Similar to EventList, but instead of TArgs, a map of event names ang argument types is provided with TArgsMap.
  */
@@ -2645,14 +2645,14 @@ exports.NonUniformPromiseEventList = NonUniformPromiseEventList;
 
 /***/ }),
 
-/***/ 5072:
+/***/ 2330:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseEventDispatcher = void 0;
-const ste_core_1 = __webpack_require__(2874);
+const ste_core_1 = __webpack_require__(9184);
 /**
  * Dispatcher implementation for events. Can be used to subscribe, unsubscribe
  * or dispatch events. Use the ToEvent() method to expose the event.
@@ -2711,15 +2711,15 @@ exports.PromiseEventDispatcher = PromiseEventDispatcher;
 
 /***/ }),
 
-/***/ 7873:
+/***/ 3351:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseEventHandlingBase = void 0;
-const ste_core_1 = __webpack_require__(2874);
-const PromiseEventList_1 = __webpack_require__(4414);
+const ste_core_1 = __webpack_require__(9184);
+const PromiseEventList_1 = __webpack_require__(4283);
 /**
  * Extends objects with signal event handling capabilities.
  */
@@ -2733,15 +2733,15 @@ exports.PromiseEventHandlingBase = PromiseEventHandlingBase;
 
 /***/ }),
 
-/***/ 4414:
+/***/ 4283:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseEventList = void 0;
-const ste_core_1 = __webpack_require__(2874);
-const PromiseEventDispatcher_1 = __webpack_require__(5072);
+const ste_core_1 = __webpack_require__(9184);
+const PromiseEventDispatcher_1 = __webpack_require__(2330);
 /**
  * Storage class for multiple events that are accessible by name.
  * Events dispatchers are automatically created.
@@ -2765,7 +2765,7 @@ exports.PromiseEventList = PromiseEventList;
 
 /***/ }),
 
-/***/ 6586:
+/***/ 606:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -2780,19 +2780,19 @@ exports.PromiseEventList = PromiseEventList;
  */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.NonUniformPromiseEventList = exports.PromiseEventList = exports.PromiseEventHandlingBase = exports.PromiseEventDispatcher = void 0;
-const PromiseEventDispatcher_1 = __webpack_require__(5072);
+const PromiseEventDispatcher_1 = __webpack_require__(2330);
 Object.defineProperty(exports, "PromiseEventDispatcher", ({ enumerable: true, get: function () { return PromiseEventDispatcher_1.PromiseEventDispatcher; } }));
-const PromiseEventHandlingBase_1 = __webpack_require__(7873);
+const PromiseEventHandlingBase_1 = __webpack_require__(3351);
 Object.defineProperty(exports, "PromiseEventHandlingBase", ({ enumerable: true, get: function () { return PromiseEventHandlingBase_1.PromiseEventHandlingBase; } }));
-const PromiseEventList_1 = __webpack_require__(4414);
+const PromiseEventList_1 = __webpack_require__(4283);
 Object.defineProperty(exports, "PromiseEventList", ({ enumerable: true, get: function () { return PromiseEventList_1.PromiseEventList; } }));
-const NonUniformPromiseEventList_1 = __webpack_require__(6357);
+const NonUniformPromiseEventList_1 = __webpack_require__(1246);
 Object.defineProperty(exports, "NonUniformPromiseEventList", ({ enumerable: true, get: function () { return NonUniformPromiseEventList_1.NonUniformPromiseEventList; } }));
 
 
 /***/ }),
 
-/***/ 4383:
+/***/ 3729:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -2822,14 +2822,14 @@ exports.DispatchError = DispatchError;
 
 /***/ }),
 
-/***/ 894:
+/***/ 4645:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DispatcherBase = void 0;
-const __1 = __webpack_require__(2874);
+const __1 = __webpack_require__(9184);
 /**
  * Base class for implementation of the dispatcher. It facilitates the subscribe
  * and unsubscribe methods based on generic handlers. The TEventType specifies
@@ -3072,7 +3072,7 @@ exports.DispatcherBase = DispatcherBase;
 
 /***/ }),
 
-/***/ 9757:
+/***/ 7569:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3200,7 +3200,7 @@ exports.DispatcherWrapper = DispatcherWrapper;
 
 /***/ }),
 
-/***/ 5930:
+/***/ 7672:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3252,14 +3252,14 @@ exports.EventListBase = EventListBase;
 
 /***/ }),
 
-/***/ 7541:
+/***/ 7376:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseDispatcherBase = void 0;
-const __1 = __webpack_require__(2874);
+const __1 = __webpack_require__(9184);
 /**
  * Dispatcher base for dispatchers that use promises. Each promise
  * is awaited before the next is dispatched, unless the event is
@@ -3335,14 +3335,14 @@ exports.PromiseDispatcherBase = PromiseDispatcherBase;
 
 /***/ }),
 
-/***/ 2545:
+/***/ 3512:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SubscriptionChangeEventDispatcher = void 0;
-const __1 = __webpack_require__(2874);
+const __1 = __webpack_require__(9184);
 /**
  * Dispatcher for subscription changes.
  *
@@ -3367,7 +3367,7 @@ exports.SubscriptionChangeEventDispatcher = SubscriptionChangeEventDispatcher;
 
 /***/ }),
 
-/***/ 8452:
+/***/ 7744:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3430,7 +3430,7 @@ exports.PromiseSubscription = PromiseSubscription;
 
 /***/ }),
 
-/***/ 365:
+/***/ 455:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3484,7 +3484,7 @@ exports.Subscription = Subscription;
 
 /***/ }),
 
-/***/ 954:
+/***/ 278:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3579,7 +3579,7 @@ exports.HandlingBase = HandlingBase;
 
 /***/ }),
 
-/***/ 2874:
+/***/ 9184:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -3594,31 +3594,31 @@ exports.HandlingBase = HandlingBase;
  */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SubscriptionChangeEventDispatcher = exports.HandlingBase = exports.PromiseDispatcherBase = exports.PromiseSubscription = exports.DispatchError = exports.EventManagement = exports.EventListBase = exports.DispatcherWrapper = exports.DispatcherBase = exports.Subscription = void 0;
-const DispatcherBase_1 = __webpack_require__(894);
+const DispatcherBase_1 = __webpack_require__(4645);
 Object.defineProperty(exports, "DispatcherBase", ({ enumerable: true, get: function () { return DispatcherBase_1.DispatcherBase; } }));
-const DispatchError_1 = __webpack_require__(4383);
+const DispatchError_1 = __webpack_require__(3729);
 Object.defineProperty(exports, "DispatchError", ({ enumerable: true, get: function () { return DispatchError_1.DispatchError; } }));
-const DispatcherWrapper_1 = __webpack_require__(9757);
+const DispatcherWrapper_1 = __webpack_require__(7569);
 Object.defineProperty(exports, "DispatcherWrapper", ({ enumerable: true, get: function () { return DispatcherWrapper_1.DispatcherWrapper; } }));
-const EventListBase_1 = __webpack_require__(5930);
+const EventListBase_1 = __webpack_require__(7672);
 Object.defineProperty(exports, "EventListBase", ({ enumerable: true, get: function () { return EventListBase_1.EventListBase; } }));
-const EventManagement_1 = __webpack_require__(4796);
+const EventManagement_1 = __webpack_require__(6413);
 Object.defineProperty(exports, "EventManagement", ({ enumerable: true, get: function () { return EventManagement_1.EventManagement; } }));
-const HandlingBase_1 = __webpack_require__(954);
+const HandlingBase_1 = __webpack_require__(278);
 Object.defineProperty(exports, "HandlingBase", ({ enumerable: true, get: function () { return HandlingBase_1.HandlingBase; } }));
-const PromiseDispatcherBase_1 = __webpack_require__(7541);
+const PromiseDispatcherBase_1 = __webpack_require__(7376);
 Object.defineProperty(exports, "PromiseDispatcherBase", ({ enumerable: true, get: function () { return PromiseDispatcherBase_1.PromiseDispatcherBase; } }));
-const PromiseSubscription_1 = __webpack_require__(8452);
+const PromiseSubscription_1 = __webpack_require__(7744);
 Object.defineProperty(exports, "PromiseSubscription", ({ enumerable: true, get: function () { return PromiseSubscription_1.PromiseSubscription; } }));
-const Subscription_1 = __webpack_require__(365);
+const Subscription_1 = __webpack_require__(455);
 Object.defineProperty(exports, "Subscription", ({ enumerable: true, get: function () { return Subscription_1.Subscription; } }));
-const SubscriptionChangeEventHandler_1 = __webpack_require__(2545);
+const SubscriptionChangeEventHandler_1 = __webpack_require__(3512);
 Object.defineProperty(exports, "SubscriptionChangeEventDispatcher", ({ enumerable: true, get: function () { return SubscriptionChangeEventHandler_1.SubscriptionChangeEventDispatcher; } }));
 
 
 /***/ }),
 
-/***/ 4796:
+/***/ 6413:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3658,14 +3658,14 @@ exports.EventManagement = EventManagement;
 
 /***/ }),
 
-/***/ 5890:
+/***/ 4450:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseSignalDispatcher = void 0;
-const ste_core_1 = __webpack_require__(8486);
+const ste_core_1 = __webpack_require__(7852);
 /**
  * The dispatcher handles the storage of subsciptions and facilitates
  * subscription, unsubscription and dispatching of a signal event.
@@ -3710,15 +3710,15 @@ exports.PromiseSignalDispatcher = PromiseSignalDispatcher;
 
 /***/ }),
 
-/***/ 205:
+/***/ 5871:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseSignalHandlingBase = void 0;
-const ste_core_1 = __webpack_require__(8486);
-const PromiseSignalList_1 = __webpack_require__(3146);
+const ste_core_1 = __webpack_require__(7852);
+const PromiseSignalList_1 = __webpack_require__(131);
 /**
  * Extends objects with signal event handling capabilities.
  */
@@ -3732,15 +3732,15 @@ exports.PromiseSignalHandlingBase = PromiseSignalHandlingBase;
 
 /***/ }),
 
-/***/ 3146:
+/***/ 131:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseSignalList = void 0;
-const ste_core_1 = __webpack_require__(8486);
-const _1 = __webpack_require__(6838);
+const ste_core_1 = __webpack_require__(7852);
+const _1 = __webpack_require__(6042);
 /**
  * Storage class for multiple signal events that are accessible by name.
  * Events dispatchers are automatically created.
@@ -3764,7 +3764,7 @@ exports.PromiseSignalList = PromiseSignalList;
 
 /***/ }),
 
-/***/ 6838:
+/***/ 6042:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -3779,17 +3779,17 @@ exports.PromiseSignalList = PromiseSignalList;
  */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseSignalList = exports.PromiseSignalHandlingBase = exports.PromiseSignalDispatcher = void 0;
-const PromiseSignalDispatcher_1 = __webpack_require__(5890);
+const PromiseSignalDispatcher_1 = __webpack_require__(4450);
 Object.defineProperty(exports, "PromiseSignalDispatcher", ({ enumerable: true, get: function () { return PromiseSignalDispatcher_1.PromiseSignalDispatcher; } }));
-const PromiseSignalHandlingBase_1 = __webpack_require__(205);
+const PromiseSignalHandlingBase_1 = __webpack_require__(5871);
 Object.defineProperty(exports, "PromiseSignalHandlingBase", ({ enumerable: true, get: function () { return PromiseSignalHandlingBase_1.PromiseSignalHandlingBase; } }));
-const PromiseSignalList_1 = __webpack_require__(3146);
+const PromiseSignalList_1 = __webpack_require__(131);
 Object.defineProperty(exports, "PromiseSignalList", ({ enumerable: true, get: function () { return PromiseSignalList_1.PromiseSignalList; } }));
 
 
 /***/ }),
 
-/***/ 6463:
+/***/ 8589:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -3819,14 +3819,14 @@ exports.DispatchError = DispatchError;
 
 /***/ }),
 
-/***/ 1368:
+/***/ 9737:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DispatcherBase = void 0;
-const __1 = __webpack_require__(8486);
+const __1 = __webpack_require__(7852);
 /**
  * Base class for implementation of the dispatcher. It facilitates the subscribe
  * and unsubscribe methods based on generic handlers. The TEventType specifies
@@ -4069,7 +4069,7 @@ exports.DispatcherBase = DispatcherBase;
 
 /***/ }),
 
-/***/ 6982:
+/***/ 8661:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -4197,7 +4197,7 @@ exports.DispatcherWrapper = DispatcherWrapper;
 
 /***/ }),
 
-/***/ 2177:
+/***/ 5636:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -4249,14 +4249,14 @@ exports.EventListBase = EventListBase;
 
 /***/ }),
 
-/***/ 2300:
+/***/ 6372:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseDispatcherBase = void 0;
-const __1 = __webpack_require__(8486);
+const __1 = __webpack_require__(7852);
 /**
  * Dispatcher base for dispatchers that use promises. Each promise
  * is awaited before the next is dispatched, unless the event is
@@ -4332,14 +4332,14 @@ exports.PromiseDispatcherBase = PromiseDispatcherBase;
 
 /***/ }),
 
-/***/ 4303:
+/***/ 3324:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SubscriptionChangeEventDispatcher = void 0;
-const __1 = __webpack_require__(8486);
+const __1 = __webpack_require__(7852);
 /**
  * Dispatcher for subscription changes.
  *
@@ -4364,7 +4364,7 @@ exports.SubscriptionChangeEventDispatcher = SubscriptionChangeEventDispatcher;
 
 /***/ }),
 
-/***/ 9703:
+/***/ 6484:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -4427,7 +4427,7 @@ exports.PromiseSubscription = PromiseSubscription;
 
 /***/ }),
 
-/***/ 4683:
+/***/ 1240:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -4481,7 +4481,7 @@ exports.Subscription = Subscription;
 
 /***/ }),
 
-/***/ 5673:
+/***/ 5722:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -4576,7 +4576,7 @@ exports.HandlingBase = HandlingBase;
 
 /***/ }),
 
-/***/ 8486:
+/***/ 7852:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -4591,31 +4591,31 @@ exports.HandlingBase = HandlingBase;
  */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SubscriptionChangeEventDispatcher = exports.HandlingBase = exports.PromiseDispatcherBase = exports.PromiseSubscription = exports.DispatchError = exports.EventManagement = exports.EventListBase = exports.DispatcherWrapper = exports.DispatcherBase = exports.Subscription = void 0;
-const DispatcherBase_1 = __webpack_require__(1368);
+const DispatcherBase_1 = __webpack_require__(9737);
 Object.defineProperty(exports, "DispatcherBase", ({ enumerable: true, get: function () { return DispatcherBase_1.DispatcherBase; } }));
-const DispatchError_1 = __webpack_require__(6463);
+const DispatchError_1 = __webpack_require__(8589);
 Object.defineProperty(exports, "DispatchError", ({ enumerable: true, get: function () { return DispatchError_1.DispatchError; } }));
-const DispatcherWrapper_1 = __webpack_require__(6982);
+const DispatcherWrapper_1 = __webpack_require__(8661);
 Object.defineProperty(exports, "DispatcherWrapper", ({ enumerable: true, get: function () { return DispatcherWrapper_1.DispatcherWrapper; } }));
-const EventListBase_1 = __webpack_require__(2177);
+const EventListBase_1 = __webpack_require__(5636);
 Object.defineProperty(exports, "EventListBase", ({ enumerable: true, get: function () { return EventListBase_1.EventListBase; } }));
-const EventManagement_1 = __webpack_require__(8209);
+const EventManagement_1 = __webpack_require__(1385);
 Object.defineProperty(exports, "EventManagement", ({ enumerable: true, get: function () { return EventManagement_1.EventManagement; } }));
-const HandlingBase_1 = __webpack_require__(5673);
+const HandlingBase_1 = __webpack_require__(5722);
 Object.defineProperty(exports, "HandlingBase", ({ enumerable: true, get: function () { return HandlingBase_1.HandlingBase; } }));
-const PromiseDispatcherBase_1 = __webpack_require__(2300);
+const PromiseDispatcherBase_1 = __webpack_require__(6372);
 Object.defineProperty(exports, "PromiseDispatcherBase", ({ enumerable: true, get: function () { return PromiseDispatcherBase_1.PromiseDispatcherBase; } }));
-const PromiseSubscription_1 = __webpack_require__(9703);
+const PromiseSubscription_1 = __webpack_require__(6484);
 Object.defineProperty(exports, "PromiseSubscription", ({ enumerable: true, get: function () { return PromiseSubscription_1.PromiseSubscription; } }));
-const Subscription_1 = __webpack_require__(4683);
+const Subscription_1 = __webpack_require__(1240);
 Object.defineProperty(exports, "Subscription", ({ enumerable: true, get: function () { return Subscription_1.Subscription; } }));
-const SubscriptionChangeEventHandler_1 = __webpack_require__(4303);
+const SubscriptionChangeEventHandler_1 = __webpack_require__(3324);
 Object.defineProperty(exports, "SubscriptionChangeEventDispatcher", ({ enumerable: true, get: function () { return SubscriptionChangeEventHandler_1.SubscriptionChangeEventDispatcher; } }));
 
 
 /***/ }),
 
-/***/ 8209:
+/***/ 1385:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -4655,14 +4655,14 @@ exports.EventManagement = EventManagement;
 
 /***/ }),
 
-/***/ 4537:
+/***/ 5829:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.NonUniformPromiseSimpleEventList = void 0;
-const PromiseSimpleEventDispatcher_1 = __webpack_require__(8921);
+const PromiseSimpleEventDispatcher_1 = __webpack_require__(3677);
 /**
  * Similar to EventList, but instead of TArgs, a map of event names ang argument types is provided with TArgsMap.
  */
@@ -4702,14 +4702,14 @@ exports.NonUniformPromiseSimpleEventList = NonUniformPromiseSimpleEventList;
 
 /***/ }),
 
-/***/ 8921:
+/***/ 3677:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseSimpleEventDispatcher = void 0;
-const ste_core_1 = __webpack_require__(3310);
+const ste_core_1 = __webpack_require__(5575);
 /**
  * The dispatcher handles the storage of subsciptions and facilitates
  * subscription, unsubscription and dispatching of a simple event
@@ -4761,15 +4761,15 @@ exports.PromiseSimpleEventDispatcher = PromiseSimpleEventDispatcher;
 
 /***/ }),
 
-/***/ 532:
+/***/ 8648:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseSimpleEventHandlingBase = void 0;
-const ste_core_1 = __webpack_require__(3310);
-const PromiseSimpleEventList_1 = __webpack_require__(7929);
+const ste_core_1 = __webpack_require__(5575);
+const PromiseSimpleEventList_1 = __webpack_require__(5536);
 /**
  * Extends objects with signal event handling capabilities.
  */
@@ -4783,15 +4783,15 @@ exports.PromiseSimpleEventHandlingBase = PromiseSimpleEventHandlingBase;
 
 /***/ }),
 
-/***/ 7929:
+/***/ 5536:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseSimpleEventList = void 0;
-const ste_core_1 = __webpack_require__(3310);
-const PromiseSimpleEventDispatcher_1 = __webpack_require__(8921);
+const ste_core_1 = __webpack_require__(5575);
+const PromiseSimpleEventDispatcher_1 = __webpack_require__(3677);
 /**
  * Storage class for multiple simple events that are accessible by name.
  * Events dispatchers are automatically created.
@@ -4815,7 +4815,7 @@ exports.PromiseSimpleEventList = PromiseSimpleEventList;
 
 /***/ }),
 
-/***/ 9176:
+/***/ 4225:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -4830,19 +4830,19 @@ exports.PromiseSimpleEventList = PromiseSimpleEventList;
  */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.NonUniformPromiseSimpleEventList = exports.PromiseSimpleEventList = exports.PromiseSimpleEventHandlingBase = exports.PromiseSimpleEventDispatcher = void 0;
-const NonUniformPromiseSimpleEventList_1 = __webpack_require__(4537);
+const NonUniformPromiseSimpleEventList_1 = __webpack_require__(5829);
 Object.defineProperty(exports, "NonUniformPromiseSimpleEventList", ({ enumerable: true, get: function () { return NonUniformPromiseSimpleEventList_1.NonUniformPromiseSimpleEventList; } }));
-const PromiseSimpleEventDispatcher_1 = __webpack_require__(8921);
+const PromiseSimpleEventDispatcher_1 = __webpack_require__(3677);
 Object.defineProperty(exports, "PromiseSimpleEventDispatcher", ({ enumerable: true, get: function () { return PromiseSimpleEventDispatcher_1.PromiseSimpleEventDispatcher; } }));
-const PromiseSimpleEventHandlingBase_1 = __webpack_require__(532);
+const PromiseSimpleEventHandlingBase_1 = __webpack_require__(8648);
 Object.defineProperty(exports, "PromiseSimpleEventHandlingBase", ({ enumerable: true, get: function () { return PromiseSimpleEventHandlingBase_1.PromiseSimpleEventHandlingBase; } }));
-const PromiseSimpleEventList_1 = __webpack_require__(7929);
+const PromiseSimpleEventList_1 = __webpack_require__(5536);
 Object.defineProperty(exports, "PromiseSimpleEventList", ({ enumerable: true, get: function () { return PromiseSimpleEventList_1.PromiseSimpleEventList; } }));
 
 
 /***/ }),
 
-/***/ 8181:
+/***/ 2210:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -4872,14 +4872,14 @@ exports.DispatchError = DispatchError;
 
 /***/ }),
 
-/***/ 3040:
+/***/ 5072:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.DispatcherBase = void 0;
-const __1 = __webpack_require__(3310);
+const __1 = __webpack_require__(5575);
 /**
  * Base class for implementation of the dispatcher. It facilitates the subscribe
  * and unsubscribe methods based on generic handlers. The TEventType specifies
@@ -5122,7 +5122,7 @@ exports.DispatcherBase = DispatcherBase;
 
 /***/ }),
 
-/***/ 3122:
+/***/ 1050:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -5250,7 +5250,7 @@ exports.DispatcherWrapper = DispatcherWrapper;
 
 /***/ }),
 
-/***/ 7955:
+/***/ 4211:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -5302,14 +5302,14 @@ exports.EventListBase = EventListBase;
 
 /***/ }),
 
-/***/ 2490:
+/***/ 3787:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.PromiseDispatcherBase = void 0;
-const __1 = __webpack_require__(3310);
+const __1 = __webpack_require__(5575);
 /**
  * Dispatcher base for dispatchers that use promises. Each promise
  * is awaited before the next is dispatched, unless the event is
@@ -5385,14 +5385,14 @@ exports.PromiseDispatcherBase = PromiseDispatcherBase;
 
 /***/ }),
 
-/***/ 1002:
+/***/ 1789:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SubscriptionChangeEventDispatcher = void 0;
-const __1 = __webpack_require__(3310);
+const __1 = __webpack_require__(5575);
 /**
  * Dispatcher for subscription changes.
  *
@@ -5417,7 +5417,7 @@ exports.SubscriptionChangeEventDispatcher = SubscriptionChangeEventDispatcher;
 
 /***/ }),
 
-/***/ 9347:
+/***/ 5485:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -5480,7 +5480,7 @@ exports.PromiseSubscription = PromiseSubscription;
 
 /***/ }),
 
-/***/ 2229:
+/***/ 8080:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -5534,7 +5534,7 @@ exports.Subscription = Subscription;
 
 /***/ }),
 
-/***/ 1605:
+/***/ 5537:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -5629,7 +5629,7 @@ exports.HandlingBase = HandlingBase;
 
 /***/ }),
 
-/***/ 3310:
+/***/ 5575:
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 "use strict";
@@ -5644,31 +5644,31 @@ exports.HandlingBase = HandlingBase;
  */
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.SubscriptionChangeEventDispatcher = exports.HandlingBase = exports.PromiseDispatcherBase = exports.PromiseSubscription = exports.DispatchError = exports.EventManagement = exports.EventListBase = exports.DispatcherWrapper = exports.DispatcherBase = exports.Subscription = void 0;
-const DispatcherBase_1 = __webpack_require__(3040);
+const DispatcherBase_1 = __webpack_require__(5072);
 Object.defineProperty(exports, "DispatcherBase", ({ enumerable: true, get: function () { return DispatcherBase_1.DispatcherBase; } }));
-const DispatchError_1 = __webpack_require__(8181);
+const DispatchError_1 = __webpack_require__(2210);
 Object.defineProperty(exports, "DispatchError", ({ enumerable: true, get: function () { return DispatchError_1.DispatchError; } }));
-const DispatcherWrapper_1 = __webpack_require__(3122);
+const DispatcherWrapper_1 = __webpack_require__(1050);
 Object.defineProperty(exports, "DispatcherWrapper", ({ enumerable: true, get: function () { return DispatcherWrapper_1.DispatcherWrapper; } }));
-const EventListBase_1 = __webpack_require__(7955);
+const EventListBase_1 = __webpack_require__(4211);
 Object.defineProperty(exports, "EventListBase", ({ enumerable: true, get: function () { return EventListBase_1.EventListBase; } }));
-const EventManagement_1 = __webpack_require__(2234);
+const EventManagement_1 = __webpack_require__(3504);
 Object.defineProperty(exports, "EventManagement", ({ enumerable: true, get: function () { return EventManagement_1.EventManagement; } }));
-const HandlingBase_1 = __webpack_require__(1605);
+const HandlingBase_1 = __webpack_require__(5537);
 Object.defineProperty(exports, "HandlingBase", ({ enumerable: true, get: function () { return HandlingBase_1.HandlingBase; } }));
-const PromiseDispatcherBase_1 = __webpack_require__(2490);
+const PromiseDispatcherBase_1 = __webpack_require__(3787);
 Object.defineProperty(exports, "PromiseDispatcherBase", ({ enumerable: true, get: function () { return PromiseDispatcherBase_1.PromiseDispatcherBase; } }));
-const PromiseSubscription_1 = __webpack_require__(9347);
+const PromiseSubscription_1 = __webpack_require__(5485);
 Object.defineProperty(exports, "PromiseSubscription", ({ enumerable: true, get: function () { return PromiseSubscription_1.PromiseSubscription; } }));
-const Subscription_1 = __webpack_require__(2229);
+const Subscription_1 = __webpack_require__(8080);
 Object.defineProperty(exports, "Subscription", ({ enumerable: true, get: function () { return Subscription_1.Subscription; } }));
-const SubscriptionChangeEventHandler_1 = __webpack_require__(1002);
+const SubscriptionChangeEventHandler_1 = __webpack_require__(1789);
 Object.defineProperty(exports, "SubscriptionChangeEventDispatcher", ({ enumerable: true, get: function () { return SubscriptionChangeEventHandler_1.SubscriptionChangeEventDispatcher; } }));
 
 
 /***/ }),
 
-/***/ 2234:
+/***/ 3504:
 /***/ ((__unused_webpack_module, exports) => {
 
 "use strict";
@@ -5708,14 +5708,14 @@ exports.EventManagement = EventManagement;
 
 /***/ }),
 
-/***/ 1051:
+/***/ 9244:
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, {
-  "ZP": () => (/* binding */ tippy_esm)
+  Ay: () => (/* binding */ tippy_esm)
 });
 
 // UNUSED EXPORTS: animateFill, createSingleton, delegate, followCursor, hideAll, inlinePositioning, roundArrow, sticky
@@ -10147,7 +10147,7 @@ tippy.setDefaultProps({
 
 /***/ }),
 
-/***/ 5042:
+/***/ 1234:
 /***/ (() => {
 
 /* (ignored) */
@@ -10601,16 +10601,16 @@ class Loader {
 }
 
 // EXTERNAL MODULE: ./node_modules/@4site/engrid-common/node_modules/strongly-typed-events/dist/index.js
-var dist = __webpack_require__(5363);
+var dist = __webpack_require__(920);
 ;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/events/en-form.js
 
 
 class EnForm {
     constructor() {
         this.logger = new EngridLogger("EnForm");
-        this._onSubmit = new dist/* SignalDispatcher */.nz();
-        this._onValidate = new dist/* SignalDispatcher */.nz();
-        this._onError = new dist/* SignalDispatcher */.nz();
+        this._onSubmit = new dist/* SignalDispatcher */.UD();
+        this._onValidate = new dist/* SignalDispatcher */.UD();
+        this._onError = new dist/* SignalDispatcher */.UD();
         this.submit = true;
         this.submitPromise = false;
         this.validate = true;
@@ -10664,7 +10664,7 @@ class EnForm {
 
 class DonationAmount {
     constructor(radios = "transaction.donationAmt", other = "transaction.donationAmt.other") {
-        this._onAmountChange = new dist/* SimpleEventDispatcher */.FK();
+        this._onAmountChange = new dist/* SimpleEventDispatcher */.IL();
         this._amount = 0;
         this._radios = "";
         this._other = "";
@@ -11285,7 +11285,7 @@ class engrid_ENGrid {
 
 class DonationFrequency {
     constructor() {
-        this._onFrequencyChange = new dist/* SimpleEventDispatcher */.FK();
+        this._onFrequencyChange = new dist/* SimpleEventDispatcher */.IL();
         this._frequency = "onetime";
         this._recurring = "n";
         this._dispatch = true;
@@ -11388,7 +11388,7 @@ class DonationFrequency {
 
 class ProcessingFees {
     constructor() {
-        this._onFeeChange = new dist/* SimpleEventDispatcher */.FK();
+        this._onFeeChange = new dist/* SimpleEventDispatcher */.IL();
         this._amount = DonationAmount.getInstance();
         this._form = EnForm.getInstance();
         this._fee = 0;
@@ -13030,7 +13030,7 @@ class InputPlaceholders {
   <figure class="media-with-attribution"><img src="https://via.placeholder.com/300x300" data-src="https://via.placeholder.com/300x300" data-attribution-source="Jane Doe 1"><figattribution class="attribution-bottomright">Jane Doe 1</figattribution></figure>
 */
 
-const tippy = (__webpack_require__(1051)/* ["default"] */ .ZP);
+const tippy = (__webpack_require__(9244)/* ["default"] */ .Ay);
 class MediaAttribution {
     constructor() {
         // Find all images with attribution but not with the "data-attribution-hide-overlay" attribute
@@ -15078,7 +15078,7 @@ class ProgressBar {
 ;// CONCATENATED MODULE: ./node_modules/@4site/engrid-common/dist/remember-me.js
 
 
-const remember_me_tippy = (__webpack_require__(1051)/* ["default"] */ .ZP);
+const remember_me_tippy = (__webpack_require__(9244)/* ["default"] */ .Ay);
 class RememberMe {
     constructor(options) {
         this._form = EnForm.getInstance();
@@ -15768,7 +15768,7 @@ class MinMaxAmount {
 
 class Ticker {
     constructor() {
-        this.shuffleSeed = __webpack_require__(7650);
+        this.shuffleSeed = __webpack_require__(3184);
         this.items = [];
         this.tickerElement = document.querySelector(".engrid-ticker");
         this.logger = new EngridLogger("Ticker", "black", "beige", "🔁");
@@ -19317,24 +19317,23 @@ const AppVersion = "0.14.17";
 
 ;// CONCATENATED MODULE: ./src/scripts/main.js
 const customScript = function () {
-  console.log("ENGrid client scripts are executing"); // Add your client scripts here
-
-  const backgroundImage = ["https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-1.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-2.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-3.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-4.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-5.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-6.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-7.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-8.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-9.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-10.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-11.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-12.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-13.jpg?v=1578587000000"]; // Check if Body has a data-engrid-no-page-backgroundImage attribute
-
+  console.log("ENGrid client scripts are executing");
+  // Add your client scripts here
+  const backgroundImage = ["https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-1.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-2.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-3.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-4.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-5.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-6.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-7.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-8.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-9.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-10.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-11.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-12.jpg?v=1578587000000", "https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/default-bg-13.jpg?v=1578587000000"];
+  // Check if Body has a data-engrid-no-page-backgroundImage attribute
   if (document.querySelector("[data-engrid-no-page-backgroundImage]") !== null) {
     const randomImage = backgroundImage[Math.floor(Math.random() * backgroundImage.length)];
     console.log(randomImage);
     const pageBackground = document.querySelector(".page-backgroundImage");
-
     if (pageBackground) {
       pageBackground.style.setProperty("--engrid__page-backgroundImage_url", `url(${randomImage})`);
       document.body.setAttribute("data-engrid-page-background", "image");
       document.body.removeAttribute("data-engrid-no-page-backgroundImage");
     }
-  } // Accessibility Audit Enhancements from Jason Thomas <jason@artisanapps.io>
+  }
+
+  // Accessibility Audit Enhancements from Jason Thomas <jason@artisanapps.io>
   //remove the skip to content link, which makes no sense when the content is inside an iframe
-
-
   function inIframe() {
     try {
       return window.self !== window.top;
@@ -19342,59 +19341,52 @@ const customScript = function () {
       return true;
     }
   }
-
   if (inIframe()) {
     let elem = document.querySelector(".skip-link");
-
     if (elem) {
       elem.remove();
     }
   }
-
   function makeBetterNumberInput(field) {
     field.setAttribute("type", "text");
     field.setAttribute("pattern", "[0-9]*"); //modern browsers will validate the field for number entry
-
     field.setAttribute("inputmode", "numeric"); //most devices with virtual keyboards will show the number pad
   }
-
   let ccField = document.getElementById("en__field_transaction_ccnumber");
-
   if (ccField) {
     //add a hidden aria-live region to announce the calculated credit card icon to screen readers
     //the content is set via CSS
     let liveUpdate = document.createElement("span");
     liveUpdate.className = "live-card-sr-region";
     liveUpdate.setAttribute("aria-live", "polite");
-    ccField.parentNode.append(liveUpdate); //don't use type=number, which causes agents to treat it like a number spinner
+    ccField.parentNode.append(liveUpdate);
 
+    //don't use type=number, which causes agents to treat it like a number spinner
     makeBetterNumberInput(ccField);
   }
-
   let cvvField = document.getElementById("en__field_transaction_ccvv");
-
   if (cvvField) {
     //don't use type=tel, which is semantically incorrect
     makeBetterNumberInput(cvvField);
-  } //add a label to the CC expiry year, for screen readers
+  }
 
-
+  //add a label to the CC expiry year, for screen readers
   let ccExpYear = document.querySelector('[autocomplete="cc-exp-year"]');
-
   if (ccExpYear) {
     ccExpYear.setAttribute("aria-label", "Expiration Year");
-  } // Get the elements with the specified classes
+  }
 
-
+  // Get the elements with the specified classes
   let paypalElement = document.querySelector('.en__field__item.paypal');
-  let cardElement = document.querySelector('.en__field__item.card'); //dumpGlobalVar implementation (manages the iframes);
+  let cardElement = document.querySelector('.en__field__item.card');
+
+  //dumpGlobalVar implementation (manages the iframes);
 
   function dumpGlobalVar() {
     // EN is not reading the global variable because their JS file loads before ENgrid, so we're going to HACK TOWN
     // Clean up the VGS iFrames
     window.setTimeout(() => {
       const vgsIElements = document.querySelectorAll(".en__field__input--vgs");
-
       if (vgsIElements.length > 0) {
         // Create a mutation observer that cleans the VGS Elements before anything is rendered
         const observer = new MutationObserver(mutations => {
@@ -19406,22 +19398,22 @@ const customScript = function () {
               }
             });
           });
-        }); // Observe the VGS Elements
-
+        });
+        // Observe the VGS Elements
         vgsIElements.forEach(vgsIElement => {
           observer.observe(vgsIElement, {
             childList: true
           });
-        }); //if (ENGrid.checkNested(window.EngagingNetworks, "require", "_defined", "enjs", "vgs")) {
-
-        window.EngagingNetworks.require._defined.enjs.vgs.init(); //}
+        });
+        //if (ENGrid.checkNested(window.EngagingNetworks, "require", "_defined", "enjs", "vgs")) {
+        window.EngagingNetworks.require._defined.enjs.vgs.init();
+        //}
         //else {
-        //  }
 
+        //  }
       }
     }, 1000);
   }
-
   function preSelectDonationValue() {
     var params = {};
     location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (s, k, v) {
@@ -19429,7 +19421,6 @@ const customScript = function () {
     });
     var donationPreSelect = params["transaction.donationAmt"];
     var ichange = new Event('change');
-
     if (donationPreSelect != undefined) {
       window.setTimeout(function () {
         if (document.querySelector('.en__field--donationAmt .en__field__item input[value="' + donationPreSelect + '"]').classList.contains('en__field__input--other')) {
@@ -19443,48 +19434,43 @@ const customScript = function () {
       }, 300);
     }
   }
-
   function setPaymentType() {
-    console.log('triggered setPaymentType'); // Get the select element by its name
-
+    console.log('triggered setPaymentType');
+    // Get the select element by its name
     const enFieldPaymentType = document.querySelector("#en__field_transaction_paymenttype");
-
     if (enFieldPaymentType) {
-      console.log('field payment type ', enFieldPaymentType); // Find the option with the matching value
-
+      console.log('field payment type ', enFieldPaymentType);
+      // Find the option with the matching value
       const options = enFieldPaymentType.options;
       let foundOption;
-
       for (let i = 0; i < options.length; i++) {
         const option = options[i];
-
         if (option.value.toLowerCase() === "visa" || option.value.toLowerCase() === "vi") {
           foundOption = option;
           enFieldPaymentType.selectedIndex = i;
           break;
         }
       }
-
       if (foundOption) {
         // Set the selected property of the found option to true
-        foundOption.selected = true; // Dispatch a change event to simulate user interaction
+        foundOption.selected = true;
 
+        // Dispatch a change event to simulate user interaction
         const event = new Event("change");
         enFieldPaymentType.dispatchEvent(event);
       }
     }
-
     console.log("Setting payment type to: " + enFieldPaymentType.selectedIndex);
-  } //Workaround for gift swap list
+  }
 
-
+  //Workaround for gift swap list
+  let selectedButton;
+  let associatedLabel;
   let checkedDonationButton;
   let searchString = 'transaction_donationAmt';
-
   function checkDefaultValues() {
     console.log('triggered checkdefaultvalue()');
     let donationButton = document.getElementsByClassName('en__field__input--radio');
-
     for (var i = 0; i < donationButton.length; i++) {
       if (donationButton[i].checked) {
         //console.log("Checkbox " + donationButton[i].id + " is checked");
@@ -19494,26 +19480,52 @@ const customScript = function () {
         }
       }
     }
-
     console.log('The id is: ', checkedDonationButton);
-    return checkedDonationButton;
+    selectedButton = document.getElementById(checkedDonationButton);
+    associatedLabel = document.querySelector(`label[for="${selectedButton.id}"]`);
+    console.log('The element is: ', selectedButton);
+    console.log('the label is', associatedLabel);
   }
-
   let frequencyInput = document.getElementById('en__field_transaction_recurrfreq0');
   frequencyInput.addEventListener('change', function () {
     console.log('triggered changedFrequency');
-    let checkedDonationButton = checkDefaultValues();
+    console.log(selectedButton);
+    //let checkedDonationButton = checkDefaultValues();
     let donationButtons = document.getElementsByClassName('en__field__input--radio');
-
+    if (selectedButton.length !== null) {
+      console.log('element is here');
+    }
+    let changeEvent = new Event('change', {
+      bubbles: true // Whether the event bubbles up through the DOM or not
+    });
     for (let i = 0; i < donationButtons.length; i++) {
-      if (donationButtons[i].checked && donationButtons[i].id === checkedDonationButton) {
+      if (donationButtons[i].checked && donationButtons[i].id != checkedDonationButton) {
         console.log("Checked donation button matches checkedDonationButton");
-        console.log(donationButtons[i].checked);
-        console.log(donationButtons[i].id);
+        /*console.log('donation Button ID checked',donationButtons[i].checked.id);
+        console.log('donation Button ID',donat ionButtons[i].id);*/
+        /*selectedButton.dispatchEvent(changeEvent);
+        selectedButton.click();
+        debugger;
+        selectedButton.checked=true;
+        associatedLabel.click();*/
+        setTimeout(function () {
+          console.log('timeout Btn', selectedButton);
+          console.log('timeout label', associatedLabel);
+          selectedButton.dispatchEvent(changeEvent);
+          selectedButton.checked = true;
+          selectedButton.click();
+          debugger;
+          associatedLabel.click();
+          associatedLabel.focus();
+          associatedLabel.setAttribute('tabindex', '0');
+          associatedLabel.dispatchEvent(changeEvent);
+          debugger;
+        }, 1300); // Adjust the timeout value as needed
       }
     }
-  }); // Add click event listeners to the elements
+  });
 
+  // Add click event listeners to the elements
   /*if (paypalElement) {
     paypalElement.addEventListener('click', function() {
       console.log('clicked paypal');  
@@ -19570,7 +19582,6 @@ const customScript = function () {
         }
     }
   });*/
-
   preSelectDonationValue();
   checkDefaultValues();
   dumpGlobalVar();
@@ -19579,7 +19590,6 @@ const customScript = function () {
 ;// CONCATENATED MODULE: ./src/index.ts
  // Uses ENGrid via NPM
 // import { Options, App } from "../../engrid-scripts/packages/common"; // Uses ENGrid via Visual Studio Workspace
-
 
 
 const options = {
