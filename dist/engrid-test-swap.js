@@ -17,7 +17,7 @@
  *
  *  ENGRID PAGE TEMPLATE ASSETS
  *
- *  Date: Tuesday, May 14, 2024 @ 12:47:17 ET
+ *  Date: Thursday, May 16, 2024 @ 10:15:21 ET
  *  By: ewerter
  *  ENGrid styles: v0.14.17
  *  ENGrid scripts: v0.14.17
@@ -19420,19 +19420,23 @@ const customScript = function () {
       params[k] = v;
     });
     var donationPreSelect = params["transaction.donationAmt"];
-    var ichange = new Event('change');
     if (donationPreSelect != undefined) {
-      window.setTimeout(function () {
-        if (document.querySelector('.en__field--donationAmt .en__field__item input[value="' + donationPreSelect + '"]').classList.contains('en__field__input--other')) {
-          document.querySelector('.en__field--withOther').classList.add('en__field--withOther--active');
-          document.querySelector('.en__field__input--other').value = donationPreSelect;
-          document.querySelector('.en__field__input--other').dispatchEvent(ichange);
-          document.querySelector('.en__field__input--other').focus();
-        } else {
-          document.querySelector('.en__field--donationAmt .en__field__item input[value="' + donationPreSelect + '"]').checked = true;
-        }
-      }, 300);
+      setSelectedAmount(donationPreSelect);
     }
+  }
+  function setSelectedAmount(amount) {
+    var ichange = new Event('change');
+    window.setTimeout(function () {
+      if (document.querySelector('.en__field--donationAmt .en__field__item input[value="' + amount + '"]').classList.contains('en__field__input--other')) {
+        document.querySelector('.en__field--withOther').classList.add('en__field--withOther--active');
+        document.querySelector('.en__field__input--other').value = amount;
+        document.querySelector('.en__field__input--other').dispatchEvent(ichange);
+        document.querySelector('.en__field__input--other').focus();
+      } else {
+        document.querySelector('.en__field--donationAmt .en__field__item input[value="' + amount + '"]').checked = true;
+      }
+      updateSubmitButton();
+    }, 300);
   }
   function setPaymentType() {
     console.log('triggered setPaymentType');
@@ -19464,67 +19468,53 @@ const customScript = function () {
   }
 
   //Workaround for gift swap list
-  let selectedButton;
-  let associatedLabel;
-  let checkedDonationButton;
-  let searchString = 'transaction_donationAmt';
+
+  let defaultCheckedDonationButton;
+  let defaultCheckedDonationButtonValue;
+  let defaultCheckedFrequency;
+  let submitLabel;
+  let upsellLabel;
   function checkDefaultValues() {
     console.log('triggered checkdefaultvalue()');
-    let donationButton = document.getElementsByClassName('en__field__input--radio');
-    for (var i = 0; i < donationButton.length; i++) {
-      if (donationButton[i].checked) {
-        //console.log("Checkbox " + donationButton[i].id + " is checked");
-        if (donationButton[i].id.includes(searchString)) {
-          console.log("Checkbox with id " + donationButton[i].id + " contains the string '" + searchString + "'");
-          checkedDonationButton = donationButton[i].id;
-        }
-      }
-    }
-    console.log('The id is: ', checkedDonationButton);
-    selectedButton = document.getElementById(checkedDonationButton);
-    associatedLabel = document.querySelector(`label[for="${selectedButton.id}"]`);
-    console.log('The element is: ', selectedButton);
-    console.log('the label is', associatedLabel);
+    defaultCheckedDonationButton = document.querySelector('[name="transaction.donationAmt"]:checked');
+    defaultCheckedDonationButtonValue = defaultCheckedDonationButton.value;
+    console.log('The element is: ', defaultCheckedDonationButton);
   }
-  let frequencyInput = document.getElementById('en__field_transaction_recurrfreq0');
-  frequencyInput.addEventListener('change', function () {
+  function checkDefaultFrequency() {
+    console.log('triggered checkDefaultFrequency()');
+    defaultCheckedFrequency = document.querySelector('[name="transaction.recurrfreq"]:checked');
+    console.log('The element is: ', defaultCheckedFrequency);
+    return defaultCheckedFrequency;
+  }
+  checkDefaultFrequency();
+  defaultCheckedFrequency.addEventListener('change', function () {
     console.log('triggered changedFrequency');
-    console.log(selectedButton);
-    //let checkedDonationButton = checkDefaultValues();
-    let donationButtons = document.getElementsByClassName('en__field__input--radio');
-    if (selectedButton.length !== null) {
-      console.log('element is here');
-    }
-    let changeEvent = new Event('change', {
-      bubbles: true // Whether the event bubbles up through the DOM or not
-    });
-    for (let i = 0; i < donationButtons.length; i++) {
-      if (donationButtons[i].checked && donationButtons[i].id != checkedDonationButton) {
-        console.log("Checked donation button matches checkedDonationButton");
-        /*console.log('donation Button ID checked',donationButtons[i].checked.id);
-        console.log('donation Button ID',donat ionButtons[i].id);*/
-        /*selectedButton.dispatchEvent(changeEvent);
-        selectedButton.click();
-        debugger;
-        selectedButton.checked=true;
-        associatedLabel.click();*/
-        setTimeout(function () {
-          console.log('timeout Btn', selectedButton);
-          console.log('timeout label', associatedLabel);
-          selectedButton.dispatchEvent(changeEvent);
-          selectedButton.checked = true;
-          selectedButton.click();
-          debugger;
-          associatedLabel.click();
-          associatedLabel.focus();
-          associatedLabel.setAttribute('tabindex', '0');
-          associatedLabel.dispatchEvent(changeEvent);
-          debugger;
-        }, 1300); // Adjust the timeout value as needed
-      }
+    let currentlySelectedButton = document.querySelector('[name="transaction.donationAmt"]:checked');
+    console.log('currentlySelectedButton ', currentlySelectedButton.value);
+    console.log('defaultCheckedDonationButtonValue', defaultCheckedDonationButtonValue);
+    if (currentlySelectedButton.value != defaultCheckedDonationButtonValue) {
+      setSelectedAmount(defaultCheckedDonationButtonValue);
     }
   });
-
+  function updateSubmitButton() {
+    console.log('triggered updateSubmitButton');
+    submitLabel = document.querySelector('.en__submit button .live-variable-amount');
+    console.log(submitLabel);
+    //console.log(defaultCheckedDonationButtonValue);
+    submitLabel.innerText = `${defaultCheckedDonationButtonValue}`;
+  }
+  function updateUpsellButton() {
+    console.log('triggered updateUpsell');
+    upsellLabel = document.querySelector('.upsell_amount');
+    window.setTimeout(function () {
+      upsellLabel.innerText = `$${defaultCheckedDonationButtonValue}`;
+    }, 500);
+  }
+  let submitButton = document.getElementsByClassName('en__submit')[0];
+  submitButton.addEventListener('click', function () {
+    console.log('clicked submit');
+    updateUpsellButton();
+  });
   // Add click event listeners to the elements
   /*if (paypalElement) {
     paypalElement.addEventListener('click', function() {
@@ -19584,6 +19574,7 @@ const customScript = function () {
   });*/
   preSelectDonationValue();
   checkDefaultValues();
+  checkDefaultFrequency();
   dumpGlobalVar();
   setPaymentType();
 };

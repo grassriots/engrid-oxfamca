@@ -142,7 +142,9 @@ export const customScript = function () {
       } else {
         document.querySelector('.en__field--donationAmt .en__field__item input[value="' + amount + '"]').checked = true;
       }
+      updateSubmitButton();
     }, 300);
+    
   }
 
   function setPaymentType() {
@@ -182,6 +184,8 @@ export const customScript = function () {
   let defaultCheckedDonationButton;
   let defaultCheckedDonationButtonValue;
   let defaultCheckedFrequency;
+  let submitLabel;
+  let upsellLabel;
 
   function checkDefaultValues() {
     console.log('triggered checkdefaultvalue()');
@@ -195,19 +199,42 @@ export const customScript = function () {
     console.log('triggered checkDefaultFrequency()');
     defaultCheckedFrequency = document.querySelector('[name="transaction.recurrfreq"]:checked');
     console.log('The element is: ', defaultCheckedFrequency);
+    return defaultCheckedFrequency;
   }
+  checkDefaultFrequency();
 
   defaultCheckedFrequency.addEventListener('change', function () {
     console.log('triggered changedFrequency');
 
     let currentlySelectedButton = document.querySelector('[name="transaction.donationAmt"]:checked');
-
+    console.log('currentlySelectedButton ',currentlySelectedButton.value);
+    console.log('defaultCheckedDonationButtonValue', defaultCheckedDonationButtonValue)
     if (currentlySelectedButton.value != defaultCheckedDonationButtonValue) {
       setSelectedAmount(defaultCheckedDonationButtonValue);
     }
   });
 
+  function updateSubmitButton(){
+    console.log('triggered updateSubmitButton');
+    submitLabel = document.querySelector('.en__submit button .live-variable-amount');
+    console.log(submitLabel);
+    //console.log(defaultCheckedDonationButtonValue);
+    submitLabel.innerText = `${defaultCheckedDonationButtonValue}`;
+  }
 
+  function updateUpsellButton(){
+    console.log('triggered updateUpsell')
+    upsellLabel = document.querySelector('.upsell_amount');
+    window.setTimeout(function(){
+      upsellLabel.innerText = `$${defaultCheckedDonationButtonValue}`;
+    },500)
+  }
+
+  let submitButton = document.getElementsByClassName('en__submit')[0];
+  submitButton.addEventListener('click',function(){
+    console.log('clicked submit');
+    updateUpsellButton();
+  })
   // Add click event listeners to the elements
   /*if (paypalElement) {
     paypalElement.addEventListener('click', function() {
