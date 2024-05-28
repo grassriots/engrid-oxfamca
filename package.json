@@ -9,7 +9,7 @@
     "build": "npm run production & npm run minify",
     "production": "webpack --config webpack.prod.js",
     "minify": "webpack --config webpack.min.js",
-    "update": "npm update & npm install git+ssh://git@github.com:grassriots/engrid-scripts-no-history#donation-core",
+    "update-gitpkg": "npm install git+ssh://git@github.com:grassriots/engrid-scripts-no-history#donation-core",
     "rebuild": "npm run update;npm run build"
   },
   "keywords": [
