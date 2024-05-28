@@ -2,7 +2,7 @@
 @import "./page-template-variables";
 
 /* ENGRID ASSETS */
-@import "@grassriotsinc/engrid-styles"; // Uses ENGrid via NPM
+@import "engrid-scripts/packages/styles"; // Uses ENGrid via NPM
 // @import "../../../engrid-scripts/packages/styles"; // Uses ENGrid via Visual Studio Workspace
 
 /* CLIENT THEME FONTS AND STYLES */

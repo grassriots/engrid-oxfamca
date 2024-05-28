@@ -2,14 +2,14 @@ const exec = require("child_process").execSync;
 const ForkTsCheckerWebpackPlugin = require("fork-ts-checker-webpack-plugin");
 const webpack = require("webpack");
 const author = require("os").userInfo().username;
-let engridScriptStylesVersion = exec("npm list @grassriotsinc/engrid-styles")
+let engridScriptStylesVersion = "gr-custom" /*exec("npm list @4site/engrid-styles")
   .toString("utf8")
-  .split("@grassriotsinc/engrid-styles@")[1]
-  .split("\n")[0];
-const engridScriptScriptsVersion = exec("npm list @4site/engrid-common")
+  .split("@4site/engrid-styles@")[1]
+  .split("\n")[0];*/
+const engridScriptScriptsVersion = "gr-custom" /*exec("npm list @4site/engrid-common")
   .toString("utf8")
   .split("@4site/engrid-common@")[1]
-  .split("\n")[0];
+  .split("\n")[0];*/
 const localeStringDateOptions = {
   weekday: "long",
   year: "numeric",
