@@ -1,5 +1,25 @@
 export const customScript = function () {
   console.log("ENGrid client scripts are executing");
+
+  // Grassriots - fix for making the credit card and CVV fields mandatory but still be able to make Payal donations
+  var paypalbutton = document.getElementsByClassName("en__field__item paypal");
+      
+  var addCVVNumbers = function() {
+      document.getElementById("en__field_transaction_ccnumber").value = "0000000000000000";
+      document.getElementById("en__field_transaction_ccvv").value = "000";
+  };
+
+  paypalbutton[0].addEventListener('click', addCVVNumbers, false);
+
+  var cardbutton = document.getElementsByClassName("en__field__item card");
+
+  var removeCVVNumbers = function() {
+      document.getElementById("en__field_transaction_ccnumber").value = "";
+      document.getElementById("en__field_transaction_ccvv").value = "";
+  };
+
+  cardbutton[0].addEventListener('click', removeCVVNumbers, false);
+
   // Add your client scripts here
   /*const backgroundImage = [
     //"https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/Shortfall+Campaign+-+Donation+Page+-+Plain+Background.png?v=1709580281000",
@@ -74,60 +94,70 @@ export const customScript = function () {
   let paypalElement = document.querySelector('.en__field__item.paypal');
   let cardElement = document.querySelector('.en__field__item.card');
 
-//dumpGlobalVar implementation (manages the iframes);
+  //dumpGlobalVar implementation (manages the iframes);
 
-function dumpGlobalVar() {
+  function dumpGlobalVar() {
 
 
-  // EN is not reading the global variable because their JS file loads before ENgrid, so we're going to HACK TOWN
-  // Clean up the VGS iFrames
-  window.setTimeout(() => {
+    // EN is not reading the global variable because their JS file loads before ENgrid, so we're going to HACK TOWN
+    // Clean up the VGS iFrames
+    window.setTimeout(() => {
       const vgsIElements = document.querySelectorAll(".en__field__input--vgs");
       if (vgsIElements.length > 0) {
-          // Create a mutation observer that cleans the VGS Elements before anything is rendered
-          const observer = new MutationObserver((mutations) => {
-              mutations.forEach((mutation) => {
-                  if (mutation.type === "childList" && mutation.addedNodes.length > 0)
-                      mutation.addedNodes.forEach((node) => {
-                          if (node.nodeName === "IFRAME" &&
-                              mutation.previousSibling &&
-                              mutation.previousSibling.nodeName === "IFRAME") {
-                              // Delete the previous sibling
-                              mutation.previousSibling.remove();
-                          }
-                      });
+        // Create a mutation observer that cleans the VGS Elements before anything is rendered
+        const observer = new MutationObserver((mutations) => {
+          mutations.forEach((mutation) => {
+            if (mutation.type === "childList" && mutation.addedNodes.length > 0)
+              mutation.addedNodes.forEach((node) => {
+                if (node.nodeName === "IFRAME" &&
+                  mutation.previousSibling &&
+                  mutation.previousSibling.nodeName === "IFRAME") {
+                  // Delete the previous sibling
+                  mutation.previousSibling.remove();
+                }
               });
           });
-          // Observe the VGS Elements
-          vgsIElements.forEach((vgsIElement) => {
-              observer.observe(vgsIElement, { childList: true });
-          });
-          //if (ENGrid.checkNested(window.EngagingNetworks, "require", "_defined", "enjs", "vgs")) {
-              window.EngagingNetworks.require._defined.enjs.vgs.init();
-          //}
-          //else {
+        });
+        // Observe the VGS Elements
+        vgsIElements.forEach((vgsIElement) => {
+          observer.observe(vgsIElement, { childList: true });
+        });
+        //if (ENGrid.checkNested(window.EngagingNetworks, "require", "_defined", "enjs", "vgs")) {
+        window.EngagingNetworks.require._defined.enjs.vgs.init();
+        //}
+        //else {
 
         //  }
       }
-  }, 1000);
-}
+    }, 1000);
+  }
 
-  function preSelectDonationValue(){
-    var params={};location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(s,k,v){params[k]=v});
-    var donationPreSelect =  params["transaction.donationAmt"];
-    var ichange = new Event('change');
-    if (donationPreSelect != undefined){
-       window.setTimeout(function(){
-           if (document.querySelector('.en__field--donationAmt .en__field__item input[value="' + donationPreSelect + '"]').classList.contains('en__field__input--other')){
-            document.querySelector('.en__field--withOther').classList.add('en__field--withOther--active');
-            document.querySelector('.en__field__input--other').value = donationPreSelect;
-            document.querySelector('.en__field__input--other').dispatchEvent(ichange);
-            document.querySelector('.en__field__input--other').focus();
-        } else {
-            document.querySelector('.en__field--donationAmt .en__field__item input[value="' + donationPreSelect + '"]').checked = true;
-        }
-      },300);
+  function preSelectDonationValue() {
+    var params = {}; location.search.replace(/[?&]+([^=&]+)=([^&]*)/gi, function (s, k, v) { params[k] = v });
+    var donationPreSelect = params["transaction.donationAmt"];
+    if (donationPreSelect != undefined) {
+      setSelectedAmount(donationPreSelect);
     }
+  }
+
+  function setSelectedAmount(amount) {
+    var ichange = new Event('change');
+    window.setTimeout(function () {
+      if (document.querySelector('.en__field--donationAmt .en__field__item input[value="' + amount + '"]').classList.contains('en__field__input--other')) {
+        document.querySelector('.en__field--withOther').classList.add('en__field--withOther--active');
+        document.querySelector('.en__field__input--other').value = amount;
+        document.querySelector('.en__field__input--other').dispatchEvent(ichange);
+        document.querySelector('.en__field__input--other').focus();
+      } else {
+        document.querySelector('.en__field--donationAmt .en__field__item input[value="' + amount + '"]').checked = true;
+        if(document.querySelector('.en__field--withOther').classList.contains('en__field--withOther--active')){
+          document.querySelector('.en__field--withOther').classList.remove('en__field--withOther--active');
+          document.querySelector('.en__field__input--other').value = null;
+        }
+      }
+      updateSubmitButton();
+    }, 300);
+    
   }
 
   function setPaymentType() {
@@ -136,31 +166,66 @@ function dumpGlobalVar() {
     const enFieldPaymentType = document.querySelector("#en__field_transaction_paymenttype");
 
     if (enFieldPaymentType) {
-      console.log('field payment type ',enFieldPaymentType);
-        // Find the option with the matching value
-        const options = enFieldPaymentType.options;
-        let foundOption;
+      console.log('field payment type ', enFieldPaymentType);
+      // Find the option with the matching value
+      const options = enFieldPaymentType.options;
+      let foundOption;
 
-        for (let i = 0; i < options.length; i++) {
-            const option = options[i];
-            if (option.value.toLowerCase() === "visa" || option.value.toLowerCase() === "vi") {
-                foundOption = option;
-                enFieldPaymentType.selectedIndex = i;
-                break;
-            }
+      for (let i = 0; i < options.length; i++) {
+        const option = options[i];
+        if (option.value.toLowerCase() === "visa" || option.value.toLowerCase() === "vi") {
+          foundOption = option;
+          enFieldPaymentType.selectedIndex = i;
+          break;
         }
+      }
 
-        if (foundOption) {
-            // Set the selected property of the found option to true
-            foundOption.selected = true;
+      if (foundOption) {
+        // Set the selected property of the found option to true
+        foundOption.selected = true;
 
-            // Dispatch a change event to simulate user interaction
-            const event = new Event("change");
-            enFieldPaymentType.dispatchEvent(event);
-        }
+        // Dispatch a change event to simulate user interaction
+        const event = new Event("change");
+        enFieldPaymentType.dispatchEvent(event);
+      }
     }
     console.log("Setting payment type to: " + enFieldPaymentType.selectedIndex);
-}
+  }
+
+  //Workaround for gift swap list
+
+  let defaultCheckedDonationButton;
+  let defaultCheckedDonationButtonValue;
+  let defaultCheckedFrequency;
+  let submitLabel;
+  let upsellLabel;
+
+  function checkDefaultValues() {
+    console.log('triggered checkdefaultvalue()');
+    defaultCheckedDonationButton = document.querySelector('[name="transaction.donationAmt"]:checked');
+    defaultCheckedDonationButtonValue = defaultCheckedDonationButton.value;
+
+    console.log('The element is: ', defaultCheckedDonationButton);
+  }
+
+  function checkDefaultFrequency() {
+    //console.log('triggered checkDefaultFrequency()');
+    defaultCheckedFrequency = document.querySelector('[name="transaction.recurrfreq"]:checked');
+    //console.log('The element is: ', defaultCheckedFrequency);
+    return defaultCheckedFrequency;
+  }
+  checkDefaultFrequency();
+
+  defaultCheckedFrequency.addEventListener('change', function () {
+    //console.log('triggered changedFrequency');
+
+    let currentlySelectedButton = document.querySelector('[name="transaction.donationAmt"]:checked');
+    console.log('currentlySelectedButton ',currentlySelectedButton.value);
+    //console.log('defaultCheckedDonationButtonValue', defaultCheckedDonationButtonValue)
+    if (currentlySelectedButton.value != defaultCheckedDonationButtonValue) {
+      setSelectedAmount(defaultCheckedDonationButtonValue);
+    }
+  });
 
 //lazy loading for footer
 
@@ -177,65 +242,88 @@ function setLazyLoading(){
   });
 }
 
-// Add click event listeners to the elements
-/*if (paypalElement) {
-  paypalElement.addEventListener('click', function() {
-    console.log('clicked paypal');  
-    setPaymentType();
-  });
-}*/
+  function updateSubmitButton(){
+    //console.log('triggered updateSubmitButton');
+    submitLabel = document.querySelector('.en__submit button .live-variable-amount');
+    console.log(submitLabel);
+    //console.log(defaultCheckedDonationButtonValue);
+    submitLabel.innerText = `${defaultCheckedDonationButtonValue}`;
+  }
 
-/*if (cardElement) {
-  cardElement.addEventListener('click', function() {
-      console.log('clicked card');
-      setPaymentType();
-  });
-}/*
-
-
+  function updateUpsellButton(){
+    //console.log('triggered updateUpsell')
+    upsellLabel = document.querySelector('.upsell_amount');
+    window.setTimeout(function(){
+      upsellLabel.innerText = `$${defaultCheckedDonationButtonValue}`;
+    },500)
+  }
 
   let submitButton = document.getElementsByClassName('en__submit')[0];
-  
-  submitButton.addEventListener("click", function(evt) {
-    evt.preventDefault(); // Prevent the default form submission behavior
-    let form = submitButton.closest("form");
+  submitButton.addEventListener('click',function(){
+    //console.log('clicked submit');
+    updateUpsellButton();
+  })
+  // Add click event listeners to the elements
+  /*if (paypalElement) {
+    paypalElement.addEventListener('click', function() {
+      console.log('clicked paypal');  
+      setPaymentType();
+    });
+  }*/
 
-    let paymentfield = document.getElementsByName("transaction.paymenttype")[0];
-    console.log('Payment type: ', paymentfield);
-    console.log("Button clicked!");
-    // Get the transaction.ccnumber field
-    const ccNumberField = document.querySelector('#en__field_transaction_ccnumber');
-
-    // Check if the field exists
-    if (ccNumberField) {
-      const cardNumberInput = '4222222222222220';
-      console.log('iframe: ',cardNumberInput);
-      const liveCardTypeNA = document.querySelector('.live-card-type-na');
-      console.log('input hidden: ', liveCardTypeNA);
-      //ccnumberVGS = cardNumberInput.getAttribute('value').trim();
-      liveCardTypeNA.setAttribute('value', cardNumberInput);
-    }
-    form.submit();
+  /*if (cardElement) {
+    cardElement.addEventListener('click', function() {
+        console.log('clicked card');
+        setPaymentType();
+    });
+  }/*
 
 
-});
-/*document.addEventListener("click", function(event) {
-  // Check if the clicked element has the class 'submitButton'
-  if (event.target.classList.contains("en__submit")) {
-    console.log('clicked');
-      // Find the closest form element based on the button
-      var form = event.target.closest("form");
 
-      // Check if a form is found
-      if (form) {
-        console.log('submit form');
-          // Trigger the form submission
-          form.submit();
+    let submitButton = document.getElementsByClassName('en__submit')[0];
+    
+    submitButton.addEventListener("click", function(evt) {
+      evt.preventDefault(); // Prevent the default form submission behavior
+      let form = submitButton.closest("form");
+
+      let paymentfield = document.getElementsByName("transaction.paymenttype")[0];
+      console.log('Payment type: ', paymentfield);
+      console.log("Button clicked!");
+      // Get the transaction.ccnumber field
+      const ccNumberField = document.querySelector('#en__field_transaction_ccnumber');
+
+      // Check if the field exists
+      if (ccNumberField) {
+        const cardNumberInput = '4222222222222220';
+        console.log('iframe: ',cardNumberInput);
+        const liveCardTypeNA = document.querySelector('.live-card-type-na');
+        console.log('input hidden: ', liveCardTypeNA);
+        //ccnumberVGS = cardNumberInput.getAttribute('value').trim();
+        liveCardTypeNA.setAttribute('value', cardNumberInput);
       }
-  }
-});*/
-preSelectDonationValue();
-dumpGlobalVar();
-setPaymentType();
-setLazyLoading();
+      form.submit();
+
+
+  });
+  /*document.addEventListener("click", function(event) {
+    // Check if the clicked element has the class 'submitButton'
+    if (event.target.classList.contains("en__submit")) {
+      console.log('clicked');
+        // Find the closest form element based on the button
+        var form = event.target.closest("form");
+
+        // Check if a form is found
+        if (form) {
+          console.log('submit form');
+            // Trigger the form submission
+            form.submit();
+        }
+    }
+  });*/
+  preSelectDonationValue();
+  checkDefaultValues();
+  checkDefaultFrequency();
+  dumpGlobalVar();
+  setPaymentType();
+  setLazyLoading();
 };
