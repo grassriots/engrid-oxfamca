@@ -261,7 +261,7 @@ function setLazyLoading(){
   let submitButton = document.getElementsByClassName('en__submit')[0];
   submitButton.addEventListener('click',function(){
     //console.log('clicked submit');
-    updateUpsellButton();
+    //updateUpsellButton();
   })
   // Add click event listeners to the elements
   /*if (paypalElement) {
