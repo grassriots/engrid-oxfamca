@@ -2,7 +2,7 @@
 @import "./page-template-variables";
 
 /* ENGRID ASSETS */
-@import "@4site/engrid-styles"; // Uses ENGrid via NPM
+@import "engrid-scripts/packages/styles"; // Uses ENGrid via NPM
 // @import "../../../engrid-scripts/packages/styles"; // Uses ENGrid via Visual Studio Workspace
 
 /* CLIENT THEME FONTS AND STYLES */
@@ -25,3 +25,19 @@ body {
   width: 100%;
 }
 
+//logo
+.no-margin{
+  margin: 0 !important;
+}
+
+//bounce component
+p.nudge{
+
+}
+
+//message above toggle button
+@media screen and (max-width: 765px) {
+  .wrap__nudge{
+    display: none !important;
+  }
+}

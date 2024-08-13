@@ -9,7 +9,7 @@
     "build": "npm run production & npm run minify",
     "production": "webpack --config webpack.prod.js",
     "minify": "webpack --config webpack.min.js",
-    "update": "npm update @4site/engrid-common @4site/engrid-styles",
+    "update-gitpkg": "npm install git+ssh://git@github.com:grassriots/engrid-scripts-no-history#donation-core",
     "rebuild": "npm run update;npm run build"
   },
   "keywords": [
@@ -26,8 +26,6 @@
   "license": "Unlicense",
   "url": "https://github.com/4site-interactive-studios/engrid-oxfamca",
   "devDependencies": {
-    "@4site/engrid-common": "^0.14.12",
-    "@4site/engrid-styles": "^0.14.12",
     "@babel/core": "^7.14.3",
     "@babel/plugin-proposal-class-properties": "7.13.0",
     "@babel/plugin-proposal-object-rest-spread": "7.14.2",
@@ -39,12 +37,13 @@
     "breakpoint-slicer": "^2.0.0",
     "css-loader": "^5.2.6",
     "css-minimizer-webpack-plugin": "^3.0.2",
+    "engrid-scripts": "github:grassriots/engrid-scripts-no-history#donation-core",
     "file-loader": "^6.2.0",
     "fork-ts-checker-webpack-plugin": "6.2.12",
     "mini-css-extract-plugin": "^1.6.2",
     "popper.js": "^1.16.1",
     "postcss-loader": "^6.1.0",
-    "postcss-preset-env": "^6.7.0",
+    "postcss-preset-env": "^9.5.2",
     "prettier": "2.4.1",
     "sass": "^1.49.0",
     "sass-loader": "^12.1.0",
