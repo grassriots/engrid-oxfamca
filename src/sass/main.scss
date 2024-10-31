@@ -41,3 +41,24 @@ p.nudge{
     display: none !important;
   }
 }
+
+
+//Styles for Digital Wallet
+
+[data-engrid-theme] #en__digitalWallet {
+  flex-basis: 100%;
+  font-size: var(--submit__button_font-size);
+  padding: inherit;
+  padding-left: var(--fields_spacing-inline);
+  padding-right: var(--fields_spacing-inline);
+  order:1;
+}
+.en__field--ccnumber {
+  order:2;
+}
+.en__field--ccexpire {
+  order:3;
+}
+.en__field--ccvv {
+  order:4;
+}
