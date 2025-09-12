@@ -62,3 +62,86 @@ p.nudge{
 .en__field--ccvv {
   order:4;
 }
+//thank you donation component
+
+.thankYouDonation {
+        background-color: #fff;
+        border: 1px solid #6c757d;
+        border-radius:4px;
+        padding:0;
+    }
+    .thankYouDonation h1 {
+        padding:15px;
+        color:#fff;
+        font-size: 34px;
+        height: 100%;
+        line-height: 40.8px;
+        margin-bottom:15px;
+        margin-top:0;
+        text-align:left;
+    }
+    .thankYouDonation .thankYouDonation__text p {
+        padding:0 15px;
+        font-size:18px;
+        line-height:20px;
+        margin-bottom:0;
+    }
+    .thankYouDonation--form .thankYouDonation--inputs{
+        display:flex;
+        width:100%;
+        padding:15px;
+        gap:10px;
+        flex-wrap:nowrap;
+    }
+    .thankYouDonation--form .thankYouDonation--inputs label{
+        display:flex;
+        width:100%;
+        border-radius:4px;
+        font-size: 20px;
+        font-style: normal;
+        line-height: 23px;
+        padding:0;
+        text-align:center;
+        border:1px solid #333;
+        display:block;
+        font-weight:700;
+    }
+    .thankYouDonation--form .thankYouDonation--inputs label span {
+        padding:10px;
+        display:block;
+    }
+    
+    .thankYouDonation--form .thankYouDonation--inputs input{
+        display:none;
+    }
+    .donationAmount {
+        display:none;
+    }
+    .thankYouDonation--other {
+        padding:0 15px 15px 15px;
+    }
+    .thankYouDonation--other input {
+        border:1px solid #333;
+            font-size: 20px;
+    font-style: normal;
+    line-height: 23px;
+    color:#333;
+        
+    }
+    .thankYouDonation--submit_wrapper{
+        padding:15px;
+    }
+    .thankYouDonation--submit {
+        width:100%;
+        padding:10px;
+        text-align:center;
+        display:block;
+                font-size: 20px;
+        font-style: normal;
+        line-height: 23px;
+        font-weight:700;
+        border-radius:4px;
+        color:#fff;
+        text-decoration:none;
+        
+    }

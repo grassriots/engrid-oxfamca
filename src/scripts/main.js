@@ -320,10 +320,162 @@ function setLazyLoading(){
         }
     }
   });*/
+
+  /*
+  // Thank you page function
+  Looks for a special component on the thank you page. 
+  uses data definied in the component to geenrate an interface to choose a donation amount and forward to a donation page with prefilled information.
+  Defaults:
+  donationOptions= {
+        form: 'https://secured.oxfam.ca/page/164472/donate/1', //form link 
+        amounts: [50, 100, 500], //Amounts
+        heading:"Donate to Oxfam to support the people of Gaza", //Heading
+        textContent: "", //optional text contentbelow heading
+        colourTheme: "#64ae3c" //Button, heading and input colour theme.
+    }
+        Outputs:
+        <div class="thankYouDonation">
+          <div class="thankYouDonation__header">
+              <h1>&nbsp;</h1>
+          </div>
+          <div class="thankYouDonation__text">
+              <p>&nbsp;</p>
+          </div>
+        <div class="thankYouDonation--form">
+            <div class="thankYouDonation--inputs">
+                <input type="radio" id="donationArray" value="50" name="" />
+                <input type="radio" id="donationArray" value="100" name="" />
+                <input type="radio" id="donationArray" value="500" name="" />
+            </div>
+            <div class="thankYouDonation--other">
+                <input type="text" id="other" value="" placeholder="other" />
+            </div>
+            <a href="#" target="blank">Submit</a>
+        </div>
+      </div>
+  */
+function thankYouDonation() {
+  // Look for the special component on the thank you page
+  const thankYouComponent = document.querySelector('[data-thank-you-donation]');
+  
+  if (!thankYouComponent) {
+    return; // Exit if component not found
+  }
+
+  // Default configuration
+  const defaults = {
+    form: 'https://secured.oxfam.ca/page/164472/donate/1',
+    amounts: [50, 100, 500],
+    heading: "Donate to Oxfam to support the people of Gaza",
+    customTextContent: "",
+    colourTheme: "#64ae3c"
+  };
+
+  // Parse data attributes from component, fallback to defaults
+  const config = {
+    form: (window.donationOptions && window.donationOptions.form) || defaults.form,
+    amounts: (window.donationOptions && window.donationOptions.amounts) || defaults.amounts,
+    heading: (window.donationOptions && window.donationOptions.heading) || defaults.heading,
+    customTextContent: (window.donationOptions && window.donationOptions.customTextContent) || defaults.customTextContent,
+    colourTheme: (window.donationOptions && window.donationOptions.colourTheme) || defaults.colourTheme
+  };
+
+  // Create the donation interface HTML
+  const donationHTML = `
+    <div class="thankYouDonation">
+      <div class="thankYouDonation__header">
+        <h1 style="background-color: ${config.colourTheme}">${config.heading}</h1>
+      </div>
+      <div class="thankYouDonation__text">
+      ${config.customTextContent ? `<div class="thankYouDonation__text">
+        <p>${config.customTextContent}</p>
+      </div>` : ''}
+      </div>
+      <div class="thankYouDonation--form">
+        <div class="thankYouDonation--inputs">
+          ${config.amounts.map((amount, index) => 
+            `<label style="border-color: ${config.colourTheme}">
+              <input type="radio" name="donationAmount" value="${amount}" ${index === 0 ? 'checked' : ''} />
+             <span style="color:${config.colourTheme};">$${amount}</span>
+            </label>`
+          ).join('')}
+        </div>
+        <div class="thankYouDonation--other">
+          <input type="text" id="otherAmount" placeholder="Other amount"  />
+        </div>
+        <div class="thankYouDonation--submit_wrapper">
+            <a href="#" class="thankYouDonation--submit" style="background-color: ${config.colourTheme}" target="_blank">Donate</a>
+            </div>
+      </div>
+    </div>
+    <style>
+          .thankYouDonation--inputs label:hover span, .thankYouDonation--inputs label:active span, .thankYouDonation--inputs label:focus-within span{
+          color: #ffffff !important;
+          background-color: ${config.colourTheme};
+          }
+          
+          .thankYouDonation--inputs label input:checked ~span{
+          color: #ffffff !important;
+          background-color: ${config.colourTheme};
+          }
+          
+        .thankYouDonation--submit:hover, .thankYouDonation--submit:focus {
+            color: #fff;
+            background-color: ${config.colourTheme};
+          }
+        }
+    </style>
+  `;
+
+  // Replace the component with the generated interface
+  thankYouComponent.innerHTML = donationHTML;
+  
+  // Add event listeners
+  const submitButton = thankYouComponent.querySelector('.thankYouDonation--submit');
+  const radioButtons = thankYouComponent.querySelectorAll('input[name="donationAmount"]');
+  const otherInput = thankYouComponent.querySelector('#otherAmount');
+
+  // Handle other amount input
+  otherInput.addEventListener('input', function() {
+    radioButtons.forEach(radio => radio.checked = false);
+  });
+
+  // Handle radio button selection
+  radioButtons.forEach(radio => {
+    radio.addEventListener('change', function() {
+      if (this.checked) {
+        otherInput.value = '';
+      }
+    });
+  });
+
+  // Handle form submission
+  submitButton.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    let selectedAmount;
+    const checkedRadio = thankYouComponent.querySelector('input[name="donationAmount"]:checked');
+    
+    if (checkedRadio) {
+      selectedAmount = checkedRadio.value;
+    } else if (otherInput.value && !isNaN(otherInput.value)) {
+      selectedAmount = otherInput.value;
+    } else {
+      alert('Please select or enter a donation amount');
+      return;
+    }
+
+    // Build the donation URL with prefilled amount
+    const donationUrl = `${config.form}?transaction.donationAmt=${selectedAmount}&chain`;
+    window.open(donationUrl, '_blank');
+  });
+}
+
   preSelectDonationValue();
   checkDefaultValues();
   checkDefaultFrequency();
   dumpGlobalVar();
   setPaymentType();
   setLazyLoading();
+  thankYouDonation();
 };
