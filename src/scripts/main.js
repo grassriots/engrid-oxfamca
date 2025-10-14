@@ -3,7 +3,8 @@ export const customScript = function () {
 
   // Grassriots - fix for making the credit card and CVV fields mandatory but still be able to make Payal donations
   var paypalbutton = document.getElementsByClassName("en__field__item paypal");
-      
+      if (paypalbutton.length != 0) {
+
   var addCVVNumbers = function() {
       document.getElementById("en__field_transaction_ccnumber").value = "0000000000000000";
       document.getElementById("en__field_transaction_ccvv").value = "000";
@@ -19,7 +20,7 @@ export const customScript = function () {
   };
 
   cardbutton[0].addEventListener('click', removeCVVNumbers, false);
-
+      }
   // Add your client scripts here
   /*const backgroundImage = [
     //"https://aaf1a18515da0e792f78-c27fdabe952dfc357fe25ebf5c8897ee.ssl.cf5.rackcdn.com/2110/Shortfall+Campaign+-+Donation+Page+-+Plain+Background.png?v=1709580281000",
@@ -203,29 +204,49 @@ export const customScript = function () {
   function checkDefaultValues() {
     console.log('triggered checkdefaultvalue()');
     defaultCheckedDonationButton = document.querySelector('[name="transaction.donationAmt"]:checked');
-    defaultCheckedDonationButtonValue = defaultCheckedDonationButton.value;
-
-    console.log('The element is: ', defaultCheckedDonationButton);
+    if (defaultCheckedDonationButton) {
+      defaultCheckedDonationButtonValue = defaultCheckedDonationButton.value;
+      console.log('Default donation value:', defaultCheckedDonationButtonValue);
+    }
   }
 
   function checkDefaultFrequency() {
-    //console.log('triggered checkDefaultFrequency()');
+    console.log('triggered checkDefaultFrequency()');
     defaultCheckedFrequency = document.querySelector('[name="transaction.recurrfreq"]:checked');
-    //console.log('The element is: ', defaultCheckedFrequency);
+    
+    if (!defaultCheckedFrequency) {
+      console.log('No default frequency found');
+      return null;
+    }
+    
+    console.log('Default frequency:', defaultCheckedFrequency.value);
     return defaultCheckedFrequency;
   }
-  checkDefaultFrequency();
 
-  defaultCheckedFrequency.addEventListener('change', function () {
-    //console.log('triggered changedFrequency');
+ function setupFrequencyChangeListener() {
+  if (!defaultCheckedFrequency) {
+    console.log('No frequency element to add listener to');
+    return;
+  }
 
+  defaultCheckedFrequency.addEventListener('change', function() {
+    console.log('Frequency changed');
+    
     let currentlySelectedButton = document.querySelector('[name="transaction.donationAmt"]:checked');
-    console.log('currentlySelectedButton ',currentlySelectedButton.value);
-    //console.log('defaultCheckedDonationButtonValue', defaultCheckedDonationButtonValue)
-    if (currentlySelectedButton.value != defaultCheckedDonationButtonValue) {
+    
+    if (!currentlySelectedButton || !defaultCheckedDonationButtonValue) {
+      console.log('Missing required elements for frequency change handler');
+      return;
+    }
+    
+    console.log('Currently selected amount:', currentlySelectedButton.value);
+    console.log('Default amount:', defaultCheckedDonationButtonValue);
+    
+    if (currentlySelectedButton.value !== defaultCheckedDonationButtonValue) {
       setSelectedAmount(defaultCheckedDonationButtonValue);
     }
   });
+}
 
 //lazy loading for footer
 
@@ -257,12 +278,6 @@ function setLazyLoading(){
       upsellLabel.innerText = `$${defaultCheckedDonationButtonValue}`;
     },500)
   }
-
-  let submitButton = document.getElementsByClassName('en__submit')[0];
-  submitButton.addEventListener('click',function(){
-    //console.log('clicked submit');
-    //updateUpsellButton();
-  })
   // Add click event listeners to the elements
   /*if (paypalElement) {
     paypalElement.addEventListener('click', function() {
@@ -354,8 +369,44 @@ function setLazyLoading(){
         </div>
       </div>
   */
+function setUpTrucks(){
+        let thermometers = document.querySelectorAll('.enWidget--thermometer');
+        console.log("Thermometers: " + thermometers.length)
+
+    if (!thermometers.length)
+        return false;
+    thermometers.forEach((thermometer) => {
+      let truckCopy = document.querySelector(".enWidget__copy p")?.innerHTML || "";
+      let truckTotal = document.querySelector(".enWidget__total").innerHTML;
+      let truckFill = document.querySelector(".enWidget__thermFill").style.height;
+      console.log("fill width: " + truckFill);
+
+      // Parse the percentage value from the string (e.g., "45%" -> 45)
+      let truckFillPercent = parseInt(truckFill.replace('%', ''));
+      console.log("fill percentage: " + truckFillPercent);
+      let truckThermometer = `<div class="truck__thermometer">                      
+                            <div class="truckGoal">
+                                ${truckCopy}
+                            </div>
+                            <div class="truckBar">
+                              <div class="truckFill" style="width:0%;"></div>
+                               <div class="truckMarker${truckFillPercent > 33 ? ' active' : ''} truckMarker1"></div>
+                              <div class="truckMarker${truckFillPercent > 66 ? ' active' : ''} truckMarker2"></div>
+                              <div class="truckMarker${truckFillPercent > 99 ? ' active' : ''} truckMarker3"></div>
+                            </div>
+                            
+                        </div>`;
+                        //append the truck thermometer to the thermometer widget
+      thermometer.innerHTML = truckThermometer;
+      //Animate the bar fill
+      let truckFillBar = thermometer.querySelector(".truckFill");
+        truckFillBar.style.width = truckFill;
+    });
+}
+
 function thankYouDonation() {
-  // Look for the special component on the thank you page
+  // TO DO - allow multiple instances on a page.
+  console.log('triggered thankYouDonation()');
   const thankYouComponent = document.querySelector('[data-thank-you-donation]');
   
   if (!thankYouComponent) {
@@ -466,16 +517,35 @@ function thankYouDonation() {
     }
 
     // Build the donation URL with prefilled amount
-    const donationUrl = `${config.form}?transaction.donationAmt=${selectedAmount}&chain`;
+    // Check if URL already has query parameters
+    const separator = config.form.includes('?') ? '&' : '?';
+    const donationUrl = `${config.form}${separator}transaction.donationAmt=${selectedAmount}&chain`;
     window.open(donationUrl, '_blank');
   });
 }
 
+
+
+
+if (window.pageJson.pageNumber == window.pageJson.pageCount) {
+//thank you page function
+  thankYouDonation();
+}else{
+  //Payment Page functions
+  console.log('On payment page - executing payment functions');
   preSelectDonationValue();
   checkDefaultValues();
   checkDefaultFrequency();
+  setupFrequencyChangeListener();
   dumpGlobalVar();
   setPaymentType();
   setLazyLoading();
-  thankYouDonation();
+}
+
+
+
+
+
+
 };
+
