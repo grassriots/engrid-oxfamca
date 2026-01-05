@@ -139,6 +139,13 @@ export const customScript = function () {
     if (donationPreSelect != undefined) {
       setSelectedAmount(donationPreSelect);
     }
+
+    //Set other Placeholder
+
+    let other = document.querySelector("[name='transaction.donationAmt.other']");
+    if (other) { // always good to check it exists
+        other.placeholder = "Other";
+    }
   }
 
   function setSelectedAmount(amount) {
