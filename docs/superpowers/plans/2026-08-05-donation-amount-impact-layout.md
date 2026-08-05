@@ -128,26 +128,37 @@ $color_primary_emergency: #ff1d34;
 
 - [ ] **Step 3: Point the two declarations at the variables**
 
+**Sass does not evaluate SassScript inside custom-property values.** A bare `$var` or an un-interpolated `rgba()` is emitted as a literal string, producing an invalid declaration that fails silently. Every SCSS value assigned to a `--custom-property` in this plan must be wrapped in `#{}`. Verified:
+
+```scss
+.a { --x: $c; --y: #{$c}; --z: rgba($c, .1); --w: #{rgba($c, .1)}; }
+// compiles to:
+// --x: $c;                       <- literal, broken
+// --y: #f16e22;                  <- correct
+// --z: rgba($c, .1);             <- literal, broken
+// --w: rgba(241, 110, 34, 0.1);  <- correct
+```
+
 `src/sass/page-template-styles.scss:24` — replace `--color_primary: #f16e22;` with:
 
 ```scss
-  --color_primary: $color_primary_normal;
+  --color_primary: #{$color_primary_normal};
 ```
 
 `src/sass/page-template-styles.scss:788` (inside the `&[data-engrid-subtheme="emergency"]` block) — replace `--color_primary: #ff1d34;` with:
 
 ```scss
-    --color_primary: $color_primary_emergency;
+    --color_primary: #{$color_primary_emergency};
 ```
 
 - [ ] **Step 4: Rebuild and prove the output is unchanged**
 
 ```bash
 npx webpack --config webpack.min.js
-diff <(tail -c +600 /tmp/impact-baseline.css) <(tail -c +600 dist/engrid.min.css) && echo "IDENTICAL — no rendered change"
+diff <(tail -c +1120 /tmp/impact-baseline.css) <(tail -c +1120 dist/engrid.min.css) && echo "IDENTICAL — no rendered change"
 ```
 
-Expected: `IDENTICAL — no rendered change`. The `tail -c +600` skips the build-date banner, which differs between builds by design.
+Expected: `IDENTICAL — no rendered change`. The offset skips the build banner, whose date line differs between builds by design. Confirm the offset clears the banner before trusting a diff — if the output still shows a one-line timestamp difference, the offset is landing inside the ASCII art and needs raising, not the change investigating.
 
 If the diff is non-empty, the refactor changed rendered output — inspect before continuing.
 
@@ -774,7 +785,9 @@ Append to `src/sass/_impact-amounts.scss`:
 // read a CSS custom property.
 .impact-amounts {
   --impact-row_accent: var(--color_primary);
-  --impact-row_background_checked: rgba($color_primary_normal, 0.1);
+  // #{} is required: Sass emits an un-interpolated rgba() into a custom
+  // property as a literal string, producing a dead declaration.
+  --impact-row_background_checked: #{rgba($color_primary_normal, 0.1)};
   --impact-row_border-color: #cacaca;
   --impact-row_amount-color: #333;
   --impact-row_impact-color: #555;
@@ -791,7 +804,7 @@ Append to `src/sass/_impact-amounts.scss`:
 }
 
 [data-engrid-subtheme="emergency"] .impact-amounts {
-  --impact-row_background_checked: rgba($color_primary_emergency, 0.1);
+  --impact-row_background_checked: #{rgba($color_primary_emergency, 0.1)};
 }
 
 // ROW
