@@ -1,3 +1,5 @@
+import { initImpactAmounts } from "./impact-amounts";
+
 export const customScript = function () {
   console.log("ENGrid client scripts are executing");
 
@@ -541,6 +543,7 @@ if (window.pageJson.pageNumber == window.pageJson.pageCount) {
   //Payment Page functions
   console.log('On payment page - executing payment functions');
   preSelectDonationValue();
+  initImpactAmounts();
   checkDefaultValues();
   checkDefaultFrequency();
   setupFrequencyChangeListener();
