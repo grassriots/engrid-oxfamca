@@ -1,0 +1,24 @@
+// DONATION AMOUNT IMPACT LAYOUT
+// Applied only when an EN code component defines window.impactArray.
+// See docs/superpowers/specs/2026-08-05-donation-amount-impact-layout-design.md
+
+// COLUMN COUNT
+// ENGrid consumes --donation-amount__button_count via
+//   flex-basis: calc(100% / var(--donation-amount__button_count))
+// This selector must out-specify two existing rules:
+//   .donation-amount_count_3                                              (0,1,0)
+//   [data-engrid-theme=oxfamca][data-engrid-layout] .radio-to-buttons_donationAmt
+//     inside @media (max-width:425px)                                     (0,3,0)
+// The mobile rule is why simply adding .donation-amount_count_1 is not enough:
+// full-width rows would silently become two-up on phones.
+[data-engrid-theme="oxfamca"][data-engrid-layout]
+  .radio-to-buttons_donationAmt.impact-amounts {
+  --donation-amount__button_count: 1;
+
+  // half is two-up from 426px and single column below it
+  @media (min-width: 426px) {
+    &.impact-amounts--half {
+      --donation-amount__button_count: 2;
+    }
+  }
+}

@@ -88,6 +88,24 @@ export function findEntry(array, value) {
   return null;
 }
 
+const CONTAINER_SELECTOR = ".radio-to-buttons_donationAmt";
+
+/**
+ * Tag each amount array container so the stylesheet can take over the column
+ * count. EN's own classes, including donation-amount_count_*, are left in place:
+ * our rules win on specificity rather than by mutating class lists, which avoids
+ * depending on stylesheet source order.
+ */
+export function applyLayout(current) {
+  current.fields.forEach((field) => {
+    const container = field.closest(CONTAINER_SELECTOR);
+    if (!container) return;
+    container.classList.add("impact-amounts");
+    container.classList.remove("impact-amounts--full", "impact-amounts--half");
+    container.classList.add(`impact-amounts--${current.config.layout}`);
+  });
+}
+
 let state = null;
 
 export function initImpactAmounts() {
@@ -97,6 +115,7 @@ export function initImpactAmounts() {
 
     if (state) {
       state.config = config;
+      applyLayout(state);
       console.log(`${LOG_PREFIX} re-initialised`, describe(config));
       return;
     }
@@ -110,6 +129,7 @@ export function initImpactAmounts() {
     }
 
     state = { config, fields, warned: {} };
+    applyLayout(state);
     console.log(`${LOG_PREFIX} initialised`, describe(config));
 
     window.ENGridImpact = { init: initImpactAmounts };
