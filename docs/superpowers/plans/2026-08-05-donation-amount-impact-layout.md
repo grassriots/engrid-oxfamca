@@ -391,8 +391,10 @@ Expected: the second log reports `frequency: "monthly"` with the monthly amounts
 
 ```js
 window.impactArray = "nonsense";      window.ENGridImpact.init();   // warns, no throw
-window.impactArray = { layout: "Half", otg: [] };  window.ENGridImpact.init();  // warns twice, no throw
-window.impactArray = { layout: "HALF", otg: [{ amount: 50 }] };  window.ENGridImpact.init();  // layout "half"
+// "Half" lowercases to a valid layout, so only the empty-array warning fires here - one warn, not two
+window.impactArray = { layout: "Half", otg: [] };  window.ENGridImpact.init();
+window.impactArray = { layout: "sideways", otg: [{ amount: 50 }] };  window.ENGridImpact.init();  // warns about layout, falls back to "full"
+window.impactArray = { layout: "HALF", otg: [{ amount: 50 }] };  window.ENGridImpact.init();  // layout "half", no warn
 ```
 
 Expected: warnings only, no uncaught exceptions, page unchanged.
