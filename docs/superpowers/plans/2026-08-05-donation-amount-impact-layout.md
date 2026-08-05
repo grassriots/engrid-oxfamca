@@ -1120,14 +1120,15 @@ npx webpack --config webpack.min.js
 
 - [ ] **Step 3: Verify each failure mode**
 
-Run each in the console, reloading between the destructive ones:
+`window.ENGridImpact` only exists after a successful init, so run checks 2–5 first while the hook is alive, and do the absent-config check last since it requires a reload with no config. Establish a valid config and confirm the hook before starting:
 
 ```js
-// 1. absent config - the headline requirement
-delete window.impactArray;
-// reload: expect NO [impact-amounts] log, and null for the next line
-document.querySelector(".impact-amounts");                       // null
+console.assert(window.ENGridImpact && window.ENGridImpact.init, "run Step 5 of Task 2 first - no hook");
+```
 
+Then:
+
+```js
 // 2. malformed shapes
 window.impactArray = null;                     window.ENGridImpact.init();
 window.impactArray = [1, 2, 3];                window.ENGridImpact.init();
@@ -1152,6 +1153,17 @@ window.impactArray = { layout: "full", otg: [{ amount: 50 }] };
 window.ENGridImpact.init();
 // expect: row renders with just its amount, no errors
 ```
+
+Finally, the headline requirement — absent config. Remove the config `<script>` from the page override and reload:
+
+```js
+// 1. absent config
+typeof window.impactArray;                  // "undefined"
+document.querySelector(".impact-amounts");  // null
+typeof window.ENGridImpact;                 // "undefined" - init returned before setting the hook
+```
+
+Expected: no `[impact-amounts]` console line at all, and the page behaves exactly as it does with no component present.
 
 Expected throughout: the donation form stays fully usable and no exception escapes.
 
