@@ -12,3 +12,11 @@ $one_col_body-column_max-width: 680px;
 // $two_col_content-column_min-width:  900px;
 // $two_col_body-column_max-width:    1080px;
 // $two_col_body-column_min-width:     900px;
+
+// BRAND COLOURS
+// Single source of truth. Referenced by the --color_primary custom properties in
+// page-template-styles.scss (runtime) and by rgba() tints in _impact-amounts.scss
+// (build time). SCSS rgba() cannot read a CSS custom property, so both must resolve
+// from these variables or the accent and its tint will drift apart.
+$color_primary_normal: #f16e22;
+$color_primary_emergency: #ff1d34;

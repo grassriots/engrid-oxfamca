@@ -21,7 +21,7 @@
   --error__color: #e60f0f; /*this ensures 4.5:1 contrast of white and error red*/
 
   // PRIMARY COLORS
-  --color_primary: #f16e22;
+  --color_primary: #{$color_primary_normal};
   --color_primary_overlay: #ffffff;
 
   // SEMANTIC GEOMETRIC SCALING
@@ -785,7 +785,7 @@
     // Emergency Theme Override
     /* Overrides the base styles to create an "Emergency Theme" */
 
-    --color_primary: #ff1d34;
+    --color_primary: #{$color_primary_emergency};
     --engrid__page_background-color: #000000;
 
     .en__contactDetails__select:checked + .en__contactDetails__rows:after,
