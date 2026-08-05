@@ -64,3 +64,9 @@ typings/
 
 # built files
 dist/*
+
+# design mockups (reference only, not shipped)
+mockup/
+
+# browser automation session output
+.playwright-mcp/
