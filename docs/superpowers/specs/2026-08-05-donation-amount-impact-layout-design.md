@@ -180,6 +180,8 @@ Rejected alternatives:
 | `src/scripts/main.js` | Imports and calls it in the existing payment-page branch. |
 | `src/sass/_impact-amounts.scss` | New partial, all feature styles. |
 | `src/sass/main.scss` | Imports the partial after `page-template-styles`. |
+| `src/sass/page-template-variables.scss` | Two new SCSS variables for the brand orange and emergency red. |
+| `src/sass/page-template-styles.scss` | Two existing `--color_primary` declarations reference those variables. |
 
 `src/scripts/main.js` is a 557-line `customScript` handling a dozen unrelated jobs. This feature
 gets its own module rather than being added to that pile. Refactoring the rest of `main.js` is out
@@ -285,30 +287,54 @@ The indicator is a real element rather than a pseudo-element because ENGrid alre
 
 ### Tokens
 
+The accent is the theme's own primary colour, referenced rather than restated:
+
 ```scss
+// src/sass/_impact-amounts.scss
 .impact-amounts {
-  --impact-row_accent-rgb: 240 85 35;                              // #f05523, theme orange
-  --impact-row_accent: rgb(var(--impact-row_accent-rgb));
-  --impact-row_background_checked: rgb(var(--impact-row_accent-rgb) / 0.1);
+  --impact-row_accent: var(--color_primary);        // #f16e22, → #ff1d34 under emergency
+  --impact-row_background_checked: rgba($color_primary_normal, 0.1);
   --impact-row_border-color: #cacaca;
   --impact-row_amount-color: #333;
   --impact-row_impact-color: #555;
-  --impact-row_icon-size: 56px;                                    // 48px below 426px
+  --impact-row_icon-size: 56px;                    // 48px below 426px
 }
 [data-engrid-subtheme="emergency"] .impact-amounts {
-  --impact-row_accent-rgb: 255 29 52;                              // #ff1d34, theme red
+  --impact-row_background_checked: rgba($color_primary_emergency, 0.1);
 }
 ```
 
-One triplet per theme; both the accent and its lighter background derive from it. `rgb(r g b / a)`
-is supported well beyond the project's browser targets, so no fallback is required.
+**The accent needs no emergency override.** It follows `--color_primary`, which the existing
+subtheme already flips. Only the tint needs a second declaration, because SCSS `rgba()` resolves at
+build time and cannot read a CSS custom property.
 
-**The triplet duplicates a value rather than referencing it.** `#f05523` is already held in
-`--button_background-color_checked`, but CSS cannot decompose a hex custom property into the
-channels `rgb()` needs, so the number is restated here as `240 85 35`. The trade is deliberate: it
-buys runtime derivation of the tint from the accent, which is what makes one triplet per theme
-sufficient. The cost is that changing the theme orange means updating both places, so the
-declaration carries a comment naming its source token.
+**Theme colours take priority over the mockups.** Where a colour already exists in the theme and is
+in use, that value wins over sampling the mockup. The mockup's selected orange reads closer to the
+`#f05523` held in `--button_background-color_checked`, but `--color_primary` is the theme's primary
+orange, is what the submit button uses, and is the value the emergency subtheme overrides — so it is
+the correct source. Any small difference from the mockup is accepted deliberately.
+
+### One source of truth for the two brand colours
+
+So the tint cannot drift from the accent, the two hex values move into SCSS variables and the
+existing theme declarations reference them:
+
+```scss
+// src/sass/page-template-variables.scss  (imported first by main.scss)
+$color_primary_normal:    #f16e22;
+$color_primary_emergency: #ff1d34;
+```
+
+```scss
+// src/sass/page-template-styles.scss
+--color_primary: $color_primary_normal;      // was #f16e22        (line 24)
+--color_primary: $color_primary_emergency;   // was #ff1d34        (line 788, emergency block)
+```
+
+Two one-line edits to existing declarations, in service of this feature: the runtime accent and the
+build-time tint now resolve from the same source, so changing a brand colour cannot leave them
+inconsistent. `rgba()` at build time also avoids `color-mix()` and any runtime channel arithmetic
+entirely.
 
 `color-mix()` was considered and rejected: `.browserslistrc` (`> 2%`, `not IE 11`) resolves only to
 very recent browsers, which is an artefact of the usage query rather than evidence that older
@@ -398,7 +424,8 @@ added later without rework.
 | Icon PNG contains the whole tile | Explains why the same glyph appears in two colourways across mockups; no schema growth, no palette logic, design keeps control. |
 | Other row is an entry with `amount: "other"` | One lookup path, no special-casing; `label` supplies "Other amount". |
 | `theme` key dropped | `[data-engrid-subtheme="emergency"]` already exists; two mechanisms could disagree. |
-| Accent is `#f05523` (theme orange) with explicit `#ff1d34` emergency override | Uses the orange already in the theme and matches the mockups, while keeping emergency pages red. Note this is *not* `--color_primary` (`#f16e22`), so the emergency override must stay explicit. |
+| Accent is `var(--color_primary)` | A colour already in the theme and in use takes priority over one sampled from the mockup. `--color_primary` is the theme's primary orange (`#f16e22`), drives the submit button, and is what the emergency subtheme already overrides — so emergency needs no accent override at all. Accepts a small difference from the mockup, which reads nearer `#f05523`. |
+| The two brand hexes move into SCSS variables | The accent resolves at runtime from `--color_primary` while the tint resolves at build time via `rgba()`; sharing one source stops them drifting when a brand colour changes. |
 | Tint is `rgba(accent, 0.1)`, not `0.4` | At `0.4` the accent amount measures 2.11:1 against its own tint (fails even large-text AA), and impact text on the emergency tint measures 3.99:1 (fails AA). At `0.1` both clear AA comfortably and the result matches the mockup cream. Recorded because `0.4` was initially requested. |
 | Unmatched amounts render plain rather than disabling the feature | One typo shouldn't silently remove the whole layout, which reads as broken code. |
 | `half` collapses to one column on mobile | Two impact rows on a phone would give each roughly 160px for icon plus two lines of copy. |
