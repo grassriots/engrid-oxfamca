@@ -169,3 +169,60 @@
     align-self: auto;
   }
 }
+
+// THE OTHER ROW
+// ENGrid's own stylesheet sets display:none on the value="other" radio row, so
+// without this the icon, label and impact copy we render into it are invisible and
+// the only visible Other control is the raw text input below. Inside impact layout
+// the Other row is a real row and must show. !important is required for the same
+// reason as the checked-row rule: the competing declaration is in a stylesheet this
+// bundle does not control.
+.impact-amounts .en__field--donationAmt .en__field__item.impact-row {
+  display: flex !important;
+}
+
+// The raw text input appears only once Other is actually selected. ENGrid adds
+// .en__field--withOther--active to the field on selection; we only react to it.
+.impact-amounts .en__field--donationAmt:not(.en__field--withOther--active)
+  .en__field__item--other {
+  display: none !important;
+}
+
+// The revealed amount input, per mockup/impact-other-selected.png: an accent "$"
+// block on the left, joined to a bordered field.
+.impact-amounts .en__field--donationAmt.en__field--withOther--active .en__field__item--other {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  margin-top: 10px;
+  padding: 0;
+  background: none;
+
+  &:before {
+    display: flex;
+    position: static;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 44px;
+    content: "$";
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: var(--impact-row_accent);
+  }
+
+  input {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 56px;
+    margin: 0;
+    padding: 0 14px;
+    font-size: 20px;
+    color: var(--impact-row_amount-color);
+    background-color: #fff;
+    border: 1px solid var(--impact-row_border-color);
+    border-left: none;
+    border-radius: 0;
+  }
+}
