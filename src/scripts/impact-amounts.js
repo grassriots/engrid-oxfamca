@@ -225,6 +225,47 @@ export function decorate(current) {
   }
 }
 
+function safeDecorate(current) {
+  try {
+    decorate(current);
+  } catch (error) {
+    console.warn(`${LOG_PREFIX} decorate failed; rows left as they were`, error);
+  }
+}
+
+/**
+ * Re-apply decoration when EN rebuilds the rows.
+ *
+ * Two triggers, one idempotent handler:
+ *  1. EN's gift-swap replaces every .en__field__item on frequency change. The
+ *     parent .en__field__element keeps its identity for the life of the page,
+ *     which is what makes it a valid observation target.
+ *  2. A page with no gift-swap list keeps its rows, but the active array and the
+ *     "/ month" suffix must still change.
+ *
+ * This cannot loop: the row observer watches childList WITHOUT subtree and our
+ * nodes are grandchildren of the observed element, so writing them fires
+ * nothing. The body observer is filtered to one attribute we never write.
+ */
+function observe(current) {
+  current.observers = [];
+
+  current.fields.forEach((field) => {
+    const fieldElement = field.querySelector(".en__field__element");
+    if (!fieldElement) return;
+    const observer = new MutationObserver(() => safeDecorate(current));
+    observer.observe(fieldElement, { childList: true });
+    current.observers.push(observer);
+  });
+
+  const bodyObserver = new MutationObserver(() => safeDecorate(current));
+  bodyObserver.observe(document.body, {
+    attributes: true,
+    attributeFilter: ["data-engrid-transaction-recurring-frequency"],
+  });
+  current.observers.push(bodyObserver);
+}
+
 let state = null;
 
 export function initImpactAmounts() {
@@ -235,7 +276,7 @@ export function initImpactAmounts() {
     if (state) {
       state.config = config;
       applyLayout(state);
-      decorate(state);
+      safeDecorate(state);
       console.log(`${LOG_PREFIX} re-initialised`, describe(config));
       return;
     }
@@ -251,6 +292,7 @@ export function initImpactAmounts() {
     state = { config, fields, warned: {} };
     applyLayout(state);
     decorate(state);
+    observe(state);
     console.log(`${LOG_PREFIX} initialised`, describe(config));
 
     window.ENGridImpact = { init: initImpactAmounts };
