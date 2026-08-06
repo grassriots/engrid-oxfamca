@@ -33,6 +33,8 @@
   // #{} is required: Sass emits an un-interpolated rgba() into a custom
   // property as a literal string, producing a dead declaration.
   --impact-row_background_checked: #{rgba($color_primary_normal, 0.1)};
+  // Half the checked tint, so hover previews selection without impersonating it.
+  --impact-row_background_hover: #{rgba($color_primary_normal, 0.05)};
   --impact-row_border-color: #cacaca;
   --impact-row_amount-color: #333;
   --impact-row_impact-color: #555;
@@ -51,6 +53,7 @@
 
 [data-engrid-subtheme="emergency"] .impact-amounts {
   --impact-row_background_checked: #{rgba($color_primary_emergency, 0.1)};
+  --impact-row_background_hover: #{rgba($color_primary_emergency, 0.05)};
 }
 
 // ROW
@@ -88,6 +91,20 @@
     background-color: var(--impact-row_background_checked) !important;
     border-color: var(--impact-row_accent) !important;
     box-shadow: inset 0 0 0 1px var(--impact-row_accent);
+  }
+
+  // Hover, unselected rows only.
+  // ENGrid's hover rule at (0,6,2) paints the row solid --color_off-black
+  // (#3b3b3b), which reads as disabled rather than selectable. Preview the
+  // selected state instead: same accent border, half the tint. This selector is
+  // (0,8,2) so it wins on specificity and needs no !important.
+  // Selected rows are excluded via :not(:checked) — their own rule already wins
+  // over ENGrid's :checked+label:hover because it carries !important.
+  .en__field__item.impact-row
+    > input:not(:checked)
+    + label.en__field__label--item:hover {
+    background-color: var(--impact-row_background_hover);
+    border-color: var(--impact-row_accent);
   }
 }
 
