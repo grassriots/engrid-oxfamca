@@ -22,3 +22,144 @@
     }
   }
 }
+
+// TOKENS
+// The accent references the theme's own primary colour, so the emergency
+// subtheme recolours these rows with no override here. Only the tint needs a
+// second declaration, because SCSS rgba() resolves at build time and cannot
+// read a CSS custom property.
+.impact-amounts {
+  --impact-row_accent: var(--color_primary);
+  // #{} is required: Sass emits an un-interpolated rgba() into a custom
+  // property as a literal string, producing a dead declaration.
+  --impact-row_background_checked: #{rgba($color_primary_normal, 0.1)};
+  --impact-row_border-color: #cacaca;
+  --impact-row_amount-color: #333;
+  --impact-row_impact-color: #555;
+  --impact-row_icon-size: 56px;
+  --impact-row_gap: 20px;
+  --impact-row_padding: 20px;
+  --impact-row_indicator-size: 28px;
+
+  @media (max-width: 425px) {
+    --impact-row_icon-size: 48px;
+    --impact-row_gap: 14px;
+    --impact-row_padding: 14px;
+  }
+}
+
+[data-engrid-subtheme="emergency"] .impact-amounts {
+  --impact-row_background_checked: #{rgba($color_primary_emergency, 0.1)};
+}
+
+// ROW
+// ENGrid styles the button label at
+//   .radio-to-buttons_donationAmt .en__field--donationAmt.en__field--radio
+//     input[type=radio]+label                                            (0,4,1)
+// so these rules are deliberately deeper to win.
+.impact-amounts .en__field--donationAmt.en__field--radio {
+  .en__field__item.impact-row > label.en__field__label--item {
+    position: relative;
+    display: flex;
+    align-items: flex-start;
+    gap: var(--impact-row_gap);
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: var(--impact-row_padding);
+    text-align: left;
+    background-color: #fff;
+    border: 1px solid var(--impact-row_border-color);
+    border-radius: var(--button_border-radius);
+  }
+
+  // Selected. The inset shadow reads as a 2px border without changing the box
+  // model, so selecting a row cannot shift layout by a pixel.
+  .en__field__item.impact-row > input:checked + label.en__field__label--item {
+    background-color: var(--impact-row_background_checked);
+    border-color: var(--impact-row_accent);
+    box-shadow: inset 0 0 0 1px var(--impact-row_accent);
+  }
+}
+
+// ELEMENTS
+.impact-row__icon {
+  flex: 0 0 auto;
+  width: var(--impact-row_icon-size);
+  height: var(--impact-row_icon-size);
+  object-fit: contain;
+}
+
+.impact-row__body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.impact-row__amount {
+  display: block;
+  font-size: 30px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--impact-row_amount-color);
+}
+
+.impact-row__period {
+  margin-left: 6px;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--impact-row_impact-color);
+}
+
+.impact-row__impact {
+  display: block;
+  margin-top: 4px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.35;
+  color: var(--impact-row_impact-color);
+}
+
+.impact-row__indicator {
+  flex: 0 0 auto;
+  align-self: center;
+  width: var(--impact-row_indicator-size);
+  height: var(--impact-row_indicator-size);
+  background-color: transparent;
+  border: 2px solid var(--impact-row_border-color);
+  border-radius: 50%;
+}
+
+.impact-amounts .en__field--donationAmt.en__field--radio
+  .en__field__item.impact-row > input:checked + label {
+  .impact-row__amount {
+    color: var(--impact-row_accent);
+  }
+
+  .impact-row__indicator {
+    background-color: var(--impact-row_accent);
+    border-color: var(--impact-row_accent);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23fff' stroke-width='3' stroke-linecap='round' stroke-linejoin='round' d='M4 10.5l4 4 8-9'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 58%;
+  }
+}
+
+// HALF LAYOUT
+// Per impact-half.png the indicator appears only on the selected card, pinned
+// top-right, rather than sitting on every row as it does in full.
+.impact-amounts--half {
+  .impact-row__indicator {
+    display: none;
+  }
+
+  .en__field__item.impact-row > input:checked + label .impact-row__indicator {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: block;
+    align-self: auto;
+  }
+}
