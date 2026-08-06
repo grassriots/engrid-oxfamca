@@ -208,7 +208,9 @@ export function decorate(current) {
       const entry = findEntry(entries, input.value);
       if (!entry) unmatched.push(input.value);
 
-      label.replaceChildren(buildRow(entry, item.dataset.impactAmountText, period));
+      // "Other amount / month" is nonsense - the suffix belongs only on real amounts.
+      const rowPeriod = input.value === "other" ? "" : period;
+      label.replaceChildren(buildRow(entry, item.dataset.impactAmountText, rowPeriod));
 
       item.classList.add("impact-row");
       item.classList.toggle("impact-row--matched", !!entry);
