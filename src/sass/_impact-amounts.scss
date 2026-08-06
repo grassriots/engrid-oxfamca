@@ -231,7 +231,10 @@
     margin: 0;
     padding: 0 14px;
     font-size: 20px;
-    color: var(--impact-row_amount-color);
+    // ENGrid sets this input's colour to white at (0,6,0) via
+    // --donation-amount__button_color_checked, which outranks our (0,5,1).
+    // Their declaration is not !important, so ours wins on priority alone.
+    color: var(--impact-row_amount-color) !important;
     // !important on background-color/border-color only: the inline Emergency
     // Theme component sets both with !important on this same input, the same
     // justified use as the checked-row rule above. border-color is split out
