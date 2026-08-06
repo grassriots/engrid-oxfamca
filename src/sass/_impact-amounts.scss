@@ -198,7 +198,11 @@
 
 // The revealed amount input, per mockup/impact-other-selected.png: an accent "$"
 // block on the left, joined to a bordered field.
-.impact-amounts .en__field--donationAmt.en__field--withOther--active .en__field__item--other {
+// .en__field--radio is here for specificity, not selection: the page's inline
+// "Emergency Theme" component sets this input's background and border with
+// !important at (0,4,1), and its <style> sits in the body, after our stylesheet.
+// Matching that at (0,4,1) loses the tie on document order, so we go one higher.
+.impact-amounts .en__field--donationAmt.en__field--radio.en__field--withOther--active .en__field__item--other {
   position: relative;
   display: flex;
   align-items: stretch;
