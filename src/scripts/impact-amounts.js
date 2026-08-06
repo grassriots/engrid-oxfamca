@@ -97,13 +97,17 @@ const CONTAINER_SELECTOR = ".radio-to-buttons_donationAmt";
  * depending on stylesheet source order.
  */
 export function applyLayout(current) {
-  current.fields.forEach((field) => {
-    const container = field.closest(CONTAINER_SELECTOR);
-    if (!container) return;
-    container.classList.add("impact-amounts");
-    container.classList.remove("impact-amounts--full", "impact-amounts--half");
-    container.classList.add(`impact-amounts--${current.config.layout}`);
-  });
+  try {
+    current.fields.forEach((field) => {
+      const container = field.closest(CONTAINER_SELECTOR);
+      if (!container) return;
+      container.classList.add("impact-amounts");
+      container.classList.remove("impact-amounts--full", "impact-amounts--half");
+      container.classList.add(`impact-amounts--${current.config.layout}`);
+    });
+  } catch (error) {
+    console.warn(`${LOG_PREFIX} could not apply layout classes`, error);
+  }
 }
 
 const AMOUNT_INPUT_SELECTOR = 'input[name="transaction.donationAmt"]';
