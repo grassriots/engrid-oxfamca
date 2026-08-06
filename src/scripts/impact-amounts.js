@@ -106,6 +106,125 @@ export function applyLayout(current) {
   });
 }
 
+const AMOUNT_INPUT_SELECTOR = 'input[name="transaction.donationAmt"]';
+
+function element(tag, className) {
+  const node = document.createElement(tag);
+  if (className) node.className = className;
+  return node;
+}
+
+/**
+ * Build a row's label contents.
+ *
+ * Returns DOM nodes rather than an HTML string: config is author-supplied and
+ * would otherwise need escaping before reaching innerHTML, and an inline
+ * onerror attribute would break under a page CSP. textContent handles both.
+ */
+export function buildRow(entry, amountText, period) {
+  const fragment = document.createDocumentFragment();
+
+  if (entry && entry.icon) {
+    const icon = element("img", "impact-row__icon");
+    icon.src = entry.icon;
+    icon.alt = "";
+    icon.setAttribute("aria-hidden", "true");
+    fragment.appendChild(icon);
+  }
+
+  const body = element("span", "impact-row__body");
+
+  const amount = element("span", "impact-row__amount");
+  amount.textContent = entry && entry.label ? entry.label : amountText;
+  if (period) {
+    const suffix = element("span", "impact-row__period");
+    suffix.textContent = period;
+    amount.appendChild(suffix);
+  }
+  body.appendChild(amount);
+
+  if (entry && entry.impact) {
+    const impact = element("span", "impact-row__impact");
+    impact.textContent = entry.impact;
+    body.appendChild(impact);
+  }
+
+  fragment.appendChild(body);
+
+  const indicator = element("span", "impact-row__indicator");
+  indicator.setAttribute("aria-hidden", "true");
+  fragment.appendChild(indicator);
+
+  return fragment;
+}
+
+function warnOnce(current, key, message) {
+  if (current.warned[key]) return;
+  current.warned[key] = true;
+  console.warn(message);
+}
+
+/**
+ * Rewrite every amount row for the current frequency.
+ *
+ * Idempotent by construction: the label is rebuilt from known parts rather than
+ * wrapped in place, and the original amount text is cached on the item the first
+ * time it is seen, so a second pass never reads our own generated markup.
+ */
+export function decorate(current) {
+  const frequency = readFrequency();
+  const entries = selectArray(current.config, frequency);
+  const period = frequency === "monthly" ? "/ month" : "";
+  const unmatched = [];
+
+  if (!entries) {
+    warnOnce(
+      current,
+      `frequency:${frequency}`,
+      `${LOG_PREFIX} no entries configured for frequency "${frequency}" - rows left plain`
+    );
+  }
+
+  current.fields.forEach((field) => {
+    const items = field.querySelectorAll(".en__field__item");
+
+    Array.prototype.forEach.call(items, (item) => {
+      // The trailing .en__field__item--other holds a text input named
+      // transaction.donationAmt.other, so this selector skips it.
+      const input = item.querySelector(AMOUNT_INPUT_SELECTOR);
+      if (!input || input.type !== "radio") return;
+
+      const label = item.querySelector("label");
+      if (!label) return;
+
+      if (!item.dataset.impactAmountText) {
+        item.dataset.impactAmountText = label.textContent.trim();
+      }
+
+      const entry = findEntry(entries, input.value);
+      if (!entry) unmatched.push(input.value);
+
+      label.replaceChildren(buildRow(entry, item.dataset.impactAmountText, period));
+
+      item.classList.add("impact-row");
+      item.classList.toggle("impact-row--matched", !!entry);
+
+      const icon = label.querySelector(".impact-row__icon");
+      if (icon) {
+        icon.addEventListener("error", () => icon.remove(), { once: true });
+      }
+    });
+  });
+
+  if (unmatched.length) {
+    warnOnce(
+      current,
+      `unmatched:${frequency}`,
+      `${LOG_PREFIX} no entry for ${unmatched.join(", ")} (${frequency}) - rows left plain`
+    );
+  }
+}
+
 let state = null;
 
 export function initImpactAmounts() {
@@ -116,6 +235,7 @@ export function initImpactAmounts() {
     if (state) {
       state.config = config;
       applyLayout(state);
+      decorate(state);
       console.log(`${LOG_PREFIX} re-initialised`, describe(config));
       return;
     }
@@ -130,6 +250,7 @@ export function initImpactAmounts() {
 
     state = { config, fields, warned: {} };
     applyLayout(state);
+    decorate(state);
     console.log(`${LOG_PREFIX} initialised`, describe(config));
 
     window.ENGridImpact = { init: initImpactAmounts };
