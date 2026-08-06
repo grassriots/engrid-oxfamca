@@ -379,6 +379,52 @@ Column count, at specificity beating both `.donation-amount_count_3` (0,1,0) and
 
 `half` is therefore two-up from 426px and single-column below it.
 
+## The Other row and its revealed input
+
+Reference: `mockup/impact-other-selected.png`.
+
+**The problem found in browser verification.** ENGrid's own deployed stylesheet sets `display: none`
+on the `value="other"` radio row. Everything the feature renders into that row — icon, "Other
+amount", impact copy — is therefore invisible, while the Other control donors actually see is the
+separate `.en__field__item--other` text input, which the feature skips and which keeps ENGrid's dark
+button styling. Left alone, the Other row cannot match the mockups on this page.
+
+**Resolution.** The Other radio row is unhidden and styled like every other impact row. Selecting it
+reveals the ENGrid text input beneath it. Verified on the live page:
+
+| Behaviour | Owner |
+| --- | --- |
+| Clicking the Other radio adds `en__field--withOther--active` to the field | ENGrid, already works |
+| Selecting it drops `en__field__item--hidden` from the input item | ENGrid, already works |
+| Typing an amount updates the submit button ("Give $42") | ENGrid, already works |
+| Unhiding the Other radio row | **this feature** |
+| Hiding the text input until Other is selected | **this feature** |
+| Styling the revealed input | **this feature** |
+
+So no JavaScript is required — ENGrid owns the state, and the feature owns only presentation:
+
+```scss
+// ENGrid hides the value="other" radio row outright; inside impact layout it is a
+// real row and must show.
+.impact-amounts .en__field--donationAmt .en__field__item.impact-row { display: flex !important; }
+
+// The raw text input appears only once Other is actually selected.
+.impact-amounts .en__field--donationAmt:not(.en__field--withOther--active)
+  .en__field__item--other { display: none !important; }
+```
+
+Both need `!important` for the same reason the checked-row rule does: the competing declarations
+come from stylesheets this bundle does not control.
+
+**Deliberately out of scope**, flagged rather than silently changed — each is existing behaviour the
+mockup happens to depict differently:
+
+- The input placeholder is `"Other"`, set by `preSelectDonationValue()` in `main.js`. The mockup
+  shows "Enter amount". Changing it alters behaviour shipped in commit `b634fc9`.
+- "Minimum donation $5" helper text. Not currently rendered by this feature or, apparently, the page.
+- The submit button reading "Enter an amount" when empty. Today it renders "Give" with a blank
+  amount. That label is ENGrid/EN configuration, not this feature.
+
 ## Failure modes
 
 The entire init is wrapped in `try/catch`. A malformed config logs a warning and leaves the page

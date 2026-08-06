@@ -1262,6 +1262,139 @@ If a check fails, fix it in the task that owns the behaviour, rebuild, and re-ru
 
 ---
 
+### Task 9: Reveal and style the Other row
+
+Browser verification found that ENGrid's deployed stylesheet sets `display: none` on the
+`value="other"` radio row, so everything the feature renders into it is invisible, while the Other
+control donors actually see is the `.en__field__item--other` text input — which the feature skips,
+leaving it with ENGrid's dark button styling next to the impact rows.
+
+Reference: `mockup/impact-other-selected.png`.
+
+**Files:**
+- Modify: `src/sass/_impact-amounts.scss`
+
+**Interfaces:**
+- Consumes: `.impact-row`, `.impact-amounts` and the tokens from Tasks 3–5.
+- Produces: no JS interface. No JavaScript changes at all in this task.
+
+**Verified on the live page before writing this task — ENGrid already owns the state:** clicking the
+Other radio adds `en__field--withOther--active` to `.en__field--donationAmt`, drops
+`en__field__item--hidden` from the input item, and typing an amount updates the submit button to
+"Give $42". This task is presentation only.
+
+- [ ] **Step 1: Unhide the Other row and gate the text input**
+
+Append to `src/sass/_impact-amounts.scss`:
+
+```scss
+// THE OTHER ROW
+// ENGrid's own stylesheet sets display:none on the value="other" radio row, so
+// without this the icon, label and impact copy we render into it are invisible and
+// the only visible Other control is the raw text input below. Inside impact layout
+// the Other row is a real row and must show. !important is required for the same
+// reason as the checked-row rule: the competing declaration is in a stylesheet this
+// bundle does not control.
+.impact-amounts .en__field--donationAmt .en__field__item.impact-row {
+  display: flex !important;
+}
+
+// The raw text input appears only once Other is actually selected. ENGrid adds
+// .en__field--withOther--active to the field on selection; we only react to it.
+.impact-amounts .en__field--donationAmt:not(.en__field--withOther--active)
+  .en__field__item--other {
+  display: none !important;
+}
+```
+
+- [ ] **Step 2: Style the revealed input**
+
+Append:
+
+```scss
+// The revealed amount input, per mockup/impact-other-selected.png: an accent "$"
+// block on the left, joined to a bordered field.
+.impact-amounts .en__field--donationAmt.en__field--withOther--active .en__field__item--other {
+  position: relative;
+  display: flex;
+  align-items: stretch;
+  margin-top: 10px;
+  padding: 0;
+  background: none;
+
+  &:before {
+    display: flex;
+    position: static;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 44px;
+    content: "$";
+    color: #fff;
+    font-size: 20px;
+    font-weight: 700;
+    background-color: var(--impact-row_accent);
+  }
+
+  input {
+    flex: 1 1 auto;
+    min-width: 0;
+    height: 56px;
+    margin: 0;
+    padding: 0 14px;
+    font-size: 20px;
+    color: var(--impact-row_amount-color);
+    background-color: #fff;
+    border: 1px solid var(--impact-row_border-color);
+    border-left: none;
+    border-radius: 0;
+  }
+}
+```
+
+- [ ] **Step 3: Build**
+
+```bash
+npx webpack --config webpack.min.js
+```
+
+Expected: `compiled with 3 warnings` (pre-existing asset-size warnings), no errors.
+
+- [ ] **Step 4: Static verification**
+
+```bash
+grep -o '[^{}]*impact-row{display:flex[^}]*}' dist/engrid.min.css
+grep -o '[^{}]*withOther--active)[^{}]*item--other{display:none[^}]*}' dist/engrid.min.css
+grep -c "important" src/sass/_impact-amounts.scss
+```
+
+Expected: the first two print a match. The third returns a count — note that the explanatory
+comments contain the word "important" in prose, so this count is **not** a reliable measure of
+`!important` declarations. Verify the real count against compiled CSS instead:
+
+```bash
+grep -o 'impact[^{}]*{[^}]*!important[^}]*}' dist/engrid.min.css | wc -l
+```
+
+- [ ] **Step 5: Commit**
+
+```bash
+git add src/sass/_impact-amounts.scss
+git commit -m "Reveal and style the Other amount row
+
+ENGrid hides the value=other radio row outright, so the icon, label and
+impact copy rendered into it were invisible while the raw text input
+showed with ENGrid's dark button styling. Unhides the row inside impact
+layout, gates the text input on ENGrid's existing withOther--active
+state, and styles the revealed input per the mockup."
+```
+
+**Browser verification (controller runs this, not the implementer):** with the Other row visible,
+selecting it must reveal the styled input beneath, the row must take the selected treatment, and
+typing an amount must still update the submit button.
+
+---
+
 ## Self-Review
 
 **Spec coverage.** Config contract → Task 2. Column count and layout classes → Task 3. Markup and accessibility → Task 4. Tokens, states, layout, half-layout indicator → Task 5. Decoration lifecycle and observers → Task 6. Failure modes → Task 7. Verification checklist → Task 8. Brand-colour single source → Task 1.
