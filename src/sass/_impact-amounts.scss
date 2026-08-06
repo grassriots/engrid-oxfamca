@@ -76,8 +76,14 @@
   // Selected. The inset shadow reads as a 2px border without changing the box
   // model, so selecting a row cannot shift layout by a pixel.
   .en__field__item.impact-row > input:checked + label.en__field__label--item {
-    background-color: var(--impact-row_background_checked);
-    border-color: var(--impact-row_accent);
+    // !important is required, not defensive: Oxfam EN pages carry an inline
+    // "Emergency Theme" code component whose
+    //   .en__field--donationAmt.en__field--radio input[type=radio]:checked+label
+    // rule sets background-color and border-color with !important. Without this,
+    // the selected row renders solid #FF1D34 and the amount text — also
+    // #FF1D34 under that subtheme — becomes invisible.
+    background-color: var(--impact-row_background_checked) !important;
+    border-color: var(--impact-row_accent) !important;
     box-shadow: inset 0 0 0 1px var(--impact-row_accent);
   }
 }
