@@ -40,6 +40,7 @@
   --impact-row_gap: 20px;
   --impact-row_padding: 20px;
   --impact-row_indicator-size: 28px;
+  --impact-row_other-input-height: 56px;
 
   @media (max-width: 425px) {
     --impact-row_icon-size: 48px;
@@ -217,6 +218,10 @@
     justify-content: center;
     flex: 0 0 auto;
     width: 44px;
+    // Explicit height is required: the parent computes align-items:stretch and
+    // align-self:stretch on this pseudo-element still yields 0px, so the accent
+    // block never paints. Shares the input's height token so the two stay joined.
+    height: var(--impact-row_other-input-height);
     content: "$";
     color: #fff;
     font-size: 20px;
@@ -227,7 +232,7 @@
   input {
     flex: 1 1 auto;
     min-width: 0;
-    height: 56px;
+    height: var(--impact-row_other-input-height);
     margin: 0;
     padding: 0 14px;
     font-size: 20px;
