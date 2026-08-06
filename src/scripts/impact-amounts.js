@@ -6,6 +6,12 @@
  * write, leaving the page exactly as it was.
  *
  * See docs/superpowers/specs/2026-08-05-donation-amount-impact-layout-design.md
+ *
+ * Most of the functions below are exported even though nothing in this bundle
+ * imports them. That is deliberate, not dead code: they are factored so each
+ * piece (config resolution, frequency reading, entry matching, row building)
+ * can be unit tested in isolation once the project has a test runner, which it
+ * does not yet. If you are hunting for the missing test file, that is why.
  */
 
 const LOG_PREFIX = "[impact-amounts]";
@@ -91,16 +97,28 @@ export function findEntry(array, value) {
 const CONTAINER_SELECTOR = ".radio-to-buttons_donationAmt";
 
 /**
+ * Resolve each field's styling container. A field with no matching ancestor
+ * yields no container - callers must check for this and bail rather than
+ * decorate rows that no stylesheet rule (all scoped under .impact-amounts)
+ * will ever reach.
+ */
+export function resolveContainers(fields) {
+  return fields.map((field) => field.closest(CONTAINER_SELECTOR)).filter(Boolean);
+}
+
+/**
  * Tag each amount array container so the stylesheet can take over the column
  * count. EN's own classes, including donation-amount_count_*, are left in place:
  * our rules win on specificity rather than by mutating class lists, which avoids
  * depending on stylesheet source order.
+ *
+ * Takes already-resolved containers (see resolveContainers) rather than
+ * re-deriving them from current.fields, so the "did we find anything"
+ * decision is made once, by the caller, before any DOM write happens.
  */
-export function applyLayout(current) {
+export function applyLayout(current, containers) {
   try {
-    current.fields.forEach((field) => {
-      const container = field.closest(CONTAINER_SELECTOR);
-      if (!container) return;
+    containers.forEach((container) => {
       container.classList.add("impact-amounts");
       container.classList.remove("impact-amounts--full", "impact-amounts--half");
       container.classList.add(`impact-amounts--${current.config.layout}`);
@@ -178,16 +196,24 @@ function warnOnce(current, key, message) {
 export function decorate(current) {
   const frequency = readFrequency();
   const entries = selectArray(current.config, frequency);
-  const period = frequency === "monthly" ? "/ month" : "";
-  const unmatched = [];
 
   if (!entries) {
+    // No array is configured for this frequency at all - either it maps to no
+    // FREQUENCY_ARRAY_KEYS entry (a three-frequency page's annual/quarterly)
+    // or the key exists but the author never populated it. Either way there is
+    // nothing to decorate rows with, so bail before writing anything: leaving
+    // rows untouched beats rebuilding every one into an icon-less, copy-less
+    // impact-row card.
     warnOnce(
       current,
       `frequency:${frequency}`,
-      `${LOG_PREFIX} no entries configured for frequency "${frequency}" - rows left plain`
+      `${LOG_PREFIX} no entries configured for frequency "${frequency}" - leaving rows unchanged`
     );
+    return;
   }
+
+  const period = frequency === "monthly" ? "/ month" : "";
+  const unmatched = [];
 
   current.fields.forEach((field) => {
     const items = field.querySelectorAll(".en__field__item");
@@ -254,6 +280,9 @@ function safeDecorate(current) {
  * nothing. The body observer is filtered to one attribute we never write.
  */
 function observe(current) {
+  // current.observers is otherwise unread - it exists solely to keep a strong
+  // reference to each MutationObserver for the life of the page, so nothing
+  // here relies on garbage-collection timing to keep watching.
   current.observers = [];
 
   current.fields.forEach((field) => {
@@ -281,8 +310,19 @@ export function initImpactAmounts() {
 
     if (state) {
       state.config = config;
-      applyLayout(state);
+      const containers = resolveContainers(state.fields);
+      if (!containers.length) {
+        console.warn(
+          `${LOG_PREFIX} no ${CONTAINER_SELECTOR} ancestor found - leaving page unchanged`
+        );
+        return;
+      }
+      // decorate before applyLayout: decorate only writes DOM and never reads
+      // layout, so if it throws partway the container is never tagged
+      // .impact-amounts and every impact rule (all scoped under that class)
+      // stays inert instead of half-applying.
       safeDecorate(state);
+      applyLayout(state, containers);
       console.log(`${LOG_PREFIX} re-initialised`, describe(config));
       return;
     }
@@ -295,9 +335,24 @@ export function initImpactAmounts() {
       return;
     }
 
+    // Resolve containers - and bail if none exist - before decorating: on a
+    // page whose amount formblock lacks CONTAINER_SELECTOR, every rule in the
+    // stylesheet is inert, so rewriting labels here would leave icons at
+    // intrinsic size and the indicator invisible for no visual benefit.
+    const containers = resolveContainers(fields);
+    if (!containers.length) {
+      console.warn(
+        `${LOG_PREFIX} no ${CONTAINER_SELECTOR} ancestor found - leaving page unchanged`
+      );
+      return;
+    }
+
     state = { config, fields, warned: {} };
-    applyLayout(state);
+    // decorate before applyLayout (see comment in the re-init branch above):
+    // a throw in decorate must not leave the container tagged .impact-amounts
+    // with rows only half-migrated to the new markup.
     decorate(state);
+    applyLayout(state, containers);
     observe(state);
     console.log(`${LOG_PREFIX} initialised`, describe(config));
 

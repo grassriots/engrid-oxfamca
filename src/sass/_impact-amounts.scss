@@ -91,6 +91,20 @@
   }
 }
 
+// ENGrid appends "/mo" (and "/yr", "/qt" on three-frequency pages) to amount
+// labels via ::after:
+//   [data-engrid-transaction-recurring-frequency=monthly]
+//     .radio-to-buttons_donationAmt .en__field--donationAmt div:not(.en__field__item--other)
+//     .en__field__label--item:after                                        (0,4,1)+pseudo
+// Our label is display:flex, so that pseudo-element becomes a stray fourth
+// flex item after the indicator, duplicating the "/ month" we already render
+// and appearing on the Other row too, where no period belongs. This selector
+// is (0,6,1)+pseudo, so it wins outright without !important.
+.impact-amounts .en__field--donationAmt.en__field--radio .en__field__item.impact-row
+  > label.en__field__label--item::after {
+  content: none;
+}
+
 // ELEMENTS
 // Nested under the same ancestor chain as the row rule (0,4,1+) rather than
 // left as bare single-class selectors (0,1,0), which lost to ENGrid/theme
@@ -190,10 +204,22 @@
   display: flex !important;
 }
 
-// The raw text input appears only once Other is actually selected. ENGrid adds
-// .en__field--withOther--active to the field on selection; we only react to it.
+// The raw text input appears only once Other is actually selected.
+//
+// This requires BOTH signals, not just one:
+//  - .en__field--withOther--active is added to the field by EN's own page
+//    script (real user click) and by our src/scripts/main.js:157 (URL
+//    preselect). Neither path removes .en__field__item--hidden.
+//  - .en__field__item--hidden is removed from the wrapper itself by ENGrid
+//    modules (upsell lightbox, processing-fees) that check the Other radio
+//    programmatically via `.checked = true`. That fires no event, so it never
+//    adds withOther--active.
+// Gating on --active alone left the field hidden while a hidden input still
+// held (and would submit) a real amount the donor never saw. Requiring the
+// conjunction means either signal alone leaves the control visible - the
+// control fails open, not closed, when the two disagree.
 .impact-amounts .en__field--donationAmt:not(.en__field--withOther--active)
-  .en__field__item--other {
+  .en__field__item--other.en__field__item--hidden {
   display: none !important;
 }
 
@@ -249,7 +275,12 @@
     border-width: 1px;
     border-style: solid;
     border-color: var(--impact-row_border-color) !important;
-    border-left: none;
+    // Explicit longhand, not the border-left shorthand: this must stay ordered
+    // after border-color above regardless of what a minifier's declaration
+    // sorter decides, and border-left (which also sets width/color) could
+    // reintroduce a border here depending on that order. border-left-style
+    // only ever touches style, so it is safe in either position.
+    border-left-style: none;
     border-radius: 0;
   }
 }
